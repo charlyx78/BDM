@@ -1,0 +1,56 @@
+@import "variables.scss";
+
+.contenedor-login {
+    display: grid;
+    grid-template-columns: 4fr 3fr;
+}
+.contenedor-hero-login {
+    height: 100vh;
+    background-image: url(../img/hero-login.svg);
+    background-repeat: no repeat;
+    background-position: center center;
+    background-size: cover;
+    color: $color-blanco;
+    position: relative;
+    .contenido-hero-login {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 2em 5em;
+        .logo {
+            h2 {
+                font-size: 2.5em;
+            }
+        }
+        .eslogan {
+            ul {
+                display: flex;
+                list-style: none;
+                padding: 0;
+                margin-bottom: 5em;
+                li {
+                    h3 {
+                        font-size: 1.5em;
+                        margin: 0 0.5em 0 0;
+                    }
+                }
+            }           
+        }
+        .texto-hero-login {
+            font-family: $fuente-parrafo;
+        }
+    }
+    &::before {
+        content: '';
+        position: absolute;
+        background-color: rgba($color: black, $alpha: 0.8);
+        top: 0;
+        left: 0;
+    }
+}
+.contenedor-formulario-login {
+    padding: 2em 3em;
+}

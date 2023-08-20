@@ -1,0 +1,25 @@
+@import "variables.scss";
+
+h1 {
+    font-family: $fuente-primaria;
+    font-weight: bolder;
+    font-size: 5em;
+    margin: 0;
+}
+h2 {
+    font-family: $fuente-primaria;
+    font-weight: bolder;
+    font-size: 4em;
+    margin: 0;
+}
+h3 {
+    font-family: $fuente-secundaria;
+    font-weight: bolder;
+    font-size: 3em;
+    margin: 0;
+}
+h4 {
+    font-family: $fuente-secundaria;
+    font-size: 2em;
+    margin: 0;
+}
