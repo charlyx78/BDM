@@ -25,20 +25,7 @@
             </div>
         </div>
         <div class="contenedor-formulario-login">
-            <form action="#" id="formLogin" method="post">
 
-                <h2>Iniciar Sesion</h2>
-
-                <label for="username" class="col-form-label">Nombre de usuario: </label>
-                <input type="text" class="form-control" name="username" id="username" placeholder="Nombre de usuario" maxlength="70" required>
-
-                <label for="password" class="col-form-label">Contraseña: </label>
-                <input type="password" class="form-control" name="password" id="password" placeholder="Contraseña" maxlength="40" required>
-
-                <button class="btn btn-primary" role="button" type="submit" >Iniciar Sesion</button>
-                <label for="">No te has registrado hacer clic <a href="/views/signup.php">aquí</a></label>
-
-            </form>
         </div>
     </div>
 

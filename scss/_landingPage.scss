@@ -1,0 +1,88 @@
+@import "variables.scss";
+
+.contenedor-landing-page {
+    height: 100vh;
+    @media (min-width: $tablet) {
+        background-image: url(../img/landingPageBackground.svg);
+    }
+    background-image: url(../img/landingPageBackgroundMobile.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    position: relative;
+    z-index: 2;
+}
+
+.contenido-landing-page {
+    @media (min-width: $tablet) {
+        display: grid;
+        grid-template-columns: 0.85fr 1fr;
+    }
+    display: block;
+    padding: 3em 0;
+    width: 100%;
+
+    .contenedor-texto-landing-page {
+        .logo {
+            display: flex;
+            @media (min-width: $tablet) {
+                justify-content: flex-start;
+                margin-bottom: 3em !important;
+            }
+            justify-content: center;
+        }
+        @media (min-width: $tablet) {
+            text-align: left;
+        }
+        text-align: center;
+        h2 {
+            @media (min-width:$tablet) {
+                font-size: 4em;
+            }
+            font-size: 3em;
+        }
+        .landing-page-tags {
+            @media (min-width:$tablet) {
+                display: block;
+            }
+            display: none;
+        }
+        .contenedor-botones-landing-page {
+            display: flex;
+            @media (min-width: $tablet) {
+                height: auto;
+                justify-content: flex-start;
+            }
+            height: 40vh;
+            align-items: end;
+            justify-content: center;
+            gap: 2em;
+            .btn-secundario {
+                @media (min-width:$tablet) {
+                    border: none;
+                    background-color: $color-secundario;
+                }
+                border: 1px solid $color-blanco;
+                background-color: transparent;
+            } 
+        }
+    }
+    .contenedor-imagen-landing-page {
+        display: flex;
+        align-items: center;
+        @media (min-width: $tablet) {
+            justify-content: end;
+            position: static;
+            height: auto;
+        }
+        justify-content: center;
+        position: absolute;
+        top: 45%;
+        bottom: 0;
+        z-index: 1;
+        height: 35vh;
+        img {
+            width: 80%;
+        }
+    }
+}

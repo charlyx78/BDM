@@ -1,0 +1,25 @@
+.logo {
+    display: flex;
+    align-items: end;
+    gap: 0.6em;
+    color: $color-primario;
+    h1 {
+        font-size: 2.6em;
+    }
+}
+.btn-primario {
+    background-color: $color-secundario;
+    color: $color-blanco;
+}
+.btn-secundario {
+    background-color: $color-secundario;
+    color: $color-blanco;
+}
+.btn-terciario {
+    background-color: $color-terciario;
+    color: $color-blanco;
+}
+.btn-blanco {
+    background-color: $color-blanco;
+    color: $color-negro;
+}

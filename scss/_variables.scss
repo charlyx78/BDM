@@ -1,10 +1,17 @@
 //colores
-$color-primario: #0B38BF;
-$color-llamativo: #F2A71B;
+$color-primario: #392F7F;
+$color-secundario: #735FFF;
+$color-terciario: #5B567F;
+
 $color-blanco: #f5f5f5;
 $color-negro: #333333;
 
 //fuentes
-$fuente-primaria: 'Cardo', serif;
-$fuente-secundaria: 'EB Garamond', serif;
-$fuente-parrafo: 'Montserrat', sans-serif;
+$fuente-primaria: 'League Spartan', sans-serif;
+$fuente-secundaria: 'Raleway', sans-serif;
+$fuente-parrafo: 'Nunito', sans-serif;
+
+//tamaños de pantlla
+$celular: 390px;
+$tablet: 768px;
+$laptop: 1440px;
