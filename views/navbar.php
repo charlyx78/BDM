@@ -8,7 +8,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <form class="d-flex ms-lg-4 w-100" role="search">
-                <div class="input-group input-group-md w-75">
+                <div class="input-group input-group-md">
                     <input class="form-control" type="search" placeholder="Buscar producto..." aria-label="Search" aria-label="Search" aria-describedby="button-addon2">
                     <button class="input-group-text btn btn-outline-light" type="submit" id="button-addon2">Buscar</button>
                 </div>
@@ -25,16 +25,20 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a href="" class="position-relative" role="button">
-                        <i class="bi bi-cart-dash-fill fa-2x text-light"></i>
-                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                            1
-                        <span class="visually-hidden">unread messages</span>
+                    <a href="" class="nav-link w-100 link-carrito" role="button">
+                        <div class="position-relative w-100 d-flex justify-content-between align-items-center">
+                            <div class="d-md-none">Carrito</div>
+                            <i class="bi bi-cart-dash-fill text-light"></i>
+                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                0
+                            <span class="visually-hidden">unread messages</span>
+                        </div>
                     </a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="../img/avatar.svg" class="rounded-circle me-2" width="30" height="30" alt="Avatar" />    
+                    <a class="nav-link dropdown w-100 d-flex justify-content-between align-items-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <div class="d-md-none">Carlos Ruiz</div>  
+                        <img src="../img/avatar.svg" class="rounded-circle me-2" width="30" height="30" alt="Avatar" />  
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="#">Mi cuenta</a></li>

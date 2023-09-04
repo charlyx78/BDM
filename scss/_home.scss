@@ -1,0 +1,163 @@
+@import "variables.scss";
+
+.contenedor-home {
+    .contenido-home {
+        .hero-home {
+            background-image: url(../img/promocion-hoodies.png);
+            width: 100%;
+            height: 40vh;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            h3.texto-hero-home {
+                color: $color-blanco;
+                text-align: center;
+            }
+            position: absolute;
+            .contenedor-productos {
+                position: relative;
+                left: 0;
+                right: 0;
+                top: 400%;
+                .seccion-categorias {
+                    display: flex;
+                    overflow-x: scroll;
+                    margin-bottom: 2em;
+                    .categoria {
+                        display: flex;
+                        justify-content: center;
+                        min-width: 140px;
+                        height: 160px;
+                        cursor: pointer;
+                        margin-right: 0.6em;
+                        text-align: center;
+                        &:last-child {
+                            margin-right: 0;
+                        }
+                        .imagen-categoria {
+                            max-width: 120px;
+                            min-height: 80px;
+                            margin: 0 auto 0.6em auto;
+                        }
+                    }
+                }
+                .contenedor-secciones-productos {
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    .seccion-productos {
+                        h3.titulo-seccion-productos {
+                            font-size: 1.4em;
+                            margin-top: 0.6em;
+                        }
+                        .producto {
+                            display: flex;
+                            justify-content: center;
+                            height: 180px;
+                            border: none;
+                            text-decoration: none;
+                            background-color: $color-blanco;
+                            border-radius: 1em;
+                            padding: 0 1em;
+                            .imagen-producto {
+                                width: 100%;
+                                height: 100px;
+                                background-image: url(../img/producto.webp);
+                                background-position: center center;
+                                background-size: cover;
+                                background-repeat: no-repeat;
+                                margin-bottom: 1em;
+    
+                            }
+                            h3.nombre-producto {
+                                font-size: 1em;
+                                font-weight: normal;
+                            }
+                            h4.precio-producto {
+                                font-size: 1.2em;
+                                font-weight: bold;
+                            }
+                        }
+                        .card-body {
+                            padding-bottom: 0
+                        }
+                        .card-footer {
+                            border-top: 0;
+                            background-color: transparent;
+                            padding-bottom: 1em;
+                            a {
+                                display: flex;
+                                justify-content: end;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: $laptop) {
+    .contenedor-home {
+        .contenido-home {
+            .hero-home {
+                height: 60vh;
+                background-position: center 40%;
+                .contenedor-productos {
+                    top: 200%;
+                    .seccion-categorias {
+                        justify-content: space-between;
+                        margin-bottom: 3em;
+                        .categoria {
+                            min-width: 180px;
+                            height: 180px;
+                            cursor: pointer;
+                            .imagen-categoria {
+                                max-width: 140px;
+                                min-height: 100px;
+                                margin: 0 auto 0.6em auto;
+                            }
+                        }
+                    }
+                    .contenedor-secciones-productos {
+                        grid-template-columns: 1fr 1fr;
+                        grid-template-rows: 1fr 1fr 1fr;
+                        gap: 2em;
+                        .seccion-productos {
+                            &:nth-child(1) {
+                                grid-column: 1/2;
+                                grid-row: 1/2;
+                                overflow-x: scroll;
+                            }
+                            &:nth-child(2) {
+                                grid-column: 2/3;
+                                grid-row: 1/3;
+                            }
+                            &:nth-child(3) {
+                                grid-column: 1/2;
+                                grid-row: 2/3;
+                            }
+                            &:nth-child(4) {
+                                grid-column: 1/3;
+                                grid-row: 3/4;
+                                .producto {
+                                    height: 250px;
+                                    .imagen-producto {
+                                        min-height: 150px;
+                                    }
+                                }
+                            }
+                            .producto {
+                                height: 200px;
+                                padding: 1.6em 1em;
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}
