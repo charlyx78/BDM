@@ -23,3 +23,17 @@
     background-color: $color-blanco;
     color: $color-negro;
 }
+.hr {
+    border-bottom: 1px solid $color-gris;
+    margin: 1em 0;
+}
+.color-oro {
+    color: $color-oro;
+}
+.bg-blanco {
+    background-color: $color-blanco;
+}
+h2.titulo-pagina {
+    font-size: 2.2em;
+    margin-bottom: 0.6em;
+}

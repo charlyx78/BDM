@@ -46,28 +46,28 @@
                                 <h3 class="titulo-seccion-productos mb-4">Recomendados para ti</h3>
                                 <div class="row">
                                     <div class="col-6 col-lg-4 mb-3">
-                                        <a class="producto card" href="#">
+                                        <a class="producto card" href="producto.php">
                                             <div class="imagen-producto"></div>
                                             <h3 class="nombre-producto">iPhone 14 Pro</h3>
                                             <h4 class="precio-producto">$12999</h4>
                                         </a>
                                     </div>
                                     <div class="col-6 col-lg-4 mb-3">
-                                        <a class="producto card" href="#">
+                                        <a class="producto card" href="producto.php">
                                             <div class="imagen-producto"></div>
                                             <h3 class="nombre-producto">iPhone 14 Pro</h3>
                                             <h4 class="precio-producto">$12999</h4>
                                         </a>
                                     </div>
                                     <div class="col-6 col-lg-4 mb-3">
-                                        <a class="producto card" href="#">
+                                        <a class="producto card" href="producto.php">
                                             <div class="imagen-producto"></div>
                                             <h3 class="nombre-producto">iPhone 14 Pro</h3>
                                             <h4 class="precio-producto">$12999</h4>
                                         </a>
                                     </div>
                                     <div class="col-6 col-lg-4 d-lg-none mb-3">
-                                        <a class="producto card" href="#">
+                                        <a class="producto card" href="producto.php">
                                             <div class="imagen-producto"></div>
                                             <h3 class="nombre-producto">iPhone 14 Pro</h3>
                                             <h4 class="precio-producto">$12999</h4>
@@ -84,42 +84,42 @@
                                 <h3 class="titulo-seccion-productos mb-4">Populares ahora</h3>
                                 <div class="row">
                                     <div class="col-6 mb-3">
-                                        <a class="producto card" href="#">
+                                        <a class="producto card" href="producto.php">
                                             <div class="imagen-producto"></div>
                                             <h3 class="nombre-producto">iPhone 14 Pro</h3>
                                             <h4 class="precio-producto">$12999</h4>
                                         </a>
                                     </div>
                                     <div class="col-6 mb-3">
-                                        <a class="producto card" href="#">
+                                        <a class="producto card" href="producto.php">
                                             <div class="imagen-producto"></div>
                                             <h3 class="nombre-producto">iPhone 14 Pro</h3>
                                             <h4 class="precio-producto">$12999</h4>
                                         </a>
                                     </div>
                                     <div class="col-6 mb-3">
-                                        <a class="producto card" href="#">
+                                        <a class="producto card" href="producto.php">
                                             <div class="imagen-producto"></div>
                                             <h3 class="nombre-producto">iPhone 14 Pro</h3>
                                             <h4 class="precio-producto">$12999</h4>
                                         </a>
                                     </div>
                                     <div class="col-6 mb-3">
-                                        <a class="producto card" href="#">
+                                        <a class="producto card" href="producto.php">
                                             <div class="imagen-producto"></div>
                                             <h3 class="nombre-producto">iPhone 14 Pro</h3>
                                             <h4 class="precio-producto">$12999</h4>
                                         </a>
                                     </div>
                                     <div class="col-6 mb-3">
-                                        <a class="producto card" href="#">
+                                        <a class="producto card" href="producto.php">
                                             <div class="imagen-producto"></div>
                                             <h3 class="nombre-producto">iPhone 14 Pro</h3>
                                             <h4 class="precio-producto">$12999</h4>
                                         </a>
                                     </div>
                                     <div class="col-6 mb-3">
-                                        <a class="producto card" href="#">
+                                        <a class="producto card" href="producto.php">
                                             <div class="imagen-producto"></div>
                                             <h3 class="nombre-producto">iPhone 14 Pro</h3>
                                             <h4 class="precio-producto">$12999</h4>
@@ -136,28 +136,28 @@
                                 <h3 class="titulo-seccion-productos mb-4">Los mas vendidos</h3>
                                 <div class="row">
                                     <div class="col-6 col-lg-4 mb-3">
-                                        <a class="producto card" href="#">
+                                        <a class="producto card" href="producto.php">
                                             <div class="imagen-producto"></div>
                                             <h3 class="nombre-producto">iPhone 14 Pro</h3>
                                             <h4 class="precio-producto">$12999</h4>
                                         </a>
                                     </div>
                                     <div class="col-6 col-lg-4 mb-3">
-                                        <a class="producto card" href="#">
+                                        <a class="producto card" href="producto.php">
                                             <div class="imagen-producto"></div>
                                             <h3 class="nombre-producto">iPhone 14 Pro</h3>
                                             <h4 class="precio-producto">$12999</h4>
                                         </a>
                                     </div>
                                     <div class="col-6 col-lg-4 mb-3">
-                                        <a class="producto card" href="#">
+                                        <a class="producto card" href="producto.php">
                                             <div class="imagen-producto"></div>
                                             <h3 class="nombre-producto">iPhone 14 Pro</h3>
                                             <h4 class="precio-producto">$12999</h4>
                                         </a>
                                     </div>
                                     <div class="col-6 col-lg-4 d-lg-none mb-3">
-                                        <a class="producto card" href="#">
+                                        <a class="producto card" href="producto.php">
                                             <div class="imagen-producto"></div>
                                             <h3 class="nombre-producto">iPhone 14 Pro</h3>
                                             <h4 class="precio-producto">$12999</h4>
@@ -173,29 +173,29 @@
                             <div class="card-body">
                                 <h3 class="titulo-seccion-productos mb-4">Los mas recientes</h3>
                                 <div class="row">
-                                    <div class="col-6 col-lg-4 mb-3">
-                                        <a class="producto card" href="#">
+                                    <div class="col-6 col-lg-3 mb-3">
+                                        <a class="producto card" href="producto.php">
                                             <div class="imagen-producto"></div>
                                             <h3 class="nombre-producto">iPhone 14 Pro</h3>
                                             <h4 class="precio-producto">$12999</h4>
                                         </a>
                                     </div>
-                                    <div class="col-6 col-lg-4 mb-3">
-                                        <a class="producto card" href="#">
+                                    <div class="col-6 col-lg-3 mb-3">
+                                        <a class="producto card" href="producto.php">
                                             <div class="imagen-producto"></div>
                                             <h3 class="nombre-producto">iPhone 14 Pro</h3>
                                             <h4 class="precio-producto">$12999</h4>
                                         </a>
                                     </div>
-                                    <div class="col-6 col-lg-4 mb-3">
-                                        <a class="producto card" href="#">
+                                    <div class="col-6 col-lg-3 mb-3">
+                                        <a class="producto card" href="producto.php">
                                             <div class="imagen-producto"></div>
                                             <h3 class="nombre-producto">iPhone 14 Pro</h3>
                                             <h4 class="precio-producto">$12999</h4>
                                         </a>
                                     </div>
-                                    <div class="col-6 col-lg-4 d-lg-none mb-3">
-                                        <a class="producto card" href="#">
+                                    <div class="col-6 col-lg-3 mb-3">
+                                        <a class="producto card" href="producto.php">
                                             <div class="imagen-producto"></div>
                                             <h3 class="nombre-producto">iPhone 14 Pro</h3>
                                             <h4 class="precio-producto">$12999</h4>

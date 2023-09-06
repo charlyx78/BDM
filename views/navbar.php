@@ -25,7 +25,7 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a href="" class="nav-link w-100 link-carrito" role="button">
+                    <a href="cart.php" class="nav-link w-100 link-carrito" role="button">
                         <div class="position-relative w-100 d-flex justify-content-between align-items-center">
                             <div class="d-md-none">Carrito</div>
                             <i class="bi bi-cart-dash-fill text-light"></i>
