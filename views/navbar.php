@@ -10,7 +10,7 @@
             <form class="d-flex ms-lg-4 w-100" role="search">
                 <div class="input-group input-group-md">
                     <input class="form-control" type="search" placeholder="Buscar producto..." aria-label="Search" aria-label="Search" aria-describedby="button-addon2">
-                    <button class="input-group-text btn btn-outline-light" type="submit" id="button-addon2">Buscar</button>
+                    <a class="input-group-text btn btn-outline-light" id="button-addon2" href="search.php">Buscar</a>
                 </div>
             </form>
             <ul class="navbar-nav mb-2 mb-lg-0">
@@ -23,6 +23,17 @@
                         <li><a class="dropdown-item" href="#">Electrodomesticos</a></li>
                         <li><a class="dropdown-item" href="#">Something else here</a></li>
                     </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="chat.php" class="nav-link w-100 link-carrito" role="button">
+                        <div class="position-relative w-100 d-flex justify-content-between align-items-center">
+                            <div class="d-md-none">Mensajes</div>
+                            <i class="bi bi-chat-text-fill text-light"></i>
+                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                0
+                            <span class="visually-hidden">unread messages</span>
+                        </div>
+                    </a>
                 </li>
                 <li class="nav-item">
                     <a href="cart.php" class="nav-link w-100 link-carrito" role="button">
@@ -41,7 +52,7 @@
                         <img src="../img/avatar.svg" class="rounded-circle me-2" width="30" height="30" alt="Avatar" />  
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Mi cuenta</a></li>
+                        <li><a class="dropdown-item" href="account.php">Mi cuenta</a></li>
                         <li><a class="dropdown-item" href="#">Mis pedidos</a></li>
                         <li><a class="dropdown-item" href="#">Wishlist</a></li>
                         <li><hr class="dropdown-divider"></li>

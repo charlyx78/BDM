@@ -1,0 +1,19 @@
+.foto-perfil {
+    height: 80px;
+    width: 80px;
+    background-image: url(../img/avatar.svg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+.boton-editar-foto {
+    bottom: 0;
+    right: 0;
+}
+@media (min-width:$laptop) {
+    .foto-perfil {
+        height: 100px;
+        width: 100px;
+    }
+}

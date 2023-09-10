@@ -1,0 +1,75 @@
+.contacto {
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    gap: 1.4em;
+    align-items: center;
+    cursor: pointer;
+    color:$color-negro;
+    img {
+        width: 15%;
+    }
+    h5 {
+        font-size: 1.2em;
+        font-weight: bold;
+        margin: 0;
+    }
+    .informacion-perfil-mensaje {
+        width: 80%;
+        margin: 0 auto;
+    }
+}
+.contenedor-chat {
+    .card-header, .card-footer {
+        background-color: transparent;
+    }
+    .contenedor-mensajes {
+        height: 70vh;
+        overflow-y: scroll; 
+        .mensaje {
+            margin-bottom: 1em;
+            display: flex;
+        }
+        .mensaje-local  {
+            background-color: $color-blanco;
+            justify-content: flex-end;
+            max-width: 60%;
+            padding: 0.6em 1em;
+        }
+        .mensaje-remoto {
+            background-color: $color-secundario;
+            color: $color-blanco;
+            justify-content: flex-start;
+            max-width: 60%;
+            padding: 0.6em 1em;
+            margin: 0 0 0 auto;
+        }
+    }
+}
+
+@media (min-width: $laptop) {
+    .contacto {
+        img {
+            width: 60px;
+        }
+        .informacion-perfil-mensaje {
+            width: 90%;
+        }
+    }
+    .contenedor-chat {
+        .contenedor-mensajes {
+            height: 65vh;
+            .producto-carrito {
+                .imagen-producto-carrito {
+                    width: 20%;
+                }
+            }
+            .mensaje-local  {
+                max-width: 40%;
+            }
+            .mensaje-remoto {
+                max-width: 40%;
+            }
+        }
+    }
+}

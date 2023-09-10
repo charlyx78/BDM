@@ -156,10 +156,6 @@
                         <div class="d-flex justify-content-end">
                             <button type="button" class="btn btn-secundario">Registrarse</button>
                         </div>
-                </form>
-
-                        
-
                     </form>
                 </div>
             </div>
