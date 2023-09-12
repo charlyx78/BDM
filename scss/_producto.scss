@@ -36,6 +36,14 @@
                 font-weight: bolder;
             }
         }
+        .descripcion-producto {
+            p {
+                text-align: justify;
+            }
+        } 
+    }
+    .comentario-texto {
+        text-align: justify;
     }
 }
 

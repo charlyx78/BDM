@@ -25,7 +25,8 @@
                     <h2 class="precio-producto">$12999.99</h2>
                     <h5><i class="bi bi-star-fill color-oro me-2"></i>4.9</h5>
                 </div>
-                <h5 class="disponibilidad-producto mb-4">Unidades disponibles: <span>65</span> </h5>
+                <h5 class="disponibilidad-producto">Unidades disponibles: <span>65</span> </h5>
+                <h5 class="text-secondary mb-4">Tecnologia</h5>
                 <form action="">
                     <div class="d-flex align-items-end gap-3 mb-3">
                         <label for="cantidad-producto" class="form-label">Cantidad</label>

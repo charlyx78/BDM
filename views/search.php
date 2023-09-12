@@ -11,9 +11,17 @@
     <main class="container py-4">
         <h2 class="titulo-pagina">Resultados de busqueda de: iPhone</h2>
         <h5 class="fw-bold">Filtros</h5>
-        <div class="card card-body filtros-busqueda mb-4">
+        <div class="card card-body filtros-busqueda mb-5">
             <form action="">
                 <div class="row">
+                    <div class="mb-2 col-12 col-lg-6">
+                        <label for="nombreProducto" class="form-label">Nombre del producto</label>
+                        <input type="number" name="nombreProducto" class="form-control">
+                    </div>
+                    <div class="mb-2 col-12 col-lg-6">
+                        <label for="nombreVendedor" class="form-label">Nombre del vendedor</label>
+                        <input type="number" name="nombreVendedor" class="form-control">
+                    </div>
                     <div class="mb-2 col-6 col-lg-3">
                         <label for="precioMinimo" class="form-label">Precio minimo</label>
                         <input type="number" name="precioMinimo" class="form-control">

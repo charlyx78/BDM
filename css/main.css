@@ -72,6 +72,9 @@ h4 {
 h2.titulo-pagina {
   font-size: 2.2em;
   margin-bottom: 0.6em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .contenedor-landing-page {
@@ -437,6 +440,12 @@ h2.titulo-pagina {
   color: #392F7F;
   font-weight: bolder;
 }
+.contenedor-producto .informacion-producto .descripcion-producto p {
+  text-align: justify;
+}
+.contenedor-producto .comentario-texto {
+  text-align: justify;
+}
 
 @media (min-width: 1440px) {
   .contenedor-producto {
@@ -646,7 +655,7 @@ h2.titulo-pagina {
   .contenedor-productos-busqueda {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 1em;
+    gap: 1.6em;
   }
   .contenedor-productos-busqueda .producto-busqueda {
     display: flex;
@@ -664,6 +673,73 @@ h2.titulo-pagina {
   }
   .contenedor-productos-busqueda .producto-busqueda .informacion-producto-busqueda .calificacion-producto-busqueda {
     justify-content: center;
+  }
+}
+.producto-wishlist {
+  display: flex;
+  flex-direction: row;
+  gap: 1.4em;
+}
+.producto-wishlist .imagen-producto-wishlist {
+  height: 170px;
+  width: 50%;
+  background-image: url(../img/producto.webp);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.producto-wishlist .informacion-producto-wishlist h4 {
+  font-size: 1em;
+}
+.producto-wishlist .informacion-producto-wishlist h5 {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.accordion-button::after {
+  margin-left: 0;
+  background: none;
+}
+
+.accordion-button:not(.collapsed)::after {
+  background: none;
+}
+
+.contenedor-wishlist-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.boton-wishlist {
+  width: 100%;
+  margin-bottom: 0.4em;
+}
+
+.calificacion-producto-wishlist {
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+}
+
+@media (min-width: 1440px) {
+  .producto-wishlist .imagen-producto-wishlist {
+    width: 20%;
+    height: 120px;
+  }
+  .producto-wishlist .informacion-producto-wishlist {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .contenedor-wishlist-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .boton-wishlist {
+    width: auto;
   }
 }
 .contenedor-login {

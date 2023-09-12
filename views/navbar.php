@@ -25,6 +25,9 @@
                     </ul>
                 </li>
                 <li class="nav-item">
+                    <a href="misProductos.php" class="nav-link w-100 link-carrito" role="button">Mis productos</a>
+                </li>
+                <li class="nav-item">
                     <a href="chat.php" class="nav-link w-100 link-carrito" role="button">
                         <div class="position-relative w-100 d-flex justify-content-between align-items-center">
                             <div class="d-md-none">Mensajes</div>
@@ -53,8 +56,8 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="account.php">Mi cuenta</a></li>
-                        <li><a class="dropdown-item" href="#">Mis pedidos</a></li>
-                        <li><a class="dropdown-item" href="#">Wishlist</a></li>
+                        <li><a class="dropdown-item" href="pedidos.php">Mis pedidos</a></li>
+                        <li><a class="dropdown-item" href="wishlist.php">Wishlist</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item text-danger" href="landingPage.php">Cerrar sesion</a></li>
                     </ul>
