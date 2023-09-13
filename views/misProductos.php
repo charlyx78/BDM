@@ -39,43 +39,43 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="">
+                <form action="#" id="formAddProducto" method="post">
                     <div class="row">
                         <div class="mb-2">
                             <label for="nombreProducto" class="form-label">Nombre</label>
-                            <input type="text" class="form-control" name="nombreProducto">
+                            <input type="text" class="form-control" name="nombreProducto" id="nombreProducto">
                         </div>
                         <div class="mb-2">
                             <label for="categoriaProducto" class="form-label">Categoria</label>
-                            <select name="categoriaProducto" id="" class="form-select">
+                            <select name="categoriaProducto" id="categoriaProducto" class="form-select">
                                 <option value="">Selecciona una categoria...</option>
-                                <option value="">Tecnologia</option>
-                                <option value="">Belleza</option>
+                                <option value="Tecnologia">Tecnologia</option>
+                                <option value="Belleza">Belleza</option>
                             </select>                        
                         </div>
                         <div class="mb-2 col-6">
                             <label for="tipoVentaProducto" class="form-label">Tipo de venta</label>
-                            <select name="tipoVentaProducto" id="" class="form-select">
+                            <select name="tipoVentaProducto" id="tipoVentaProducto" class="form-select">
                                 <option value="">Selecciona una opcion...</option>
-                                <option value="">Precio fijo</option>
-                                <option value="">Cotizable</option>
+                                <option value="Precio fijo">Precio fijo</option>
+                                <option value="Cotizable">Cotizable</option>
                             </select>  
                         </div>
                         <div class="mb-2 col-6">
                             <label for="precioProducto" class="form-label">Precio</label>
                             <div class="input-group input-group">
-                                <input class="form-control" type="number" name="precioProducto" aria-label="Precio" aria-label="Precio" aria-describedby="button-addon3">
+                                <input class="form-control" type="number" name="precioProducto" id="precioProducto" aria-label="Precio" aria-label="Precio" aria-describedby="button-addon3">
                                 <p class="input-group-text m-0" id="button-addon3">$</a>
                             </div>
                         </div>
                         <div class="mb-2">
                             <label for="stockProducto" class="form-label">Stock</label>
                             <div class="input-group input-group">
-                                <input class="form-control" type="number" name="stockProducto" aria-label="Precio" aria-label="Precio" aria-describedby="button-addon4">
-                                <select class="input-group-text form-select" id="button-addon4">
+                                <input class="form-control" type="number" name="stockProducto" id="stockProducto" aria-label="Precio" aria-label="Precio" aria-describedby="button-addon4">
+                                <select class="input-group-text form-select" id="stockUnidadMedida">
                                     <option value="">Unidad de medida</option>
-                                    <option value="">Piezas</option>
-                                    <option value="">Kilogramos</option>
+                                    <option value="Piezas">Piezas</option>
+                                    <option value="Kilogramos">Kilogramos</option>
                                 </select>
                             </div>
                         </div>
@@ -100,7 +100,7 @@
                             <textarea class="form-control" name="descripcionProducto" id="descripcionProducto" rows="5"></textarea>
                         </div>
                         <div class="mb-2">
-                            <input type="submit" class="btn btn-primario w-100" value="Guardar">
+                            <button type="submit" class="btn btn-primario w-100">Guardar</button>
                         </div>
                     </div>
                 </form>
@@ -108,6 +108,6 @@
             </div>
         </div>
     </div>
-
+    <script src="../js/misProductos.js"></script>
 </body>
 </html>

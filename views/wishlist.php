@@ -64,14 +64,14 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form action="">
+                    <form action="#" id="formAddWishlist" method="post">
                         <div class="mb-2">
                             <label for="nombreWishlist" class="form-label">Nombre</label>
-                            <input type="text" class="form-control" name="nombreWishlist">
+                            <input type="text" class="form-control" name="nombreWishlist" id="nombreWishlist">
                         </div>
                         <div class="mb-2">
                             <label for="descripcionWishlist" class="form-label">Wishlist</label>
-                            <textarea class="form-control" name="descripcionWishlist" rows="5"></textarea>
+                            <textarea class="form-control" name="descripcionWishlist" id="descripcionWishlist" rows="5"></textarea>
                         </div>
                         <div class="mb-4">
                             <label for="imagenWishlist" class="form-label">Imagen</label>
@@ -115,5 +115,6 @@
 
 
     </main>
+    <script src="../js/wishlist.js"></script>
 </body>
 </html>

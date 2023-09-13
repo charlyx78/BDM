@@ -69,15 +69,15 @@
                     <form action="#" id="formLogin" method="post">
                         <div class="mb-2">
                             <label for="username" class="col-form-label">Nombre de usuario: </label>
-                            <input type="text" class="form-control" name="username" id="username" placeholder="Nombre de usuario" maxlength="70" required>
+                            <input type="text" class="form-control" name="usernameL" id="usernameL" placeholder="Nombre de usuario" maxlength="70">
                         </div>
                         <div class="mb-5">
                             <label for="password" class="col-form-label">Contraseña: </label>
-                            <input type="password" class="form-control mb-4" name="password" id="password" placeholder="Contraseña" maxlength="40" required>
+                            <input type="password" class="form-control mb-4" name="passwordL" id="passwordL" placeholder="Contraseña" maxlength="40">
                         </div>
                         
                         <div class="d-flex justify-content-end">
-                            <button type="button" class="btn btn-secundario">Iniciar sesion</button>
+                            <button type="submit" class="btn btn-secundario">Iniciar sesion</button>
                         </div>
                     </form>
                 </div>
@@ -99,43 +99,44 @@
                         <div class="mb-2 row">
                             <div class="col">
                                 <label for="names" class="col-form-label">Nombre (s): </label>
-                                <input type="text" class="form-control" name="names" id="names" placeholder="Nombre (s)" maxlength="70" required>
+                                <input type="text" class="form-control" name="namesR" id="namesR" placeholder="Nombre (s)" maxlength="70">
                             </div>
                             <div class="col">
                                 <label for="lastnames" class="col-form-label">Apellidos: </label>
-                                <input type="text" class="form-control" name="lastnames" id="lastnames" placeholder="Apellidos"  maxlength="70" required>
+                                <input type="text" class="form-control" name="lastnamesR" id="lastnamesR" placeholder="Apellidos"  maxlength="70">
                             </div>       
                         </div>
                         <div class="mb-2 row">
                             <div class="col">
                                 <label for="birthdate" class="col-form-label">Fecha de nacimiento: </label>
-                                <input type="date" class="form-control" name="birthdate" id="birthdate" required>
+                                <input type="date" class="form-control" name="birthdateR" id="birthdateR">
                             </div>
                             <div class="col">
                                 <label for="sex" class="col-form-label">Sexo: </label>
-                                <select name="sex" id="sex" class="form-control">
-                                    <option value="">Hombre</option>
-                                    <option value="">Mujer</option>
-                                    <option value="">Otro</option>
+                                <select name="sexR" id="sexR" class="form-control">
+                                    <option value="">Seleccionar...</option>
+                                    <option value="Hombre">Hombre</option>
+                                    <option value="Mujer">Mujer</option>
+                                    <option value="Otro">Otro</option>
                                 </select>
                             </div>
                         </div>
                         <div class="mb-2">
                             <label for="username" class="col-form-label">Nombre de usuario: </label>
-                            <input type="text" class="form-control" name="username" id="username" placeholder="Nombre de usuario"  maxlength="70" required>
+                            <input type="text" class="form-control" name="usernameR" id="usernameR" placeholder="Nombre de usuario"  maxlength="70">
                         </div>
                         <div class="mb-2">
                             <label for="email" class="col-form-label">Correo: </label>
-                            <input type="email" class="form-control" name="email" id="email" placeholder="Correo"  maxlength="40" required>
+                            <input type="text" class="form-control" name="emailR" id="emailR" placeholder="Correo"  maxlength="40">
                         </div>
                         <div class="mb-3 row">
                             <div class="col">
                                 <label for="password" class="col-form-label">Contraseña: </label>
-                                <input type="password" class="form-control" name="password" id="password" placeholder="Contraseña" maxlength="40" required>
+                                <input type="password" class="form-control" name="passwordR" id="passwordR" placeholder="Contraseña" maxlength="40">
                             </div>
                             <div class="col">
                                 <label for="confirmpassword" class="col-form-label">Confirmar contraseña: </label>
-                                <input type="password" class="form-control" name="confirmpassword" id="password" placeholder="Confirmar contraseña" maxlength="40" required>
+                                <input type="password" class="form-control" name="confirmpasswordR" id="confirmpasswordR" placeholder="Confirmar contraseña" maxlength="40">
                             </div>  
                         </div>
                         <div class="mb-5">
@@ -154,12 +155,13 @@
                             </div>
                         </div>    
                         <div class="d-flex justify-content-end">
-                            <button type="button" class="btn btn-secundario">Registrarse</button>
+                            <button type="submit" class="btn btn-secundario">Registrarse</button>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
+    <script src="../js/landingPage.js"></script>
 </body>
 </html>

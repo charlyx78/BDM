@@ -27,10 +27,10 @@
                 </div>
                 <h5 class="disponibilidad-producto">Unidades disponibles: <span>65</span> </h5>
                 <h5 class="text-secondary mb-4">Tecnologia</h5>
-                <form action="">
+                <form action="#" id="formAddProductoACarrito" method="post">
                     <div class="d-flex align-items-end gap-3 mb-3">
                         <label for="cantidad-producto" class="form-label">Cantidad</label>
-                        <input type="number" class="form-control">
+                        <input type="number" class="form-control" id="CantidadAgregar">
                     </div>
                     <div class="row">
                         <div class="col-10">                
@@ -64,6 +64,6 @@
         </div>
     </main>
     
-    
+    <script src="../js/producto.js"></script>
 </body>
 </html>
