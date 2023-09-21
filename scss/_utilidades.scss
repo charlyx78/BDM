@@ -30,6 +30,9 @@
 .color-oro {
     color: $color-oro;
 }
+.color-primario {
+    color: $color-primario;
+}
 .bg-blanco {
     background-color: $color-blanco;
 }
@@ -39,4 +42,7 @@ h2.titulo-pagina {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+.container-fluid {
+    width: 90% !important;
 }

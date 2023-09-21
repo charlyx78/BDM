@@ -10,7 +10,7 @@ h2 {
   font-weight: bolder;
   font-size: 4em;
   margin: 0;
-  color: #333333;
+  color: #1C1C1C;
 }
 
 h3 {
@@ -53,7 +53,7 @@ h4 {
 
 .btn-blanco {
   background-color: #f5f5f5;
-  color: #333333;
+  color: #1C1C1C;
 }
 
 .hr {
@@ -63,6 +63,10 @@ h4 {
 
 .color-oro {
   color: #f3da35;
+}
+
+.color-primario {
+  color: #392F7F;
 }
 
 .bg-blanco {
@@ -75,6 +79,10 @@ h2.titulo-pagina {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.container-fluid {
+  width: 90% !important;
 }
 
 .contenedor-landing-page {
@@ -182,7 +190,10 @@ h2.titulo-pagina {
 }
 
 .navbar {
-  background-color: #735FFF !important;
+  background-color: #f5f5f5 !important;
+}
+.navbar a {
+  text-decoration: none;
 }
 
 .navbar-nav {
@@ -193,7 +204,7 @@ h2.titulo-pagina {
   align-items: center;
 }
 .navbar-nav li .nav-link {
-  color: #f5f5f5;
+  color: #1C1C1C;
 }
 .navbar-nav li .nav-link.active {
   color: #392F7F;
@@ -202,6 +213,11 @@ h2.titulo-pagina {
   font-size: 1.4em;
 }
 
+@media (min-width: 768px) {
+  .navbar-nav {
+    margin: 0 0 0 auto !important;
+  }
+}
 .navbar-brand {
   display: flex;
   align-items: flex-end;
@@ -216,11 +232,8 @@ h2.titulo-pagina {
 .navbar-collapse {
   margin-top: 1.4em;
 }
-.navbar-collapse .input-group {
-  width: 100%;
-}
 .navbar-collapse .nav-item {
-  border-bottom: 1px solid #f5f5f5;
+  border-bottom: 1px solid #cacaca;
   height: 40px;
   width: 100%;
 }
@@ -235,8 +248,11 @@ h2.titulo-pagina {
   .navbar-collapse {
     margin-top: 0;
   }
-  .navbar-collapse .input-group {
-    width: 75%;
+  .navbar-collapse form .input-group {
+    width: 100%;
+  }
+  .navbar-collapse form .input-group input {
+    width: 20vw;
   }
   .navbar-collapse .nav-item {
     border: none;
@@ -261,104 +277,125 @@ h2.titulo-pagina {
 }
 
 .contenedor-home .contenido-home .hero-home {
-  background-image: url(../img/promocion-hoodies.png);
+  background-image: url(../img/business-3293079_1920.jpg);
   width: 100%;
-  height: 40vh;
+  height: 50vh;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: absolute;
 }
-.contenedor-home .contenido-home .hero-home h3.texto-hero-home {
-  color: #f5f5f5;
+
+.modulo-home {
+  padding: 2.4em 0;
+}
+
+.contenedor-promocion-home1 {
   text-align: center;
 }
-.contenedor-home .contenido-home .hero-home .contenedor-productos {
+.contenedor-promocion-home1 h5 {
+  margin-bottom: 1em;
+}
+.contenedor-promocion-home1 h5 span {
+  color: #735FFF;
+  font-weight: bolder;
+}
+.contenedor-promocion-home1 h2 {
+  font-size: 3.2em;
+  letter-spacing: 0.15em;
+}
+.contenedor-promocion-home1 h6 {
+  line-height: 1.6em;
+}
+
+.contenedor-promocion-home2 .imagen-promocion-home2 {
+  width: 100%;
+  height: 40vh;
+  background-image: url(../img/vr.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
   position: relative;
-  left: 0;
-  right: 0;
-  top: 400%;
 }
-.contenedor-home .contenido-home .hero-home .contenedor-productos .seccion-categorias {
-  display: flex;
-  overflow-x: scroll;
-  margin-bottom: 2em;
+.contenedor-promocion-home2 .imagen-promocion-home2 .contenido-imagen-promocion {
+  position: absolute;
+  bottom: 0;
+  padding: 1em;
 }
-.contenedor-home .contenido-home .hero-home .contenedor-productos .seccion-categorias .categoria {
-  display: flex;
-  justify-content: center;
-  min-width: 140px;
-  height: 160px;
-  cursor: pointer;
-  margin-right: 0.6em;
-  text-align: center;
+.contenedor-promocion-home2 .imagen-promocion-home2 .contenido-imagen-promocion h2 {
+  font-size: 1.4em;
+  margin-bottom: 0.4em;
+  color: #f5f5f5;
 }
-.contenedor-home .contenido-home .hero-home .contenedor-productos .seccion-categorias .categoria:last-child {
-  margin-right: 0;
-}
-.contenedor-home .contenido-home .hero-home .contenedor-productos .seccion-categorias .categoria .imagen-categoria {
-  max-width: 120px;
-  min-height: 80px;
-  margin: 0 auto 0.6em auto;
-}
-.contenedor-home .contenido-home .hero-home .contenedor-productos .contenedor-secciones-productos {
+
+.contenedor-secciones-productos {
   display: grid;
   grid-template-columns: 1fr;
 }
-.contenedor-home .contenido-home .hero-home .contenedor-productos .contenedor-secciones-productos .seccion-productos h3.titulo-seccion-productos {
+.contenedor-secciones-productos .seccion-productos h3.titulo-seccion-productos {
   font-size: 1.4em;
   margin-top: 0.6em;
 }
-.contenedor-home .contenido-home .hero-home .contenedor-productos .contenedor-secciones-productos .seccion-productos .producto {
+.contenedor-secciones-productos .seccion-productos .contenedor-productos {
+  width: 350px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+.contenedor-secciones-productos .seccion-productos .contenedor-productos .contenido-productos {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1em;
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+.contenedor-secciones-productos .seccion-productos .contenedor-productos .contenido-productos .item-producto {
+  width: 300px !important;
+  height: 400px;
+}
+.contenedor-secciones-productos .seccion-productos .contenedor-productos .contenido-productos .item-producto .producto {
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  height: 180px;
+  gap: 0.2em;
   border: none;
   text-decoration: none;
-  background-color: #f5f5f5;
-  border-radius: 1em;
-  padding: 0 1em;
+  border-radius: 0;
 }
-.contenedor-home .contenido-home .hero-home .contenedor-productos .contenedor-secciones-productos .seccion-productos .producto .imagen-producto {
+.contenedor-secciones-productos .seccion-productos .contenedor-productos .contenido-productos .item-producto .producto .imagen-producto {
   width: 100%;
-  height: 100px;
+  height: 300px;
   background-image: url(../img/producto.webp);
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
   margin-bottom: 1em;
 }
-.contenedor-home .contenido-home .hero-home .contenedor-productos .contenedor-secciones-productos .seccion-productos .producto h3.nombre-producto {
+.contenedor-secciones-productos .seccion-productos .contenedor-productos .contenido-productos .item-producto .producto h4.categoria-producto {
   font-size: 1em;
   font-weight: normal;
 }
-.contenedor-home .contenido-home .hero-home .contenedor-productos .contenedor-secciones-productos .seccion-productos .producto h4.precio-producto {
+.contenedor-secciones-productos .seccion-productos .contenedor-productos .contenido-productos .item-producto .producto h2.nombre-producto {
+  font-size: 1.2em;
+  font-weight: normal;
+  color: #1C1C1C;
+}
+.contenedor-secciones-productos .seccion-productos .contenedor-productos .contenido-productos .item-producto .producto h4.precio-producto {
   font-size: 1.2em;
   font-weight: bold;
-}
-.contenedor-home .contenido-home .hero-home .contenedor-productos .contenedor-secciones-productos .seccion-productos .card-body {
-  padding-bottom: 0;
-}
-.contenedor-home .contenido-home .hero-home .contenedor-productos .contenedor-secciones-productos .seccion-productos .card-footer {
-  border-top: 0;
-  background-color: transparent;
-  padding-bottom: 1em;
-}
-.contenedor-home .contenido-home .hero-home .contenedor-productos .contenedor-secciones-productos .seccion-productos .card-footer a {
-  display: flex;
-  justify-content: end;
+  color: #1C1C1C;
 }
 
 @media (min-width: 1440px) {
   .contenedor-home .contenido-home .hero-home {
     height: 60vh;
-    background-position: center 40%;
-  }
-  .contenedor-home .contenido-home .hero-home .contenedor-productos {
-    top: 200%;
+    background-position: center 20%;
   }
   .contenedor-home .contenido-home .hero-home .contenedor-productos .seccion-categorias {
     justify-content: space-between;
@@ -415,7 +452,7 @@ h2.titulo-pagina {
   height: 250px;
   width: 100%;
   margin-bottom: 1em;
-  background-color: #333333;
+  background-color: #1C1C1C;
 }
 .contenedor-producto .multimedia-producto .contenedor-imagenes-producto {
   display: flex;
@@ -558,7 +595,7 @@ h2.titulo-pagina {
   gap: 1.4em;
   align-items: center;
   cursor: pointer;
-  color: #333333;
+  color: #1C1C1C;
 }
 .contacto img {
   width: 15%;

@@ -9,211 +9,81 @@
 <body>
     <?php include_once "navbar.php" ?>
 
-    <div class="contenedor-home">
+    <section class="contenedor-home">
         <div class="contenido-home">
             <section class="hero-home">
-                <!-- <h3 class="texto-hero-home">Ofertas de otoño-invierno 2023</h3> -->
-                <section class="contenedor-productos container">
-                    <section class="seccion-categorias">
-                        <div class="categoria card">
-                            <img src="../img/producto.webp" class="imagen-categoria" alt="">
-                            <h6>Tecnologia</h6>
-                        </div>
-                        <div class="categoria card">
-                            <img src="../img/producto.webp" class="imagen-categoria" alt="">
-                            <h6>Moda y Belleza</h6>
-                        </div>
-                        <div class="categoria card">
-                            <img src="../img/producto.webp" class="imagen-categoria" alt="">
-                            <h6>Entretenimiento</h6>
-                        </div>
-                        <div class="categoria card">
-                            <img src="../img/producto.webp" class="imagen-categoria" alt="">
-                            <h6>Libros</h6>
-                        </div>
-                        <div class="categoria card">
-                            <img src="../img/producto.webp" class="imagen-categoria" alt="">
-                            <h6>Supermercado</h6>
-                        </div>
-                        <div class="categoria card">
-                            <img src="../img/producto.webp" class="imagen-categoria" alt="">
-                            <h6>Deportes</h6>
-                        </div>
-                    </section>
-                    <div class="contenedor-secciones-productos">
-                        <section class="seccion-productos card mb-4">
-                            <div class="card-body">
-                                <h3 class="titulo-seccion-productos mb-4">Recomendados para ti</h3>
-                                <div class="row">
-                                    <div class="col-6 col-lg-4 mb-3">
-                                        <a class="producto card" href="producto.php">
-                                            <div class="imagen-producto"></div>
-                                            <h3 class="nombre-producto">iPhone 14 Pro</h3>
-                                            <h4 class="precio-producto">$12999</h4>
-                                        </a>
-                                    </div>
-                                    <div class="col-6 col-lg-4 mb-3">
-                                        <a class="producto card" href="producto.php">
-                                            <div class="imagen-producto"></div>
-                                            <h3 class="nombre-producto">iPhone 14 Pro</h3>
-                                            <h4 class="precio-producto">$12999</h4>
-                                        </a>
-                                    </div>
-                                    <div class="col-6 col-lg-4 mb-3">
-                                        <a class="producto card" href="producto.php">
-                                            <div class="imagen-producto"></div>
-                                            <h3 class="nombre-producto">iPhone 14 Pro</h3>
-                                            <h4 class="precio-producto">$12999</h4>
-                                        </a>
-                                    </div>
-                                    <div class="col-6 col-lg-4 d-lg-none mb-3">
-                                        <a class="producto card" href="producto.php">
-                                            <div class="imagen-producto"></div>
-                                            <h3 class="nombre-producto">iPhone 14 Pro</h3>
-                                            <h4 class="precio-producto">$12999</h4>
-                                        </a>
-                                    </div>
-                                </div>                
-                            </div>
-                            <div class="card-footer">
-                                <a href="#">Ver todos</a>
-                            </div>
-                        </section>
-                        <section class="seccion-productos card mb-4">
-                            <div class="card-body">
-                                <h3 class="titulo-seccion-productos mb-4">Populares ahora</h3>
-                                <div class="row">
-                                    <div class="col-6 mb-3">
-                                        <a class="producto card" href="producto.php">
-                                            <div class="imagen-producto"></div>
-                                            <h3 class="nombre-producto">iPhone 14 Pro</h3>
-                                            <h4 class="precio-producto">$12999</h4>
-                                        </a>
-                                    </div>
-                                    <div class="col-6 mb-3">
-                                        <a class="producto card" href="producto.php">
-                                            <div class="imagen-producto"></div>
-                                            <h3 class="nombre-producto">iPhone 14 Pro</h3>
-                                            <h4 class="precio-producto">$12999</h4>
-                                        </a>
-                                    </div>
-                                    <div class="col-6 mb-3">
-                                        <a class="producto card" href="producto.php">
-                                            <div class="imagen-producto"></div>
-                                            <h3 class="nombre-producto">iPhone 14 Pro</h3>
-                                            <h4 class="precio-producto">$12999</h4>
-                                        </a>
-                                    </div>
-                                    <div class="col-6 mb-3">
-                                        <a class="producto card" href="producto.php">
-                                            <div class="imagen-producto"></div>
-                                            <h3 class="nombre-producto">iPhone 14 Pro</h3>
-                                            <h4 class="precio-producto">$12999</h4>
-                                        </a>
-                                    </div>
-                                    <div class="col-6 mb-3">
-                                        <a class="producto card" href="producto.php">
-                                            <div class="imagen-producto"></div>
-                                            <h3 class="nombre-producto">iPhone 14 Pro</h3>
-                                            <h4 class="precio-producto">$12999</h4>
-                                        </a>
-                                    </div>
-                                    <div class="col-6 mb-3">
-                                        <a class="producto card" href="producto.php">
-                                            <div class="imagen-producto"></div>
-                                            <h3 class="nombre-producto">iPhone 14 Pro</h3>
-                                            <h4 class="precio-producto">$12999</h4>
-                                        </a>
-                                    </div>
-                                </div>                
-                            </div>
-                            <div class="card-footer">
-                                <a href="#">Ver todos</a>
-                            </div>
-                        </section>
-                        <section class="seccion-productos card mb-4">
-                            <div class="card-body">
-                                <h3 class="titulo-seccion-productos mb-4">Los mas vendidos</h3>
-                                <div class="row">
-                                    <div class="col-6 col-lg-4 mb-3">
-                                        <a class="producto card" href="producto.php">
-                                            <div class="imagen-producto"></div>
-                                            <h3 class="nombre-producto">iPhone 14 Pro</h3>
-                                            <h4 class="precio-producto">$12999</h4>
-                                        </a>
-                                    </div>
-                                    <div class="col-6 col-lg-4 mb-3">
-                                        <a class="producto card" href="producto.php">
-                                            <div class="imagen-producto"></div>
-                                            <h3 class="nombre-producto">iPhone 14 Pro</h3>
-                                            <h4 class="precio-producto">$12999</h4>
-                                        </a>
-                                    </div>
-                                    <div class="col-6 col-lg-4 mb-3">
-                                        <a class="producto card" href="producto.php">
-                                            <div class="imagen-producto"></div>
-                                            <h3 class="nombre-producto">iPhone 14 Pro</h3>
-                                            <h4 class="precio-producto">$12999</h4>
-                                        </a>
-                                    </div>
-                                    <div class="col-6 col-lg-4 d-lg-none mb-3">
-                                        <a class="producto card" href="producto.php">
-                                            <div class="imagen-producto"></div>
-                                            <h3 class="nombre-producto">iPhone 14 Pro</h3>
-                                            <h4 class="precio-producto">$12999</h4>
-                                        </a>
-                                    </div>
-                                </div>                
-                            </div>
-                            <div class="card-footer">
-                                <a href="#">Ver todos</a>
-                            </div>
-                        </section>
-                        <section class="seccion-productos card mb-4">
-                            <div class="card-body">
-                                <h3 class="titulo-seccion-productos mb-4">Los mas recientes</h3>
-                                <div class="row">
-                                    <div class="col-6 col-lg-3 mb-3">
-                                        <a class="producto card" href="producto.php">
-                                            <div class="imagen-producto"></div>
-                                            <h3 class="nombre-producto">iPhone 14 Pro</h3>
-                                            <h4 class="precio-producto">$12999</h4>
-                                        </a>
-                                    </div>
-                                    <div class="col-6 col-lg-3 mb-3">
-                                        <a class="producto card" href="producto.php">
-                                            <div class="imagen-producto"></div>
-                                            <h3 class="nombre-producto">iPhone 14 Pro</h3>
-                                            <h4 class="precio-producto">$12999</h4>
-                                        </a>
-                                    </div>
-                                    <div class="col-6 col-lg-3 mb-3">
-                                        <a class="producto card" href="producto.php">
-                                            <div class="imagen-producto"></div>
-                                            <h3 class="nombre-producto">iPhone 14 Pro</h3>
-                                            <h4 class="precio-producto">$12999</h4>
-                                        </a>
-                                    </div>
-                                    <div class="col-6 col-lg-3 mb-3">
-                                        <a class="producto card" href="producto.php">
-                                            <div class="imagen-producto"></div>
-                                            <h3 class="nombre-producto">iPhone 14 Pro</h3>
-                                            <h4 class="precio-producto">$12999</h4>
-                                        </a>
-                                    </div>
-                                </div>                
-                            </div>
-                            <div class="card-footer">
-                                <a href="#">Ver todos</a>
-                            </div>
-                        </section>
-
-                    </div>            
-                </section>
             </section>
-
         </div>
-    </div>
+    </section>
+
+    <section class="container-fluid">
+
+        <div class="modulo-home contenedor-promocion-home1">
+            <div class="texto-promocion-home1">
+                <h5>Con <span>Trendigo</span></h5>
+                <h2>DESCUBRE EL FUTURO</h2>
+                <h6 class="mb-4">Encuentra los productos mas innovadores del momento con nosotros</h6>
+                <button class="btn btn-primario rounded-pill">Compra ahora</button>
+            </div>
+        </div>
+        <div class="modulo-home contenedor-promocion-home2">
+            <div class="imagen-promocion-home2">
+                <div class="contenido-imagen-promocion">
+                    <h2>Realidad virtual</h2>
+                    <button class="btn btn-light rounded-pill fw-bold">Conoce más</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="contenedor-secciones-productos">
+            <section class="modulo-home seccion-productos mb-4">
+                <h3 class="titulo-seccion-productos mb-4">Los elegidos <span class="color-primario">para ti</span> </h3>
+                
+                <div class="contenedor-productos">
+                    <ul class="contenido-productos">
+                        <li class="item-producto">                        
+                            <a class="producto" href="producto.php">
+                                <div class="imagen-producto"></div>
+                                <h4 class="categoria-producto  text-secondary">Smartphones</h4>
+                                <h2 class="nombre-producto">iPhone 14 Pro 128GB 4GB RAM</h2>
+                                <h4 class="precio-producto">$12999</h4>
+                            </a>
+                        </li>
+                        <li class="item-producto">                        
+                            <a class="producto" href="producto.php">
+                                <div class="imagen-producto"></div>
+                                <h4 class="categoria-producto  text-secondary">Smartphones</h4>
+                                <h2 class="nombre-producto">iPhone 14 Pro 128GB 4GB RAM</h2>
+                                <h4 class="precio-producto">$12999</h4>
+                            </a>
+                        </li>
+                        <li class="item-producto">                        
+                            <a class="producto" href="producto.php">
+                                <div class="imagen-producto"></div>
+                                <h4 class="categoria-producto  text-secondary">Smartphones</h4>
+                                <h2 class="nombre-producto">iPhone 14 Pro 128GB 4GB RAM</h2>
+                                <h4 class="precio-producto">$12999</h4>
+                            </a>
+                        </li>
+                        <li class="item-producto">                        
+                            <a class="producto" href="producto.php">
+                                <div class="imagen-producto"></div>
+                                <h4 class="categoria-producto  text-secondary">Smartphones</h4>
+                                <h2 class="nombre-producto">iPhone 14 Pro 128GB 4GB RAM</h2>
+                                <h4 class="precio-producto">$12999</h4>
+                            </a>
+                        </li>
+                    </ul>          
+                </div>
+                
+            </section>
+        </div>   
+        
+        <div class="modulo-home contenedor-promocion-home3">
+                
+        </div>
+
+    </section>
 
 </body>
 </html>

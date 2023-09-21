@@ -1,5 +1,8 @@
 .navbar {
-    background-color: $color-secundario !important;
+    background-color: $color-blanco !important;
+    a {
+        text-decoration: none;
+    }
 }
 .navbar-nav {
     gap: 1.4em;
@@ -7,7 +10,7 @@
         display: flex;
         align-items: center;
         .nav-link {
-            color: $color-blanco;
+            color: $color-negro;
         }
         .nav-link.active {
             color: $color-primario;
@@ -15,6 +18,11 @@
         i {
             font-size: 1.4em;
         }
+    }
+}
+@media (min-width: $tablet) {
+    .navbar-nav {
+        margin: 0 0 0 auto !important;
     }
 }
 .navbar-brand {
@@ -30,11 +38,8 @@
 
 .navbar-collapse {
     margin-top: 1.4em;
-    .input-group {
-        width: 100%;
-    }
     .nav-item {
-        border-bottom: 1px solid $color-blanco;
+        border-bottom: 1px solid $color-gris;
         height: 40px;
         width: 100%;
         &:first-child {
@@ -48,8 +53,13 @@
 @media (min-width: $tablet) {
     .navbar-collapse {
         margin-top: 0;
-        .input-group {
-            width: 75%;
+        form {
+            .input-group {
+                width: 100%;
+                input {
+                    width: 20vw;
+                }
+            }
         }
         .nav-item {
             border: none;
