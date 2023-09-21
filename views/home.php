@@ -37,7 +37,7 @@
         
         <div class="contenedor-secciones-productos">
             <section class="modulo-home seccion-productos mb-4">
-                <h3 class="titulo-seccion-productos mb-4">Los elegidos <span class="color-primario">para ti</span> </h3>
+                <h3 class="titulo-seccion-productos mb-4">Los elegidos <span class="color-secundario">para ti</span> </h3>
                 
                 <div class="contenedor-productos">
                     <ul class="contenido-productos">
@@ -80,7 +80,7 @@
         </div>   
         
         <div class="modulo-home contenedor-promocion-home3">
-                
+
         </div>
 
     </section>
