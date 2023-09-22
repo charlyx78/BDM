@@ -9,45 +9,81 @@
 <body>
     <?php include_once "navbar.php" ?>
 
-    <main class="container py-5">
-        <div class="contenedor-producto">
-            <div class="multimedia-producto">
-                <video class="video-producto rounded" src="../img/video-producto.mp4" controls autoplay muted loop></video>
-                <div class="contenedor-imagenes-producto">
-                    <div class="imagen-producto rounded"></div>
-                    <div class="imagen-producto rounded"></div>
-                    <div class="imagen-producto rounded"></div>
+    <div class="container-fluid contenedor-pagina">
+
+        <div class="informacion-producto">
+            <h5 class="text-secondary">Tecnologia</h5>
+            <h2 class="nombre-producto">iPhone 14 Pro 128GB 4GB RAM</h2>
+            <div class="d-flex justify-content-between align-items-end precio-calificacion">
+                <h2 class="precio-producto">$12999.99</h2>
+                <h5><i class="bi bi-star-fill color-secundario me-2"></i>4.9</h5>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="modulo-producto">
+        <div id="carouselProducto" class="carousel slide carousel-fade ">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="muestra-multimedia muestra-multimedia1">
+                        <video src="../img/video-producto.mp4" autoplay controls muted loop></video>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="muestra-multimedia muestra-multimedia2"></div>
+                </div>
+                <div class="carousel-item">
+                    <div class="muestra-multimedia muestra-multimedia3"></div>
+                </div>
+                <div class="carousel-item">
+                    <div class="muestra-multimedia muestra-multimedia4"></div>
                 </div>
             </div>
-            <div class="informacion-producto">
-                <h2 class="nombre-producto">iPhone 14 Pro</h2>
-                <div class="d-flex justify-content-between align-items-end precio-calificacion">
-                    <h2 class="precio-producto">$12999.99</h2>
-                    <h5><i class="bi bi-star-fill color-oro me-2"></i>4.9</h5>
-                </div>
-                <h5 class="disponibilidad-producto">Unidades disponibles: <span>65</span> </h5>
-                <h5 class="text-secondary mb-4">Tecnologia</h5>
-                <form action="#" id="formAddProductoACarrito" method="post">
-                    <div class="d-flex align-items-end gap-3 mb-3">
-                        <label for="cantidad-producto" class="form-label">Cantidad</label>
-                        <input type="number" class="form-control" id="CantidadAgregar">
-                    </div>
-                    <div class="row">
-                        <div class="col-10">                
-                            <button type="submit" class="btn btn-primario w-100">Agregar al carrito</button>
-                        </div>
-                        <div class="col-2">
-                            <button type="button" class="btn btn-terciario w-100"><i class="bi bi-bookmark-star-fill"></i></button>
-                        </div>
-                    </div>
-                </form>
-                <div class="hr"></div>
-                <div class="descripcion-producto">
-                    <h5 class="fw-bold mb-4">Descripcion</h5>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia reprehenderit eos repellendus error tenetur, quo praesentium tempore neque incidunt sapiente! Laudantium error voluptas tempore quos laboriosam aut, officia neque eveniet! Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, ea omnis quidem, odit nobis neque modi cum corrupti reiciendis, voluptate adipisci laudantium! Voluptas veniam tempora quis excepturi expedita illo dolores? Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis ullam neque aut incidunt itaque facere aperiam atque temporibus, tempora laboriosam omnis perspiciatis, provident a nam labore dicta pariatur dolorem aliquid? Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt autem veniam, consequuntur provident ipsum maiores commodi adipisci dolorum quaerat delectus corrupti dolorem. Placeat fugit illum optio reiciendis exercitationem unde suscipit. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione, facilis in error dolore aperiam ad minima beatae exercitationem eveniet explicabo maiores ullam, ipsam consectetur nemo nisi eaque vitae quaerat magni.</p>
-                </div>
+        </div>
+        <div class="contenedor-thumbnails-productos">
+            <div class="contenido-thumbnails-productos">
+                <div class="thumbnail-multimedia" data-bs-target="#carouselProducto" data-bs-slide-to="0"></div>
+                <div class="thumbnail-multimedia" data-bs-target="#carouselProducto" data-bs-slide-to="1"></div>
+                <div class="thumbnail-multimedia" data-bs-target="#carouselProducto" data-bs-slide-to="2"></div>
+                <div class="thumbnail-multimedia" data-bs-target="#carouselProducto" data-bs-slide-to="3"></div>
             </div>
-            <div class="hr"></div>
+        </div>
+    </div>
+    
+
+    <div class="container-fluid">
+        <!-- <h5 class="disponibilidad-producto">Unidades disponibles: <span>65</span> </h5> -->
+        <form action="#" id="formAddProductoACarrito" class="modulo-producto" method="post">
+            <!-- <div class="d-flex align-items-end gap-3 mb-3">
+                <label for="cantidad-producto" class="form-label">Cantidad</label>
+                <input type="number" class="form-control" id="CantidadAgregar">
+            </div> -->
+            <div class="botones-producto">
+                <button type="submit" class="btn btn-primario d-inline-block rounded-pill mb-3">Agregar al carrito</button>
+                <button type="button" class="btn btn-terciario d-inline-block rounded-pill">
+                    Agregar a wishlist
+                    <i class="bi bi-bookmark ms-3"></i>
+                </button>
+            </div>
+        </form>
+        <div class="descripcion-producto modulo-producto">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit, ad incidunt quos earum sed voluptate voluptatibus architecto, possimus cumque quod consequatur quidem laborum expedita fuga quo ipsum facilis. Natus, nostrum.</p>   
+        </div>
+
+        <div class="header-comentarios">
+            
+        </div>
+    </div>
+
+
+
+
+
+            <!-- <div class="hr"></div>
+
+        </div>
+        <div class="hr"></div>
             <div class="comentarios-producto">
                 <h5 class="fw-bold mb-4">Comentarios</h5>
                 <div class="comentario card card-body border-0 bg-blanco">
@@ -61,9 +97,9 @@
                     <p class="comentario-texto m-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum, recusandae commodi tenetur sint quo, minus quam minima officiis aspernatur accusamus perferendis est at itaque ea vel, nam asperiores voluptatem consequatur.</p>
                 </div>
             </div>
-        </div>
-    </main>
-    
+        </div> -->
+
+
     <script src="../js/producto.js"></script>
 </body>
 </html>

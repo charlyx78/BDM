@@ -36,6 +36,9 @@
 .color-secundario {
     color: $color-secundario;
 }
+.bg-secundario {
+    background-color: $color-secundario;
+}
 .bg-blanco {
     background-color: $color-blanco;
 }
@@ -48,4 +51,7 @@ h2.titulo-pagina {
 }
 .container-fluid {
     width: 90% !important;
+}
+.contenedor-pagina {
+    margin-top: 6em;
 }

@@ -1,8 +1,17 @@
 .navbar {
-    background-color: $color-blanco !important;
+    background-color: white !important;
     a {
         text-decoration: none;
     }
+    padding: 1em 0;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+.navbar-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10000;
 }
 .navbar-nav {
     gap: 1.4em;
@@ -39,9 +48,9 @@
 .navbar-collapse {
     margin-top: 1.4em;
     .nav-item {
-        border-bottom: 1px solid $color-gris;
         height: 40px;
         width: 100%;
+        font-weight: 600;
         &:first-child {
             margin-top: 1em;
         }
@@ -79,8 +88,4 @@
     .link-carrito {
         padding-right: 0;
     }
-}
-
-.navbar-toggler {
-    background-color: $color-blanco;
 }
