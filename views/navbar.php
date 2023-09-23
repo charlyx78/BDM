@@ -27,7 +27,13 @@
                         <a class="input-group-text btn-primario" id="button-addon2" href="search.php"><i class="bi bi-search"></i></a>
                     </div>
                 </form>
-                <li class="nav-item">
+                <li class="nav-item d-block d-lg-none">
+                    <a href="contactos.php" class="nav-link btn btn-light w-100 d-flex align-items-center" role="button">
+                        <i class="bi bi-chat-left color-primario me-3 me-lg-0"></i>    
+                        <div class="d-md-none">Mensajes</div>  
+                    </a>
+                </li>
+                <li class="nav-item d-none d-lg-block">
                     <a href="chat.php" class="nav-link btn btn-light w-100 d-flex align-items-center" role="button">
                         <i class="bi bi-chat-left color-primario me-3 me-lg-0"></i>    
                         <div class="d-md-none">Mensajes</div>  

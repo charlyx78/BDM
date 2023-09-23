@@ -5,7 +5,7 @@
         .hero-home {
             background-image: url(../img/business-3293079_1920.jpg);
             width: 100%;
-            height: 55vh;
+            height: 50vh;
             background-position: center center;
             background-repeat: no-repeat;
             background-size: cover;
@@ -83,11 +83,11 @@
     grid-template-columns: 1fr;
     .seccion-productos {
         h3.titulo-seccion-productos {
-            font-size: 1.6em;
+            font-size: 1.4em;
             margin-top: 0.6em;
         }
         .contenedor-productos {     
-            width: 350px;
+            width: 360px;
             overflow-x: scroll;
             overflow-y: hidden;
             white-space: nowrap;

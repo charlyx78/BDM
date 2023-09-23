@@ -149,7 +149,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="comentarioModalLabel">Escribe una reseña</h1>
+                    <h1 class="modal-title fs-4" id="comentarioModalLabel">Escribe una reseña</h1>
                     <button class="btn"><i class="bi bi-x-circle-fill text-danger" data-bs-dismiss="modal" aria-label="Close"></i></button>
                 </div>
                 <div class="modal-body">
