@@ -61,8 +61,8 @@
         gap: 0.8em;
         .thumbnail-multimedia {
             border-radius: 6px;
-            width: 200px;
-            height: 200px;
+            width: 150px;
+            height: 150px;
             background-image: url(../img/producto.webp);
             background-size: cover;
             background-position: center center;
@@ -86,6 +86,96 @@
         line-height: 1.8em;
         font-weight: 500;
     }
+}
+.contenedor-comentarios {
+    width: 100%;
+    p {
+        border-top: 1px solid $color-gris;
+        border-bottom: 1px solid $color-gris;
+        padding: 1.4em 0;
+        a.header-comentarios {
+            text-decoration: none;
+            color: $color-negro;
+            font-size: 1.2em;
+            font-weight: 500;
+            display: flex;
+            justify-content: space-between;
+        }
+    }   
+    .collapse {
+        a.boton-escribir-comentario {
+            font-weight: bold;
+            font-size: 1.4em;
+            text-decoration: underline;
+            color: $color-negro;
+        }
+        .comentario {
+            padding: 0.6em 0;
+            &:first-of-type {
+                margin-top: 1.6em;
+            }
+            .titulo-comentario > h2 {
+                font-size: 1.4em;
+                margin-bottom: 0.4em;
+            }   
+            .calificacion-comentario > h4, .usuario-fecha-comentario > h4 {
+                display: flex;
+                align-items: center;
+                font-size: 1em;
+                margin: 0;
+            } 
+            .usuario-fecha-comentario {
+                display: flex;
+                gap: 0.4em;
+
+            }
+            .contenido-comentario > p {
+                border: none;
+            }
+        }
+    }
+}
+#comentarioModal {
+    z-index: 100000;
+    .star-rating {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+    }
+    .radio-input {
+        position: fixed;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .radio-label {
+    cursor: pointer;
+        font-size: 0;
+        color: rgba(0,0,0,0.2);
+        transition: color 0.1s ease-in-out;
+    }
+
+    .radio-label:before {
+    content: "★";
+        display: inline-block;
+        font-size: 32px;
+    }
+    .radio-input:checked ~ .radio-label {
+        color: $color-secundario;
+    }
+
+    .radio-label:hover,
+    .radio-label:hover ~ .radio-label {
+        color: $color-secundario;
+    }
+
+    .radio-input:checked + .radio-label:hover,
+    .radio-input:checked + .radio-label:hover ~ .radio-label,
+    .radio-input:checked ~ .radio-label:hover,
+    .radio-input:checked ~ .radio-label:hover ~ .radio-label,
+    .radio-label:hover ~ .radio-input:checked ~ .radio-label {
+        color: $color-primario;
+    }    
 }
 
 @media (min-width:$laptop) {
