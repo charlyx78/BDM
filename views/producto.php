@@ -164,10 +164,9 @@
 
                 <div class="contenedor-comentarios">
                     <p class="m-0">
-                        <a class="header-comentarios" data-bs-toggle="collapse" href="#collapseComentarios" role="button" aria-expanded="false" aria-controls="collapseComentarios">
+                        <a class="header-comentarios" id="headerComentarios" data-bs-toggle="collapse" href="#collapseComentarios" role="button" aria-expanded="false" aria-controls="collapseComentarios">
                             Reseñas (5)
-                            <i class="bi bi-chevron-down"></i>
-
+                            <i class="bi bi-chevron-down" id="iconoChevron"></i>
                         </a>
                     </p>
                     <div class="collapse pt-4" id="collapseComentarios">
