@@ -1,50 +1,47 @@
-.contenedor-carrito {
-    .contenedor-productos-carrito {
-        margin-top: 1em;
-        margin-bottom: 10em;
-        overflow-y: scroll;
-        // border-bottom: 1px solid $color-gris;
-        min-height: 40vh;
-        .producto-carrito {
-            display: flex;
-            flex-direction: row;
-            gap: 1em;
-            margin: 1.4em 0.1em;
-            box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;       
-            border-radius: 0.4em;
-            padding: 1em;
-            position: relative;
-            &:first-of-type {
-                margin-top: 0;
+.contenedor-productos-carrito {
+    margin-top: 1em;
+    margin-bottom: 10em;
+    overflow-y: scroll;
+    min-height: 40vh;
+    .producto-carrito {
+        display: flex;
+        flex-direction: row;
+        gap: 1em;
+        margin: 1.4em 0.1em;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;       
+        border-radius: 0.4em;
+        padding: 1em;
+        position: relative;
+        &:first-of-type {
+            margin-top: 0;
+        }
+        .imagen-producto-carrito {
+            width: 40%;
+            background-image: url(../img/producto.webp);
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+        .informacion-producto-carrito {
+            width: 60%;
+            h2 {
+                font-weight: 500;
+                font-size: 1.2em;
             }
-            .imagen-producto-carrito {
-                width: 40%;
-                background-image: url(../img/producto.webp);
-                background-size: cover;
-                background-position: center center;
-                background-repeat: no-repeat;
+            h4 {
+                font-size: 1em;
+                font-weight: 600;
+                margin-bottom: 1em;
             }
-            .informacion-producto-carrito {
-                width: 60%;
-                h2 {
-                    font-weight: 500;
-                    font-size: 1.2em;
-                }
-                h4 {
-                    font-size: 1em;
-                    font-weight: 600;
-                    margin-bottom: 1em;
-                }
-                #inputCantidad {
-                    text-align: center;
-                    font-weight: 500;
-                }
+            #inputCantidad {
+                text-align: center;
+                font-weight: 500;
             }
-            .boton-quitar-producto {
-                position: absolute;
-                left: 0;
-                top: 0;
-            }
+        }
+        .boton-quitar-producto {
+            position: absolute;
+            left: 0;
+            top: 0;
         }
     }
 }
@@ -70,37 +67,62 @@
                 font-weight: 600;
             }
             &:last-of-type {
-                span {
-                    // font-size: 1.4em;
-                }
                 margin-bottom: 1em;
             }
         }
     }    
 }
 
-
-
-
 @media (min-width:$laptop) {
     .contenedor-carrito {
+        margin: 0 auto;
         display: grid;
-        grid-template-columns: 1fr 0.5fr;
-        gap: 2em;
+        grid-template-columns: 1fr 0.4fr;
+        gap: 0.4em;
         .contenedor-productos-carrito {
-            max-height: 65vh;
+            width: auto;
+            max-height: 75vh;
             overflow-y: scroll;
-            .imagen-producto-carrito {
-                width: 30%;
-                min-height: 150px;
+            margin-bottom: 0;
+            .producto-carrito {
+                .informacion-producto-carrito {
+                    display: grid;
+                    grid-template-columns: 1fr 0.8fr 0.6fr 0.6fr;
+                    gap: 4em;
+                    align-items: center;
+                    width: 90%;
+                    h2 {
+                        font-weight: 500;
+                        font-size: 1.2em;
+                    }
+                    h4 {
+                        font-size: 1em;
+                        font-weight: 600;
+                    }
+                    .total {
+                        h4 {
+                            font-size: 1.2em;
+                        }
+                    }
+
+                }
+                .imagen-producto-carrito {
+                    width: 20%;
+                    height: 100px;
+                }
             }
         }
         .contenedor-total-carrito {
+            width: 90%;
+            position: static;
             max-height: 150px;
+            border-radius: 0.4em 0.4em 0.4em 0.4em;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;       
             h4 {
                 text-align: left;
             }
         }
     }
+
 }
 

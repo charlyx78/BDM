@@ -1,4 +1,15 @@
 @charset "UTF-8";
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+  -moz-appearance: textfield; /* Firefox */
+}
+
 h1 {
   font-family: "League Spartan", sans-serif;
   font-weight: bolder;
@@ -51,6 +62,10 @@ button {
   background-color: #735FFF;
   color: #f5f5f5;
 }
+.btn-primario:hover {
+  background-color: #392F7F;
+  color: #f5f5f5;
+}
 
 .btn-secundario {
   background-color: #735FFF;
@@ -92,13 +107,25 @@ button {
   background-color: #f5f5f5;
 }
 
-h2.titulo-pagina {
-  font-size: 1.6em;
-  font-weight: 600;
+.contenedor-titulo-pagina {
   margin-bottom: 1.6em;
+  padding: 0.8em 0;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+.contenedor-titulo-pagina .contenido-titulo-pagina {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 90% !important;
+  margin: 0 auto;
+}
+.contenedor-titulo-pagina .contenido-titulo-pagina h2 {
+  font-size: 1.6em;
+  font-weight: 600;
+}
+
+.dropdown-menu {
+  z-index: 10000;
 }
 
 .container-fluid {
@@ -106,7 +133,7 @@ h2.titulo-pagina {
 }
 
 .contenedor-pagina {
-  margin-top: 5.2em;
+  margin-top: 4.2em;
 }
 
 @media (min-width: 1440px) {
@@ -114,7 +141,23 @@ h2.titulo-pagina {
     width: 90% !important;
   }
   .contenedor-pagina {
-    margin-top: 6em;
+    margin-top: 4.8em;
+  }
+  .contenedor-titulo-pagina {
+    margin-bottom: 1.6em;
+    padding: 0.8em 0;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  }
+  .contenedor-titulo-pagina .contenido-titulo-pagina {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90% !important;
+    margin: 0 auto;
+  }
+  .contenedor-titulo-pagina .contenido-titulo-pagina h2 {
+    font-size: 1.6em;
+    font-weight: 600;
   }
 }
 .modal {
@@ -772,13 +815,13 @@ h2.titulo-pagina {
     width: 760px;
   }
 }
-.contenedor-carrito .contenedor-productos-carrito {
+.contenedor-productos-carrito {
   margin-top: 1em;
   margin-bottom: 10em;
   overflow-y: scroll;
   min-height: 40vh;
 }
-.contenedor-carrito .contenedor-productos-carrito .producto-carrito {
+.contenedor-productos-carrito .producto-carrito {
   display: flex;
   flex-direction: row;
   gap: 1em;
@@ -788,33 +831,33 @@ h2.titulo-pagina {
   padding: 1em;
   position: relative;
 }
-.contenedor-carrito .contenedor-productos-carrito .producto-carrito:first-of-type {
+.contenedor-productos-carrito .producto-carrito:first-of-type {
   margin-top: 0;
 }
-.contenedor-carrito .contenedor-productos-carrito .producto-carrito .imagen-producto-carrito {
+.contenedor-productos-carrito .producto-carrito .imagen-producto-carrito {
   width: 40%;
   background-image: url(../img/producto.webp);
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
 }
-.contenedor-carrito .contenedor-productos-carrito .producto-carrito .informacion-producto-carrito {
+.contenedor-productos-carrito .producto-carrito .informacion-producto-carrito {
   width: 60%;
 }
-.contenedor-carrito .contenedor-productos-carrito .producto-carrito .informacion-producto-carrito h2 {
+.contenedor-productos-carrito .producto-carrito .informacion-producto-carrito h2 {
   font-weight: 500;
   font-size: 1.2em;
 }
-.contenedor-carrito .contenedor-productos-carrito .producto-carrito .informacion-producto-carrito h4 {
+.contenedor-productos-carrito .producto-carrito .informacion-producto-carrito h4 {
   font-size: 1em;
   font-weight: 600;
   margin-bottom: 1em;
 }
-.contenedor-carrito .contenedor-productos-carrito .producto-carrito .informacion-producto-carrito #inputCantidad {
+.contenedor-productos-carrito .producto-carrito .informacion-producto-carrito #inputCantidad {
   text-align: center;
   font-weight: 500;
 }
-.contenedor-carrito .contenedor-productos-carrito .producto-carrito .boton-quitar-producto {
+.contenedor-productos-carrito .producto-carrito .boton-quitar-producto {
   position: absolute;
   left: 0;
   top: 0;
@@ -845,22 +888,48 @@ h2.titulo-pagina {
 .contenedor-total-carrito .contenido-total-carrito h2:last-of-type {
   margin-bottom: 1em;
 }
+
 @media (min-width: 1440px) {
   .contenedor-carrito {
+    margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 0.5fr;
-    gap: 2em;
+    grid-template-columns: 1fr 0.4fr;
+    gap: 0.4em;
   }
   .contenedor-carrito .contenedor-productos-carrito {
-    max-height: 65vh;
+    width: auto;
+    max-height: 75vh;
     overflow-y: scroll;
+    margin-bottom: 0;
   }
-  .contenedor-carrito .contenedor-productos-carrito .imagen-producto-carrito {
-    width: 30%;
-    min-height: 150px;
+  .contenedor-carrito .contenedor-productos-carrito .producto-carrito .informacion-producto-carrito {
+    display: grid;
+    grid-template-columns: 1fr 0.8fr 0.6fr 0.6fr;
+    gap: 4em;
+    align-items: center;
+    width: 90%;
+  }
+  .contenedor-carrito .contenedor-productos-carrito .producto-carrito .informacion-producto-carrito h2 {
+    font-weight: 500;
+    font-size: 1.2em;
+  }
+  .contenedor-carrito .contenedor-productos-carrito .producto-carrito .informacion-producto-carrito h4 {
+    font-size: 1em;
+    font-weight: 600;
+  }
+  .contenedor-carrito .contenedor-productos-carrito .producto-carrito .informacion-producto-carrito .total h4 {
+    font-size: 1.2em;
+  }
+  .contenedor-carrito .contenedor-productos-carrito .producto-carrito .imagen-producto-carrito {
+    width: 20%;
+    height: 100px;
   }
   .contenedor-carrito .contenedor-total-carrito {
+    width: 90%;
+    position: static;
     max-height: 150px;
+    border-radius: 0.4em 0.4em 0.4em 0.4em;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
   }
   .contenedor-carrito .contenedor-total-carrito h4 {
     text-align: left;
@@ -1113,7 +1182,7 @@ h2.titulo-pagina {
 .contactos {
   list-style: none;
   padding: 0;
-  margin-top: 0.6em;
+  margin-top: 2em;
   min-height: 51.5vh;
   overflow-y: scroll;
 }

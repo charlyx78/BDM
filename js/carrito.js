@@ -1,41 +1,54 @@
-let menos = document.getElementById('btnMenosCantidad');
-let mas = document.getElementById('btnMasCantidad');
-let precioProductoElement = document.getElementById('precioProducto1');
+let menos = document.querySelectorAll('.boton-menos-cantidad');
+let mas = document.querySelectorAll('.boton-mas-cantidad');
 let totalCarritoElement = document.getElementById('totalCarrito');
-let totalCarrito = parseFloat(document.getElementById('totalCarrito').innerHTML);
 
-menos.addEventListener('click', ()=> {
-    let fieldName = menos.dataset.field;
-    let input = document.getElementsByName(fieldName)[0];
-    let currentVal = parseFloat(document.getElementsByName(fieldName)[0].value);
-    if(!isNaN(currentVal)) {
-        if(currentVal!=0) {
-            input.value = currentVal - 1;
-            let precioProducto = parseFloat(precioProductoElement.innerHTML);
-            totalCarritoElement.innerHTML="";
-            totalCarrito -= precioProducto;
-            totalCarritoElement.innerHTML = totalCarrito.toFixed(2);
+sumCarrito();
+
+menos.forEach(botonMenos => {
+    botonMenos.addEventListener('click', ()=> {
+        let fieldName = botonMenos.dataset.idproducto;
+        let input = document.getElementsByName(fieldName)[0];
+        let currentVal = parseFloat(document.getElementsByName(fieldName)[0].value);
+        if(!isNaN(currentVal)) {
+            if(currentVal!=0) {
+                input.value = currentVal - 1;
+                sumCarrito();
+            }
         }
+        else {
+            input.value = 0;
+        }
+    })
+});
+mas.forEach(botonMas => {
+    botonMas.addEventListener('click', ()=> {
+        let fieldName = botonMas.dataset.idproducto;
+        let input = document.getElementsByName(fieldName)[0];
+        let currentVal = parseFloat(document.getElementsByName(fieldName)[0].value);
+        if(!isNaN(currentVal)) {
+            input.value = currentVal + 1;
+            sumCarrito();
+        }
+        else {
+            input.value = 0;
+        }
+    })
+});
+
+
+
+function sumCarrito() {
+    let inputsCantidad = document.querySelector('.contenedor-productos-carrito').getElementsByTagName('input');
+    let preciosProducto = document.querySelectorAll('.precio-producto');
+    let totalCarrito = 0;
+    for(let i = 0; i < inputsCantidad.length; i++) {
+        let cantidad = inputsCantidad[i].value;
+        let precio  = parseFloat(preciosProducto[i].innerHTML)
+        totalCarrito += (cantidad * precio);
     }
-    else {
-        input.value = 0;
-    }
-})
-mas.addEventListener('click', ()=> {
-    let fieldName = mas.dataset.field;
-    let input = document.getElementsByName(fieldName)[0];
-    let currentVal = parseFloat(document.getElementsByName(fieldName)[0].value);
-    if(!isNaN(currentVal)) {
-        input.value = currentVal + 1;
-        let precioProducto = parseFloat(precioProductoElement.innerHTML);
-        totalCarritoElement.innerHTML="";
-        totalCarrito += precioProducto;
-        totalCarritoElement.innerHTML = totalCarrito.toFixed(2);
-    }
-    else {
-        input.value = 0;
-    }
-})
+    totalCarritoElement.innerHTML = '';
+    totalCarritoElement.innerHTML = totalCarrito;
+}
 
 
 
