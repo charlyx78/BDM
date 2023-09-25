@@ -19,7 +19,7 @@
                     <img src="../img/avatar.svg" width="40" alt="">
                     <a href="account.php"><h2>Mario Salinas</h2></a>
                 </div>
-                <div class="btn btn-outline-dark rounded-circle">
+                <div class="btn btn-outline-dark rounded-circle" data-bs-toggle="modal" data-bs-target="#productoModal">
                     <i class="bi bi-box fs-4"></i>
                 </div>     
             </div>
@@ -66,6 +66,33 @@
         </div>
     </div>
     
+    <div class="modal fade" id="productoModal" tabindex="-1" aria-labelledby="productoModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="producto">
+                        <div class="imagen-producto"></div>
+                        <div class="informacion-producto">
+                            <h4 class="text-secondary">Smartphones</h4>
+                            <h2>iPhone 14 Pro 128GB 4GB RAM</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <div class="mb-3">
+                            <label for="precioProducto" class="form-label">Establecer precio</label>
+                            <input type="number" class="form-control">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primario">Enviar producto</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>

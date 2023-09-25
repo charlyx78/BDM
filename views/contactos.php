@@ -22,7 +22,7 @@
             </form>
         </div>
 
-        <ul class="contactos list-group list-group-flush">
+        <ul class="contactos list-group">
             <li class="contacto-item list-group-item">
                 <a href="chat.php" class="contacto">
                     <div class="imagen-contacto">

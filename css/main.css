@@ -32,6 +32,9 @@ button {
   font-size: 1.1em !important;
   padding: 0.4em 0.8em;
   margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .logo {
@@ -114,6 +117,10 @@ h2.titulo-pagina {
     margin-top: 6em;
   }
 }
+.modal {
+  z-index: 100000;
+}
+
 .contenedor-landing-page {
   height: 100vh;
   background-image: url(../img/landingPageBackgroundMobile.svg);
@@ -232,7 +239,7 @@ h2.titulo-pagina {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 10000;
+  z-index: 2;
 }
 
 .navbar-nav {
@@ -701,9 +708,6 @@ h2.titulo-pagina {
   border: none;
 }
 
-#comentarioModal {
-  z-index: 100000;
-}
 #comentarioModal .star-rating {
   display: flex;
   flex-direction: row-reverse;
@@ -768,44 +772,79 @@ h2.titulo-pagina {
     width: 760px;
   }
 }
-.producto-carrito {
+.contenedor-carrito .contenedor-productos-carrito {
+  margin-top: 1em;
+  margin-bottom: 10em;
+  overflow-y: scroll;
+  min-height: 40vh;
+}
+.contenedor-carrito .contenedor-productos-carrito .producto-carrito {
   display: flex;
   flex-direction: row;
-  padding: 1em;
   gap: 1em;
-  margin-bottom: 1em;
+  margin: 1.4em 0.1em;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  border-radius: 0.4em;
+  padding: 1em;
+  position: relative;
 }
-.producto-carrito:last-child {
-  margin-bottom: 2em;
+.contenedor-carrito .contenedor-productos-carrito .producto-carrito:first-of-type {
+  margin-top: 0;
 }
-.producto-carrito .imagen-producto-carrito {
+.contenedor-carrito .contenedor-productos-carrito .producto-carrito .imagen-producto-carrito {
   width: 40%;
   background-image: url(../img/producto.webp);
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
 }
-.producto-carrito .informacion-producto-carrito {
+.contenedor-carrito .contenedor-productos-carrito .producto-carrito .informacion-producto-carrito {
   width: 60%;
 }
-.producto-carrito .informacion-producto-carrito h4 {
-  font-weight: bold;
-  font-size: 1.6em;
-}
-.producto-carrito .informacion-producto-carrito h5 {
+.contenedor-carrito .contenedor-productos-carrito .producto-carrito .informacion-producto-carrito h2 {
+  font-weight: 500;
   font-size: 1.2em;
 }
-
-.contenedor-total-carrito h4 {
-  font-size: 1.4em;
+.contenedor-carrito .contenedor-productos-carrito .producto-carrito .informacion-producto-carrito h4 {
+  font-size: 1em;
+  font-weight: 600;
+  margin-bottom: 1em;
+}
+.contenedor-carrito .contenedor-productos-carrito .producto-carrito .informacion-producto-carrito #inputCantidad {
   text-align: center;
-  margin-bottom: 0.8em;
+  font-weight: 500;
 }
-.contenedor-total-carrito h4 span {
-  color: #392F7F;
-  font-weight: bold;
+.contenedor-carrito .contenedor-productos-carrito .producto-carrito .boton-quitar-producto {
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
+.contenedor-total-carrito {
+  width: 100%;
+  padding: 1em 0;
+  position: fixed;
+  bottom: 0;
+  border-radius: 1em 1em 0 0;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  z-index: 3;
+  background-color: white;
+}
+.contenedor-total-carrito .contenido-total-carrito h2 {
+  font-size: 1.4em;
+  font-weight: 500;
+  margin-bottom: 0.8em;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.contenedor-total-carrito .contenido-total-carrito h2 span {
+  color: #392F7F;
+  font-weight: 600;
+}
+.contenedor-total-carrito .contenido-total-carrito h2:last-of-type {
+  margin-bottom: 1em;
+}
 @media (min-width: 1440px) {
   .contenedor-carrito {
     display: grid;
@@ -904,6 +943,28 @@ h2.titulo-pagina {
 .contenedor-chat .contenedor-input-mensaje {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
   padding: 1em;
+}
+
+#productoModal .producto {
+  display: flex;
+  align-items: flex-start;
+  gap: 1em;
+}
+#productoModal .producto .imagen-producto {
+  height: 100px;
+  width: 100px;
+  background-image: url(../img/producto.webp);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+#productoModal .producto .informacion-producto h4 {
+  font-size: 1em;
+  margin-bottom: 0.2em;
+}
+#productoModal .producto .informacion-producto h2 {
+  font-size: 1.4em;
+  font-weight: 500;
 }
 
 @media (min-width: 1440px) {
@@ -1057,7 +1118,11 @@ h2.titulo-pagina {
   overflow-y: scroll;
 }
 .contactos .contacto-item {
-  padding: 1em 0;
+  padding: 1em;
+  border: none !important;
+  border-radius: 0.4em;
+  margin: 0.4em 0.1em;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
 }
 .contactos .contacto-item a.contacto {
   display: flex;
