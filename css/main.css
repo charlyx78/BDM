@@ -459,7 +459,7 @@ button {
   margin-top: 0.6em;
 }
 .contenedor-secciones-productos .seccion-productos .contenedor-productos {
-  width: 360px;
+  width: 89vw;
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
@@ -521,7 +521,7 @@ button {
   margin-top: 0.6em;
 }
 .contenedor-secciones-categorias .seccion-categorias .contenedor-categorias {
-  width: 350px;
+  width: 89vw;
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
@@ -583,7 +583,7 @@ button {
   }
   .contenedor-secciones-productos .seccion-productos .contenedor-productos {
     padding-bottom: 1.6em;
-    width: 1350px;
+    width: 89vw;
     overflow-x: scroll;
   }
   .contenedor-secciones-productos .seccion-productos .contenedor-productos .contenido-productos .item-producto {
@@ -604,7 +604,7 @@ button {
   }
   .contenedor-secciones-categorias .seccion-categorias .contenedor-categorias {
     padding-bottom: 1.6em;
-    width: 1365px;
+    width: 89vw;
     overflow-x: scroll;
   }
   .contenedor-secciones-categorias .seccion-categorias .contenedor-categorias .contenido-categorias .item-categoria {
@@ -626,6 +626,10 @@ button {
 }
 .modulo-producto {
   padding: 2em 0;
+}
+
+.contenedor-producto {
+  margin-top: 5.2em;
 }
 
 .informacion-producto .nombre-producto {
@@ -669,7 +673,7 @@ button {
 }
 
 .contenedor-thumbnails-productos {
-  width: 390px;
+  width: 100vw;
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
@@ -790,6 +794,7 @@ button {
 @media (min-width: 1440px) {
   .contenedor-multimedia-producto #carouselProducto .muestra-multimedia {
     height: 450px;
+    margin-bottom: 4em;
   }
   .contenedor-multimedia-producto .modulo-producto {
     padding: 0;
@@ -799,7 +804,7 @@ button {
     grid-template-columns: 1fr 0.8fr;
     grid: 2em;
     width: 90%;
-    margin: 0 auto;
+    margin: 8em auto 0 auto;
   }
   .contenedor-producto .contenedor-info-producto {
     grid-column: 2/3;
@@ -812,7 +817,7 @@ button {
     grid-row: 1/3;
   }
   .contenedor-producto .contenedor-multimedia-producto .contenedor-thumbnails-productos {
-    width: 760px;
+    width: 50vw;
   }
 }
 .contenedor-productos-carrito {
@@ -853,9 +858,17 @@ button {
   font-weight: 600;
   margin-bottom: 1em;
 }
-.contenedor-productos-carrito .producto-carrito .informacion-producto-carrito #inputCantidad {
+.contenedor-productos-carrito .producto-carrito .informacion-producto-carrito input {
   text-align: center;
   font-weight: 500;
+  height: 30px;
+}
+.contenedor-productos-carrito .producto-carrito .informacion-producto-carrito .boton-menos-cantidad, .contenedor-productos-carrito .producto-carrito .informacion-producto-carrito .boton-mas-cantidad {
+  height: 30px;
+}
+.contenedor-productos-carrito .producto-carrito .informacion-producto-carrito .boton-menos-cantidad i, .contenedor-productos-carrito .producto-carrito .informacion-producto-carrito .boton-mas-cantidad i {
+  display: flex;
+  align-items: center;
 }
 .contenedor-productos-carrito .producto-carrito .boton-quitar-producto {
   position: absolute;
@@ -1221,6 +1234,40 @@ button {
 }
 .contactos .contacto-item a.contacto .informacion-contacto p {
   text-overflow: fade;
+}
+
+.contenedor-metodos-pago {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4em;
+}
+.contenedor-metodos-pago .metodo-pago {
+  display: flex;
+  align-items: center;
+  gap: 2em;
+  height: 60px;
+  padding: 0 0.8em;
+  border-radius: 0.6em;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}
+.contenedor-metodos-pago .metodo-pago h2 {
+  font-size: 1.2em;
+  font-weight: 500;
+}
+.contenedor-metodos-pago .metodo-pago:hover {
+  background-color: #cacaca;
+}
+.contenedor-metodos-pago .agregar-metodo-pago {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2em;
+  cursor: pointer;
+}
+.contenedor-metodos-pago .agregar-metodo-pago h2 {
+  font-size: 1.2em;
+  font-weight: 500;
 }
 
 .contenedor-login {

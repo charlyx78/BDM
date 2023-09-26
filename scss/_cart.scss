@@ -33,9 +33,17 @@
                 font-weight: 600;
                 margin-bottom: 1em;
             }
-            #inputCantidad {
+            input {
                 text-align: center;
                 font-weight: 500;
+                height: 30px;
+            }
+            .boton-menos-cantidad, .boton-mas-cantidad {
+                height: 30px;
+                i {
+                    display: flex;
+                    align-items: center;
+                }
             }
         }
         .boton-quitar-producto {

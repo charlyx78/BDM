@@ -1,6 +1,9 @@
 .modulo-producto {
     padding: 2em 0;
 }
+.contenedor-producto {
+    margin-top: 5.2em;
+}
 .informacion-producto {
     .nombre-producto {
         font-size: 1.8em;
@@ -50,7 +53,7 @@
     }
 }
 .contenedor-thumbnails-productos {
-    width: 390px;
+    width: 100vw;
     overflow-x: scroll;
     overflow-y: hidden;
     white-space: nowrap;
@@ -182,6 +185,7 @@
         #carouselProducto {
             .muestra-multimedia {
                 height: 450px;
+                margin-bottom: 4em;
             }
         }
         .modulo-producto {
@@ -193,7 +197,7 @@
         grid-template-columns: 1fr 0.8fr;
         grid: 2em;
         width: 90%;
-        margin: 0 auto;
+        margin: 8em auto 0 auto;
         .contenedor-info-producto {
             grid-column: 2/3;
             height: 85vh;
@@ -204,7 +208,7 @@
             grid-column: 1/2;
             grid-row: 1/3;
             .contenedor-thumbnails-productos {
-                width: 760px;
+                width: 50vw;
             }
         }
     }
