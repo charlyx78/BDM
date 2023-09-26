@@ -1,16 +1,49 @@
-.foto-perfil {
-    height: 80px;
-    width: 80px;
-    background-image: url(../img/avatar.svg);
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    cursor: pointer;
+.contenedor-pagina-cuenta  {
+    margin-top: 3.6em;
+    .contenedor-informacion-perfil {
+        padding: 1.8em 0;
+        background: rgb(115,95,255);
+        background: linear-gradient(180deg, rgba(115,95,255,1) 0%, rgba(64,49,166,1) 100%);
+        .foto-perfil {
+            height: 90px;
+            width: 90px;
+            background-image: url(../img/avatar.svg);
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            cursor: pointer;
+        }
+        .contenedor-boton-editar-foto {
+            bottom: 0;
+            right: 0;
+        }
+        .boton-editar-foto {
+            height: 30px;
+            width: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        h3 {
+            font-size: 2em;
+            color: $color-blanco;
+        }
+        h5 {
+            color: $color-blanco;
+        }
+        position: relative;
+        .contenedor-formulario-perfil {
+            position: absolute;
+            background-color: white;
+            padding: 1em 0;
+            border-radius: 1em 1em 0 0;
+            margin-top: 1.2em;
+        }
+    }
+
 }
-.boton-editar-foto {
-    bottom: 0;
-    right: 0;
-}
+
+
 @media (min-width:$laptop) {
     .foto-perfil {
         height: 100px;

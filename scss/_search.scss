@@ -1,37 +1,63 @@
+.filtros-busqueda {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;       
+    padding: 1em;
+    border-radius: 0.6em;
+}
 .contenedor-productos-busqueda {
-    .producto-busqueda {
-        display: flex;
-        flex-direction: row;
-        gap: 1em;
-        text-decoration: none;
-        margin-bottom: 1em;
-        border: none;
-        background-color: $color-blanco;
-        .imagen-producto-busqueda {
-            height: 100px;
-            width: 30%;
-            background-image: url(../img/producto.webp);
-            background-position: center center;
-            background-size: cover;
-            background-repeat: no-repeat;
-        }
-        .informacion-producto-busqueda {
-            h4 {
-                font-size: 1em;
-                margin-bottom: 0.2em;
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8em;
+    .producto-busqueda-item {
+        .producto-busqueda {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4em;
+            text-decoration: none;
+            margin-bottom: 1em;
+            border: none;
+            text-decoration: none;
+            color: $color-negro;
+            .imagen-producto-busqueda {
+                height: 200px;
+                width: 100%;
+                margin-bottom: 0.4em;
+                background-image: url(../img/producto.webp);
+                background-position: center center;
+                background-size: cover;
+                background-repeat: no-repeat;
             }
-            h5 {
-                font-size: 1.2em;
-                font-weight: bold;
-                margin-bottom: 0.2em;
-            }
-            .calificacion-producto-busqueda {
-                font-size: 1em;
-                display: flex;
-                gap: 0.4em;
+            .informacion-producto-busqueda {
+                padding: 0 0.8em;
+                h2 {
+                    font-size: 1.2em;
+                    font-weight: 400;
+                    margin-bottom: 0.12em;
+                }
+                h4 {
+                    font-size: 1.2em;
+                    font-weight: bold;
+                    margin-bottom: 0.2em;
+                }
+                h6 {
+                    font-size: 0.88em;
+                    margin-bottom: 0.2em;
+                    font-weight: 400;
+                }
+                .calificacion-producto-busqueda {
+                    p, i {
+                        font-size: 0.8em;
+                        font-weight: 500;
+                    }
+                    display: flex;
+                    align-items: center;
+                    gap: 0.4em;
+                }
             }
         }
     }
+    
 }
 
 @media (min-width: $laptop) {

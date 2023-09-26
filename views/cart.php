@@ -29,9 +29,9 @@
                     </div>
                     <div class="d-flex align-items-center gap-2">
                         <div class="d-flex gap-1 align-items-center">
-                            <button class="btn btn-primario btn-sm boton-menos-cantidad" data-idproducto="inputCantidad1"><i class="bi bi-dash"></i></button>
-                            <input name="inputCantidad1" class="form-control text-center input-cantidad" value="1">
-                            <button class="btn btn-primario btn-sm boton-mas-cantidad" data-idproducto="inputCantidad1"><i class="bi bi-plus"></i></button>
+                            <button class="btn btn-primario btn-sm boton-menos-cantidad rounded-pill" data-idproducto="1"><i class="bi bi-dash"></i></button>
+                            <input name="1" class="form-control text-center input-cantidad" value="1">
+                            <button class="btn btn-primario btn-sm boton-mas-cantidad rounded-pill" data-idproducto="1"><i class="bi bi-plus"></i></button>
                         </div>
                     </div>
                     <div class="total d-none d-lg-block">
@@ -53,9 +53,9 @@
                     </div>
                     <div class="d-flex align-items-center gap-2">
                         <div class="d-flex gap-1 align-items-center">
-                            <button class="btn btn-primario btn-sm boton-menos-cantidad" data-idproducto="inputCantidad2"><i class="bi bi-dash"></i></button>
-                            <input type="number" name="inputCantidad2" class="form-control text-center input-cantidad" value="1">
-                            <button class="btn btn-primario btn-sm boton-mas-cantidad" data-idproducto="inputCantidad2"><i class="bi bi-plus"></i></button>
+                            <button class="btn btn-primario btn-sm boton-menos-cantidad rounded-pill" data-idproducto="2"><i class="bi bi-dash"></i></button>
+                            <input type="number" name="2" class="form-control text-center input-cantidad" value="4">
+                            <button class="btn btn-primario btn-sm boton-mas-cantidad rounded-pill" data-idproducto="2"><i class="bi bi-plus"></i></button>
                         </div>
                     </div>
                     <div class="total d-none d-lg-block">
@@ -77,9 +77,9 @@
                     </div>
                     <div class="d-flex align-items-center gap-2">
                         <div class="d-flex gap-1 align-items-center">
-                            <button class="btn btn-primario btn-sm boton-menos-cantidad" data-idproducto="inputCantidad3"><i class="bi bi-dash"></i></button>
-                            <input type="number" name="inputCantidad3" class="form-control text-center input-cantidad" value="1">
-                            <button class="btn btn-primario btn-sm boton-mas-cantidad" data-idproducto="inputCantidad3"><i class="bi bi-plus"></i></button>
+                            <button class="btn btn-primario btn-sm boton-menos-cantidad rounded-pill" data-idproducto="3"><i class="bi bi-dash"></i></button>
+                            <input type="number" name="3" class="form-control text-center input-cantidad" value="1">
+                            <button class="btn btn-primario btn-sm boton-mas-cantidad rounded-pill" data-idproducto="3"><i class="bi bi-plus"></i></button>
                         </div>
                     </div>
                     <div class="total d-none d-lg-block">
@@ -99,7 +99,7 @@
                 <h2>Descuento: <span>0.00</span></h2>
                 <hr> -->
                 <h2>Total: <span id="totalCarrito">0</span></h2>
-                <a href="pago.php" class="btn btn-primario w-100">Proceder al pago</a>
+                <a href="pago.php" class="btn btn-primario rounded-pill w-100">Proceder al pago</a>
             </div>               
         </div>
     </div>

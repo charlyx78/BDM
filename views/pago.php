@@ -42,7 +42,7 @@
                 <h2>Descuento: <span>0.00</span></h2>
                 <hr> -->
                 <h2>Total: <span id="totalCarrito">0</span></h2>
-                <a href="pago.php" class="btn btn-primario w-100">Pagar</a>
+                <a href="pago.php" class="btn btn-primario w-100 rounded-pill">Pagar</a>
             </div>               
         </div>
     </main>
@@ -72,7 +72,7 @@
                                 </div>
                                 <div class="col-6">
                                     <label for="cvvTarjeta" class="form-label">CVV</label>
-                                    <input type="number" name="cvvTarjeta" class="form-control">
+                                    <input type="password" name="cvvTarjeta" class="form-control">
                                 </div>
                             </div>
                         </div>

@@ -2,7 +2,7 @@ let menos = document.querySelectorAll('.boton-menos-cantidad');
 let mas = document.querySelectorAll('.boton-mas-cantidad');
 let totalCarritoElement = document.getElementById('totalCarrito');
 
-sumCarrito();
+sumFila();
 
 menos.forEach(botonMenos => {
     botonMenos.addEventListener('click', ()=> {
@@ -12,7 +12,7 @@ menos.forEach(botonMenos => {
         if(!isNaN(currentVal)) {
             if(currentVal!=0) {
                 input.value = currentVal - 1;
-                sumCarrito();
+                sumFila();
             }
         }
         else {
@@ -27,7 +27,7 @@ mas.forEach(botonMas => {
         let currentVal = parseFloat(document.getElementsByName(fieldName)[0].value);
         if(!isNaN(currentVal)) {
             input.value = currentVal + 1;
-            sumCarrito();
+            sumFila();
         }
         else {
             input.value = 0;
@@ -35,16 +35,23 @@ mas.forEach(botonMas => {
     })
 });
 
-
-
-function sumCarrito() {
+function sumFila() {
     let inputsCantidad = document.querySelector('.contenedor-productos-carrito').getElementsByTagName('input');
     let preciosProducto = document.querySelectorAll('.precio-producto');
-    let totalCarrito = 0;
+    let totalProducto = document.querySelectorAll('.total-producto');
+
     for(let i = 0; i < inputsCantidad.length; i++) {
-        let cantidad = inputsCantidad[i].value;
-        let precio  = parseFloat(preciosProducto[i].innerHTML)
-        totalCarrito += (cantidad * precio);
+        totalProducto[i].innerHTML = '';
+        totalProducto[i].innerHTML = (parseFloat(inputsCantidad[i].value) * parseFloat(preciosProducto[i].innerHTML));
+    }
+    sumCarrito();
+}
+
+function sumCarrito() {
+    let totalProducto = document.querySelectorAll('.total-producto');
+    let totalCarrito = 0;
+    for(let i = 0; i < totalProducto.length; i++) {
+        totalCarrito += parseFloat(totalProducto[i].innerHTML);
     }
     totalCarritoElement.innerHTML = '';
     totalCarritoElement.innerHTML = totalCarrito;

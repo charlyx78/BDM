@@ -8,10 +8,16 @@
 </head>
 <body>
     <?php include_once "navbar.php" ?>
-    <main class="container py-4">
-        <h2 class="titulo-pagina">Resultados de busqueda de: iPhone</h2>
-        <h5 class="fw-bold">Filtros</h5>
-        <div class="card card-body filtros-busqueda mb-5">
+
+    <div class="contenedor-pagina">
+        <div class="contenedor-titulo-pagina">
+            <div class="contenido-titulo-pagina">
+                <h2 class="titulo-pagina mb-0">Busqueda de: iPhone 14</h2>
+                <button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFiltros" aria-expanded="false" aria-controls="collapseFiltros"><i class="bi bi-sliders fs-5"></i></button>
+            </div>
+        </div>
+
+        <div class="container-fluid filtros-busqueda mb-5 collapse" id="collapseFiltros">
             <form action="">
                 <div class="row">
                     <div class="mb-2 col-12 col-lg-6">
@@ -53,130 +59,72 @@
             </form>
         </div>
 
-        <div class="contenedor-productos-busqueda">
-            <a class="producto-busqueda card card-body" href="producto.php">
-                <div class="imagen-producto-busqueda rounded">
-                </div>
-                <div class="informacion-producto-busqueda">
-                    <h4>iPhone 14 pro</h4>
-                    <h5>12999.99</h5>
-                    <div class="calificacion-producto-busqueda">
-                        <i class="bi bi-star-fill color-oro"></i>
-                        <p class="m-0">4.5 <span class="text-secondary">(1523)</span></p>
+        <ul class="contenedor-productos-busqueda">
+            <li class="producto-busqueda-item">
+                <a class="producto-busqueda" href="producto.php">
+                    <div class="imagen-producto-busqueda">
                     </div>
-                </div>
-            </a>
-            <a class="producto-busqueda card card-body" href="producto.php">
-                <div class="imagen-producto-busqueda rounded">
-                </div>
-                <div class="informacion-producto-busqueda">
-                    <h4>iPhone 14 pro</h4>
-                    <h5>12999.99</h5>
-                    <div class="calificacion-producto-busqueda">
-                        <i class="bi bi-star-fill color-oro"></i>
-                        <p class="m-0">4.5 <span class="text-secondary">(1523)</span></p>
+                    <div class="informacion-producto-busqueda">
+                        <h6 class="text-secondary">Smarthphones</h6>
+                        <h2>iPhone 14 pro</h2>
+                        <h4>12999.99</h4>
+                        <div class="calificacion-producto-busqueda">
+                            <i class="bi bi-star-fill color-oro"></i>
+                            <p class="m-0 text-secondary">4.5 <span>(1523)</span></p>
+                        </div>
                     </div>
-                </div>
-            </a>
-            <a class="producto-busqueda card card-body" href="producto.php">
-                <div class="imagen-producto-busqueda rounded">
-                </div>
-                <div class="informacion-producto-busqueda">
-                    <h4>iPhone 14 pro</h4>
-                    <h5>12999.99</h5>
-                    <div class="calificacion-producto-busqueda">
-                        <i class="bi bi-star-fill color-oro"></i>
-                        <p class="m-0">4.5 <span class="text-secondary">(1523)</span></p>
+                </a>
+            </li>
+            <li class="producto-busqueda-item">
+                <a class="producto-busqueda" href="producto.php">
+                    <div class="imagen-producto-busqueda">
                     </div>
-                </div>
-            </a>
-            <a class="producto-busqueda card card-body" href="producto.php">
-                <div class="imagen-producto-busqueda rounded">
-                </div>
-                <div class="informacion-producto-busqueda">
-                    <h4>iPhone 14 pro</h4>
-                    <h5>12999.99</h5>
-                    <div class="calificacion-producto-busqueda">
-                        <i class="bi bi-star-fill color-oro"></i>
-                        <p class="m-0">4.5 <span class="text-secondary">(1523)</span></p>
+                    <div class="informacion-producto-busqueda">
+                        <h6 class="text-secondary">Smarthphones</h6>
+                        <h2>iPhone 14 pro</h2>
+                        <h4>12999.99</h4>
+                        <div class="calificacion-producto-busqueda">
+                            <i class="bi bi-star-fill color-oro"></i>
+                            <p class="m-0 text-secondary">4.5 <span>(1523)</span></p>
+                        </div>
                     </div>
-                </div>
-            </a>
-            <a class="producto-busqueda card card-body" href="producto.php">
-                <div class="imagen-producto-busqueda rounded">
-                </div>
-                <div class="informacion-producto-busqueda">
-                    <h4>iPhone 14 pro</h4>
-                    <h5>12999.99</h5>
-                    <div class="calificacion-producto-busqueda">
-                        <i class="bi bi-star-fill color-oro"></i>
-                        <p class="m-0">4.5 <span class="text-secondary">(1523)</span></p>
+                </a>
+            </li>
+            <li class="producto-busqueda-item">
+                <a class="producto-busqueda" href="producto.php">
+                    <div class="imagen-producto-busqueda">
                     </div>
-                </div>
-            </a>
-            <a class="producto-busqueda card card-body" href="producto.php">
-                <div class="imagen-producto-busqueda rounded">
-                </div>
-                <div class="informacion-producto-busqueda">
-                    <h4>iPhone 14 pro</h4>
-                    <h5>12999.99</h5>
-                    <div class="calificacion-producto-busqueda">
-                        <i class="bi bi-star-fill color-oro"></i>
-                        <p class="m-0">4.5 <span class="text-secondary">(1523)</span></p>
+                    <div class="informacion-producto-busqueda">
+                        <h6 class="text-secondary">Smarthphones</h6>
+                        <h2>iPhone 14 pro</h2>
+                        <h4>12999.99</h4>
+                        <div class="calificacion-producto-busqueda">
+                            <i class="bi bi-star-fill color-oro"></i>
+                            <p class="m-0 text-secondary">4.5 <span>(1523)</span></p>
+                        </div>
                     </div>
-                </div>
-            </a>
-            <a class="producto-busqueda card card-body" href="producto.php">
-                <div class="imagen-producto-busqueda rounded">
-                </div>
-                <div class="informacion-producto-busqueda">
-                    <h4>iPhone 14 pro</h4>
-                    <h5>12999.99</h5>
-                    <div class="calificacion-producto-busqueda">
-                        <i class="bi bi-star-fill color-oro"></i>
-                        <p class="m-0">4.5 <span class="text-secondary">(1523)</span></p>
+                </a>
+            </li>
+            <li class="producto-busqueda-item">
+                <a class="producto-busqueda" href="producto.php">
+                    <div class="imagen-producto-busqueda">
                     </div>
-                </div>
-            </a>
-            <a class="producto-busqueda card card-body" href="producto.php">
-                <div class="imagen-producto-busqueda rounded">
-                </div>
-                <div class="informacion-producto-busqueda">
-                    <h4>iPhone 14 pro</h4>
-                    <h5>12999.99</h5>
-                    <div class="calificacion-producto-busqueda">
-                        <i class="bi bi-star-fill color-oro"></i>
-                        <p class="m-0">4.5 <span class="text-secondary">(1523)</span></p>
+                    <div class="informacion-producto-busqueda">
+                        <h6 class="text-secondary">Smarthphones</h6>
+                        <h2>iPhone 14 pro</h2>
+                        <h4>12999.99</h4>
+                        <div class="calificacion-producto-busqueda">
+                            <i class="bi bi-star-fill color-oro"></i>
+                            <p class="m-0 text-secondary">4.5 <span>(1523)</span></p>
+                        </div>
                     </div>
-                </div>
-            </a>
-            <a class="producto-busqueda card card-body" href="producto.php">
-                <div class="imagen-producto-busqueda rounded">
-                </div>
-                <div class="informacion-producto-busqueda">
-                    <h4>iPhone 14 pro</h4>
-                    <h5>12999.99</h5>
-                    <div class="calificacion-producto-busqueda">
-                        <i class="bi bi-star-fill color-oro"></i>
-                        <p class="m-0">4.5 <span class="text-secondary">(1523)</span></p>
-                    </div>
-                </div>
-            </a>
-            <a class="producto-busqueda card card-body" href="producto.php">
-                <div class="imagen-producto-busqueda rounded">
-                </div>
-                <div class="informacion-producto-busqueda">
-                    <h4>iPhone 14 pro</h4>
-                    <h5>12999.99</h5>
-                    <div class="calificacion-producto-busqueda">
-                        <i class="bi bi-star-fill color-oro"></i>
-                        <p class="m-0">4.5 <span class="text-secondary">(1523)</span></p>
-                    </div>
-                </div>
-            </a>
-        </div>
+                </a>
+            </li>     
+        </ul>
 
-    </main>
+
+    </div>
+
 
 </body>
 </html>

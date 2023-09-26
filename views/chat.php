@@ -41,20 +41,20 @@
                     </div>
                 </div> -->
                     <!-- <div class="hr"></div> -->
-                    <div class="mensaje"><div class="mensaje-local rounded">Hola</div></div>
-                    <div class="mensaje"><div class="mensaje-remoto rounded">Que onda</div></div>
-                    <div class="mensaje"><div class="mensaje-local rounded">Hola</div></div>
-                    <div class="mensaje"><div class="mensaje-remoto rounded">Que onda</div></div>
-                    <div class="mensaje"><div class="mensaje-local rounded">Hola</div></div>
-                    <div class="mensaje"><div class="mensaje-remoto rounded">Que onda</div></div>
-                    <div class="mensaje"><div class="mensaje-local rounded">Hola</div></div>
-                    <div class="mensaje"><div class="mensaje-remoto rounded">Que onda</div></div>
-                    <div class="mensaje"><div class="mensaje-local rounded">Hola</div></div>
-                    <div class="mensaje"><div class="mensaje-remoto rounded">Que onda</div></div>
-                    <div class="mensaje"><div class="mensaje-local rounded">Hola</div></div>
-                    <div class="mensaje"><div class="mensaje-remoto rounded">Que onda</div></div>
-                    <div class="mensaje"><div class="mensaje-local rounded">Hola</div></div>
-                    <div class="mensaje"><div class="mensaje-remoto rounded">Que onda</div></div>
+                    <div class="mensaje"><div class="rounded-pill mensaje-local rounded">Hola</div></div>
+                    <div class="mensaje"><div class="rounded-pill mensaje-remoto rounded">Que onda</div></div>
+                    <div class="mensaje"><div class="rounded-pill mensaje-local rounded">Hola</div></div>
+                    <div class="mensaje"><div class="rounded-pill mensaje-remoto rounded">Que onda</div></div>
+                    <div class="mensaje"><div class="rounded-pill mensaje-local rounded">Hola</div></div>
+                    <div class="mensaje"><div class="rounded-pill mensaje-remoto rounded">Que onda</div></div>
+                    <div class="mensaje"><div class="rounded-pill mensaje-local rounded">Hola</div></div>
+                    <div class="mensaje"><div class="rounded-pill mensaje-remoto rounded">Que onda</div></div>
+                    <div class="mensaje"><div class="rounded-pill mensaje-local rounded">Hola</div></div>
+                    <div class="mensaje"><div class="rounded-pill mensaje-remoto rounded">Que onda</div></div>
+                    <div class="mensaje"><div class="rounded-pill mensaje-local rounded">Hola</div></div>
+                    <div class="mensaje"><div class="rounded-pill mensaje-remoto rounded">Que onda</div></div>
+                    <div class="mensaje"><div class="rounded-pill mensaje-local rounded">Hola</div></div>
+                    <div class="mensaje"><div class="rounded-pill mensaje-remoto rounded">Que onda</div></div>
 
             </div>
             <div class="contenedor-input-mensaje">
