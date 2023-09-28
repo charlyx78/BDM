@@ -98,3 +98,7 @@
 .modal {
     z-index: 100000;
 }
+.btn-outline-secundario {
+    color: $color-secundario;
+    border: 1px solid $color-secundario;
+}

@@ -9,52 +9,58 @@
 <body>
     <?php include_once "navbar.php" ?>
 
-    <main class="container py-4">
-        <h2 class="titulo-pagina">
-            Wishlist
-            <button class="btn btn-primario" data-bs-toggle="modal" data-bs-target="#nuevaWishlistModal">Nueva lista</button>
-        </h2>
+    <div class="contenedor-pagina">
+        <div class="contenedor-titulo-pagina">
+            <div class="contenido-titulo-pagina">
+                <h2 class="titulo-pagina mb-0">Wishlists</h2>
+                <button class="btn btn-primario" data-bs-toggle="modal" data-bs-target="#nuevaWishlistModal">Nueva lista</button>
+            </div>
+        </div>
+    </div>
 
-        <div class="accordion accordion-flush mb-3" id="accordionFlushExample">
+    <div class="container-fluid">
+
+    <ul class="contenedor-wishlist">
+        <li class="wishlist accordion accordion-flush" id="accordionFlushExample">
             <div class="accordion-item mb-3">
-                <h2 class="accordion-header" id="flush-headingOne">
-                    <button class="accordion-button collapsed bg-blanco contenedor-wishlist-header" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                        <div class=""><p class="me-5 mb-0">Wishlist de la casa de los famosos</p> </div>   
-                        <div class="ms-auto me-0 contenedor-botones-wishlist">
-                            <a href="#" class="btn btn-primario btn-sm boton-wishlist" data-bs-toggle="modal" data-bs-target="#descripcionWishlistModal">Ver descripcion</a>
-                            <a href="#" class="btn btn-primario btn-sm boton-wishlist" data-bs-toggle="modal" data-bs-target="#nuevaWishlistModal">Editar</a>
-                            <a href="#" class="btn btn-danger btn-sm boton-wishlist" data-bs-toggle="modal" data-bs-target="#nuevaWishlistModal">Eliminar</a>
-                        </div>             
-                    </button>
-                </h2>
+                <div class="accordion-header" id="flush-headingOne">
+                    <div class="btn-group contenedor-wishlist-header" role="group" aria-label="acordeon">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                            Wishlist 1    
+                        </button>
+                        <button type="button" class="btn btn-sm boton-wishlist" data-bs-toggle="modal" data-bs-target="#nuevaWishlistModal"><i class="bi bi-pencil text-primario fs-5 fw-bold"></i></button>
+                        <button type="button" class="btn btn-sm boton-wishlist"><i class="bi bi-trash3 text-danger fs-5 fw-bold"></i></button>
+                    </div>
+                </div>  
                 <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
                     <div class="accordion-body">
-                        <div class="producto-wishlist card card-body mb-2">
+                        <div class="producto-wishlist mb-2">
                             <div class="imagen-producto-wishlist rounded">
                             </div>
                             <div class="informacion-producto-wishlist">
                                 <div class="d-flex flex-column">
-                                    <h4>iPhone 14 pro</h4>
-                                    <h5>12999.99</h5>
+                                    <h2>iPhone 14 pro</h2>
+                                    <h4>12999.99</h4>
                                 </div>
                                 <div class="calificacion-producto-wishlist">
                                     <i class="bi bi-star-fill color-oro"></i>
                                     <p class="m-0">4.5 <span class="text-secondary">(1523)</span></p>
                                 </div>
-                                <div class="d-flex gap-1 align-items-center mb-1">
+                                <!-- <div class="d-flex gap-1 align-items-center mb-1">
                                     <label for="cantidad-producto-wishlist form-label">Cantidad</label>
                                     <input type="number" class="form-control form-control-sm">
-                                </div>
-                                <div class="d-lg-flex gap-2">
-                                    <button type="button" class="btn btn-primario btn-sm w-100 mb-1 mb-lg-0">Agregar al carrito</button>
-                                    <button type="button" class="btn btn-danger btn-sm w-100">Eliminar</button>
+                                </div> -->
+                                <div class="botones-producto-wishlist">
+                                    <button type="button" class="btn btn-sm btn-outline-secundario w-100 mb-1 mb-lg-0">Agregar al carrito</button>
+                                    <button type="button" class="btn btn-sm btn-outline-danger w-100">Eliminar</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            </div>  
+        </li>
+    </ul>
 
         <div class="modal fade" id="nuevaWishlistModal" tabindex="-1" aria-labelledby="nuevaWishlistModalLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -70,7 +76,7 @@
                             <input type="text" class="form-control" name="nombreWishlist" id="nombreWishlist">
                         </div>
                         <div class="mb-2">
-                            <label for="descripcionWishlist" class="form-label">Wishlist</label>
+                            <label for="descripcionWishlist" class="form-label">Descripcion</label>
                             <textarea class="form-control" name="descripcionWishlist" id="descripcionWishlist" rows="5"></textarea>
                         </div>
                         <div class="mb-4">
@@ -114,7 +120,7 @@
         </div>
 
 
-    </main>
+    </div>
     <script src="../js/wishlist.js"></script>
 </body>
 </html>
