@@ -194,8 +194,8 @@
     } 
     .contenedor-producto {
         display: grid;
-        grid-template-columns: 1fr 0.8fr;
-        grid: 2em;
+        grid-template-columns: 1fr 1fr;
+        gap: 2em;
         width: 90%;
         margin: 8em auto 0 auto;
         .contenedor-info-producto {

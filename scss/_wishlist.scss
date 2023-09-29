@@ -28,79 +28,94 @@
             }
 
         }
+        .producto-wishlist {
+            display: flex;
+            flex-direction: row;
+            gap: 1em;
+            .imagen-producto-wishlist {
+                width: 40%;
+                // height: 170px;
+                background-image: url(../img/producto.webp);
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            .informacion-producto-wishlist {
+                .titulo-producto {
+                    display: flex;
+                    flex-direction: column;
+                }
+                h2 {
+                    font-weight: 500;
+                    font-size: 1.2em;
+                }
+                h4 {
+                    font-size: 1em;
+                    font-weight: 600;
+                    margin-bottom: 0.4em;
+                    span {
+                        font-weight: 400;
+                        margin-right: 0.4em;
+                    }
+                }
+                .calificacion-producto-wishlist {
+                    display: flex;
+                    align-items: center;
+                    gap: 0.8em;
+                    margin-bottom: 0.6em;
+                    p,i {
+                        font-size: 0.8em;
+                    }
+                }
+                .botones-producto-wishlist {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.6em;
+                    button {
+                        width: 100%;
+                    }
+                }
+            }
+        }
     }
 }
 
 
-.producto-wishlist {
-    display: flex;
-    flex-direction: row;
-    gap: 1em;
-    .imagen-producto-wishlist {
-        width: 40%;
-        // height: 170px;
-        background-image: url(../img/producto.webp);
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-    .informacion-producto-wishlist {
-        h2 {
-            font-weight: 500;
-            font-size: 1.2em;
-        }
-        h4 {
-            font-size: 1em;
-            font-weight: 600;
-            margin-bottom: 0.4em;
-            span {
-                font-weight: 400;
-                margin-right: 0.4em;
-            }
-        }
-        .calificacion-producto-wishlist {
-            display: flex;
-            align-items: center;
-            gap: 0.8em;
-            margin-bottom: 0.6em;
-            p,i {
-                font-size: 0.8em;
-            }
-        }
-        .botones-producto-wishlist {
-            display: flex;
-            flex-direction: column;
-            gap: 0.6em;
-            button {
-                width: 100%;
-            }
-        }
-    }
-}
-.boton-wishlist {
-    width: 100%;
-    margin-bottom: 0.4em;
-}
+
+// .boton-wishlist {
+//     width: 100%;
+//     margin-bottom: 0.4em;
+// }
 
 @media (min-width:$laptop) {
-    .producto-wishlist {
-        .imagen-producto-wishlist {
-            width: 20%;
-            height: 120px;
-        }
-        .informacion-producto-wishlist { 
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+    .contenedor-wishlist {
+        .wishlist {
+            .accordion-item {
+            .producto-wishlist {
+                .imagen-producto-wishlist {
+                    width: 10%;
+                    height: 100px;
+                }
+                .informacion-producto-wishlist {
+                    .titulo-producto {
+                        flex-direction: row;
+                        gap: 10em;
+                    }
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    width: 100%;
+                    .calificacion-producto-wishlist {
+                        p,i {
+                            font-size: 1em;
+                        }
+                    }
+                    .botones-producto-wishlist {
+                        flex-direction: row;
+                    }
+                }
+            }
         }
     }
-    .contenedor-wishlist-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    .boton-wishlist {
-        width: auto;
     }
 }

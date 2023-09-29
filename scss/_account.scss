@@ -45,8 +45,23 @@
 
 
 @media (min-width:$laptop) {
-    .foto-perfil {
-        height: 100px;
-        width: 100px;
+    .contenedor-pagina-cuenta  {
+        .contenedor-informacion-perfil {
+            padding: 0;
+            .foto-perfil {
+                margin-top: 1.8em;
+                height: 100px;
+                width: 100px;
+            }
+            position: static;
+            .contenedor-formulario-perfil {
+                width: 60%;
+                margin: 1em auto 0 auto;
+                position: static;
+                background-color: white;
+                border-radius: 1em;
+            }
+        }
+    
     }
 }

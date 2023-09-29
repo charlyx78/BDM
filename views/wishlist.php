@@ -38,7 +38,7 @@
                             <div class="imagen-producto-wishlist rounded">
                             </div>
                             <div class="informacion-producto-wishlist">
-                                <div class="d-flex flex-column">
+                                <div class="titulo-producto">
                                     <h2>iPhone 14 pro</h2>
                                     <h4>12999.99</h4>
                                 </div>

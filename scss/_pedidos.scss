@@ -1,76 +1,74 @@
-.contenedor-pedido {
-    margin-top: 1em;
-    margin-bottom: 10em;
-    overflow-y: scroll;
-    min-height: 40vh;
-    .contenedor-productos-pedido {
-        .producto-pedido {
-            display: flex;
-            flex-direction: row;
-            gap: 1em;
-            margin: 1.4em 0.1em;
-            box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;       
-            border-radius: 0.4em;
-            padding: 1em;
-            position: relative;
-            &:first-of-type {
-                margin-top: 0;
-            }
-            .imagen-producto-pedido {
-                width: 40%;
-                background-image: url(../img/producto.webp);
-                background-size: cover;
-                background-position: center center;
-                background-repeat: no-repeat;
-            }
-            .informacion-producto-pedido {
-                display: flex;
-                flex-direction: column;
-                gap: 0.2em;
-                h2 {
-                    font-weight: 500;
-                    font-size: 1.2em;
-                }
-                h4 {
-                    font-size: 1em;
-                    font-weight: 600;
-                    span {
-                        font-weight: 400;
-                        margin-right: 0.4em;
-                    }
-                }
-            }
-        }
-    }
-}
-
-@media (min-width:$laptop) {
+.contenedor-pagina-pedidos {
     .contenedor-pedido {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 0.6em;
+        margin-top: 1em;
+        margin-bottom: 10em;
+        overflow-y: scroll;
+        min-height: 40vh;
         .contenedor-productos-pedido {
-            width: auto;
-            max-height: 75vh;
-            overflow-y: scroll;
-            margin-bottom: 0;
             .producto-pedido {
-                .informacion-producto-pedido {
-                    flex-wrap: wrap;
-                    justify-content: space-between;
-                    flex-direction: row;
-                    height: 60px;
-                    h2.nombre-producto-pedido {
-                        width: 100%;
-                    }
+                display: flex;
+                flex-direction: row;
+                gap: 1em;
+                margin: 1.4em 0.1em;
+                box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;       
+                border-radius: 0.4em;
+                padding: 1em;
+                position: relative;
+                &:first-of-type {
+                    margin-top: 0;
                 }
                 .imagen-producto-pedido {
-                    width: 20%;
-                    height: 140px;
+                    width: 40%;
+                    background-image: url(../img/producto.webp);
+                    background-size: cover;
+                    background-position: center center;
+                    background-repeat: no-repeat;
+                }
+                .informacion-producto-pedido {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.2em;
+                    h2 {
+                        font-weight: 500;
+                        font-size: 1.2em;
+                    }
+                    h4 {
+                        font-size: 1em;
+                        font-weight: 600;
+                        span {
+                            font-weight: 400;
+                            margin-right: 0.4em;
+                        }
+                    }
                 }
             }
         }
-
     }
+    position: relative;
+}
 
+
+@media (min-width:$laptop) {
+    .contenedor-pagina-pedidos {
+        .contenedor-pedido {
+            margin-top: 1em;
+            margin-bottom: 10em;
+            overflow-y: scroll;
+            min-height: 40vh;
+            .contenedor-productos-pedido {
+                .producto-pedido {
+                    .imagen-producto-pedido {
+                        width: 10%;
+                        height: 100px;
+                    }
+                    .informacion-producto-pedido {
+                        flex-direction: row;
+                        justify-content: space-between;
+                        width: 100%;
+                        padding: 0 1.6em;
+                    }
+                }
+            }
+        }
+    }
 }
