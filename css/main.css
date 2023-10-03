@@ -143,7 +143,7 @@ ul {
 }
 
 .contenedor-pagina {
-  margin-top: 4.2em;
+  margin-top: 3.8em;
 }
 
 @media (min-width: 1440px) {
@@ -151,7 +151,7 @@ ul {
     width: 80% !important;
   }
   .contenedor-pagina {
-    margin-top: 4.8em;
+    margin-top: 4.4em;
   }
   .contenedor-titulo-pagina {
     margin-bottom: 1.6em;
@@ -1245,7 +1245,7 @@ ul {
   height: 100vh;
   background-color: white;
   width: 80%;
-  z-index: 2000;
+  z-index: 1;
   top: 0;
   bottom: 0;
   left: 0;

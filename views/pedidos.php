@@ -35,6 +35,10 @@
         </div>
         
         <div class="sidebar-menu-filtros" id="sidebarFiltrosPedidos">
+            <div class="d-flex justify-content-between align-items-center">
+                <h2 class="fw-bold mb-4 fs-3 mt-3">Filtros</h2>
+                <button class="btn" id="btnCerrarSidebar" onclick="mostrarFiltros('sidebarFiltrosPedidos')"><i class="bi bi-x-lg text-secondary"></i></button>
+            </div>
             <form action="">
                 <div class="row">
                     <div class="mb-2 col-12">
