@@ -3,37 +3,41 @@
 .contenedor-home {
     .contenido-home {
         .hero-home {
-            background-image: url(../img/business-3293079_1920.jpg);
+            background-image: url(../img/lorenzo-herrera-p0j-mE6mGo4-unsplash.jpg);
             width: 100%;
-            height: 50vh;
+            height: 100vh;
             background-position: center center;
             background-repeat: no-repeat;
             background-size: cover;
             display: flex;
-            align-items: center;
+            align-items: flex-end;
             justify-content: center;
+            padding: 2em 1.4em;
+            .texto-hero-home {
+                text-align: center;
+                color: $color-blanco;
+                h5 {
+                    margin-bottom: 1em;
+                    span {
+                        color: $color-blanco;
+                        font-weight: bolder;
+                    }
+                }
+                h2 {
+                    font-size: 3.2em;
+                    letter-spacing: 0.1em;
+                    color: $color-blanco;
+                }
+                h6 {
+                    line-height: 1.6em;
+                    color: $color-blanco;
+                }
+            }
         }
     }
 }
 .modulo-home {
     padding: 2.4em 0;
-}
-.contenedor-promocion-home1 {
-    text-align: center;
-    h5 {
-        margin-bottom: 1em;
-        span {
-            color: $color-secundario;
-            font-weight: bolder;
-        }
-    }
-    h2 {
-        font-size: 3.2em;
-        letter-spacing: 0.15em;
-    }
-    h6 {
-        line-height: 1.6em;
-    }
 }
 .contenedor-promocion-home2 {
     .imagen-promocion-home2 {
@@ -87,7 +91,7 @@
             margin-top: 0.6em;
         }
         .contenedor-productos {     
-            width: 89vw;
+            width: 91vw;
             overflow-x: scroll;
             overflow-y: hidden;
             white-space: nowrap;
@@ -154,7 +158,7 @@
             margin-top: 0.6em;
         }
         .contenedor-categorias {     
-            width: 89vw;
+            width: 91vw;
             overflow-x: scroll;
             overflow-y: hidden;
             white-space: nowrap;
@@ -195,12 +199,42 @@
 }
 
 
-@media (min-width: $laptop) {
+@media (min-width: $tablet) {
+    .modulo-home {
+        padding: 3.2em 0;
+    }
     .contenedor-home {
+        margin-bottom: 3em;
         .contenido-home {
             .hero-home {
-                height: 65vh;
-                background-position: center 20%;
+                height: 100vh;
+                background-position: center 35%;
+                padding: 4em 2em;
+                .texto-hero-home {
+                    text-align: center;
+                    color: $color-blanco;
+                    h5 {
+                        margin-bottom: 1em;
+                        font-size: 2.4em;
+                        span {
+                            color: $color-blanco;
+                            font-weight: bolder;
+                        }
+                    }
+                    h2 {
+                        font-size: 6em;
+                        letter-spacing: 0.1em;
+                        color: $color-blanco;
+                    }
+                    h6 {
+                        font-size: 2.2em;
+                        line-height: 1.6em;
+                        color: $color-blanco;
+                    }
+                    button {
+                        font-size: 4em;
+                    }
+                }
             }
         }
     }
@@ -218,25 +252,31 @@
         }
     }
     .contenedor-promocion-home3 {
+        display: flex;
+        gap: 3em;
         .imagen-promocion-home3 {
             height: 60vh;
             margin-bottom: 1.4em;
         }
         h2 {
-            font-size: 2.6em;
+            font-size: 3.4em;
             margin-bottom: 0.2em;
         }
     }    
     .contenedor-secciones-productos {
         .seccion-productos {
+            h3.titulo-seccion-productos {
+                font-size: 2em;
+            }
             .contenedor-productos {    
                 padding-bottom: 1.6em; 
-                width: 89vw;
+                width: 78vw;
                 overflow-x: scroll;
                 .contenido-productos {
+                    gap: 2em;
                     .item-producto {
-                        width: 500px !important;
-                        height: 500px;
+                        width: 300px !important;
+                        height: 400px;
                         .producto {
                             .imagen-producto {
                                 height: 400px;
@@ -248,7 +288,7 @@
                                 font-size: 1.2em;
                             }
                             h4.precio-producto {
-                                font-size: 1.2em;
+                                font-size: 1.4em;
                             }                     
                         }
                     }
@@ -260,15 +300,15 @@
         .seccion-categorias {
             .contenedor-categorias {    
                 padding-bottom: 1.6em;  
-                width: 89vw;
+                width: 78vw;
                 overflow-x: scroll;
                 .contenido-categorias {
                     .item-categoria {
-                        width: 400px !important;
-                        height: 500px;
+                        width: 500px !important;
+                        height: 605px;
                         .categoria {
                             .imagen-categoria {
-                                height:500px;
+                                height:600px;
                                 .contenido-categoria {
                                     position: absolute;
                                     bottom: 0;

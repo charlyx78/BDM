@@ -5,6 +5,7 @@
         overflow-y: scroll;
         min-height: 40vh;
         .contenedor-productos-pedido {
+            padding: 0 !important;
             .producto-pedido {
                 display: flex;
                 flex-direction: row;

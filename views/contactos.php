@@ -11,7 +11,7 @@
     
     <div class="contenedor-pagina">
         <div class="contenedor-titulo-pagina">
-            <div class="contenido-titulo-pagina">
+            <div class="contenido-titulo-pagina container-fluid">
                 <h2 class="titulo-pagina mb-0">Contactos</h2>
                 <button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseBusqueda" aria-expanded="false" aria-controls="collapseBusqueda"><i class="bi bi-search fs-5"></i></button>       
             </div>          

@@ -1,7 +1,7 @@
 <nav class="navbar navbar-fixed navbar-expand-lg" id="navbar">
     <div class="container-fluid">
         <a class="navbar-brand" href="home.php">
-            <img src="../img/Trendigo logo.png" alt="Logo" height="30" class="d-inline-block align-text-top">
+            <img src="../img/Trendigo-logo.png" alt="Logo" height="30" class="d-inline-block align-text-top">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -27,22 +27,22 @@
                         <a class="input-group-text btn-primario" id="button-addon2" href="search.php"><i class="bi bi-search"></i></a>
                     </div>
                 </form>
-                <li class="nav-item d-block d-lg-none">
+                <li class="nav-item d-block d-md-none">
                     <a href="contactos.php" class="nav-link btn btn-light w-100 d-flex align-items-center" role="button">
                         <i class="bi bi-chat-left color-primario me-3 me-lg-0"></i>    
                         <div class="d-md-none">Mensajes</div>  
                     </a>
                 </li>
-                <li class="nav-item d-none d-lg-block">
+                <li class="nav-item d-none d-md-block">
                     <a href="chat.php" class="nav-link btn btn-light w-100 d-flex align-items-center" role="button">
                         <i class="bi bi-chat-left color-primario me-3 me-lg-0"></i>    
-                        <div class="d-md-none">Mensajes</div>  
+                        <div class="d-lg-none">Mensajes</div>  
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="cart.php" class="nav-link btn btn-light w-100 d-flex align-items-center" role="button">
                         <i class="bi bi-bag color-primario me-3 me-lg-0"></i>
-                        <div class="d-md-none">Carrito de compras</div>  
+                        <div class="d-lg-none">Carrito de compras</div>  
                     </a>
                 </li>
 
@@ -64,7 +64,7 @@
                     <a class="nav-link btn btn-light w-100 d-flex justify-content-between align-items-center" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
                         <div class="d-flex align-items-center">
                             <i class="bi bi-person-circle color-primario me-3"></i>
-                            <div class="d-md-none">Hola, Carlos Ruiz!</div>  
+                            <div class="d-lg-none">Hola, Carlos Ruiz!</div>  
                         </div>
                         <i class="bi bi-plus color-primario"></i>
                         <!-- <img src="../img/avatar.svg" class="me-2" width="30" height="30" alt="Avatar" />   -->

@@ -10,7 +10,7 @@
     <?php include_once "navbar.php" ?>
 
     <div class="contenedor-pagina">
-        <div class="contenedor-titulo-pagina">
+        <div class="contenedor-titulo-pagina container-fluid">
             <div class="contenido-titulo-pagina">
                 <h2 class="titulo-pagina mb-0">Wishlists</h2>
                 <button class="btn btn-primario" data-bs-toggle="modal" data-bs-target="#nuevaWishlistModal">Nueva lista</button>
@@ -18,7 +18,7 @@
         </div>
     </div>
 
-    <div class="container-fluid">
+    <div class="container-fluid p-0">
 
     <ul class="contenedor-wishlist">
         <li class="wishlist accordion accordion-flush" id="accordionFlushExample">

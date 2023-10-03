@@ -44,22 +44,28 @@
 }
 
 
-@media (min-width:$laptop) {
+@media (min-width:$tablet) {
     .contenedor-pagina-cuenta  {
         .contenedor-informacion-perfil {
-            padding: 0;
+            height: 80vh;
+            padding: 2em 0;
             .foto-perfil {
                 margin-top: 1.8em;
                 height: 100px;
                 width: 100px;
             }
             position: static;
+            // margin-bottom: 4em;
             .contenedor-formulario-perfil {
-                width: 60%;
-                margin: 1em auto 0 auto;
+                margin-top: 2em;
                 position: static;
                 background-color: white;
-                border-radius: 1em;
+                border-radius: 0em;
+                .contenido-formulario-perfil {
+                    width: 50% !important;
+                    padding: 1em 0;
+                    margin: 1.8em auto 0 auto;
+                }
             }
         }
     

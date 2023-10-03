@@ -17,7 +17,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landing Page Cursos </title>
-    <?php include_once "../estilos.php" ?>
+    <?php include_once "estilosLanding.php" ?>
 </head>
 <body>
     <div class="contenedor-landing-page">
@@ -25,7 +25,7 @@
             <div class="contenido-landing-page">
                 <div class="contenedor-texto-landing-page">
                     <div class="logo mb-4">
-                        <img src="../img/logo.png" width="60" alt="logo">
+                        <img src="img/logo.png" width="60" alt="logo">
                         <h1>Trendigo</h1>
                     </div>
                     <h2 class="mb-4">La tienda online con los ultimos articulos en tendencia</h2>
@@ -50,7 +50,7 @@
                     </div>
                 </div>
                 <div class="contenedor-imagen-landing-page">
-                    <img src="../img/iphone.png" alt="Producto en tendencia de ejemplo">
+                    <img src="img/iphone.png" alt="Producto en tendencia de ejemplo">
                 </div>                
             </div>
         </div>
@@ -77,7 +77,7 @@
                         </div>
                         
                         <div class="d-flex justify-content-end">
-                            <button type="submit" class="btn btn-secundario">Iniciar sesion</button>
+                            <a href="views/home.php" class="btn btn-secundario">Iniciar sesion</a>
                         </div>
                     </form>
                 </div>
@@ -155,13 +155,13 @@
                             </div>
                         </div>    
                         <div class="d-flex justify-content-end">
-                            <button type="submit" class="btn btn-secundario">Registrarse</button>
+                            <a href="views/home.php" class="btn btn-secundario">Registrarse</a>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-    <script src="../js/landingPage.js"></script>
+    <!-- <script src="js/landingPage.js"></script> -->
 </body>
 </html>

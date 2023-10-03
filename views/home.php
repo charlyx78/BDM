@@ -12,20 +12,17 @@
     <section class="contenedor-home">
         <div class="contenido-home">
             <section class="hero-home">
+                <div class="texto-hero-home">
+                    <h5>Con <span>Trendigo</span></h5>
+                    <h2>DESCUBRE EL FUTURO</h2>
+                    <h6 class="mb-4">Encuentra los productos mas innovadores del momento con nosotros</h6>
+                    <button class="btn btn-primario rounded-pill px-3" id="btnComprarHome">Compra ahora</button>
+                </div>
             </section>
         </div>
     </section>
 
     <section class="container-fluid">
-
-        <div class="modulo-home contenedor-promocion-home1">
-            <div class="texto-promocion-home1">
-                <h5>Con <span>Trendigo</span></h5>
-                <h2>DESCUBRE EL FUTURO</h2>
-                <h6 class="mb-4">Encuentra los productos mas innovadores del momento con nosotros</h6>
-                <button class="btn btn-primario rounded-pill px-3" id="btnComprarHome">Compra ahora</button>
-            </div>
-        </div>
         <div class="modulo-home contenedor-promocion-home2">
             <div class="imagen-promocion-home2">
                 <div class="contenido-imagen-promocion">
@@ -81,9 +78,11 @@
         
         <div class="modulo-home contenedor-promocion-home3">
             <div class="imagen-promocion-home3"></div>
-            <h2>Trabaja con la comodidad de una laptop</h2>
-            <h4>Descubre nuestra coleccion de computadoras</h4>
-            <button class="btn btn-primario rounded-pill px-4 py-2">Ver mas</button>
+            <div>
+                <h2>Trabaja con la comodidad de una laptop</h2>
+                <h4>Descubre nuestra coleccion de computadoras</h4>
+                <button class="btn btn-primario rounded-pill px-4 py-2">Ver mas</button>
+            </div>
         </div>
 
         <div class="contenedor-secciones-productos">

@@ -11,9 +11,6 @@ const formLogin = document.getElementById("formLogin");
         else if(passwordL.value.length <= 0){
             alert("Contasena Vacio");
         }
-        else {
-            alert("Iniciaste Sesion");
-        }
     })
 
 const formSignup = document.getElementById("formSignup");
@@ -76,8 +73,5 @@ const formSignup = document.getElementById("formSignup");
         }
         else if(accounttype == null){
             alert("Tipo de Cuenta vacio");
-        }
-        else {
-            alert("Te Registraste");
         }
     })

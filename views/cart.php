@@ -11,14 +11,14 @@
 
     <main class="contenedor-pagina">
 
-    <div class="contenedor-titulo-pagina">
+    <div class="contenedor-titulo-pagina container-fluid">
         <div class="contenido-titulo-pagina">
             <h2 class="titulo-pagina mb-0">Carrito</h2>
         </div>
     </div>
 
-    <div class="contenedor-carrito">
-        <div class="container-fluid contenedor-productos-carrito">
+    <div class="contenedor-carrito container-fluid">
+        <div class="contenedor-productos-carrito">
             <div class="producto-carrito" data-idproducto="1">
                 <div class="imagen-producto-carrito rounded">
                 </div>

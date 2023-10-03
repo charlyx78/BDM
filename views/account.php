@@ -29,7 +29,7 @@
                 </div>
             </div>
             <div class="contenedor-formulario-perfil">
-                <div class="container-fluid">
+                <div class="contenido-formulario-perfil container-fluid">
                     <form action="#" id="formSignup" method="post">
                         <div class="mb-2 row">
                             <div class="col">

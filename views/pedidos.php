@@ -10,7 +10,7 @@
     <?php include_once "navbar.php" ?>
 
     <div class="contenedor-pagina-pedidos">
-        <div class="contenedor-pagina">
+        <div class="contenedor-pagina container-fluid">
             <div class="contenedor-titulo-pagina">
                 <div class="contenido-titulo-pagina">
                     <h2 class="titulo-pagina mb-0">Mis pedidos</h2>
@@ -19,7 +19,7 @@
             </div>
 
             <div class="contenedor-pedido">
-                <ul class="container-fluid contenedor-productos-pedido">
+                <ul class="contenedor-productos-pedido">
                     <li class="producto-pedido" data-idproducto="1">
                         <div class="imagen-producto-pedido rounded">
                         </div>

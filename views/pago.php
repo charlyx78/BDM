@@ -12,7 +12,7 @@
 
     <main class="contenedor-pagina">
         <div class="contenedor-titulo-pagina">
-            <div class="contenido-titulo-pagina">
+            <div class="contenido-titulo-pagina container-fluid">
                 <h2 class="titulo-pagina mb-0">Elige un metodo de pago</h2>
             </div>
         </div>

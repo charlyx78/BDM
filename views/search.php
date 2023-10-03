@@ -10,14 +10,14 @@
     <?php include_once "navbar.php" ?>
 
     <div class="contenedor-pagina contenedor-pagina-search">
-        <div class="contenedor-titulo-pagina">
-            <div class="contenido-titulo-pagina">
+        <div class="contenedor-titulo-pagina container-fluid">
+            <div class="contenido-titulo-pagina ">
                 <h2 class="titulo-pagina mb-0">Busqueda de: iPhone 14</h2>
                 <button class="btn" type="button" onclick="mostrarFiltros('sidebarFiltrosSearch')"><i class="bi bi-sliders fs-5"></i></button>
             </div>
         </div>
 
-        <ul class="contenedor-productos-busqueda">
+        <ul class="contenedor-productos-busqueda container-fluid">
             <li class="producto-busqueda-item">
                 <a class="producto-busqueda" href="producto.php">
                     <div class="imagen-producto-busqueda">
@@ -81,6 +81,7 @@
         </ul>
 
         <div class="sidebar-menu-filtros" id="sidebarFiltrosSearch">
+            <h4 class="fw-bold mb-4">Filtros</h4>
             <form action="">
                 <div class="row">
                     <div class="mb-2 col-12">

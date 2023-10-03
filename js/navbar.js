@@ -11,14 +11,14 @@ window.addEventListener("scroll", function() {
         if (isNavbarFixed) {
             isNavbarFixed = false;
             navbar.style.transition = 'transform 0.3s ease';
-            navbar.style.transform = 'translateY(0)';
+            // navbar.style.transform = 'translateY(0)';
         }
     }
     else { // Scroll hacia abajo
         if (!isNavbarFixed) {
             isNavbarFixed = true;
             navbar.style.transition = 'transform 0.3s ease';
-            navbar.style.transform = `translateY(-${navbarHeight}px)`;
+            // navbar.style.transform = `translateY(-${navbarHeight}px)`;
         }
     }
     prevScrollPos = currentScrollPos;
