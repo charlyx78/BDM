@@ -1,5 +1,4 @@
 .contenedor-metodos-pago {
-    // box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;       
     padding: 0;
     display: flex;
     flex-direction: column;
@@ -12,6 +11,7 @@
         padding: 0 0.8em;
         border-radius: 0.6em;
         box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;       
+        cursor: pointer;
         h2 {
             font-size: 1.2em;
             font-weight: 500;
@@ -31,4 +31,48 @@
             font-weight: 500;
         }
     }
+}
+
+@media (min-width: $tablet) {
+    .contenedor-pagina-pago {
+        width: 30%;
+        margin: 4.4em auto 0 auto;
+        .contenedor-titulo-pagina {
+            .contenido-titulo-pagina {
+                display: flex;
+                justify-content: center;
+                h2.titulo-pagina {
+                    text-align: center;
+                }
+            }
+        }
+        .contenedor-metodos-pago {
+            padding: 0 2em 4em 2em;
+            border-radius: 0.4em 0.4em 0 0;
+            .metodo-pago {
+                background-color: $color-blanco;
+                &:hover {
+                    background-color: $color-gris;
+                }
+            }
+            .agregar-metodo-pago {
+                margin: 0;
+            }
+        }
+        .contenedor-total-carrito {
+            box-shadow: none;
+            position: static;
+            padding: 0 2em 4em 2em;
+            width: 80%;
+            margin: 0 auto;
+            border-radius: 0 0 0.4em 0.4em;
+            .contenido-total-carrito {
+                width: 100% !important;
+                a {
+                    margin-top: 2em;
+                }
+            }
+        }
+    }
+
 }

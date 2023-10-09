@@ -2,60 +2,63 @@
     margin-top: 4.8em;
 }
 .contenedor-chat {
-    .contacto {
-        text-decoration: none;
-        display: flex;
-        flex-direction: row;
-        gap: 1.4em;
-        align-items: center;
-        cursor: pointer;
-        color:$color-negro;
-        padding: 0 1em 1em 1em;
-        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-        img {
-            width: 13%;
-        }
-        a {
-            text-decoration: none;            
-            h2 {
-                font-size: 1.2em;
-                font-weight: bold;
-                margin: 0;
-
+    .contenido-chat {
+        .contacto {
+            text-decoration: none;
+            display: flex;
+            flex-direction: row;
+            gap: 1.4em;
+            align-items: center;
+            cursor: pointer;
+            color:$color-negro;
+            padding: 0 1em 1em 1em;
+            box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+            img {
+                width: 13%;
+            }
+            a {
+                text-decoration: none;     
+                font-size: 1.1em;       
+                h2 {
+                    font-size: 1.2em;
+                    font-weight: bold;
+                    margin: 0;
+    
+                }
+            }
+            .informacion-perfil-mensaje {
+                width: 80%;
+                margin: 0 auto;
             }
         }
-        .informacion-perfil-mensaje {
-            width: 80%;
-            margin: 0 auto;
+        .contenedor-mensajes {
+            padding: 1.4em 1em 0 1em;
+            height: 65.9vh;
+            overflow-y: scroll; 
+            .mensaje {
+                margin-bottom: 1em;
+                display: flex;
+            }
+            .mensaje-local  {
+                background-color: $color-blanco;
+                justify-content: flex-end;
+                max-width: 60%;
+                padding: 0.6em 1em;
+            }
+            .mensaje-remoto {
+                background-color: $color-secundario;
+                color: $color-blanco;
+                justify-content: flex-start;
+                max-width: 60%;
+                padding: 0.6em 1em;
+                margin: 0 0 0 auto;
+            }
         }
-    }
-    .contenedor-mensajes {
-        padding: 1.4em 1em 0 1em;
-        height: 65.9vh;
-        overflow-y: scroll; 
-        .mensaje {
-            margin-bottom: 1em;
-            display: flex;
+        .contenedor-input-mensaje {
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+            padding: 1em;
         }
-        .mensaje-local  {
-            background-color: $color-blanco;
-            justify-content: flex-end;
-            max-width: 60%;
-            padding: 0.6em 1em;
-        }
-        .mensaje-remoto {
-            background-color: $color-secundario;
-            color: $color-blanco;
-            justify-content: flex-start;
-            max-width: 60%;
-            padding: 0.6em 1em;
-            margin: 0 0 0 auto;
-        }
-    }
-    .contenedor-input-mensaje {
-        box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
-        padding: 1em;
-    }
+    }  
 }
 #productoModal {
     .producto {
@@ -83,28 +86,77 @@
     }
 }
 
-@media (min-width: $laptop) {
-    .contacto {
-        img {
-            width: 60px;
-        }
-        .informacion-perfil-mensaje {
-            width: 90%;
-        }
+@media (min-width: $tablet) {
+    .contenedor-pagina-chat {
+        margin-top: 4.4em;
     }
-    .contenedor-chat {
-        .contenedor-mensajes {
-            height: 65vh;
-            .producto-carrito {
-                .imagen-producto-carrito {
-                    width: 20%;
+    .contenedor-pagina-chat {
+        display: flex;
+        height: 91vh;
+        ul.contactos {
+            background-color: $color-primario;
+            .contenedor-titulo-pagina {
+                margin-bottom: 1em;
+                .contenido-titulo-pagina {
+                    h2 {
+                        color: $color-blanco;
+                    }
                 }
             }
-            .mensaje-local  {
-                max-width: 40%;
+            width: 25%;
+            padding: 0 1em;
+            .contacto-item {
+                margin: 0.8em 0;
+                background-color: transparent;
+                padding: 1em 0;
+                box-shadow: none;
+                border-bottom: 1px solid $color-blanco !important;
+                border-radius: 0;
+                a.contacto {
+                    .imagen-contacto {
+                        width: 40px;
+                        height: 40px;
+                    }
+                    .informacion-contacto {
+                        h2, p {
+                            color: $color-blanco !important;
+                        }
+                    }
+                }
             }
-            .mensaje-remoto {
-                max-width: 40%;
+        }
+        .contenedor-chat {
+            width: 100%;
+            .contenido-chat {
+                margin: 0 auto;
+                .contacto {
+                    width: 100%;
+                    justify-content: space-between;
+                    padding: 1.4em 2em;
+                    img {
+                        width: 50px;
+                    }
+                    .informacion-perfil-mensaje {
+                        width: 90%;
+                    }
+                    a {
+                        font-size: 1.4em;
+                    }
+                }
+                .contenedor-mensajes {
+                    height: 72vh;
+                    .producto-carrito {
+                        .imagen-producto-carrito {
+                            width: 20%;
+                        }
+                    }
+                    .mensaje-local  {
+                        max-width: 40%;
+                    }
+                    .mensaje-remoto {
+                        max-width: 40%;
+                    }
+                }
             }
         }
     }

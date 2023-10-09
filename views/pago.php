@@ -10,39 +10,40 @@
 <body>
     <?php include_once "navbar.php" ?>
 
-    <main class="contenedor-pagina">
+    <main class="contenedor-pagina contenedor-pagina-pago">
         <div class="contenedor-titulo-pagina">
             <div class="contenido-titulo-pagina container-fluid">
                 <h2 class="titulo-pagina mb-0">Elige un metodo de pago</h2>
             </div>
         </div>
 
-        <div class="container-fluid">
-            <ul class="contenedor-metodos-pago">
-                <li class="metodo-pago">
-                    <img src="../img/visa.png" width="40" alt="">
-                    <h2>**** **** **** 1234</h2>
-                </li>
-                <li class="metodo-pago">
-                    <img src="../img/mastercard.png" width="40" alt="">
-                    <h2>**** **** **** 1234</h2>
-                </li>
-                <li class="metodo-pago agregar-metodo-pago" data-bs-toggle="modal" data-bs-target="#metodoPagoModal">
-                    <h2>
-                        <i class="bi bi-plus-lg me-3"></i>
-                        Añadir metodo de pago
-                    </h2>
-                </li>
-            </ul>
-        </div>
+        <ul class="contenedor-metodos-pago container-fluid">
+            <li class="metodo-pago">
+                <img src="../img/visa.png" width="40" alt="">
+                <h2>**** **** **** 1234</h2>
+            </li>
+            <li class="metodo-pago">
+                <img src="../img/mastercard.png" width="40" alt="">
+                <h2>**** **** **** 1234</h2>
+            </li>
+            <li class="metodo-pago agregar-metodo-pago" data-bs-toggle="modal" data-bs-target="#metodoPagoModal">
+                <h2>
+                    <i class="bi bi-plus-lg me-3"></i>
+                    Añadir metodo de pago
+                </h2>
+            </li>
+            <!-- <a href="pago.php" class="btn btn-primario w-100 rounded-pill py-3 fw-bold mt-4 d-none d-lg-block">Pagar</a> -->
+        </ul>
 
         <div class="contenedor-total-carrito">
             <div class="contenido-total-carrito container-fluid">
-                <!-- <h2>Subtotal: <span>12999.99</span></h2>
-                <h2>Descuento: <span>0.00</span></h2>
-                <hr> -->
+                <div class="d-none d-lg-block">
+                    <h2>Subtotal: <span>12999.99</span></h2>
+                    <h2>Descuento: <span>0.00</span></h2>
+                    <hr>
+                </div>
                 <h2>Total: <span id="totalCarrito">0</span></h2>
-                <a href="pago.php" class="btn btn-primario w-100 rounded-pill">Pagar</a>
+                <a href="pago.php" class="btn btn-primario w-100 rounded-pill py-2">Pagar</a>
             </div>               
         </div>
     </main>

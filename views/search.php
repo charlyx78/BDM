@@ -9,81 +9,159 @@
 <body>
     <?php include_once "navbar.php" ?>
 
-    <div class="contenedor-pagina contenedor-pagina-search">
-        <div class="contenedor-titulo-pagina container-fluid">
-            <div class="contenido-titulo-pagina ">
-                <h2 class="titulo-pagina mb-0">Busqueda de: iPhone 14</h2>
-                <button class="btn" type="button" onclick="mostrarFiltros('sidebarFiltrosSearch')"><i class="bi bi-sliders fs-5"></i></button>
+    <div class="contenedor-pagina contenedor-pagina-search container-fluid">
+        <div class="contenedor-busqueda">
+            <div class="contenedor-titulo-pagina">
+                <div class="contenido-titulo-pagina ">
+                    <h2 class="titulo-pagina mb-0">Busqueda de: iPhone 14</h2>
+                    <button class="btn" type="button" onclick="mostrarFiltros('sidebarFiltrosSearch')"><i class="bi bi-sliders fs-5"></i></button>
+                </div>
             </div>
-        </div>
 
-        <ul class="contenedor-productos-busqueda container-fluid">
-            <li class="producto-busqueda-item">
-                <a class="producto-busqueda" href="producto.php">
-                    <div class="imagen-producto-busqueda">
-                    </div>
-                    <div class="informacion-producto-busqueda">
-                        <h6 class="text-secondary">Smarthphones</h6>
-                        <h2>iPhone 14 pro</h2>
-                        <h4>12999.99</h4>
-                        <div class="calificacion-producto-busqueda">
-                            <i class="bi bi-star-fill color-oro"></i>
-                            <p class="m-0 text-secondary">4.5 <span>(1523)</span></p>
+            <ul class="contenedor-productos-busqueda">
+                <li class="producto-busqueda-item">
+                    <a class="producto-busqueda" href="producto.php">
+                        <div class="imagen-producto-busqueda">
                         </div>
-                    </div>
-                </a>
-            </li>
-            <li class="producto-busqueda-item">
-                <a class="producto-busqueda" href="producto.php">
-                    <div class="imagen-producto-busqueda">
-                    </div>
-                    <div class="informacion-producto-busqueda">
-                        <h6 class="text-secondary">Smarthphones</h6>
-                        <h2>iPhone 14 pro</h2>
-                        <h4>12999.99</h4>
-                        <div class="calificacion-producto-busqueda">
-                            <i class="bi bi-star-fill color-oro"></i>
-                            <p class="m-0 text-secondary">4.5 <span>(1523)</span></p>
+                        <div class="informacion-producto-busqueda">
+                            <h6 class="text-secondary">Smarthphones</h6>
+                            <h2>iPhone 14 pro</h2>
+                            <h4>12999.99</h4>
+                            <div class="calificacion-producto-busqueda">
+                                <i class="bi bi-star-fill color-oro"></i>
+                                <p class="m-0 text-secondary">4.5 <span>(1523)</span></p>
+                            </div>
                         </div>
-                    </div>
-                </a>
-            </li>
-            <li class="producto-busqueda-item">
-                <a class="producto-busqueda" href="producto.php">
-                    <div class="imagen-producto-busqueda">
-                    </div>
-                    <div class="informacion-producto-busqueda">
-                        <h6 class="text-secondary">Smarthphones</h6>
-                        <h2>iPhone 14 pro</h2>
-                        <h4>12999.99</h4>
-                        <div class="calificacion-producto-busqueda">
-                            <i class="bi bi-star-fill color-oro"></i>
-                            <p class="m-0 text-secondary">4.5 <span>(1523)</span></p>
+                    </a>
+                </li>
+                <li class="producto-busqueda-item">
+                    <a class="producto-busqueda" href="producto.php">
+                        <div class="imagen-producto-busqueda">
                         </div>
-                    </div>
-                </a>
-            </li>
-            <li class="producto-busqueda-item">
-                <a class="producto-busqueda" href="producto.php">
-                    <div class="imagen-producto-busqueda">
-                    </div>
-                    <div class="informacion-producto-busqueda">
-                        <h6 class="text-secondary">Smarthphones</h6>
-                        <h2>iPhone 14 pro</h2>
-                        <h4>12999.99</h4>
-                        <div class="calificacion-producto-busqueda">
-                            <i class="bi bi-star-fill color-oro"></i>
-                            <p class="m-0 text-secondary">4.5 <span>(1523)</span></p>
+                        <div class="informacion-producto-busqueda">
+                            <h6 class="text-secondary">Smarthphones</h6>
+                            <h2>iPhone 14 pro</h2>
+                            <h4>12999.99</h4>
+                            <div class="calificacion-producto-busqueda">
+                                <i class="bi bi-star-fill color-oro"></i>
+                                <p class="m-0 text-secondary">4.5 <span>(1523)</span></p>
+                            </div>
                         </div>
-                    </div>
-                </a>
-            </li>     
-        </ul>
+                    </a>
+                </li>
+                <li class="producto-busqueda-item">
+                    <a class="producto-busqueda" href="producto.php">
+                        <div class="imagen-producto-busqueda">
+                        </div>
+                        <div class="informacion-producto-busqueda">
+                            <h6 class="text-secondary">Smarthphones</h6>
+                            <h2>iPhone 14 pro</h2>
+                            <h4>12999.99</h4>
+                            <div class="calificacion-producto-busqueda">
+                                <i class="bi bi-star-fill color-oro"></i>
+                                <p class="m-0 text-secondary">4.5 <span>(1523)</span></p>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="producto-busqueda-item">
+                    <a class="producto-busqueda" href="producto.php">
+                        <div class="imagen-producto-busqueda">
+                        </div>
+                        <div class="informacion-producto-busqueda">
+                            <h6 class="text-secondary">Smarthphones</h6>
+                            <h2>iPhone 14 pro</h2>
+                            <h4>12999.99</h4>
+                            <div class="calificacion-producto-busqueda">
+                                <i class="bi bi-star-fill color-oro"></i>
+                                <p class="m-0 text-secondary">4.5 <span>(1523)</span></p>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="producto-busqueda-item">
+                    <a class="producto-busqueda" href="producto.php">
+                        <div class="imagen-producto-busqueda">
+                        </div>
+                        <div class="informacion-producto-busqueda">
+                            <h6 class="text-secondary">Smarthphones</h6>
+                            <h2>iPhone 14 pro</h2>
+                            <h4>12999.99</h4>
+                            <div class="calificacion-producto-busqueda">
+                                <i class="bi bi-star-fill color-oro"></i>
+                                <p class="m-0 text-secondary">4.5 <span>(1523)</span></p>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="producto-busqueda-item">
+                    <a class="producto-busqueda" href="producto.php">
+                        <div class="imagen-producto-busqueda">
+                        </div>
+                        <div class="informacion-producto-busqueda">
+                            <h6 class="text-secondary">Smarthphones</h6>
+                            <h2>iPhone 14 pro</h2>
+                            <h4>12999.99</h4>
+                            <div class="calificacion-producto-busqueda">
+                                <i class="bi bi-star-fill color-oro"></i>
+                                <p class="m-0 text-secondary">4.5 <span>(1523)</span></p>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="producto-busqueda-item">
+                    <a class="producto-busqueda" href="producto.php">
+                        <div class="imagen-producto-busqueda">
+                        </div>
+                        <div class="informacion-producto-busqueda">
+                            <h6 class="text-secondary">Smarthphones</h6>
+                            <h2>iPhone 14 pro</h2>
+                            <h4>12999.99</h4>
+                            <div class="calificacion-producto-busqueda">
+                                <i class="bi bi-star-fill color-oro"></i>
+                                <p class="m-0 text-secondary">4.5 <span>(1523)</span></p>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="producto-busqueda-item">
+                    <a class="producto-busqueda" href="producto.php">
+                        <div class="imagen-producto-busqueda">
+                        </div>
+                        <div class="informacion-producto-busqueda">
+                            <h6 class="text-secondary">Smarthphones</h6>
+                            <h2>iPhone 14 pro</h2>
+                            <h4>12999.99</h4>
+                            <div class="calificacion-producto-busqueda">
+                                <i class="bi bi-star-fill color-oro"></i>
+                                <p class="m-0 text-secondary">4.5 <span>(1523)</span></p>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="producto-busqueda-item">
+                    <a class="producto-busqueda" href="producto.php">
+                        <div class="imagen-producto-busqueda">
+                        </div>
+                        <div class="informacion-producto-busqueda">
+                            <h6 class="text-secondary">Smarthphones</h6>
+                            <h2>iPhone 14 pro</h2>
+                            <h4>12999.99</h4>
+                            <div class="calificacion-producto-busqueda">
+                                <i class="bi bi-star-fill color-oro"></i>
+                                <p class="m-0 text-secondary">4.5 <span>(1523)</span></p>
+                            </div>
+                        </div>
+                    </a>
+                </li>     
+            </ul>
+        </div>
+        
 
         <div class="sidebar-menu-filtros" id="sidebarFiltrosSearch">
             <div class="d-flex justify-content-between align-items-center">
                 <h2 class="fw-bold mb-4 fs-3 mt-3">Filtros</h2>
-                <button class="btn" id="btnCerrarSidebar" onclick="mostrarFiltros('sidebarFiltrosSearch')"><i class="bi bi-x-lg text-secondary"></i></button>
+                <button class="btn d-lg-none" id="btnCerrarSidebar" onclick="mostrarFiltros('sidebarFiltrosSearch')"><i class="bi bi-x-lg text-secondary"></i></button>
             </div>
             <form action="">
                 <div class="row">

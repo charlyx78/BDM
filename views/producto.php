@@ -9,9 +9,9 @@
 <body>
     <?php include_once "navbar.php" ?>
 
-    <div class="contenedor-pagina">
+    <div class="contenedor-pagina container-fluid">
         <div class="contenedor-producto">
-            <div class="container-fluid contenedor-info-producto">
+            <div class="contenedor-info-producto">
                 <div class="informacion-producto">
                     <h5 class="text-secondary">Smarthphones</h5>
                     <h2 class="nombre-producto">iPhone 14 Pro 128GB 4GB RAM</h2>
@@ -115,32 +115,32 @@
             </div>
             <div class="contenedor-multimedia-producto">
                 <div class="modulo-producto">
-                <div id="carouselProducto" class="carousel slide carousel-fade ">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <div class="muestra-multimedia muestra-multimedia1">
-                                <video src="../img/video-producto.mp4" autoplay controls muted loop></video>
+                    <div id="carouselProducto" class="carousel slide carousel-fade ">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="muestra-multimedia muestra-multimedia1">
+                                    <video src="../img/video-producto.mp4" autoplay controls muted loop></video>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="muestra-multimedia muestra-multimedia2"></div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="muestra-multimedia muestra-multimedia3"></div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="muestra-multimedia muestra-multimedia4"></div>
                             </div>
                         </div>
-                        <div class="carousel-item">
-                            <div class="muestra-multimedia muestra-multimedia2"></div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="muestra-multimedia muestra-multimedia3"></div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="muestra-multimedia muestra-multimedia4"></div>
+                    </div>
+                    <div class="contenedor-thumbnails-productos">
+                        <div class="contenido-thumbnails-productos">
+                            <div class="thumbnail-multimedia" data-bs-target="#carouselProducto" data-bs-slide-to="0"></div>
+                            <div class="thumbnail-multimedia" data-bs-target="#carouselProducto" data-bs-slide-to="1"></div>
+                            <div class="thumbnail-multimedia" data-bs-target="#carouselProducto" data-bs-slide-to="2"></div>
+                            <div class="thumbnail-multimedia" data-bs-target="#carouselProducto" data-bs-slide-to="3"></div>
                         </div>
                     </div>
-                </div>
-                <div class="contenedor-thumbnails-productos">
-                    <div class="contenido-thumbnails-productos">
-                        <div class="thumbnail-multimedia" data-bs-target="#carouselProducto" data-bs-slide-to="0"></div>
-                        <div class="thumbnail-multimedia" data-bs-target="#carouselProducto" data-bs-slide-to="1"></div>
-                        <div class="thumbnail-multimedia" data-bs-target="#carouselProducto" data-bs-slide-to="2"></div>
-                        <div class="thumbnail-multimedia" data-bs-target="#carouselProducto" data-bs-slide-to="3"></div>
-                    </div>
-                </div>
                 </div>
             </div>
             <div class="container-fluid contenedor-info-producto2 d-block d-lg-none">
@@ -165,7 +165,7 @@
                 <div class="contenedor-comentarios">
                     <p class="m-0">
                         <a class="header-comentarios" id="headerComentarios" data-bs-toggle="collapse" href="#collapseComentarios" role="button" aria-expanded="false" aria-controls="collapseComentarios">
-                            Reseñas (5)
+                            Reseñas (5) 
                             <i class="bi bi-chevron-down" id="iconoChevron"></i>
                         </a>
                     </p>

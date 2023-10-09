@@ -9,8 +9,8 @@
 <body>
     <?php include_once "navbar.php" ?>
 
-    <div class="contenedor-pagina-pedidos">
-        <div class="contenedor-pagina container-fluid">
+    <div class="contenedor-pagina contenedor-pagina-pedidos container-fluid">
+        <div class="contenedor-pedidos">
             <div class="contenedor-titulo-pagina">
                 <div class="contenido-titulo-pagina">
                     <h2 class="titulo-pagina mb-0">Mis pedidos</h2>
@@ -37,7 +37,7 @@
         <div class="sidebar-menu-filtros" id="sidebarFiltrosPedidos">
             <div class="d-flex justify-content-between align-items-center">
                 <h2 class="fw-bold mb-4 fs-3 mt-3">Filtros</h2>
-                <button class="btn" id="btnCerrarSidebar" onclick="mostrarFiltros('sidebarFiltrosPedidos')"><i class="bi bi-x-lg text-secondary"></i></button>
+                <button class="btn d-lg-none" id="btnCerrarSidebar" onclick="mostrarFiltros('sidebarFiltrosPedidos')"><i class="bi bi-x-lg text-secondary"></i></button>
             </div>
             <form action="">
                 <div class="row">
@@ -65,10 +65,10 @@
                         <label for="calificacionPedido" class="form-label">Calificacion</label>
                         <select name="calificacionPedido" id="" class="form-select">
                             <option value="">Selecciona una calificacion</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
+                            <option value="1"><1</option>
+                            <option value="2"><2</option>
+                            <option value="3"><3</option>
+                            <option value="4"><4</option>
                             <option value="5">5</option>
                         </select>                    
                     </div>
