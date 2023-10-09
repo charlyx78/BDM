@@ -1087,7 +1087,7 @@ ul {
     border-radius: 0em;
   }
   .contenedor-pagina-cuenta .contenedor-informacion-perfil .contenedor-formulario-perfil .contenido-formulario-perfil {
-    width: 50% !important;
+    width: 40% !important;
     padding: 1em 0;
     margin: 1.8em auto 0 auto;
   }
@@ -1125,7 +1125,7 @@ ul {
 }
 .contenedor-chat .contenido-chat .contenedor-mensajes {
   padding: 1.4em 1em 0 1em;
-  height: 65.9vh;
+  height: 75vh;
   overflow-y: scroll;
 }
 .contenedor-chat .contenido-chat .contenedor-mensajes .mensaje {
@@ -1179,11 +1179,13 @@ ul {
   }
   .contenedor-pagina-chat {
     display: flex;
-    height: 91vh;
+    height: 90vh;
   }
   .contenedor-pagina-chat ul.contactos {
+    height: 90.5vh;
+    border-radius: 0;
     background-color: #392F7F;
-    width: 25%;
+    width: 30%;
     padding: 0 1em;
   }
   .contenedor-pagina-chat ul.contactos .contenedor-titulo-pagina {
@@ -1193,12 +1195,12 @@ ul {
     color: #f5f5f5;
   }
   .contenedor-pagina-chat ul.contactos .contacto-item {
+    display: flex;
     margin: 0.8em 0;
-    background-color: transparent;
-    padding: 1em 0;
+    background-color: #5B567F;
+    padding: 1em;
     box-shadow: none;
-    border-bottom: 1px solid #f5f5f5 !important;
-    border-radius: 0;
+    border-radius: 0.4em;
   }
   .contenedor-pagina-chat ul.contactos .contacto-item a.contacto .imagen-contacto {
     width: 40px;
@@ -1206,6 +1208,9 @@ ul {
   }
   .contenedor-pagina-chat ul.contactos .contacto-item a.contacto .informacion-contacto h2, .contenedor-pagina-chat ul.contactos .contacto-item a.contacto .informacion-contacto p {
     color: #f5f5f5 !important;
+  }
+  .contenedor-pagina-chat ul.contactos .contacto-item a.contacto .informacion-contacto p {
+    width: 90%;
   }
   .contenedor-pagina-chat .contenedor-chat {
     width: 100%;
@@ -1228,7 +1233,8 @@ ul {
     font-size: 1.4em;
   }
   .contenedor-pagina-chat .contenedor-chat .contenido-chat .contenedor-mensajes {
-    height: 72vh;
+    height: 67.5vh;
+    padding: 1em 3em;
   }
   .contenedor-pagina-chat .contenedor-chat .contenido-chat .contenedor-mensajes .producto-carrito .imagen-producto-carrito {
     width: 20%;
@@ -1341,7 +1347,7 @@ ul {
   .sidebar-menu-filtros {
     display: block;
     position: static;
-    width: 25%;
+    width: 30%;
     padding: 1em 1.4em;
     margin: 2.6em auto 0 auto;
     height: 700px;
@@ -1629,7 +1635,7 @@ ul {
     min-height: 60vh;
   }
   .contenedor-pagina-pedidos .contenedor-pedidos .contenedor-pedido .contenedor-productos-pedido .producto-pedido .imagen-producto-pedido {
-    width: 10%;
+    width: 20%;
     height: 100px;
   }
   .contenedor-pagina-pedidos .contenedor-pedidos .contenedor-pedido .contenedor-productos-pedido .producto-pedido .informacion-producto-pedido {
