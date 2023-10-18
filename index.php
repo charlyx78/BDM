@@ -75,10 +75,15 @@
             $result2= mysqli_query($con, $query);
             if(!$result2->num_rows > 0)
             {
-                $statement = $con->prepare("CALL SP_RegistrarUsuario (?,?,?,?,?,?,?,?,?,?)");
-                $statement->bind_param("sssisssisi", $RegCorreo, $RegApodo, $RegContra, $RegRol, $RegAvatar, $RegNombre, $RegApellidos, $RegSexo, $RegFechaNac, $RegActivo);
-                $statement->execute();
-                $statement->close();
+                try{
+                    $statement = $con->prepare("CALL SP_RegistrarUsuario (?,?,?,?,?,?,?,?,?,?)");
+                    $statement->bind_param("sssisssisi", $RegCorreo, $RegApodo, $RegContra, $RegRol, $RegAvatar, $RegNombre, $RegApellidos, $RegSexo, $RegFechaNac, $RegActivo);
+                    $statement->execute();
+                    $statement->close();
+                }
+                catch(Exception $ex) {
+                    echo "<script type='text/javascript'> alert('Error en Captura')</script>";
+                }
             }
             else
             {
