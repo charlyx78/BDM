@@ -9,6 +9,82 @@
     // $idUser = $_SESSION["AUTH"];
     // $mysqli = db::connect();
     // $user = User::findUserById($mysqli,(int)$idUser);
+    session_start();
+    include("db.php");
+    if(isset($_POST["submitLogin"]))
+    {
+        $correo = $_POST['usernameL'];
+        $contra = $_POST['passwordL'];
+
+        $query= "select * from Usuarios where UsuCorreo = '$correo' and UsuContra = '$contra'";
+        $result= mysqli_query($con, $query);
+
+        if($result)
+        {
+            if($result->num_rows > 0)
+            {
+                $row = $result->fetch_assoc();
+                $_SESSION['UsuID'] = $row['PK_IdUsuario'];
+                $_SESSION['UsuCorreo'] = $row['UsuCorreo'];
+                $_SESSION['UsuApodo'] = $row['UsuApodo'];
+                $_SESSION['UsuContra'] = $row['UsuContra'];
+
+                $PK_RolUsu = $row['UsuFK_IdRol'];
+                $query2= "select RolDescripcion from RolUsuario where PK_IdRol = '$PK_RolUsu'";
+                $result2= mysqli_query($con, $query2);
+                $row2 = $result2->fetch_assoc();
+                $_SESSION['UsuRol'] = $row2['RolDescripcion'];
+
+                $_SESSION['UsuNombre'] = $row['UsuNombres'];
+                $_SESSION['UsuApellidos'] = $row['UsuApellidos'];
+
+                $_SESSION['UsuFKSexo'] = $row['UsuFK_IdSexo'];
+                $PK_Sexo = $row['UsuFK_IdSexo'];
+                $query2= "select SexoDescripcion from Sexo where PK_IdSexo = '$PK_Sexo'";
+                $result2= mysqli_query($con, $query2);
+                $row2 = $result2->fetch_assoc();
+                $_SESSION['UsuSexo'] = $row2['SexoDescripcion'];
+
+                $_SESSION['UsuFechaNac'] = $row['UsuFechaNac'];
+                $_SESSION['UsuFechaIng'] = $row['UsuFechaIng'];
+                $_SESSION['UsuActivo'] = $row['UsuFK_IdActivo'];
+                echo "<script type='text/javascript'> alert('Si existes')</script>";
+                header("Location: ../BDM/views/home.php");
+            }
+            else{
+                echo "<script type='text/javascript'> alert('No Existes')</script>";
+            }
+        }
+        //echo "<script type='text/javascript'> alert('Sesion Iniciada LOGIN')</script>";
+    }
+
+    if(isset($_POST["submiReg"]))
+    {
+        $RegNombre = $_POST['namesR'];
+        $RegApellidos = $_POST['lastnamesR'];
+        $RegFechaNac = $_POST['birthdateR'];
+        $RegSexo = $_POST['sexR'];
+        $RegApodo = $_POST['usernameR'];
+        $RegCorreo = $_POST['emailR'];
+        $RegContra = $_POST['passwordR'];
+        $RegRol = $_POST['accounttype'];
+        $RegAvatar = "ImagenXD";
+        $RegActivo = 2;
+
+        $query = "select * from Usuarios where UsuCorreo = '$RegCorreo'";
+            $result2= mysqli_query($con, $query);
+            if(!$result2->num_rows > 0)
+            {
+                $statement = $con->prepare("CALL SP_RegistrarUsuario (?,?,?,?,?,?,?,?,?,?)");
+                $statement->bind_param("sssisssisi", $RegCorreo, $RegApodo, $RegContra, $RegRol, $RegAvatar, $RegNombre, $RegApellidos, $RegSexo, $RegFechaNac, $RegActivo);
+                $statement->execute();
+                $statement->close();
+            }
+            else
+            {
+                echo "<script type='text/javascript'> alert('Ya Esta Registrado Este Correo')</script>";
+            }
+    }
 ?>
 <!DOCTYPE html>
 <html lang="es_mx">
@@ -66,7 +142,8 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="#" id="formLogin" method="post">
+                    <!-- LOGINNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN -->
+                    <form action="" id="formLogin" method="POST">
                         <div class="mb-2">
                             <label for="username" class="col-form-label">Nombre de usuario: </label>
                             <input type="text" class="form-control" name="usernameL" id="usernameL" placeholder="Nombre de usuario" maxlength="70">
@@ -77,7 +154,8 @@
                         </div>
                         
                         <div class="d-flex justify-content-end">
-                            <a href="views/home.php" class="btn btn-secundario">Iniciar sesion</a>
+                            <!-- a href="views/home.php" class="btn btn-secundario">Iniciar sesion</a> -->
+                            <input type="submit" value="Iniciar Sesion" id="submitLogin" name="submitLogin" class="btn btn-secundario">
                         </div>
                     </form>
                 </div>
@@ -95,7 +173,8 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="#" id="formSignup" method="post">
+                    <!-- REGISTROOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO -->
+                    <form action="" id="formSignup" method="POST">
                         <div class="mb-2 row">
                             <div class="col">
                                 <label for="names" class="col-form-label">Nombre (s): </label>
@@ -112,12 +191,12 @@
                                 <input type="date" class="form-control" name="birthdateR" id="birthdateR">
                             </div>
                             <div class="col">
-                                <label for="sex" class="col-form-label">Sexo: </label>
+                                <label for="sexR" class="col-form-label">Sexo: </label>
                                 <select name="sexR" id="sexR" class="form-control">
                                     <option value="">Seleccionar...</option>
-                                    <option value="Hombre">Hombre</option>
-                                    <option value="Mujer">Mujer</option>
-                                    <option value="Otro">Otro</option>
+                                    <option value="1">Hombre</option>
+                                    <option value="2">Mujer</option>
+                                    <option value="3">Otro</option>
                                 </select>
                             </div>
                         </div>
@@ -155,7 +234,8 @@
                             </div>
                         </div>    
                         <div class="d-flex justify-content-end">
-                            <a href="views/home.php" class="btn btn-secundario">Registrarse</a>
+                            <!-- <a href="views/home.php" class="btn btn-secundario">Registrarse</a> -->
+                            <input type="submit" value="Iniciar Sesion" id="submiReg" name="submiReg" class="btn btn-secundario">
                         </div>
                     </form>
                 </div>

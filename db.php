@@ -1,8 +1,8 @@
 <?php
     // class db {
     //     static public function connect() {
-    //         $host = "localhost";
-    //         $db = "db_cursos";
+    //         $host = "127.0.0.1:3306";
+    //         $db = "BaseMultimedia";
     //         $user = "root";
     //         $pass = "";
     //         try {
@@ -11,6 +11,9 @@
     //                 $response = (object)array("status"=>500,"message"=>$mysqli->connect_error);
     //                 echo json_encode($response);
     //                 die("Error de conexión: " . $mysqli->connect_error);
+    //             }
+    //             else{
+    //                 "Si se conecto pa";
     //             }
 
     //         } catch(Exception $e) {
@@ -22,4 +25,16 @@
     //     }
       
     // }
+
+$serverDB = "localhost";
+$userDB = "root";
+$passwordDB = "BaseMultimedia2023-";
+$databaseDB = "basemultimedia";
+
+    $con = mysqli_connect($serverDB, $userDB, $passwordDB, $databaseDB);
+
+    if(!$con)
+    {
+        die("Conexion Fallida");
+    }
 ?>
