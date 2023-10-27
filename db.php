@@ -26,9 +26,9 @@
       
     // }
 
-$serverDB = "localhost";
+$serverDB = "127.0.0.1:3306";
 $userDB = "root";
-$passwordDB = "BaseMultimedia2023-";
+$passwordDB = "root";
 $databaseDB = "basemultimedia";
 
     $con = mysqli_connect($serverDB, $userDB, $passwordDB, $databaseDB);

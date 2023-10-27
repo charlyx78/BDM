@@ -101,6 +101,7 @@
     <?php include_once "estilosLanding.php" ?>
 </head>
 <body>
+    
     <div class="contenedor-landing-page">
         <div class="container">
             <div class="contenido-landing-page">
@@ -137,17 +138,17 @@
         </div>
     </div>
 
+    <!-- Modal Login -->
     <div class="modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-labelledby="modalLoginLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="modalLoginLabel">Inicia sesion</h5>
                     <button class="btn"><i class="bi bi-x-circle-fill text-danger" data-bs-dismiss="modal" aria-label="Close"></i></button>
-                    <!-- <span aria-hidden="true">&times;</span> -->
                     </button>
                 </div>
                 <div class="modal-body">
-                    <!-- LOGINNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN -->
+                    <!-- Form Login -->
                     <form action="" id="formLogin" method="POST">
                         <div class="mb-2">
                             <label for="username" class="col-form-label">Nombre de usuario: </label>
@@ -159,7 +160,6 @@
                         </div>
                         
                         <div class="d-flex justify-content-end">
-                            <!-- a href="views/home.php" class="btn btn-secundario">Iniciar sesion</a> -->
                             <input type="submit" value="Iniciar Sesion" id="submitLogin" name="submitLogin" class="btn btn-secundario">
                         </div>
                     </form>
@@ -168,17 +168,17 @@
         </div>
     </div>
 
+    <!-- Modal Registro -->
     <div class="modal fade" id="modalRegistro" tabindex="-1" role="dialog" aria-labelledby="modalRegistroLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="modalRegistroLabel">Crea una cuenta</h5>
                     <button class="btn"><i class="bi bi-x-circle-fill text-danger" data-bs-dismiss="modal" aria-label="Close"></i></button>
-                    <!-- <span aria-hidden="true">&times;</span> -->
                     </button>
                 </div>
                 <div class="modal-body">
-                    <!-- REGISTROOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO -->
+                    <!-- Form Registro -->
                     <form action="" id="formSignup" method="POST">
                         <div class="mb-2 row">
                             <div class="col">
@@ -239,7 +239,6 @@
                             </div>
                         </div>    
                         <div class="d-flex justify-content-end">
-                            <!-- <a href="views/home.php" class="btn btn-secundario">Registrarse</a> -->
                             <input type="submit" value="Iniciar Sesion" id="submiReg" name="submiReg" class="btn btn-secundario">
                         </div>
                     </form>
@@ -247,6 +246,7 @@
             </div>
         </div>
     </div>
+
     <!-- <script src="js/landingPage.js"></script> -->
 </body>
 </html>
