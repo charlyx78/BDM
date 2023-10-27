@@ -12,34 +12,53 @@ session_start();
 <body>
     <?php include_once "navbar.php" ?>
 
-    <main class="container py-4">
-        <h2 class="titulo-pagina">
-            Mis productos
-            <button class="btn btn-primario" data-bs-toggle="modal" data-bs-target="#nuevoProductoModal">Nuevo producto</button>
-        </h2>
+    <main class="contenedor-pagina">
 
-        <div class="producto-wishlist card card-body mb-2">
-            <div class="imagen-producto-wishlist rounded">
+        <div class="contenedor-titulo-pagina container-fluid">
+            <div class="contenido-titulo-pagina">
+                <h2 class="titulo-pagina mb-0">Mis productos</h2>
+                <button class="btn btn-primario" data-bs-toggle="modal" data-bs-target="#nuevoProductoModal">Nuevo producto</button>
             </div>
-            <div class="informacion-producto-wishlist">
-                <div class="d-flex flex-column">
-                    <h5>iPhone 14 pro</h5>
-                </div>
-                <div class="d-lg-flex gap-2">
-                    <a href="producto.php" class="btn btn-secondary btn-sm w-100 mb-1 mb-lg-0">Ver pagina</a>
-                    <button type="button" class="btn btn-primario btn-sm w-100 mb-1 mb-lg-0" data-bs-toggle="modal" data-bs-target="#nuevoProductoModal">Editar</button>
-                    <button type="button" class="btn btn-danger btn-sm w-100">Eliminar</button>
-                </div>
-            </div>
+        </div>
+
+        <div class="container-fluid mis-productos p-0 overflow-x-scroll">
+            <table class="table table-bordered table-stripped">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Producto</th>
+                        <th>Precio</th>
+                        <th>Inventario</th>
+                        <th>Tipo de venta</th>
+                        <th>Fecha de registro</th>
+                        <th>Status</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1903184</td>
+                        <td>iPhone 14 Pro</td>
+                        <td>$14999.99</td>
+                        <td>134 pzas</td>
+                        <td>Precio fijo</td>
+                        <td>27/10/2023 15:35</td>
+                        <td><span class="badge rounded-pill bg-success fs-6">En venta</span></td>
+                        <td class="text-center"><button class="btn btn-secundario" data-bs-toggle="modal" data-bs-target="#nuevoProductoModal"><i class="bi bi-pencil"></i></button></td>
+                        <td class="text-center"><button class="btn btn-danger"><i class="bi bi-trash3"></i></button></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </main>
 
-    <div class="modal fade" id="nuevoProductoModal" tabindex="-1" aria-labelledby="nuevoProductoModalLabel" aria-hidden="true">
+    <div class="modal fade" id="nuevoProductoModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="nuevoProductoModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
             <div class="modal-header">
                 <h1 class="modal-title fs-5" id="nuevoProductoModalLabel">Nuevo Producto</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button class="btn btn-danger" data-bs-dismiss="modal" aria-label="Close"><i class="bi bi-x-lg text-light fw-bold"></i></button>
             </div>
             <div class="modal-body">
                 <form action="#" id="formAddProducto" method="post">
@@ -84,19 +103,26 @@ session_start();
                         </div>
                         <div class="mb-3">
                             <label class="form-label" name="videoProducto">Video de producto</label>
-                            <input type="file" class="form-control" id="videoProducto" accept=".mp4">
+                            <label for="videoProducto" class="preview-imagen-producto preview-video-producto">
+                                <i class="bi bi-camera-video fs-4" id="iconoPreviewVideo"></i>
+                                <video src="" id="previewVideo" class="w-100 h-100" style="display:none;" autoplay muted controls loop></video>
+                            </label>
+                            <input type="file" class="form-control d-none" id="videoProducto" accept=".mp4">
                         </div>
                         <div class="mb-1">
                             <label class="form-label">Imagenes de producto</label>
                         </div>
                         <div class="mb-2 col-4">
-                            <input type="file" class="form-control" id="imagenProducto1" accept=".jpg,.png,jpeg">
+                            <label for="imagenProducto1" class="preview-imagen-producto" id="previewImagen1"><i class="bi bi-camera fs-4" id="iconoPreviewImagen1"></i></label>
+                            <input type="file" class="form-control d-none" id="imagenProducto1" accept=".jpg,.png,jpeg">
                         </div>
                         <div class="mb-2 col-4">
-                            <input type="file" class="form-control" id="imagenProducto2" accept=".jpg,.png,jpeg">
+                            <label for="imagenProducto2" class="preview-imagen-producto" id="previewImagen2"><i class="bi bi-camera fs-4" id="iconoPreviewImagen2"></i></label>
+                            <input type="file" class="form-control d-none" id="imagenProducto2" accept=".jpg,.png,jpeg">
                         </div>
                         <div class="mb-3 col-4">
-                            <input type="file" class="form-control" id="imagenProducto3" accept=".jpg,.png,jpeg">
+                            <label for="imagenProducto3" class="preview-imagen-producto" id="previewImagen3"><i class="bi bi-camera fs-4" id="iconoPreviewImagen3"></i></label>
+                            <input type="file" class="form-control d-none" id="imagenProducto3" accept=".jpg,.png,jpeg">
                         </div>
                         <div class="mb-4">
                             <label class="form-label" name="descripcionProducto">Descripcion</label>

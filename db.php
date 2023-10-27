@@ -26,10 +26,10 @@
       
     // }
 
-$serverDB = "127.0.0.1:3306";
+$serverDB = "localhost:3307";
 $userDB = "root";
-$passwordDB = "root";
-$databaseDB = "basemultimedia";
+$passwordDB = "Phineas2011!";
+$databaseDB = "bdm";
 
     $con = mysqli_connect($serverDB, $userDB, $passwordDB, $databaseDB);
 

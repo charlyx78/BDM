@@ -144,8 +144,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="modalLoginLabel">Inicia sesion</h5>
-                    <button class="btn"><i class="bi bi-x-circle-fill text-danger" data-bs-dismiss="modal" aria-label="Close"></i></button>
-                    </button>
+                    <button class="btn btn-danger" data-bs-dismiss="modal" aria-label="Close"><i class="bi bi-x-lg text-light fw-bold"></i></button>
                 </div>
                 <div class="modal-body">
                     <!-- Form Login -->
@@ -174,8 +173,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="modalRegistroLabel">Crea una cuenta</h5>
-                    <button class="btn"><i class="bi bi-x-circle-fill text-danger" data-bs-dismiss="modal" aria-label="Close"></i></button>
-                    </button>
+                    <button class="btn btn-danger" data-bs-dismiss="modal" aria-label="Close"><i class="bi bi-x-lg text-light fw-bold"></i></button>
                 </div>
                 <div class="modal-body">
                     <!-- Form Registro -->
