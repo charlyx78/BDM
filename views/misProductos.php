@@ -54,7 +54,7 @@ session_start();
     </main>
 
     <div class="modal fade" id="nuevoProductoModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="nuevoProductoModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog producto-modal">
             <div class="modal-content">
             <div class="modal-header">
                 <h1 class="modal-title fs-5" id="nuevoProductoModalLabel">Nuevo Producto</h1>

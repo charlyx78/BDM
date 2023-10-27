@@ -1650,7 +1650,7 @@ ul {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 140px;
+  height: 220px;
   border: 1px dotted #cacaca;
   background-position: center center;
   background-repeat: no-repeat;
@@ -1663,6 +1663,10 @@ ul {
 
 .preview-video-producto {
   height: 300px;
+}
+
+.producto-modal {
+  min-width: 60% !important;
 }
 
 .contenedor-login {
