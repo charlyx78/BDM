@@ -1669,6 +1669,10 @@ ul {
   min-width: 60% !important;
 }
 
+.swal2-container {
+  z-index: 100000;
+}
+
 .contenedor-login {
   display: grid;
   grid-template-columns: 4fr 3fr;

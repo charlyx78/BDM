@@ -5,19 +5,19 @@
     //     exit;
     // }
     // require_once "./models/User.php";
-    // require_once "db.php";
+    require_once "db.php";
     // $idUser = $_SESSION["AUTH"];
-    // $mysqli = db::connect();
+    $mysqli = db::connect();
     // $user = User::findUserById($mysqli,(int)$idUser);
     session_start();
-    include("db.php");
+    // include("db.php");
     if(isset($_POST["submitLogin"]))
     {
         $correo = $_POST['usernameL'];
         $contra = $_POST['passwordL'];
 
         $query= "select * from Usuarios where UsuCorreo = '$correo' and UsuContra = '$contra'";
-        $result= mysqli_query($con, $query);
+        $result= mysqli_query($mysqli, $query);
 
         if($result)
         {
@@ -31,7 +31,7 @@
 
                 $PK_RolUsu = $row['UsuFK_IdRol'];
                 $query2= "select RolDescripcion from RolUsuario where PK_IdRol = '$PK_RolUsu'";
-                $result2= mysqli_query($con, $query2);
+                $result2= mysqli_query($mysqli, $query2);
                 $row2 = $result2->fetch_assoc();
                 $_SESSION['UsuRol'] = $row2['RolDescripcion'];
 
@@ -41,7 +41,7 @@
                 $_SESSION['UsuFKSexo'] = $row['UsuFK_IdSexo'];
                 $PK_Sexo = $row['UsuFK_IdSexo'];
                 $query2= "select SexoDescripcion from Sexo where PK_IdSexo = '$PK_Sexo'";
-                $result2= mysqli_query($con, $query2);
+                $result2= mysqli_query($mysqli, $query2);
                 $row2 = $result2->fetch_assoc();
                 $_SESSION['UsuSexo'] = $row2['SexoDescripcion'];
 

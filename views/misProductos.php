@@ -1,5 +1,51 @@
 <?php
-session_start();
+    session_start();
+    include("../db.php");
+    if(isset($_POST["submitProducto"])) {
+        try {
+            $idProducto = 0;
+            $nombreProducto = $_POST['nombreProducto'];
+            $categoriaProducto = $_POST['categoriaProducto'];
+            $tipoVentaProducto = $_POST['tipoVentaProducto'];
+            $precioProducto = $_POST['precioProducto'];
+            $stockProducto = $_POST['stockProducto'];
+            $videoProducto = file_get_contents($_FILES['videoProducto']['tmp_name']);
+            $imagenProducto1 = file_get_contents($_FILES['imagenProducto1']['tmp_name']);
+            $imagenProducto2 = file_get_contents($_FILES['imagenProducto2']['tmp_name']);
+            $imagenProducto3 = file_get_contents($_FILES['imagenProducto3']['tmp_name']);
+            $descripcionProducto = $_POST['descripcionProducto'];
+            $vendedor = $_SESSION['UsuID'];
+            $valoracionProducto = 0;
+            $activo = 1;
+            $opcion = "I";
+
+            $statement = $con->prepare("CALL SP_GestionProductos (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+            $statement->bind_param(
+                "iissssssiididis",
+                $idProducto,
+                $vendedor,
+                $nombreProducto,
+                $descripcionProducto,
+                $imagenProducto1,
+                $imagenProducto2,
+                $imagenProducto3,
+                $videoProducto,
+                $categoriaProducto,
+                $tipoVentaProducto,
+                $precioProducto,
+                $stockProducto,
+                $valoracionProducto,
+                $activo,
+                $opcion
+            );
+            $statement->execute();
+            $statement->close();
+        }
+        catch(Exception $exc) {
+            echo $exc;
+        }
+    }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -61,7 +107,7 @@ session_start();
                 <button class="btn btn-danger" data-bs-dismiss="modal" aria-label="Close"><i class="bi bi-x-lg text-light fw-bold"></i></button>
             </div>
             <div class="modal-body">
-                <form action="#" id="formAddProducto" method="post">
+                <form action="" id="formAddProducto" method="POST" enctype="multipart/form-data">
                     <div class="row">
                         <div class="mb-2">
                             <label for="nombreProducto" class="form-label">Nombre</label>
@@ -71,16 +117,16 @@ session_start();
                             <label for="categoriaProducto" class="form-label">Categoria</label>
                             <select name="categoriaProducto" id="categoriaProducto" class="form-select">
                                 <option value="">Selecciona una categoria...</option>
-                                <option value="Tecnologia">Tecnologia</option>
-                                <option value="Belleza">Belleza</option>
+                                <option value="1">Tecnologia</option>
+                                <option value="2">Belleza</option>
                             </select>                        
                         </div>
                         <div class="mb-2 col-6">
                             <label for="tipoVentaProducto" class="form-label">Tipo de venta</label>
                             <select name="tipoVentaProducto" id="tipoVentaProducto" class="form-select">
                                 <option value="">Selecciona una opcion...</option>
-                                <option value="Precio fijo">Precio fijo</option>
-                                <option value="Cotizable">Cotizable</option>
+                                <option value="1">Precio fijo</option>
+                                <option value="2">Cotizable</option>
                             </select>  
                         </div>
                         <div class="mb-2 col-6">
@@ -102,34 +148,34 @@ session_start();
                             </div>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label" name="videoProducto">Video de producto</label>
+                            <label class="form-label" for="videoProducto">Video de producto</label>
                             <label for="videoProducto" class="preview-imagen-producto preview-video-producto">
                                 <i class="bi bi-camera-video fs-4" id="iconoPreviewVideo"></i>
                                 <video src="" id="previewVideo" class="w-100 h-100" style="display:none;" autoplay muted controls loop></video>
                             </label>
-                            <input type="file" class="form-control d-none" id="videoProducto" accept=".mp4">
+                            <input type="file" class="form-control d-none" name="videoProducto" id="videoProducto" accept=".mp4">
                         </div>
                         <div class="mb-1">
                             <label class="form-label">Imagenes de producto</label>
                         </div>
                         <div class="mb-2 col-4">
                             <label for="imagenProducto1" class="preview-imagen-producto" id="previewImagen1"><i class="bi bi-camera fs-4" id="iconoPreviewImagen1"></i></label>
-                            <input type="file" class="form-control d-none" id="imagenProducto1" accept=".jpg,.png,jpeg">
+                            <input type="file" class="form-control d-none" id="imagenProducto1" name="imagenProducto1" accept=".jpg,.png,jpeg">
                         </div>
                         <div class="mb-2 col-4">
                             <label for="imagenProducto2" class="preview-imagen-producto" id="previewImagen2"><i class="bi bi-camera fs-4" id="iconoPreviewImagen2"></i></label>
-                            <input type="file" class="form-control d-none" id="imagenProducto2" accept=".jpg,.png,jpeg">
+                            <input type="file" class="form-control d-none" id="imagenProducto2" name="imagenProducto2" accept=".jpg,.png,jpeg">
                         </div>
                         <div class="mb-3 col-4">
                             <label for="imagenProducto3" class="preview-imagen-producto" id="previewImagen3"><i class="bi bi-camera fs-4" id="iconoPreviewImagen3"></i></label>
-                            <input type="file" class="form-control d-none" id="imagenProducto3" accept=".jpg,.png,jpeg">
+                            <input type="file" class="form-control d-none" id="imagenProducto3" name="imagenProducto3" accept=".jpg,.png,jpeg">
                         </div>
                         <div class="mb-4">
                             <label class="form-label" name="descripcionProducto">Descripcion</label>
                             <textarea class="form-control" name="descripcionProducto" id="descripcionProducto" rows="5"></textarea>
                         </div>
                         <div class="mb-2">
-                            <button type="submit" class="btn btn-primario w-100">Guardar</button>
+                            <button type="submit" id="submitProducto" name="submitProducto" class="btn btn-primario w-100">Guardar</button>
                         </div>
                     </div>
                 </form>
