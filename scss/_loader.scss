@@ -1,0 +1,14 @@
+.contenedor-loader {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-blanco;
+    .spinner-grow {
+        width: 3em;
+        height: 3em;
+        color: $color-primario;
+    }
+}

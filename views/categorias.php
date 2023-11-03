@@ -9,6 +9,11 @@
 <body>
     <?php include_once "navbar.php" ?>
 
+    <div class="contenedor-loader" id="loader">
+        <div class="spinner-grow" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
     <main class="contenedor-pagina">
         <div class="contenedor-titulo-pagina container-fluid">
             <div class="contenido-titulo-pagina">

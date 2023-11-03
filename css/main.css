@@ -1673,6 +1673,21 @@ ul {
   z-index: 100000;
 }
 
+.contenedor-loader {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f5f5;
+}
+.contenedor-loader .spinner-grow {
+  width: 3em;
+  height: 3em;
+  color: #392F7F;
+}
+
 .contenedor-login {
   display: grid;
   grid-template-columns: 4fr 3fr;

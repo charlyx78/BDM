@@ -39,13 +39,15 @@ $(document).ready(async () => {
                         'Exito!',
                         'Categoria agregada correctamente',
                         'success'
-                    ).then(() => {
-                        //Vuelve a imprimir todas las categorias
-                        getCategorias();
+                    ).then(async() => {
                         //Cierra el modal y se resetean los campos del formulario de este
                         $('#nuevaCategoriaModal').modal('hide')
                         nombreCategoria.val("");
                         descripcionCategoria.val("");
+                        //Vuelve a imprimir todas las categorias
+                        $('#loader').show();
+                        await getCategorias();
+                        $('#loader').hide();
                     });
                 })
                 .catch(error => {
@@ -72,13 +74,15 @@ $(document).ready(async () => {
                         'Exito!',
                         'Categoria actualizada correctamente',
                         'success'
-                    ).then(() => {
+                    ).then(async() => {
                         //Vuelve a imprimir todas las categorias
-                        getCategorias();
                         //Cierra el modal y se resetean los campos del formulario de este
                         $('#nuevaCategoriaModal').modal('hide')
                         nombreCategoria.val("");
                         descripcionCategoria.val("");
+                        $('#loader').show();
+                        await getCategorias();
+                        $('#loader').hide();
                     });
                 })
                 .catch(error => {
@@ -102,7 +106,8 @@ $(document).ready(async () => {
     });
 
     //Se imprimen todas las categorias al iniciar el HTML
-    getCategorias();
+    await getCategorias();
+    $('#loader').hide();
 
 })
 
@@ -177,9 +182,11 @@ async function getCategorias() {
                         'Categoria eliminada correctamente',
                         'success'
                     )
-                    .then(() => {
+                    .then(async() => {
                         //Vuelve a imprimir todas las categorias
-                        getCategorias();
+                        $('#loader').show();
+                        await getCategorias();
+                        $('#loader').hide();
                     })
                 })
                 .catch(error => {
