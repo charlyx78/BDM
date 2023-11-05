@@ -117,8 +117,6 @@
                             <label for="categoriaProducto" class="form-label">Categoria</label>
                             <select name="categoriaProducto" id="categoriaProducto" class="form-select">
                                 <option value="">Selecciona una categoria...</option>
-                                <option value="1">Tecnologia</option>
-                                <option value="2">Belleza</option>
                             </select>                        
                         </div>
                         <div class="mb-2 col-6">
@@ -183,6 +181,16 @@
             </div>
         </div>
     </div>
+
+    <!-- Jquery -->
+    <script
+    src="https://code.jquery.com/jquery-3.7.1.js"
+    integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous">
+    </script>
+    <!-- Sweet alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../js/misProductos.js"></script>
+
 </body>
 </html>

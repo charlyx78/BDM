@@ -35,48 +35,69 @@
 //         alert("Producto Agregado");
 //     }
 // })
+getCategorias();
+previewInputs();
 
-const inputImagenProducto1 = document.getElementById('imagenProducto1');
-const previewImagen1 = document.getElementById('previewImagen1');
-const iconoPreviewImagen1 = document.getElementById('iconoPreviewImagen1');
-inputImagenProducto1.addEventListener('change', () => {
-    const [file] = inputImagenProducto1.files
-    if (file) {
-        previewImagen1.style.backgroundImage = 'url(' + URL.createObjectURL(file) + ')';
-        iconoPreviewImagen1.style.display = 'none';
-    }
-}) 
+async function getCategorias() {
+    //Se limpia la tabla
+    $('#categoriaProducto').html('');
+    $('#categoriaProducto').append(`
+    <option value="">--Selecciona una categoria</option>`);  
+    //Se guarda en una variable la respuesta del controlador readCategorias
+    let response = await fetch('../controllers/readCategoria.php');
+    //Espera a obtener la respuesta y la convierte la respuesta en un JSON
+    let responseJSON = await response.json();
+    //Itera cada dato de este para imprimirlo en la tabla del HTML
+    await responseJSON.forEach(cat => {
+        $('#categoriaProducto').append(`
+        <option value="${cat.PK_IdCategoria}">${cat.CatNombre}</option>`);  
+    });
+}
 
-const inputImagenProducto2 = document.getElementById('imagenProducto2');
-const previewImagen2 = document.getElementById('previewImagen2');
-const iconoPreviewImagen2 = document.getElementById('iconoPreviewImagen2');
-inputImagenProducto2.addEventListener('change', () => {
-    const [file] = inputImagenProducto2.files
-    if (file) {
-        previewImagen2.style.backgroundImage = 'url(' + URL.createObjectURL(file) + ')';
-        iconoPreviewImagen2.style.display = 'none';
-    }
-}) 
+function previewInputs() {
+    const inputImagenProducto1 = document.getElementById('imagenProducto1');
+    const previewImagen1 = document.getElementById('previewImagen1');
+    const iconoPreviewImagen1 = document.getElementById('iconoPreviewImagen1');
+    inputImagenProducto1.addEventListener('change', () => {
+        const [file] = inputImagenProducto1.files
+        if (file) {
+            previewImagen1.style.backgroundImage = 'url(' + URL.createObjectURL(file) + ')';
+            iconoPreviewImagen1.style.display = 'none';
+        }
+    }) 
+    
+    const inputImagenProducto2 = document.getElementById('imagenProducto2');
+    const previewImagen2 = document.getElementById('previewImagen2');
+    const iconoPreviewImagen2 = document.getElementById('iconoPreviewImagen2');
+    inputImagenProducto2.addEventListener('change', () => {
+        const [file] = inputImagenProducto2.files
+        if (file) {
+            previewImagen2.style.backgroundImage = 'url(' + URL.createObjectURL(file) + ')';
+            iconoPreviewImagen2.style.display = 'none';
+        }
+    }) 
+    
+    const inputImagenProducto3 = document.getElementById('imagenProducto3');
+    const previewImagen3 = document.getElementById('previewImagen3');
+    const iconoPreviewImagen3 = document.getElementById('iconoPreviewImagen3');
+    inputImagenProducto3.addEventListener('change', () => {
+        const [file] = inputImagenProducto3.files
+        if (file) {
+            previewImagen3.style.backgroundImage = 'url(' + URL.createObjectURL(file) + ')';
+            iconoPreviewImagen3.style.display = 'none';
+        }
+    }) 
+    
+    const inputVideoProducto = document.getElementById('videoProducto');
+    const previewVideo = document.getElementById('previewVideo');
+    const iconoPreviewVideo = document.getElementById('iconoPreviewVideo');
+    inputVideoProducto.addEventListener('change', () => {
+        const [file] = inputVideoProducto.files;
+        if (file) {
+            previewVideo.style.display = 'block';
+            previewVideo.src = URL.createObjectURL(file);
+            iconoPreviewVideo.style.display = 'none';
+        }
+    }) 
+}
 
-const inputImagenProducto3 = document.getElementById('imagenProducto3');
-const previewImagen3 = document.getElementById('previewImagen3');
-const iconoPreviewImagen3 = document.getElementById('iconoPreviewImagen3');
-inputImagenProducto3.addEventListener('change', () => {
-    const [file] = inputImagenProducto3.files
-    if (file) {
-        previewImagen3.style.backgroundImage = 'url(' + URL.createObjectURL(file) + ')';
-        iconoPreviewImagen3.style.display = 'none';
-    }
-}) 
-
-const inputVideoProducto = document.getElementById('videoProducto');
-const previewVideo = document.getElementById('previewVideo');
-const iconoPreviewVideo = document.getElementById('iconoPreviewVideo');
-inputVideoProducto.addEventListener('change', () => {
-    const [file] = inputVideoProducto.files;
-    if (file) {
-        previewVideo.style.display = 'block';
-        previewVideo.src = URL.createObjectURL(file);
-        iconoPreviewVideo.style.display = 'none';
-    }
-}) 
