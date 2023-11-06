@@ -122,12 +122,40 @@ async function getProductos(paginaActual, categoriasPorPagina) {
             <td>${pro.ProFK_IdTipoP = 1 ? 'Precio fijo' : 'Cotizable'}</td>
             <td>${pro.ProFechaRegistro}</td>
             <td><span class="badge rounded-pill ${pro.ProFK_IdActivo = 2 ? 'bg-success': 'bg-error'} fs-6">${pro.ProFK_IdActivo = 2 ? 'Activo': 'Inactivo'}</span></td>
-            <td class="text-center"><button class="btn btn-secundario btn-editar-categoria" data-idcat="${pro.PK_IdProducto}" data-bs-toggle="modal" data-bs-target="#nuevaCategoriaModal"><i class="bi bi-pencil"></i></button></td>
-            <td class="text-center"><button class="btn btn-danger btn-eliminar-categoria" data-idcat="${pro.PK_IdProducto}"><i class="bi bi-trash3"></i></button></td>
+            <td class="text-center"><button class="btn btn-secundario btn-editar-producto" data-idpro="${pro.PK_IdProducto}" data-bs-toggle="modal" data-bs-target="#nuevoProductoModal"><i class="bi bi-pencil"></i></button></td>
+            <td class="text-center"><button class="btn btn-danger btn-eliminar-producto" data-idpro="${pro.PK_IdProducto}"><i class="bi bi-trash3"></i></button></td>
         </tr>`);  
     });
 
+    const totalCategorias = responseJSON.length;
+    const totalPaginas = Math.ceil(totalCategorias/categoriasPorPagina);
+
+    await imprimirPaginacion(totalPaginas);
+    await eventoPaginacion();
+
     $('#loader').hide();
+}
+
+async function imprimirPaginacion(totalPaginas) {
+    $('.pagination').html('');
+
+    for(let i=0; i < totalPaginas; i++) {
+        $('.pagination').append(`<li class="page-item"><a class="page-link" href="#" data-pagina="${i+1}">${i+1}</a></li>`);
+    }
+}
+async function eventoPaginacion() {
+    $('.pagination').on('click', 'a.page-link', async function() {
+        var pagina = $(this).data('pagina');
+
+        // Evita llamar a getCategorias nuevamente si ya se está ejecutando
+        if (!$(this).hasClass('disabled')) {
+            // Deshabilita los enlaces de paginación mientras se carga la nueva página
+            $('.pagination a.page-link').addClass('disabled');
+            await getProductos(pagina, 7);
+            // Habilita los enlaces de paginación después de completar la carga
+            $('.pagination a.page-link').removeClass('disabled');
+        }    
+    })
 }
 
 async function getCategorias() {
