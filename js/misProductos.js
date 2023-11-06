@@ -1,22 +1,24 @@
 $(document).ready(async () => {
+
+    isEditando = false;
+    const nombreProducto = $("#nombreProducto");
+    const categoriaProducto = $("#categoriaProducto");
+    const tipoVentaProducto = $("#tipoVentaProducto");
+    const precioProducto = $("#precioProducto");
+    const stockProducto = $("#stockProducto");
+    const stockUnidadMedida = $("#stockUnidadMedida");
+    const descripcionProducto = $("#descripcionProducto");
+    const imagenProducto1 = $("#imagenProducto1");
+    const imagenProducto2 = $("#imagenProducto2");
+    const imagenProducto3 = $("#imagenProducto3");
+    const videoProducto = $("#videoProducto");
+
     $('#formAddProducto').on('submit', function(e) {
         e.preventDefault();
-        const nombreProducto = $("#nombreProducto");
-        const categoriaProducto = $("#categoriaProducto");
-        const tipoVentaProducto = $("#tipoVentaProducto");
-        const precioProducto = $("#precioProducto");
-        const stockProducto = $("#stockProducto");
-        const stockUnidadMedida = $("#stockUnidadMedida");
-        const descripcionProducto = $("#descripcionProducto");
-        const imagenProducto1 = $("#imagenProducto1");
-        const imagenProducto2 = $("#imagenProducto2");
-        const imagenProducto3 = $("#imagenProducto3");
-        const videoProducto = $("#videoProducto");
     
         var formData = new FormData(this);
         console.log(formData);
     
-
         if(nombreProducto.val() != "" &&
             categoriaProducto.val() != "" &&
             tipoVentaProducto.val() != "" &&
@@ -119,13 +121,94 @@ async function getProductos(paginaActual, categoriasPorPagina) {
             <td>${pro.ProNombre}</td>
             <td>$${pro.ProPrecio}</td>
             <td>${pro.ProExistencias}</td>
-            <td>${pro.ProFK_IdTipoP = 1 ? 'Precio fijo' : 'Cotizable'}</td>
+            <td>${pro.ProFK_IdTipoP === 1 ? 'Precio fijo' : 'Cotizable'}</td>
             <td>${pro.ProFechaRegistro}</td>
-            <td><span class="badge rounded-pill ${pro.ProFK_IdActivo = 2 ? 'bg-success': 'bg-error'} fs-6">${pro.ProFK_IdActivo = 2 ? 'Activo': 'Inactivo'}</span></td>
+            <td><span class="badge rounded-pill ${pro.ProFK_IdActivo === 2 ? 'bg-success' : 'bg-secondary'} fs-6">${pro.ProFK_IdActivo === 2 ? 'Activo' : 'Inactivo'}</span></td>
             <td class="text-center"><button class="btn btn-secundario btn-editar-producto" data-idpro="${pro.PK_IdProducto}" data-bs-toggle="modal" data-bs-target="#nuevoProductoModal"><i class="bi bi-pencil"></i></button></td>
             <td class="text-center"><button class="btn btn-danger btn-eliminar-producto" data-idpro="${pro.PK_IdProducto}"><i class="bi bi-trash3"></i></button></td>
         </tr>`);  
     });
+
+        //Una vez terminada la impresion de los datos de la respuesta del controlador "agregarProducto", se le asigna un evento a cada boton de editar
+        $('.btn-editar-producto').on('click', async function() {
+            isEditando = true;
+    
+            //Se obtiene el valor del atributo "data-ipro" (practicamente el id del producto seleccionado)
+            var id = $(this).data('idpro');
+    
+            //Se crea un objeto que contenga dicho id
+            var formData = {
+                idProducto: id
+            };
+    
+            //Guardamos en una variable la respuesta del controlador para encontrar una categoria por su id "findProducto"
+            // let response = await fetch('../controllers/findProducto.php', { //FALTA CREAR EL CONTROLADOR
+            //     method: 'POST',
+            //     body: JSON.stringify(formData),
+            // });
+    
+            //Convierte la respuesta del controlador en un JSON 
+            // let responseJSON = await response.json();
+            
+            //Asignamos el valor del span que se encuentra en el header del modal al de el id del producto que obtuvimos previamente con "findProducto"
+            // $('#idpro').text(responseJSON.PK_IdProducto);
+    
+            //Asignamos a los campos del formulario los valores del producto seleccionado
+
+        })
+    
+        //Se le asigna un evento a cada boton de editar
+        $('.btn-eliminar-producto').on('click', async function() {
+    
+            //Se obtiene el valor del atributo "data-idpro" (practicamente el id del producto seleccionado)
+            var id = $(this).data('idpro');
+    
+            //Se crea un objeto que contenga dicho id
+            var formData = {
+                idProducto: id
+            };
+    
+            //Alerta de advertencia y confirmacion para eliminar el producto seleccionada
+            Swal.fire({
+                title: 'Advertencia!',
+                text: '¿Estás segur@ de eliminar este producto?',
+                icon: 'warning',
+                showCancelButton: true
+            })
+            .then((result) => {
+                if (result.isConfirmed) {
+                    //Se ejecuta el controlador deleteProducto FALTA CREARLO
+                    // fetch('../controllers/deleteProducto.php', {
+                    //     method: 'POST',
+                    //     body: JSON.stringify(formData),
+                    //     headers: {
+                    //         'Content-Type': 'application/json'
+                    //     }
+                    // })
+                    // .then(() => {
+                    //     //Alerta de confirmacion
+                    //     Swal.fire(
+                    //         'Exito!',
+                    //         'Producto eliminado correctamente',
+                    //         'success'
+                    //     )
+                    //     .then(async() => {
+                    //         //Vuelve a imprimir todos los productos
+                    //         $('#loader').show();
+                    //         await getProductos(1,7);
+                    //     })
+                    // })
+                    // .catch(error => {
+                    //     //Alerta de error
+                    //     Swal.fire(
+                    //         'Error',
+                    //         error.message,
+                    //         'error'
+                    //     );
+                    // });
+                }
+            })
+        })
 
     const totalCategorias = responseJSON.length;
     const totalPaginas = Math.ceil(totalCategorias/categoriasPorPagina);

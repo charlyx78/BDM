@@ -1,52 +1,3 @@
-<?php
-    session_start();
-    include("../db.php");
-    if(isset($_POST["submitProducto"])) {
-        try {
-            $idProducto = 0;
-            $nombreProducto = $_POST['nombreProducto'];
-            $categoriaProducto = $_POST['categoriaProducto'];
-            $tipoVentaProducto = $_POST['tipoVentaProducto'];
-            $precioProducto = $_POST['precioProducto'];
-            $stockProducto = $_POST['stockProducto'];
-            $videoProducto = file_get_contents($_FILES['videoProducto']['tmp_name']);
-            $imagenProducto1 = file_get_contents($_FILES['imagenProducto1']['tmp_name']);
-            $imagenProducto2 = file_get_contents($_FILES['imagenProducto2']['tmp_name']);
-            $imagenProducto3 = file_get_contents($_FILES['imagenProducto3']['tmp_name']);
-            $descripcionProducto = $_POST['descripcionProducto'];
-            $vendedor = $_SESSION['UsuID'];
-            $valoracionProducto = 0;
-            $activo = 1;
-            $opcion = "I";
-
-            $statement = $con->prepare("CALL SP_GestionProductos (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
-            $statement->bind_param(
-                "iissssssiididis",
-                $idProducto,
-                $vendedor,
-                $nombreProducto,
-                $descripcionProducto,
-                $imagenProducto1,
-                $imagenProducto2,
-                $imagenProducto3,
-                $videoProducto,
-                $categoriaProducto,
-                $tipoVentaProducto,
-                $precioProducto,
-                $stockProducto,
-                $valoracionProducto,
-                $activo,
-                $opcion
-            );
-            $statement->execute();
-            $statement->close();
-        }
-        catch(Exception $exc) {
-            echo $exc;
-        }
-    }
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -88,17 +39,7 @@
                     </tr>
                 </thead>
                 <tbody id="tablaProductos">
-                    <tr>
-                        <td>1903184</td>
-                        <td>iPhone 14 Pro</td>
-                        <td>$14999.99</td>
-                        <td>134 pzas</td>
-                        <td>Precio fijo</td>
-                        <td>27/10/2023 15:35</td>
-                        <td><span class="badge rounded-pill bg-success fs-6">En venta</span></td>
-                        <td class="text-center"><button class="btn btn-secundario" data-bs-toggle="modal" data-bs-target="#nuevoProductoModal"><i class="bi bi-pencil"></i></button></td>
-                        <td class="text-center"><button class="btn btn-danger"><i class="bi bi-trash3"></i></button></td>
-                    </tr>
+
                 </tbody>
             </table>
 
@@ -126,7 +67,7 @@
         <div class="modal-dialog producto-modal">
             <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="nuevoProductoModalLabel">Nuevo Producto</h1>
+                <h1 class="modal-title fs-5" id="nuevoProductoModalLabel">Nuevo Producto <span class="text-secondary fw-light ms-3" id="idpro"></span></h1>
                 <button class="btn btn-danger" data-bs-dismiss="modal" aria-label="Close"><i class="bi bi-x-lg text-light fw-bold"></i></button>
             </div>
             <div class="modal-body">
