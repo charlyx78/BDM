@@ -58,8 +58,13 @@
 <body>
     <?php include_once "navbar.php" ?>
 
-    <main class="contenedor-pagina">
+    <div class="contenedor-loader" id="loader">
+        <div class="spinner-grow" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
 
+    <main class="contenedor-pagina">
         <div class="contenedor-titulo-pagina container-fluid">
             <div class="contenido-titulo-pagina">
                 <h2 class="titulo-pagina mb-0">Mis productos</h2>
@@ -82,7 +87,7 @@
                         <th></th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="tablaProductos">
                     <tr>
                         <td>1903184</td>
                         <td>iPhone 14 Pro</td>
@@ -107,7 +112,7 @@
                 <button class="btn btn-danger" data-bs-dismiss="modal" aria-label="Close"><i class="bi bi-x-lg text-light fw-bold"></i></button>
             </div>
             <div class="modal-body">
-                <form action="" id="formAddProducto" method="POST" enctype="multipart/form-data">
+                <form id="formAddProducto" method="POST" enctype="multipart/form-data">
                     <div class="row">
                         <div class="mb-2">
                             <label for="nombreProducto" class="form-label">Nombre</label>

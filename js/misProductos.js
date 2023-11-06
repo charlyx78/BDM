@@ -1,42 +1,134 @@
-// const formAddProducto = document.getElementById("formAddProducto");
-// formAddProducto.addEventListener("submit", e=> {
-//     e.preventDefault();
+$(document).ready(async () => {
+    $('#formAddProducto').on('submit', function(e) {
+        e.preventDefault();
+        const nombreProducto = $("#nombreProducto");
+        const categoriaProducto = $("#categoriaProducto");
+        const tipoVentaProducto = $("#tipoVentaProducto");
+        const precioProducto = $("#precioProducto");
+        const stockProducto = $("#stockProducto");
+        const stockUnidadMedida = $("#stockUnidadMedida");
+        const descripcionProducto = $("#descripcionProducto");
+        const imagenProducto1 = $("#imagenProducto1");
+        const imagenProducto2 = $("#imagenProducto2");
+        const imagenProducto3 = $("#imagenProducto3");
+        const videoProducto = $("#videoProducto");
+    
+        var formData = new FormData(this);
+        console.log(formData);
+    
 
-//     const nombreProducto = document.getElementById("nombreProducto");
-//     const categoriaProducto = document.getElementById("categoriaProducto").value;
-//     const tipoVentaProducto = document.getElementById("tipoVentaProducto").value;
-//     const precioProducto = document.getElementById("precioProducto");
-//     const stockProducto = document.getElementById("stockProducto");
-//     const stockUnidadMedida = document.getElementById("stockUnidadMedida").value;
-//     const descripcionProducto = document.getElementById("descripcionProducto");
+        if(nombreProducto.val() != "" &&
+            categoriaProducto.val() != "" &&
+            tipoVentaProducto.val() != "" &&
+            precioProducto.val() != "" &&
+            stockProducto.val() != "" &&
+            descripcionProducto != "" &&
+            imagenProducto1.val() != "" &&
+            imagenProducto2.val() != "" &&
+            imagenProducto3.val() != "" &&
+            videoProducto.val() != "") {
+            fetch('../controllers/addProducto.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(() => {
+                //Alerta de confirmacion
+                Swal.fire(
+                    'Exito!',
+                    'Producto agregado correctamente',
+                    'success'
+                ).then(async() => {
+                    //Cierra el modal y se resetean los campos del formulario de este
+                    $('#nuevoProductoModal').modal('hide')
+                    nombreProducto.val("");
+                    categoriaProducto.val("");
+                    tipoVentaProducto.val("");
+                    precioProducto.val("");
+                    stockProducto.val("");
+                    descripcionProducto.val("");
+                    imagenProducto1.val("");
+                    imagenProducto2.val("");
+                    imagenProducto3.val("");
+                    videoProducto.val("");
+        
+                    previewVideo.style.display = 'none';
+                    previewVideo.style.backgroundImage = '';
+                    iconoPreviewVideo.style.display = 'block';
+        
+                    previewImagen1.style.backgroundImage = '';
+                    iconoPreviewImagen1.style.display = 'block';
+        
+                    previewImagen2.style.backgroundImage = '';
+                    iconoPreviewImagen2.style.display = 'block';
+        
+                    previewImagen3.style.backgroundImage = '';
+                    iconoPreviewImagen3.style.display = 'block';
+        
+                    //Vuelve a imprimir todos los productos
+                    $('#loader').show();
+                    await getProductos(1,7);
+                });
+            })
+            .catch(error => {
+                //Alerta de error
+                Swal.fire(
+                    'Error',
+                    error.message,
+                    'error'
+                );
+            });   
+        } 
+        else {
+            Swal.fire(
+                'Advertencia',
+                'Llena todos los campos para continuar',
+                'warning'
+            );
+        }
+    })
+    //Se imprimen todos los productos al iniciar el HTML
+    await getProductos(1,7);
+})
 
-//     if(nombreProducto.value.length <= 0){
-//         alert("Nombre de Producto vacio");
-//     }
-//     else if(categoriaProducto == ""){
-//         alert("Categoria de Producto vacia");
-//     }
-//     else if(tipoVentaProducto == ""){
-//         alert("Tipo de Venta de Producto vacio");
-//     }
-//     else if(precioProducto.value.length <= 0){
-//         alert("Precio de Producto vacio");
-//     }
-//     else if(stockProducto.value.length <= 0){
-//         alert("Cantidad de Stock de Producto vacio");
-//     }
-//     else if(stockUnidadMedida == ""){
-//         alert("Unidad de Stock de Producto vacio");
-//     }
-//     else if(descripcionProducto.value.length <= 0){
-//         alert("Descripcion de Producto vacio");
-//     }
-//     else {
-//         alert("Producto Agregado");
-//     }
-// })
+
+
 getCategorias();
 previewInputs();
+
+async function getProductos(paginaActual, categoriasPorPagina) {
+
+    const inicio = (paginaActual - 1) * categoriasPorPagina;
+    const fin = inicio + categoriasPorPagina;
+
+    //Se limpia la tabla
+    $('#tablaProductos').html('');
+
+    //Se guarda en una variable la respuesta del controlador readCategorias
+    let response = await fetch('../controllers/readProducto.php');
+
+    //Espera a obtener la respuesta y la convierte la respuesta en un JSON
+    let responseJSON = await response.json();
+
+    const productosAMostrar = responseJSON.slice(inicio, fin);
+
+    //Itera cada dato de este para imprimirlo en la tabla del HTML
+    await productosAMostrar.forEach(pro => {
+        $('#tablaProductos').append(`
+        <tr>
+            <td>${pro.PK_IdProducto}</td>
+            <td>${pro.ProNombre}</td>
+            <td>$${pro.ProPrecio}</td>
+            <td>${pro.ProExistencias}</td>
+            <td>${pro.ProFK_IdTipoP = 1 ? 'Precio fijo' : 'Cotizable'}</td>
+            <td>${pro.ProFechaRegistro}</td>
+            <td><span class="badge rounded-pill ${pro.ProFK_IdActivo = 2 ? 'bg-success': 'bg-error'} fs-6">${pro.ProFK_IdActivo = 2 ? 'Activo': 'Inactivo'}</span></td>
+            <td class="text-center"><button class="btn btn-secundario btn-editar-categoria" data-idcat="${pro.PK_IdProducto}" data-bs-toggle="modal" data-bs-target="#nuevaCategoriaModal"><i class="bi bi-pencil"></i></button></td>
+            <td class="text-center"><button class="btn btn-danger btn-eliminar-categoria" data-idcat="${pro.PK_IdProducto}"><i class="bi bi-trash3"></i></button></td>
+        </tr>`);  
+    });
+
+    $('#loader').hide();
+}
 
 async function getCategorias() {
     //Se limpia la tabla
