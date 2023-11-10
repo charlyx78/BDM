@@ -235,10 +235,10 @@ async function getProductos(paginaActual, categoriasPorPagina) {
             precioProducto.val(responseJSON.ProPrecio);
             stockProducto.val(responseJSON.ProExistencias);
             descripcionProducto.val(responseJSON.ProDescripcion);
-            //imagenProducto1.val(responseJSON.ProIma1);
-            //imagenProducto2.val(responseJSON.ProIma2);
-            //imagenProducto3.val(responseJSON.ProIma3);
-            //videoProducto.val(responseJSON.ProVideo);
+            imagenProducto1.val(responseJSON.ProIma1);
+            imagenProducto2.val(responseJSON.ProIma2);
+            imagenProducto3.val(responseJSON.ProIma3);
+            videoProducto.val(responseJSON.ProVideo);
         })
     
         //Se le asigna un evento a cada boton de editar
@@ -262,34 +262,34 @@ async function getProductos(paginaActual, categoriasPorPagina) {
             .then((result) => {
                 if (result.isConfirmed) {
                     //Se ejecuta el controlador deleteProducto FALTA CREARLO
-                    // fetch('../controllers/deleteProducto.php', {
-                    //     method: 'POST',
-                    //     body: JSON.stringify(formData),
-                    //     headers: {
-                    //         'Content-Type': 'application/json'
-                    //     }
-                    // })
-                    // .then(() => {
-                    //     //Alerta de confirmacion
-                    //     Swal.fire(
-                    //         'Exito!',
-                    //         'Producto eliminado correctamente',
-                    //         'success'
-                    //     )
-                    //     .then(async() => {
-                    //         //Vuelve a imprimir todos los productos
-                    //         $('#loader').show();
-                    //         await getProductos(1,7);
-                    //     })
-                    // })
-                    // .catch(error => {
-                    //     //Alerta de error
-                    //     Swal.fire(
-                    //         'Error',
-                    //         error.message,
-                    //         'error'
-                    //     );
-                    // });
+                     fetch('../controllers/deleteProducto.php', {
+                         method: 'POST',
+                         body: JSON.stringify(formData),
+                         headers: {
+                             'Content-Type': 'application/json'
+                         }
+                     })
+                     .then(() => {
+                         //Alerta de confirmacion
+                         Swal.fire(
+                             'Exito!',
+                             'Producto eliminado correctamente',
+                             'success'
+                         )
+                         .then(async() => {
+                             //Vuelve a imprimir todos los productos
+                             $('#loader').show();
+                             await getProductos(1,7);
+                         })
+                     })
+                     .catch(error => {
+                         //Alerta de error
+                         Swal.fire(
+                             'Error',
+                             error.message,
+                             'error'
+                         );
+                     });
                 }
             })
         })
