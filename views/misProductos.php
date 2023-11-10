@@ -23,7 +23,7 @@ session_start();
         <div class="contenedor-titulo-pagina container-fluid">
             <div class="contenido-titulo-pagina">
                 <h2 class="titulo-pagina mb-0">Mis productos</h2>
-                <button class="btn btn-primario" data-bs-toggle="modal" data-bs-target="#nuevoProductoModal">Nuevo producto</button>
+                <button class="btn btn-primario" data-bs-toggle="modal" id="btnAbrirModal" data-bs-target="#nuevoProductoModal">Nuevo producto</button>
             </div>
         </div>
 

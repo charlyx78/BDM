@@ -12,6 +12,22 @@ $(document).ready(async () => {
     const imagenProducto2 = $("#imagenProducto2");
     const imagenProducto3 = $("#imagenProducto3");
     const videoProducto = $("#videoProducto");
+    
+    //Al abrir el modal desde el boton de nueva categoria se resetean los campos del formulario y se cambia la variable isEditando a false 
+    $('#btnAbrirModal').click(() => {
+        isEditando = false;
+        $('#idpro').text('');
+        nombreProducto.val('');
+        categoriaProducto.val('');
+        tipoVentaProducto.val('');
+        precioProducto.val('');
+        stockProducto.val('');
+        descripcionProducto.val('');
+        imagenProducto1.val('');
+        imagenProducto2.val('');
+        imagenProducto3.val('');
+        videoProducto.val('');
+    })
 
     $('#formAddProducto').on('submit', function(e) {
         e.preventDefault();
@@ -29,57 +45,113 @@ $(document).ready(async () => {
             imagenProducto2.val() != "" &&
             imagenProducto3.val() != "" &&
             videoProducto.val() != "") {
-            fetch('../controllers/addProducto.php', {
-                method: 'POST',
-                body: formData
-            })
-            .then((response) => {
-                console.log(response.json())
-                //Alerta de confirmacion
-                Swal.fire(
-                    'Exito!',
-                    'Producto agregado correctamente',
-                    'success'
-                ).then(async() => {
-                    //Cierra el modal y se resetean los campos del formulario de este
-                    $('#nuevoProductoModal').modal('hide')
-                    nombreProducto.val("");
-                    categoriaProducto.val("");
-                    tipoVentaProducto.val("");
-                    precioProducto.val("");
-                    stockProducto.val("");
-                    descripcionProducto.val("");
-                    imagenProducto1.val("");
-                    imagenProducto2.val("");
-                    imagenProducto3.val("");
-                    videoProducto.val("");
-        
-                    previewVideo.style.display = 'none';
-                    previewVideo.style.backgroundImage = '';
-                    iconoPreviewVideo.style.display = 'block';
-        
-                    previewImagen1.style.backgroundImage = '';
-                    iconoPreviewImagen1.style.display = 'block';
-        
-                    previewImagen2.style.backgroundImage = '';
-                    iconoPreviewImagen2.style.display = 'block';
-        
-                    previewImagen3.style.backgroundImage = '';
-                    iconoPreviewImagen3.style.display = 'block';
-        
-                    //Vuelve a imprimir todos los productos
-                    $('#loader').show();
-                    await getProductos(1,7);
+
+            if(!isEditando) {//ADD PRODUCTO
+                fetch('../controllers/addProducto.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then((response) => {
+                    console.log(response.json())
+                    //Alerta de confirmacion
+                    Swal.fire(
+                        'Exito!',
+                        'Producto agregado correctamente',
+                        'success'
+                    ).then(async() => {
+                        //Cierra el modal y se resetean los campos del formulario de este
+                        $('#nuevoProductoModal').modal('hide')
+                        nombreProducto.val("");
+                        categoriaProducto.val("");
+                        tipoVentaProducto.val("");
+                        precioProducto.val("");
+                        stockProducto.val("");
+                        descripcionProducto.val("");
+                        imagenProducto1.val("");
+                        imagenProducto2.val("");
+                        imagenProducto3.val("");
+                        videoProducto.val("");
+            
+                        previewVideo.style.display = 'none';
+                        previewVideo.style.backgroundImage = '';
+                        iconoPreviewVideo.style.display = 'block';
+            
+                        previewImagen1.style.backgroundImage = '';
+                        iconoPreviewImagen1.style.display = 'block';
+            
+                        previewImagen2.style.backgroundImage = '';
+                        iconoPreviewImagen2.style.display = 'block';
+            
+                        previewImagen3.style.backgroundImage = '';
+                        iconoPreviewImagen3.style.display = 'block';
+            
+                        //Vuelve a imprimir todos los productos
+                        $('#loader').show();
+                        await getProductos(1,7);
+                    });
+                })
+                .catch(error => {
+                    //Alerta de error
+                    Swal.fire(
+                        'Error',
+                        error.message,
+                        'error'
+                    );
                 });
-            })
-            .catch(error => {
-                //Alerta de error
-                Swal.fire(
-                    'Error',
-                    error.message,
-                    'error'
-                );
-            });   
+            }
+            else{//UPDATE PRODUCTOS
+                fetch('../controllers/updateProducto.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then((response) => {
+                    console.log(response.json())
+                    //Alerta de confirmacion
+                    Swal.fire(
+                        'Exito!',
+                        'Producto actualizado correctamente',
+                        'success'
+                    ).then(async() => {
+                        //Cierra el modal y se resetean los campos del formulario de este
+                        $('#nuevoProductoModal').modal('hide')
+                        nombreProducto.val("");
+                        categoriaProducto.val("");
+                        tipoVentaProducto.val("");
+                        precioProducto.val("");
+                        stockProducto.val("");
+                        descripcionProducto.val("");
+                        imagenProducto1.val("");
+                        imagenProducto2.val("");
+                        imagenProducto3.val("");
+                        videoProducto.val("");
+            
+                        previewVideo.style.display = 'none';
+                        previewVideo.style.backgroundImage = '';
+                        iconoPreviewVideo.style.display = 'block';
+            
+                        previewImagen1.style.backgroundImage = '';
+                        iconoPreviewImagen1.style.display = 'block';
+            
+                        previewImagen2.style.backgroundImage = '';
+                        iconoPreviewImagen2.style.display = 'block';
+            
+                        previewImagen3.style.backgroundImage = '';
+                        iconoPreviewImagen3.style.display = 'block';
+            
+                        //Vuelve a imprimir todos los productos
+                        $('#loader').show();
+                        await getProductos(1,7);
+                    });
+                })
+                .catch(error => {
+                    //Alerta de error
+                    Swal.fire(
+                        'Error',
+                        error.message,
+                        'error'
+                    );
+                });
+            }   
         } 
         else {
             Swal.fire(
@@ -143,19 +215,30 @@ async function getProductos(paginaActual, categoriasPorPagina) {
             };
     
             //Guardamos en una variable la respuesta del controlador para encontrar una categoria por su id "findProducto"
-            // let response = await fetch('../controllers/findProducto.php', { //FALTA CREAR EL CONTROLADOR
-            //     method: 'POST',
-            //     body: JSON.stringify(formData),
-            // });
+             let response = await fetch('../controllers/findProducto.php', { //FALTA CREAR EL CONTROLADOR
+                 method: 'POST',
+                 body: JSON.stringify(formData),
+             });
     
             //Convierte la respuesta del controlador en un JSON 
-            // let responseJSON = await response.json();
+             let responseJSON = await response.json();
             
             //Asignamos el valor del span que se encuentra en el header del modal al de el id del producto que obtuvimos previamente con "findProducto"
-            // $('#idpro').text(responseJSON.PK_IdProducto);
+             $('#idpro').text(responseJSON.PK_IdProducto);
     
             //Asignamos a los campos del formulario los valores del producto seleccionado
-
+            nombreCategoria.val(responseJSON.CatNombre);
+            
+            nombreProducto.val(responseJSON.ProNombre);
+            categoriaProducto.val(responseJSON.ProFK_IdCategoria);
+            tipoVentaProducto.val(responseJSON.ProFK_IdTipoP);
+            precioProducto.val(responseJSON.ProPrecio);
+            stockProducto.val(responseJSON.ProExistencias);
+            descripcionProducto.val(responseJSON.ProDescripcion);
+            //imagenProducto1.val(responseJSON.ProIma1);
+            //imagenProducto2.val(responseJSON.ProIma2);
+            //imagenProducto3.val(responseJSON.ProIma3);
+            //videoProducto.val(responseJSON.ProVideo);
         })
     
         //Se le asigna un evento a cada boton de editar

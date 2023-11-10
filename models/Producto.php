@@ -378,6 +378,47 @@
                 throw new Exception("Error en la consulta: " . $exc->getMessage());
             }
         }
+        static public function updateProducto($mysqli, $id, $nombre, $descripcion, $imagen1, $imagen2, $imagen3, $nombreImagen1, $tipoImagen1, $nombreImagen2, $tipoImagen2, $nombreImagen3, $tipoImagen3, $video, $categoria, $tipo, $precio, $existencias) {
+            try {
+                $sql = "CALL SP_GestionProductos(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+                $statement = $mysqli->prepare($sql);
+
+                //VALORACION TENGO QUE ENVIARLA
+                $usuario = $_SESSION['UsuID'];
+                $valoracion = 556;
+                $activo = 2;
+                $opcion = "U";
+
+                $statement->bind_param(
+                    "iissbbbssssssbiididis",
+                    $id,
+                    $usuario,
+                    $nombre,
+                    $descripcion,
+                    $imagen1,
+                    $imagen2,
+                    $imagen3,
+                    $nombreImagen1,
+                    $tipoImagen1,
+                    $nombreImagen2,
+                    $tipoImagen2,
+                    $nombreImagen3,
+                    $tipoImagen3,    
+                    $video,
+                    $categoria,
+                    $tipo,
+                    $precio,
+                    $existencias,
+                    $valoracion,
+                    $activo,
+                    $opcion);
+                $result = $statement->execute();
+                echo $result;
+            }
+            catch (Exception $exc) {
+                echo '<script>alert("' . $exc . '")</script>';
+            }
+        }
     }
 
 ?>
