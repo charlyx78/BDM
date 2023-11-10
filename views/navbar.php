@@ -59,7 +59,8 @@
                             // Pantallas De Administrador
                             else if($_SESSION['UsuRol'] == 'Admin') {
                                 echo
-                                '<li><a class="dropdown-item" href="categorias.php">Categorias</a></li>';
+                                '<li><a class="dropdown-item" href="categorias.php">Categorias</a></li>
+                                <li><a class="dropdown-item" href="gestionProductos.php">Gestión de productos</a></li>';
                             }
                         ?>
 
@@ -109,6 +110,9 @@
                             '<li class="nav-item">
                                 <a href="categorias.php" class="nav-link btn btn-light w-100 d-flex align-items-center" role="button">
                                     <div class="d-md-none">Categorias</div>  
+                                </a>
+                                <a href="gestionProductos.php" class="nav-link btn btn-light w-100 d-flex align-items-center" role="button">
+                                    <div class="d-md-none">Gestión de productos</div>  
                                 </a>
                             </li>';
                         }

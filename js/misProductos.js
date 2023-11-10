@@ -33,7 +33,8 @@ $(document).ready(async () => {
                 method: 'POST',
                 body: formData
             })
-            .then(() => {
+            .then((response) => {
+                console.log(response.json())
                 //Alerta de confirmacion
                 Swal.fire(
                     'Exito!',
@@ -106,7 +107,7 @@ async function getProductos(paginaActual, categoriasPorPagina) {
     $('#tablaProductos').html('');
 
     //Se guarda en una variable la respuesta del controlador readCategorias
-    let response = await fetch('../controllers/readProducto.php');
+    let response = await fetch('../controllers/readProductoUsuario.php');
 
     //Espera a obtener la respuesta y la convierte la respuesta en un JSON
     let responseJSON = await response.json();

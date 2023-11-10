@@ -189,7 +189,7 @@ session_start();
                 <h3 class="titulo-seccion-productos mb-4">Lo mas <span class="color-secundario">nuevo</span> </h3>
                 
                 <div class="contenedor-productos">
-                    <ul class="contenido-productos">
+                    <ul class="contenido-productos" id="productosRecientes">
                         <li class="item-producto">                        
                             <a class="producto" href="producto.php">
                                 <div class="imagen-producto"></div>
@@ -231,6 +231,12 @@ session_start();
 
     <?php include_once "footer.php" ?>
 
+    <!-- Jquery -->
+    <script
+        src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+        crossorigin="anonymous">
+    </script>
     <script src="../js/home.js"></script>
 
 </body>
