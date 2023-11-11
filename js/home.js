@@ -43,7 +43,6 @@ async function getProductos(cantProductosAMostrar, opcionView) {
 
     //Itera cada dato de este para imprimirlo en la tabla del HTML
     await productosAMostrar.forEach(pro => {
-        console.log(pro)
         contenedorProductos.append(`
         <li class="item-producto" data-idpro=${pro.ID}>                        
             <a class="producto" href="producto.php">

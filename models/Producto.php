@@ -185,36 +185,6 @@
             $this->activo = $activo;
         }
 
-        //Crea una instancia de Categoria con los datos enviados al servidor (con el $json)
-        static public function parseJson($json) {
-            //Asignamos a la variable usuario el valor del UsuId de la sesion activa
-            $usuario = $_SESSION['UsuID'];
-            $activo = 2;
-
-            $categoria =  new Categoria(
-                isset($json["nombreProducto"]) ? $json["nombreProducto"] : "",
-                isset($json["descripcionProducto"]) ? $json["descripcionProducto"] : "",
-                isset($json["categoriaProducto"]) ? $json["categoriaProducto"] : "",
-                isset($json["tipoProducto"]) ? $json["tipoProducto"] : "",
-                isset($json["precioProducto"]) ? $json["precioProducto"] : "",
-                isset($json["existenciasProducto"]) ? $json["existenciasProducto"] : "",
-                isset($json["valoracionProducto"]) ? $json["valoracionProducto"] : "",
-                isset($json["imagen1Producto"]) ? $json["imagen1Producto"] : "",
-                isset($json["nombreImagen1Producto"]) ? $json["nombreImagen1Producto"] : "",
-                isset($json["tipoImagen1Producto"]) ? $json["tipoImagen1Producto"] : "",
-                isset($json["imagen2Producto"]) ? $json["imagen2Producto"] : "",
-                isset($json["nombreImagen2Producto"]) ? $json["nombreImagen2Producto"] : "",
-                isset($json["tipoImagen2Producto"]) ? $json["tipoImagen2Producto"] : "",
-                isset($json["imagen3Producto"]) ? $json["imagen3Producto"] : "",
-                isset($json["nombreImagen3Producto"]) ? $json["nombreImagen3Producto"] : "",
-                isset($json["tipoImagen3Producto"]) ? $json["tipoImagen3Producto"] : "",
-                isset($json["videoProducto"]) ? $json["videoProducto"] : "",
-                $usuario,
-                $activo
-            );
-            return $categoria;
-        }
-
         static public function addProducto($mysqli, $nombre, $descripcion, $imagen1, $imagen2, $imagen3, $nombreImagen1, $tipoImagen1, $nombreImagen2, $tipoImagen2, $nombreImagen3, $tipoImagen3, $video, $categoria, $tipo, $precio, $existencias) {
             try {
                 $sql = "CALL SP_GestionProductos(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
@@ -250,7 +220,6 @@
                     $activo,
                     $opcion);
                 $result = $statement->execute();
-                echo $result;
             }
             catch (Exception $exc) {
                 echo '<script>alert("' . $exc . '")</script>';
@@ -312,11 +281,14 @@
                     }
                     return $productos;
                 }
+                return $productos;
             }
             catch (Exception $exc) {
                 throw new Exception("Error en la consulta: " . $exc->getMessage());
+                echo $exc;
             }
         }
+
         static public function readProductoUsuario($mysqli) {
             try {
                 $id = 0;
