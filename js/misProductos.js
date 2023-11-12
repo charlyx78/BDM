@@ -52,7 +52,7 @@ $(document).ready(async () => {
                     body: formData
                 })
                 .then((response) => {
-                    console.log(response.json())
+                    console.log(response)
                     //Alerta de confirmacion
                     Swal.fire(
                         'Exito!',
@@ -99,7 +99,8 @@ $(document).ready(async () => {
                     );
                 });
             }
-            else{//UPDATE PRODUCTOS
+            else{
+                //UPDATE PRODUCTOS
                 fetch('../controllers/updateProducto.php', {
                     method: 'POST',
                     body: formData

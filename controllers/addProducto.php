@@ -1,7 +1,7 @@
 <?php 
     session_start();
 
-    if(isset($_POST['submitProducto'])) {
+    if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         require_once "../db.php";
         require_once "../models/Producto.php";

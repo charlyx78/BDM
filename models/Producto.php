@@ -270,7 +270,11 @@
                     $activo,
                     $opcion);
                 $statement->execute();
-                $result = $statement->get_result(); 
+                // $result = $statement->get_result(); 
+                
+                $result = $statement->store_result();
+
+                    
 
                 $productos = array();
 
@@ -281,7 +285,6 @@
                     }
                     return $productos;
                 }
-                return $productos;
             }
             catch (Exception $exc) {
                 throw new Exception("Error en la consulta: " . $exc->getMessage());
@@ -350,6 +353,7 @@
                 throw new Exception("Error en la consulta: " . $exc->getMessage());
             }
         }
+        
         static public function updateProducto($mysqli, $id, $nombre, $descripcion, $imagen1, $imagen2, $imagen3, $nombreImagen1, $tipoImagen1, $nombreImagen2, $tipoImagen2, $nombreImagen3, $tipoImagen3, $video, $categoria, $tipo, $precio, $existencias) {
             try {
                 $sql = "CALL SP_GestionProductos(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";

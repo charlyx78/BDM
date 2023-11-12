@@ -31,7 +31,7 @@
                 $result = Producto::readProducto($mysqli, $json["opcionView"]);
 
                 if($result) {
-                    echo json_encode($result);
+                    echo ($result);
                 }
             }
             else {
