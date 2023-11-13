@@ -1,15 +1,13 @@
 <?php 
     session_start();
-    
+
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
-        
 
         require_once "../db.php";
         require_once "../models/Producto.php";
 
-        try {
+        try {   
             header('Content-Type: application/json');
-            
             $json = json_decode(file_get_contents('php://input'),true);
 
             if ($json) {
@@ -27,18 +25,22 @@
 
                 // Conexion a la BD
                 $mysqli = db::connect();
+                
+                $opcion = "SR";
                         
-                $result = Producto::readProducto($mysqli, $json["opcionView"]);
+                $result = Producto::readProducto($mysqli, $opcion);
 
                 if($result) {
-                    echo ($result);
+                    echo json_encode($result);
+                    exit;
                 }
             }
             else {
-                echo '<script>alert("Los datos JSON no son válidos")</script>';
+                echo ("JSON INVALIDO");
             }
         }
         catch(Exception $exc) {
             $json_response = ["success" => false, "error" => $exc->getMessage()];  
         }
+        
     }

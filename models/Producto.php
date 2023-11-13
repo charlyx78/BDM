@@ -270,17 +270,16 @@
                     $activo,
                     $opcion);
                 $statement->execute();
-                // $result = $statement->get_result(); 
-                
-                $result = $statement->store_result();
-
-                    
+                $result = $statement->get_result(); 
 
                 $productos = array();
 
                 if($result->num_rows > 0) {
                     while($row = $result->fetch_assoc()) {
                         $producto = $row;
+                        $producto['Imagen1'] = base64_encode($producto['Imagen1']);
+                        $producto['Imagen2'] = base64_encode($producto['Imagen2']);
+                        $producto['Imagen3'] = base64_encode($producto['Imagen3']);
                         $productos[] = $producto;
                     }
                     return $productos;
@@ -288,7 +287,6 @@
             }
             catch (Exception $exc) {
                 throw new Exception("Error en la consulta: " . $exc->getMessage());
-                echo $exc;
             }
         }
 

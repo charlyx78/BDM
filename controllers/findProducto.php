@@ -8,8 +8,7 @@
         require_once "../models/Producto.php";
 
         try {
-            header('Content-Type: application/json');
-                    
+            header('Content-Type: application/json');          
             $json = json_decode(file_get_contents('php://input'),true);
             
             if ($json) {
@@ -34,9 +33,12 @@
                     echo json_encode($result);
                     exit;
                 }
+                else {
+                    echo 'No existe el producto';
+                }
             }
             else {
-                echo '<script>alert("Los datos JSON no son válidos")</script>';
+                echo 'Los datos JSON no son válidos';
             }
         }
         catch(Exception $exc) {
