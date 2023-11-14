@@ -22,8 +22,8 @@ session_start();
     <main class="contenedor-pagina">
         <div class="contenedor-titulo-pagina container-fluid">
             <div class="contenido-titulo-pagina">
-                <h2 class="titulo-pagina mb-0">Categorias</h2>
-                <button class="btn btn-primario" data-bs-toggle="modal" id="btnAbrirModal" data-bs-target="#nuevaCategoriaModal">Nueva categoria</button>
+                <h2 class="titulo-pagina mb-0">Productos en Espera</h2>
+                <!-- <button class="btn btn-primario" data-bs-toggle="modal" id="btnAbrirModal" data-bs-target="#nuevaCategoriaModal">Nueva categoria</button> -->
             </div>
         </div>
 
@@ -31,13 +31,17 @@ session_start();
             <table class="table table-bordered table-stripped">
                 <thead>
                     <tr>
-                        <th>Categorias</th>
-                        <th>Descripcion</th>
-                        <th></th>
+                    <th>ID</th>
+                        <th>Producto</th>
+                        <th>Precio</th>
+                        <th>Inventario</th>
+                        <th>Tipo de venta</th>
+                        <th>Fecha de registro</th>
+                        <th>Status</th>
                         <th></th>
                     </tr>
                 </thead>
-                <tbody id="tablaCategorias">
+                <tbody id="tablaProductos">
                 </tbody>
             </table>
 
@@ -61,6 +65,16 @@ session_start();
         </div>
         
     </main>
+    
+    <!-- Jquery -->
+    <script
+    src="https://code.jquery.com/jquery-3.7.1.js"
+    integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous">
+    </script>
+    <!-- Sweet alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/gestionProductos.js"></script>
     
 </body>
 </html>
