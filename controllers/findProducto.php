@@ -42,7 +42,7 @@
             }
         }
         catch(Exception $exc) {
-            $json_response = ["success" => false, "error" => $exc->getMessage()];  
+            echo $exc->getMessage();  
         }
     }
 

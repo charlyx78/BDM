@@ -14,7 +14,18 @@
             $stockProducto = $_POST['stockProducto'];
 
             if ($_FILES['videoProducto']['error'] === UPLOAD_ERR_OK) {
-                $videoProducto = '';
+                $datos = $_FILES['videoProducto'];
+                $direccionVideo = "../videos/";  
+            
+                $nombreArchivo = basename($datos['name']);
+                $rutaCompleta = $direccionVideo . $nombreArchivo;
+            
+                if (move_uploaded_file($datos['tmp_name'], $rutaCompleta)) {
+                    echo "El archivo de video se ha subido correctamente.";
+                    $videoProducto = $nombreArchivo;  
+                } else {
+                    echo "Error al mover el archivo de video.";
+                }
             } else {
                 echo "Error al subir el archivo de video.";
             }
