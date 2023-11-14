@@ -116,7 +116,7 @@ session_start();
                         <div class="mb-3">
                             <label class="form-label" for="videoProducto">Video de producto</label>
                             <label for="videoProducto" class="preview-imagen-producto preview-video-producto">
-                                <i class="bi bi-camera-video fs-4" id="iconoPreviewVideo"></i>
+                                <i class="bi bi-camera-video fs-4 text-light bg-dark px-2 rounded" id="iconoPreviewVideo"></i>
                                 <video src="" id="previewVideo" class="w-100 h-100" style="display:none;" autoplay muted controls loop></video>
                             </label>
                             <input type="file" class="form-control d-none" name="videoProducto" id="videoProducto" accept=".mp4">
@@ -125,15 +125,15 @@ session_start();
                             <label class="form-label">Imagenes de producto</label>
                         </div>
                         <div class="mb-2 col-4">
-                            <label for="imagenProducto1" class="preview-imagen-producto" id="previewImagen1"><i class="bi bi-camera fs-4" id="iconoPreviewImagen1"></i></label>
+                            <label for="imagenProducto1" class="preview-imagen-producto" id="previewImagen1"><i class="bi bi-camera fs-4 text-light bg-dark px-2 rounded" id="iconoPreviewImagen1"></i></label>
                             <input type="file" class="form-control d-none" id="imagenProducto1" name="imagenProducto1" accept=".jpg,.png,jpeg">
                         </div>
                         <div class="mb-2 col-4">
-                            <label for="imagenProducto2" class="preview-imagen-producto" id="previewImagen2"><i class="bi bi-camera fs-4" id="iconoPreviewImagen2"></i></label>
+                            <label for="imagenProducto2" class="preview-imagen-producto" id="previewImagen2"><i class="bi bi-camera fs-4 text-light bg-dark px-2 rounded" id="iconoPreviewImagen2"></i></label>
                             <input type="file" class="form-control d-none" id="imagenProducto2" name="imagenProducto2" accept=".jpg,.png,jpeg">
                         </div>
                         <div class="mb-3 col-4">
-                            <label for="imagenProducto3" class="preview-imagen-producto" id="previewImagen3"><i class="bi bi-camera fs-4" id="iconoPreviewImagen3"></i></label>
+                            <label for="imagenProducto3" class="preview-imagen-producto" id="previewImagen3"><i class="bi bi-camera fs-4 text-light bg-dark px-2 rounded" id="iconoPreviewImagen3"></i></label>
                             <input type="file" class="form-control d-none" id="imagenProducto3" name="imagenProducto3" accept=".jpg,.png,jpeg">
                         </div>
                         <div class="mb-4">

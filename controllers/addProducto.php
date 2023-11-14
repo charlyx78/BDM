@@ -83,7 +83,7 @@
                 $tipoImagenProducto2, 
                 $nombreImagenProducto3, 
                 $tipoImagenProducto3, 
-                $videoProducto, 
+                $rutaCompleta, 
                 $categoriaProducto, 
                 $tipoVentaProducto, 
                 $precioProducto, 
@@ -92,9 +92,10 @@
                 $activo,
                 $opcion);
 
-            $statement->send_long_data(4, $blobImagenProducto1);
-            $statement->send_long_data(5, $blobImagenProducto2);
-            $statement->send_long_data(6, $blobImagenProducto3);
+                $statement->send_long_data(4, $blobImagenProducto1);
+                $statement->send_long_data(5, $blobImagenProducto2);
+                $statement->send_long_data(6, $blobImagenProducto3);
+                $statement->send_long_data(13, $rutaCompleta);
             
             $result = $statement->execute();
         }
