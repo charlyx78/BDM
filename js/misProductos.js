@@ -228,8 +228,18 @@ async function getProductos(paginaActual, categoriasPorPagina) {
              $('#idpro').text(responseJSON.PK_IdProducto);
     
             //Asignamos a los campos del formulario los valores del producto seleccionado
-            nombreCategoria.val(responseJSON.CatNombre);
-            
+            //nombreCategoria.val(responseJSON.CatNombre);
+            const nombreProducto = $("#nombreProducto");
+            const categoriaProducto = $("#categoriaProducto");
+            const tipoVentaProducto = $("#tipoVentaProducto");
+            const precioProducto = $("#precioProducto");
+            const stockProducto = $("#stockProducto");
+            const stockUnidadMedida = $("#stockUnidadMedida");
+            const descripcionProducto = $("#descripcionProducto");
+            const imagenProducto1 = $("#imagenProducto1");
+            const imagenProducto2 = $("#imagenProducto2");
+            const imagenProducto3 = $("#imagenProducto3");
+            const videoProducto = $("#videoProducto");
             nombreProducto.val(responseJSON.ProNombre);
             categoriaProducto.val(responseJSON.ProFK_IdCategoria);
             tipoVentaProducto.val(responseJSON.ProFK_IdTipoP);
