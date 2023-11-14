@@ -246,10 +246,14 @@ async function getProductos(paginaActual, categoriasPorPagina) {
             precioProducto.val(responseJSON.ProPrecio);
             stockProducto.val(responseJSON.ProExistencias);
             descripcionProducto.val(responseJSON.ProDescripcion);
-            imagenProducto1.val(responseJSON.ProIma1);
-            imagenProducto2.val(responseJSON.ProIma2);
-            imagenProducto3.val(responseJSON.ProIma3);
-            videoProducto.val(responseJSON.ProVideo);
+            // imagenProducto1.val(responseJSON.ProIma1);
+            // imagenProducto2.val(responseJSON.ProIma2);
+            // imagenProducto3.val(responseJSON.ProIma3);
+            // videoProducto.val(responseJSON.ProVideo);
+
+            previewImagen1.style.backgroundImage = "url('data:image/png;base64," + responseJSON.ProIma1 + "')";
+            previewImagen2.style.backgroundImage = "url('data:image/png;base64," + responseJSON.ProIma2 + "')";
+            previewImagen3.style.backgroundImage = "url('data:image/png;base64," + responseJSON.ProIma3 + "')";
         })
     
         //Se le asigna un evento a cada boton de editar
@@ -360,7 +364,6 @@ function previewInputs() {
         const [file] = inputImagenProducto1.files
         if (file) {
             previewImagen1.style.backgroundImage = 'url(' + URL.createObjectURL(file) + ')';
-            iconoPreviewImagen1.style.display = 'none';
         }
     }) 
     
@@ -371,7 +374,6 @@ function previewInputs() {
         const [file] = inputImagenProducto2.files
         if (file) {
             previewImagen2.style.backgroundImage = 'url(' + URL.createObjectURL(file) + ')';
-            iconoPreviewImagen2.style.display = 'none';
         }
     }) 
     
@@ -382,7 +384,6 @@ function previewInputs() {
         const [file] = inputImagenProducto3.files
         if (file) {
             previewImagen3.style.backgroundImage = 'url(' + URL.createObjectURL(file) + ')';
-            iconoPreviewImagen3.style.display = 'none';
         }
     }) 
     
@@ -394,7 +395,6 @@ function previewInputs() {
         if (file) {
             previewVideo.style.display = 'block';
             previewVideo.src = URL.createObjectURL(file);
-            iconoPreviewVideo.style.display = 'none';
         }
     }) 
 }
