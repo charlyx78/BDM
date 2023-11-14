@@ -250,7 +250,9 @@ async function getProductos(paginaActual, categoriasPorPagina) {
             // imagenProducto2.val(responseJSON.ProIma2);
             // imagenProducto3.val(responseJSON.ProIma3);
             // videoProducto.val(responseJSON.ProVideo);
-
+            
+            previewVideo.style.display = 'block';
+            previewVideo.src = responseJSON.ProVideo;     
             previewImagen1.style.backgroundImage = "url('data:image/png;base64," + responseJSON.ProIma1 + "')";
             previewImagen2.style.backgroundImage = "url('data:image/png;base64," + responseJSON.ProIma2 + "')";
             previewImagen3.style.backgroundImage = "url('data:image/png;base64," + responseJSON.ProIma3 + "')";
