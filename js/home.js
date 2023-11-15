@@ -49,7 +49,7 @@ async function getProductos(cantProductosAMostrar, opcionView) {
     await productosAMostrar.forEach(pro => {
         contenedorProductos.append(`
         <li class="item-producto" data-idpro=${pro.ID}>                        
-            <a class="producto" href="producto.php">
+            <a class="producto" href="producto.php?idProducto=${pro.ID}">
                 <div class="imagen-producto" style="background-image: url('data:image/png;base64,${pro.Imagen1}')"></div>
                 <h4 class="categoria-producto text-secondary">${pro.Categoria}</h4>
                 <h2 class="nombre-producto">${pro.Nombre}</h2>

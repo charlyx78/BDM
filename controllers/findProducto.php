@@ -1,12 +1,12 @@
 <?php
 
     session_start();
+    require_once "../db.php";
+    require_once "../models/Producto.php";
+
 
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
         
-        require_once "../db.php";
-        require_once "../models/Producto.php";
-
         try {
             header('Content-Type: application/json');          
             $json = json_decode(file_get_contents('php://input'),true);
@@ -43,6 +43,22 @@
         }
         catch(Exception $exc) {
             echo $exc->getMessage();  
+        }
+    }
+    else {
+        $idProducto = $_REQUEST['idProducto'];
+
+        // Conexion a la BD
+        $mysqli = db::connect();
+                    
+        $result = Producto::findProducto($mysqli, $idProducto); 
+                
+        if($result) {
+            echo json_encode($result);
+            exit;
+        }
+        else {
+            echo 'No existe el producto';
         }
     }
 

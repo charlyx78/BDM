@@ -43,4 +43,8 @@
             $json_response = ["success" => false, "error" => $exc->getMessage()];  
         }
     }
+    else {
+        $idProducto = $_REQUEST['idProducto'];
+        echo $idProducto;
+    }
 

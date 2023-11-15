@@ -13,11 +13,11 @@
         <div class="contenedor-producto">
             <div class="contenedor-info-producto">
                 <div class="informacion-producto">
-                    <h5 class="text-secondary">Smarthphones</h5>
-                    <h2 class="nombre-producto">iPhone 14 Pro 128GB 4GB RAM</h2>
+                    <h5 class="text-secondary" id="categoriaProducto">Smarthphones</h5>
+                    <h2 class="nombre-producto" id="nombreProducto">iPhone 14 Pro 128GB 4GB RAM</h2>
                     <div class="d-flex justify-content-between align-items-end precio-calificacion">
-                        <h2 class="precio-producto">$12999.99</h2>
-                        <h5><i class="bi bi-star-fill color-secundario me-2"></i>4.9</h5>
+                        <h2 class="precio-producto" id="precioProducto">$12999.99</h2>
+                        <h5><i class="bi bi-star-fill color-secundario me-2"></i><span id="valoracionProducto"></span></h5>
                     </div>
                 </div>
                 <div class="d-none d-lg-block">
@@ -36,7 +36,7 @@
                         </div>
                     </form>
                     <div class="descripcion-producto modulo-producto">
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit, ad incidunt quos earum sed voluptate voluptatibus architecto, possimus cumque quod consequatur quidem laborum expedita fuga quo ipsum facilis. Natus, nostrum.</p>   
+                        <p class='textoDescProd'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit, ad incidunt quos earum sed voluptate voluptatibus architecto, possimus cumque quod consequatur quidem laborum expedita fuga quo ipsum facilis. Natus, nostrum.</p>   
                     </div>
 
                     <div class="contenedor-comentarios">
@@ -119,7 +119,7 @@
                         <div class="carousel-inner">
                             <div class="carousel-item active">
                                 <div class="muestra-multimedia muestra-multimedia1">
-                                    <video src="../img/video-producto.mp4" autoplay controls muted loop></video>
+                                    <video src="../img/video-producto.mp4" id="videoProducto" autoplay controls muted loop></video>
                                 </div>
                             </div>
                             <div class="carousel-item">
@@ -135,10 +135,10 @@
                     </div>
                     <div class="contenedor-thumbnails-productos">
                         <div class="contenido-thumbnails-productos">
-                            <div class="thumbnail-multimedia" data-bs-target="#carouselProducto" data-bs-slide-to="0"></div>
-                            <div class="thumbnail-multimedia" data-bs-target="#carouselProducto" data-bs-slide-to="1"></div>
-                            <div class="thumbnail-multimedia" data-bs-target="#carouselProducto" data-bs-slide-to="2"></div>
-                            <div class="thumbnail-multimedia" data-bs-target="#carouselProducto" data-bs-slide-to="3"></div>
+                            <div class="thumbnail-multimedia thumbnail-multimedia1" data-bs-target="#carouselProducto" data-bs-slide-to="0"></div>
+                            <div class="thumbnail-multimedia thumbnail-multimedia2" data-bs-target="#carouselProducto" data-bs-slide-to="1"></div>
+                            <div class="thumbnail-multimedia thumbnail-multimedia3" data-bs-target="#carouselProducto" data-bs-slide-to="2"></div>
+                            <div class="thumbnail-multimedia thumbnail-multimedia4" data-bs-target="#carouselProducto" data-bs-slide-to="3"></div>
                         </div>
                     </div>
                 </div>
@@ -159,7 +159,7 @@
                     </div>
                 </form>
                 <div class="descripcion-producto modulo-producto">
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit, ad incidunt quos earum sed voluptate voluptatibus architecto, possimus cumque quod consequatur quidem laborum expedita fuga quo ipsum facilis. Natus, nostrum.</p>   
+                    <p class='textoDescProd'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit, ad incidunt quos earum sed voluptate voluptatibus architecto, possimus cumque quod consequatur quidem laborum expedita fuga quo ipsum facilis. Natus, nostrum.</p>   
                 </div>
 
                 <div class="contenedor-comentarios">
@@ -281,7 +281,12 @@
 
     <?php include_once "footer.php" ?>
 
-
+    <!-- Jquery -->
+    <script
+        src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+        crossorigin="anonymous">
+    </script>
     <script src="../js/producto.js"></script>
 </body>
 </html>

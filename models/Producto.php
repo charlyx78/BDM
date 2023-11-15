@@ -502,9 +502,9 @@
                 $statement->execute();
                 $result = $statement->get_result(); 
                 $row = $result->fetch_assoc();
-                $row['ProIma1'] = base64_encode($row['ProIma1']);
-                $row['ProIma2'] = base64_encode($row['ProIma2']);
-                $row['ProIma3'] = base64_encode($row['ProIma3']);
+                $row['Imagen1'] = base64_encode($row['Imagen1']);
+                $row['Imagen2'] = base64_encode($row['Imagen2']);
+                $row['Imagen3'] = base64_encode($row['Imagen3']);
 
                 return $row;
             }
