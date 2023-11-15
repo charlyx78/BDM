@@ -24,8 +24,7 @@ $(document).ready(async() => {
     $('.muestra-multimedia4').css('background-image', "url('data:image/png;base64," + responseJSON.Imagen3 + "')");
     $('.thumbnail-multimedia4').css('background-image', "url('data:image/png;base64," + responseJSON.Imagen3 + "')");
 
-    console.log(idProducto);
-    console.log(responseJSON);
+    $('#loader').hide();
 })
 
 // const formAddProductoACarrito = document.getElementById("formAddProductoACarrito");

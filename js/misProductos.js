@@ -40,11 +40,7 @@ $(document).ready(async () => {
             tipoVentaProducto.val() != "" &&
             precioProducto.val() != "" &&
             stockProducto.val() != "" &&
-            descripcionProducto != "" &&
-            imagenProducto1.val() != "" &&
-            imagenProducto2.val() != "" &&
-            imagenProducto3.val() != "" &&
-            videoProducto.val() != "") {
+            descripcionProducto != "" ) {
 
             if(!isEditando) {//ADD PRODUCTO
                 console.log(JSON.stringify(formData));
@@ -179,30 +175,31 @@ async function getProductos(paginaActual, categoriasPorPagina) {
     //Se limpia la tabla
     $('#tablaProductos').html('');
 
-    //Se guarda en una variable la respuesta del controlador readCategorias
-    let response = await fetch('../controllers/readProductoUsuario.php');
+    
+    try {
+        //Se guarda en una variable la respuesta del controlador readCategorias
+        let response = await fetch('../controllers/readProductoUsuario.php');
 
-    //Espera a obtener la respuesta y la convierte la respuesta en un JSON
-    let responseJSON = await response.json();
-
-    const productosAMostrar = responseJSON.slice(inicio, fin);
-
-    //Itera cada dato de este para imprimirlo en la tabla del HTML
-    await productosAMostrar.forEach(pro => {
-        $('#tablaProductos').append(`
-        <tr>
-            <td>${pro.PK_IdProducto}</td>
-            <td>${pro.ProNombre}</td>
-            <td>$${pro.ProPrecio}</td>
-            <td>${pro.ProExistencias}</td>
-            <td>${pro.ProFK_IdTipoP === 1 ? 'Precio fijo' : 'Cotizable'}</td>
-            <td>${pro.ProFechaRegistro}</td>
-            <td><span class="badge rounded-pill ${pro.ProFK_IdActivo === 2 ? 'bg-success' : 'bg-secondary'} fs-6">${pro.ProFK_IdActivo === 2 ? 'Activo' : 'Inactivo'}</span></td>
-            <td class="text-center"><button class="btn btn-secundario btn-editar-producto" data-idpro="${pro.PK_IdProducto}" data-bs-toggle="modal" data-bs-target="#nuevoProductoModal"><i class="bi bi-pencil"></i></button></td>
-            <td class="text-center"><button class="btn btn-danger btn-eliminar-producto" data-idpro="${pro.PK_IdProducto}"><i class="bi bi-trash3"></i></button></td>
-        </tr>`);  
-    });
-
+        //Espera a obtener la respuesta y la convierte la respuesta en un JSON
+        let responseJSON = await response.json();
+    
+        const productosAMostrar = responseJSON.slice(inicio, fin);
+    
+        //Itera cada dato de este para imprimirlo en la tabla del HTML
+        await productosAMostrar.forEach(pro => {
+            $('#tablaProductos').append(`
+            <tr>
+                <td>${pro.PK_IdProducto}</td>
+                <td>${pro.ProNombre}</td>
+                <td>$${pro.ProPrecio}</td>
+                <td>${pro.ProExistencias}</td>
+                <td>${pro.ProFK_IdTipoP === 1 ? 'Precio fijo' : 'Cotizable'}</td>
+                <td>${pro.ProFechaRegistro}</td>
+                <td><span class="badge rounded-pill ${pro.ProFK_IdActivo === 2 ? 'bg-success' : 'bg-secondary'} fs-6">${pro.ProFK_IdActivo === 2 ? 'Activo' : 'Inactivo'}</span></td>
+                <td class="text-center"><button class="btn btn-secundario btn-editar-producto" data-idpro="${pro.PK_IdProducto}" data-bs-toggle="modal" data-bs-target="#nuevoProductoModal"><i class="bi bi-pencil"></i></button></td>
+                <td class="text-center"><button class="btn btn-danger btn-eliminar-producto" data-idpro="${pro.PK_IdProducto}"><i class="bi bi-trash3"></i></button></td>
+            </tr>`);  
+        });
         //Una vez terminada la impresion de los datos de la respuesta del controlador "agregarProducto", se le asigna un evento a cada boton de editar
         $('.btn-editar-producto').on('click', async function() {
             isEditando = true;
@@ -216,17 +213,17 @@ async function getProductos(paginaActual, categoriasPorPagina) {
             };
     
             //Guardamos en una variable la respuesta del controlador para encontrar una categoria por su id "findProducto"
-             let response = await fetch('../controllers/findProducto.php', { //FALTA CREAR EL CONTROLADOR
-                 method: 'POST',
-                 body: JSON.stringify(formData),
-             });
+                let response = await fetch('../controllers/findProducto.php', { //FALTA CREAR EL CONTROLADOR
+                    method: 'POST',
+                    body: JSON.stringify(formData),
+                });
     
             //Convierte la respuesta del controlador en un JSON 
-             let responseJSON = await response.json();
-             console.log(responseJSON);
+                let responseJSON = await response.json();
+                console.log(responseJSON);
             
             //Asignamos el valor del span que se encuentra en el header del modal al de el id del producto que obtuvimos previamente con "findProducto"
-             $('#idpro').text(responseJSON.ID);
+                $('#idpro').text(responseJSON.ID);
     
             //Asignamos a los campos del formulario los valores del producto seleccionado
             const nombreProducto = $("#nombreProducto");
@@ -240,7 +237,7 @@ async function getProductos(paginaActual, categoriasPorPagina) {
             const imagenProducto2 = $("#imagenProducto2");
             const imagenProducto3 = $("#imagenProducto3");
             const videoProducto = $("#videoProducto");
-
+    
             nombreProducto.val(responseJSON.Nombre);
             categoriaProducto.val(responseJSON.IdCategoria);
             tipoVentaProducto.val(responseJSON.IdTipo);
@@ -280,45 +277,51 @@ async function getProductos(paginaActual, categoriasPorPagina) {
             .then((result) => {
                 if (result.isConfirmed) {
                     //Se ejecuta el controlador deleteProducto FALTA CREARLO
-                     fetch('../controllers/deleteProducto.php', {
-                         method: 'POST',
-                         body: JSON.stringify(formData),
-                         headers: {
-                             'Content-Type': 'application/json'
-                         }
-                     })
-                     .then(() => {
-                         //Alerta de confirmacion
-                         Swal.fire(
-                             'Exito!',
-                             'Producto eliminado correctamente',
-                             'success'
-                         )
-                         .then(async() => {
-                             //Vuelve a imprimir todos los productos
-                             $('#loader').show();
-                             await getProductos(1,7);
-                         })
-                     })
-                     .catch(error => {
-                         //Alerta de error
-                         Swal.fire(
-                             'Error',
-                             error.message,
-                             'error'
-                         );
-                     });
+                        fetch('../controllers/deleteProducto.php', {
+                            method: 'POST',
+                            body: JSON.stringify(formData),
+                            headers: {
+                                'Content-Type': 'application/json'
+                            }
+                        })
+                        .then(() => {
+                            //Alerta de confirmacion
+                            Swal.fire(
+                                'Exito!',
+                                'Producto eliminado correctamente',
+                                'success'
+                            )
+                            .then(async() => {
+                                //Vuelve a imprimir todos los productos
+                                $('#loader').show();
+                                await getProductos(1,7);
+                            })
+                        })
+                        .catch(error => {
+                            //Alerta de error
+                            Swal.fire(
+                                'Error',
+                                error.message,
+                                'error'
+                            );
+                        });
                 }
             })
         })
+        const totalCategorias = responseJSON.length;
+        const totalPaginas = Math.ceil(totalCategorias/categoriasPorPagina);
+    
+        await imprimirPaginacion(totalPaginas);
+        await eventoPaginacion();
+    
+        $('#loader').hide();
+    }
+    catch(exception){
+        alert('No existen productos registrados en esta cuenta. Continue para crearlos')
+        $('#loader').hide();
+    }
+    
 
-    const totalCategorias = responseJSON.length;
-    const totalPaginas = Math.ceil(totalCategorias/categoriasPorPagina);
-
-    await imprimirPaginacion(totalPaginas);
-    await eventoPaginacion();
-
-    $('#loader').hide();
 }
 
 async function imprimirPaginacion(totalPaginas) {

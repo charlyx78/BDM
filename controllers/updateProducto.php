@@ -80,6 +80,8 @@
                 $precioProducto, 
                 $stockProducto
             );
+
+            echo "muy bien";
         }
         catch(Exception $exc) {
             echo ($exc->getMessage());

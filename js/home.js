@@ -6,8 +6,9 @@ btnScrollComprar.addEventListener("click", ()=> {
     window.scrollTo(0,contenedorProductosParaTiTopPos);
 })
 
-$(document).ready(()=> {
+$(document).ready(async()=> {
     getProductos(4,"SR");
+    getProductos(4,"SMV");
 })
 
 
@@ -18,6 +19,9 @@ async function getProductos(cantProductosAMostrar, opcionView) {
     switch(opcionView) {
         case "SR":
             contenedorProductos = $('#productosRecientes');
+            break;
+        case "SMV":
+            contenedorProductos = $('#productosValorados');
             break;
     }
 
@@ -57,4 +61,6 @@ async function getProductos(cantProductosAMostrar, opcionView) {
             </a>
         </li>`);  
     });
+
+    $('#loader').hide();
 }    

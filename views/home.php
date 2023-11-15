@@ -12,6 +12,12 @@ session_start();
 <body class="body">
     <?php include_once "navbar.php" ?>
 
+    <div class="contenedor-loader" id="loader">
+        <div class="spinner-grow" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+
     <section class="contenedor-home">
         <div class="contenido-home">
             <section class="hero-home">
@@ -40,39 +46,7 @@ session_start();
                 <h3 class="titulo-seccion-productos mb-4">Los elegidos <span class="color-secundario">para ti</span> </h3>
                 
                 <div class="contenedor-productos">
-                    <ul class="contenido-productos">
-                        <li class="item-producto">                        
-                            <a class="producto" href="producto.php">
-                                <div class="imagen-producto"></div>
-                                <h4 class="categoria-producto  text-secondary">Smartphones</h4>
-                                <h2 class="nombre-producto">iPhone 14 Pro 128GB 4GB RAM</h2>
-                                <h4 class="precio-producto">$12999</h4>
-                            </a>
-                        </li>
-                        <li class="item-producto">                        
-                            <a class="producto" href="producto.php">
-                                <div class="imagen-producto"></div>
-                                <h4 class="categoria-producto  text-secondary">Smartphones</h4>
-                                <h2 class="nombre-producto">iPhone 14 Pro 128GB 4GB RAM</h2>
-                                <h4 class="precio-producto">$12999</h4>
-                            </a>
-                        </li>
-                        <li class="item-producto">                        
-                            <a class="producto" href="producto.php">
-                                <div class="imagen-producto"></div>
-                                <h4 class="categoria-producto  text-secondary">Smartphones</h4>
-                                <h2 class="nombre-producto">iPhone 14 Pro 128GB 4GB RAM</h2>
-                                <h4 class="precio-producto">$12999</h4>
-                            </a>
-                        </li>
-                        <li class="item-producto">                        
-                            <a class="producto" href="producto.php">
-                                <div class="imagen-producto"></div>
-                                <h4 class="categoria-producto  text-secondary">Smartphones</h4>
-                                <h2 class="nombre-producto">iPhone 14 Pro 128GB 4GB RAM</h2>
-                                <h4 class="precio-producto">$12999</h4>
-                            </a>
-                        </li>
+                    <ul class="contenido-productos" id="productosValorados">
                     </ul>          
                 </div>
                 
@@ -189,39 +163,7 @@ session_start();
                 <h3 class="titulo-seccion-productos mb-4">Lo mas <span class="color-secundario">nuevo</span> </h3>
                 
                 <div class="contenedor-productos">
-                    <ul class="contenido-productos" id="productosRecientes">
-                        <li class="item-producto">                        
-                            <a class="producto" href="producto.php">
-                                <div class="imagen-producto"></div>
-                                <h4 class="categoria-producto  text-secondary">Smartphones</h4>
-                                <h2 class="nombre-producto">iPhone 14 Pro 128GB 4GB RAM</h2>
-                                <h4 class="precio-producto">$12999</h4>
-                            </a>
-                        </li>
-                        <li class="item-producto">                        
-                            <a class="producto" href="producto.php">
-                                <div class="imagen-producto"></div>
-                                <h4 class="categoria-producto  text-secondary">Smartphones</h4>
-                                <h2 class="nombre-producto">iPhone 14 Pro 128GB 4GB RAM</h2>
-                                <h4 class="precio-producto">$12999</h4>
-                            </a>
-                        </li>
-                        <li class="item-producto">                        
-                            <a class="producto" href="producto.php">
-                                <div class="imagen-producto"></div>
-                                <h4 class="categoria-producto  text-secondary">Smartphones</h4>
-                                <h2 class="nombre-producto">iPhone 14 Pro 128GB 4GB RAM</h2>
-                                <h4 class="precio-producto">$12999</h4>
-                            </a>
-                        </li>
-                        <li class="item-producto">                        
-                            <a class="producto" href="producto.php">
-                                <div class="imagen-producto"></div>
-                                <h4 class="categoria-producto  text-secondary">Smartphones</h4>
-                                <h2 class="nombre-producto">iPhone 14 Pro 128GB 4GB RAM</h2>
-                                <h4 class="precio-producto">$12999</h4>
-                            </a>
-                        </li>
+                    <ul class="contenido-productos" id="productosRecientes">                        
                     </ul>          
                 </div>
                 

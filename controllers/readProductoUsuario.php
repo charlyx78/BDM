@@ -15,9 +15,6 @@
         if($result) {
             echo json_encode($result);
         }
-        else {
-            echo json_encode('No se encontraron resultados');
-        }
     }
     catch(Exception $exc) {
         $json_response = ["success" => false, "error" => $exc->getMessage()];  

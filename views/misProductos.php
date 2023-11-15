@@ -98,7 +98,7 @@ session_start();
                         <div class="mb-2 col-6">
                             <label for="precioProducto" class="form-label">Precio</label>
                             <div class="input-group input-group">
-                                <input class="form-control" type="number" name="precioProducto" id="precioProducto" aria-label="Precio" aria-label="Precio" aria-describedby="button-addon3">
+                                <input class="form-control" type="number" step=".01" name="precioProducto" id="precioProducto" aria-label="Precio" aria-label="Precio" aria-describedby="button-addon3">
                                 <p class="input-group-text m-0" id="button-addon3">$</a>
                             </div>
                         </div>
