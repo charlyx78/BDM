@@ -25,21 +25,53 @@ $(document).ready(async() => {
     $('.thumbnail-multimedia4').css('background-image', "url('data:image/png;base64," + responseJSON.Imagen3 + "')");
 
     $('#loader').hide();
+
+    
+    const formAddProductoACarrito = document.getElementById("formAddProductoACarrito");
+    formAddProductoACarrito.addEventListener("submit", e=> {
+    e.preventDefault();
+    const CantidadAgregar = document.getElementById("CantidadAgregar");
+
+    var formData = {
+        idProducto: idProducto,
+        cantidadProducto: CantidadAgregar.value,
+        precioProducto: responseJSON.Precio
+    };
+
+    if(CantidadAgregar.value.length <= 0){
+        alert("Cantidad a Agregar Vacia");
+    }
+    else {
+        //alert("Agregado al Carrito " + CantidadAgregar.value)
+        console.log(JSON.stringify(formData));
+        fetch('../controllers/addCarrito.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then((response) => {
+            console.log(response)
+            //Alerta de confirmacion
+            Swal.fire(
+                'Exito!',
+                'Producto agregado al Carrito',
+                'success'
+            ).then(async() => {
+                //Se resetean los campos del formulario de este
+                CantidadAgregar.value = 0;
+            });
+        })
+        .catch(error => {
+            //Alerta de error
+            Swal.fire(
+                'Error',
+                error.message,
+                'error'
+            );
+        });
+    }
 })
 
-// const formAddProductoACarrito = document.getElementById("formAddProductoACarrito");
-// formAddProductoACarrito.addEventListener("submit", e=> {
-//     e.preventDefault();
-
-//     const CantidadAgregar = document.getElementById("CantidadAgregar");
-
-//     if(CantidadAgregar.value.length <= 0){
-//         alert("Cantidad a Agregar Vacia");
-//     }
-//     else {
-//         alert("Agreagdo al Carrito")
-//     }
-// })
+})
 
 // const btnHeaderComentarios = document.getElementById('headerComentarios');
 // let rotado = false;
