@@ -14,19 +14,46 @@
             $precioProducto = $_POST['precioProducto'];
             $stockProducto = $_POST['stockProducto'];
 
-            $videoProducto = file_get_contents($_FILES['videoProducto']['tmp_name']);
+            if ($_FILES['videoProducto']['error'] === UPLOAD_ERR_OK) {
+                $datos = $_FILES['videoProducto'];
+                $direccionVideo = "../videos/";  
             
-            $blobImagenProducto1 = file_get_contents($_FILES['imagenProducto1']['tmp_name']);
-            $nombreImagenProducto1 = $_FILES['imagenProducto1']['name'];
-            $tipoImagenProducto1 = $_FILES['imagenProducto1']['type'];
+                $nombreArchivo = basename($datos['name']);
+                $rutaCompleta = $direccionVideo . $nombreArchivo;
+            
+                if (move_uploaded_file($datos['tmp_name'], $rutaCompleta)) {
+                    echo "El archivo de video se ha subido correctamente.";
+                    $videoProducto = $nombreArchivo;  
+                } else {
+                    echo "Error al mover el archivo de video.";
+                }
+            } else {
+                echo "Error al subir el archivo de video.";
+            }
 
-            $blobImagenProducto2 = file_get_contents($_FILES['imagenProducto2']['tmp_name']);
-            $nombreImagenProducto2 = $_FILES['imagenProducto2']['name'];
-            $tipoImagenProducto2 = $_FILES['imagenProducto2']['type'];
+            if ($_FILES['imagenProducto1']['error'] === UPLOAD_ERR_OK) {
+                $blobImagenProducto1 = (file_get_contents($_FILES['imagenProducto1']['tmp_name']));
+                $nombreImagenProducto1 = $_FILES['imagenProducto1']['name'];
+                $tipoImagenProducto1 = $_FILES['imagenProducto1']['type'];
+            } else {
+                echo "Error al subir el archivo de imagen.";
+            }
+        
+            if ($_FILES['imagenProducto2']['error'] === UPLOAD_ERR_OK) {
+                $blobImagenProducto2 = (file_get_contents($_FILES['imagenProducto2']['tmp_name']));
+                $nombreImagenProducto2 = $_FILES['imagenProducto2']['name'];
+                $tipoImagenProducto2 = $_FILES['imagenProducto2']['type'];
+            } else {
+                echo "Error al subir el archivo de imagen.";
+            }
 
-            $blobImagenProducto3 = file_get_contents($_FILES['imagenProducto3']['tmp_name']);
-            $nombreImagenProducto3 = $_FILES['imagenProducto3']['name'];
-            $tipoImagenProducto3 = $_FILES['imagenProducto3']['type'];
+            if ($_FILES['imagenProducto3']['error'] === UPLOAD_ERR_OK) {
+                $blobImagenProducto3 = (file_get_contents($_FILES['imagenProducto3']['tmp_name']));
+                $nombreImagenProducto3 = $_FILES['imagenProducto3']['name'];
+                $tipoImagenProducto3 = $_FILES['imagenProducto3']['type'];
+            } else {
+                echo "Error al subir el archivo de imagen.";
+            }
 
             $descripcionProducto = $_POST['descripcionProducto'];
 
@@ -39,12 +66,12 @@
                 $nombreProducto, 
                 $descripcionProducto, 
                 $blobImagenProducto1,
+                $blobImagenProducto2,
+                $blobImagenProducto3,
                 $nombreImagenProducto1,
                 $tipoImagenProducto1,
-                $blobImagenProducto2,
                 $nombreImagenProducto2, 
                 $tipoImagenProducto2, 
-                $blobImagenProducto3, 
                 $nombreImagenProducto3, 
                 $tipoImagenProducto3, 
                 $videoProducto, 

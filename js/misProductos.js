@@ -47,6 +47,7 @@ $(document).ready(async () => {
             videoProducto.val() != "") {
 
             if(!isEditando) {//ADD PRODUCTO
+                console.log(JSON.stringify(formData));
                 fetch('../controllers/addProducto.php', {
                     method: 'POST',
                     body: formData
@@ -105,8 +106,7 @@ $(document).ready(async () => {
                     method: 'POST',
                     body: formData
                 })
-                .then((response) => {
-                    console.log(response.json())
+                .then(() => {
                     //Alerta de confirmacion
                     Swal.fire(
                         'Exito!',
@@ -138,8 +138,8 @@ $(document).ready(async () => {
             
                         previewImagen3.style.backgroundImage = '';
                         iconoPreviewImagen3.style.display = 'block';
-            
-                        //Vuelve a imprimir todos los productos
+
+                        //Vuelve a imprimir todas las categorias
                         $('#loader').show();
                         await getProductos(1,7);
                     });
@@ -223,12 +223,12 @@ async function getProductos(paginaActual, categoriasPorPagina) {
     
             //Convierte la respuesta del controlador en un JSON 
              let responseJSON = await response.json();
+             console.log(responseJSON);
             
             //Asignamos el valor del span que se encuentra en el header del modal al de el id del producto que obtuvimos previamente con "findProducto"
-             $('#idpro').text(responseJSON.PK_IdProducto);
+             $('#idpro').text(responseJSON.ID);
     
             //Asignamos a los campos del formulario los valores del producto seleccionado
-            //nombreCategoria.val(responseJSON.CatNombre);
             const nombreProducto = $("#nombreProducto");
             const categoriaProducto = $("#categoriaProducto");
             const tipoVentaProducto = $("#tipoVentaProducto");
@@ -240,9 +240,10 @@ async function getProductos(paginaActual, categoriasPorPagina) {
             const imagenProducto2 = $("#imagenProducto2");
             const imagenProducto3 = $("#imagenProducto3");
             const videoProducto = $("#videoProducto");
+
             nombreProducto.val(responseJSON.Nombre);
-            categoriaProducto.val(responseJSON.Categoria);
-            tipoVentaProducto.val(responseJSON.Tipo);
+            categoriaProducto.val(responseJSON.IdCategoria);
+            tipoVentaProducto.val(responseJSON.IdTipo);
             precioProducto.val(responseJSON.Precio);
             stockProducto.val(responseJSON.CantidadInventario);
             descripcionProducto.val(responseJSON.Descripcion);
