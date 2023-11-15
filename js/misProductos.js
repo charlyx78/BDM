@@ -240,22 +240,22 @@ async function getProductos(paginaActual, categoriasPorPagina) {
             const imagenProducto2 = $("#imagenProducto2");
             const imagenProducto3 = $("#imagenProducto3");
             const videoProducto = $("#videoProducto");
-            nombreProducto.val(responseJSON.ProNombre);
-            categoriaProducto.val(responseJSON.ProFK_IdCategoria);
-            tipoVentaProducto.val(responseJSON.ProFK_IdTipoP);
-            precioProducto.val(responseJSON.ProPrecio);
-            stockProducto.val(responseJSON.ProExistencias);
-            descripcionProducto.val(responseJSON.ProDescripcion);
+            nombreProducto.val(responseJSON.Nombre);
+            categoriaProducto.val(responseJSON.Categoria);
+            tipoVentaProducto.val(responseJSON.Tipo);
+            precioProducto.val(responseJSON.Precio);
+            stockProducto.val(responseJSON.CantidadInventario);
+            descripcionProducto.val(responseJSON.Descripcion);
             // imagenProducto1.val(responseJSON.ProIma1);
             // imagenProducto2.val(responseJSON.ProIma2);
             // imagenProducto3.val(responseJSON.ProIma3);
             // videoProducto.val(responseJSON.ProVideo);
             
             previewVideo.style.display = 'block';
-            previewVideo.src = responseJSON.ProVideo;     
-            previewImagen1.style.backgroundImage = "url('data:image/png;base64," + responseJSON.ProIma1 + "')";
-            previewImagen2.style.backgroundImage = "url('data:image/png;base64," + responseJSON.ProIma2 + "')";
-            previewImagen3.style.backgroundImage = "url('data:image/png;base64," + responseJSON.ProIma3 + "')";
+            previewVideo.src = responseJSON.Video;     
+            previewImagen1.style.backgroundImage = "url('data:image/png;base64," + responseJSON.Imagen1 + "')";
+            previewImagen2.style.backgroundImage = "url('data:image/png;base64," + responseJSON.Imagen2 + "')";
+            previewImagen3.style.backgroundImage = "url('data:image/png;base64," + responseJSON.Imagen3 + "')";
         })
     
         //Se le asigna un evento a cada boton de editar
