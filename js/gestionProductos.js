@@ -30,7 +30,7 @@ async function getProductos(paginaActual, categoriasPorPagina) {
             <td>${pro.ProFK_IdTipoP === 1 ? 'Precio fijo' : 'Cotizable'}</td>
             <td>${pro.ProFechaRegistro}</td>
             <td><span class="badge rounded-pill ${pro.ProFK_IdActivo === 2 ? 'bg-success' : 'bg-secondary'} fs-6">${pro.ProFK_IdActivo === 2 ? 'Activo' : 'Inactivo'}</span></td>
-            <td class="text-center"><button class="btn btn-danger btn-activar-producto" data-idpro="${pro.PK_IdProducto}"><i class="bi bi-trash3"></i></button></td>
+            <td class="text-center"><button class="btn btn-activar-producto" data-idpro="${pro.PK_IdProducto}"><i class="bi ${pro.ProFK_IdActivo === 2 ? 'bi-toggle-on' : 'bi-toggle-off'} color-primario fs-3"></i></button></td>
         </tr>`);  
     });
     
