@@ -1,6 +1,7 @@
 $(document).ready(async() => {
     urlParametros = new URLSearchParams(window.location.search);
     idProducto = urlParametros.get("idProducto");
+    
     //Se guarda en una variable la respuesta del controlador findProducto
     let response = await fetch('../controllers/findProducto.php?idProducto=' + idProducto, {
         method: 'GET'
@@ -27,11 +28,12 @@ $(document).ready(async() => {
     getWishlist();
 
     $('#loader').hide();
-
+    
+    
     $('#formAddProductoWishlist').submit((e) => {
         e.preventDefault();
         let idWishlist = $('#wishlist').val();
-
+        
         var formData = {
             idProducto: idProducto,
             idWishlist : idWishlist
@@ -43,28 +45,63 @@ $(document).ready(async() => {
             headers: {
                 'Content-Type': 'application/json'
             }
-        })    
-        .then((response) => {
-            console.log(response)
-            //Alerta de confirmacion
+        })   
+        .then(()=> {
             Swal.fire(
                 'Exito!',
                 'Producto agregado a wishlist correctamente',
                 'success'
-            ).then(() => {
-                $('#wishlistModal').modal('hide')
-            });
+                )
+                .then(() => {
+                    $('#wishlistModal').modal('hide')
+                })
+            }) 
         })
-        .catch(error => {
-            //Alerta de error
-            Swal.fire(
-                'Error',
-                error.message,
-                'error'
-            );
-        });
+        
+    const formAddProductoACarrito = document.getElementById("formAddProductoACarrito");
+    formAddProductoACarrito.addEventListener("submit", e=> {
+        e.preventDefault();
+        const CantidadAgregar = document.getElementById("CantidadAgregar");
+
+        var formData = {
+            idProducto: idProducto,
+            cantidadProducto: CantidadAgregar.value,
+            precioProducto: responseJSON.Precio
+        };
+
+        if(CantidadAgregar.value.length <= 0){
+            alert("Cantidad a Agregar Vacia");
+        }
+        else {
+            //alert("Agregado al Carrito " + CantidadAgregar.value)
+            console.log(JSON.stringify(formData));
+            fetch('../controllers/addCarrito.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then((response) => {
+                console.log(response)
+                //Alerta de confirmacion
+                Swal.fire(
+                    'Exito!',
+                    'Producto agregado al Carrito',
+                    'success'
+                ).then(async() => {
+                    //Se resetean los campos del formulario de este
+                    CantidadAgregar.value = 0;
+                });
+            })
+            .catch(error => {
+                //Alerta de error
+                Swal.fire(
+                    'Error',
+                    error.message,
+                    'error'
+                );
+            });
+        }
     })
-})
+
 
 async function getWishlist() {
     //Se limpia la tabla
@@ -104,7 +141,7 @@ async function getWishlist() {
 //         alert("Agreagdo al Carrito")
 //     }
 // })
-
+})
 // const btnHeaderComentarios = document.getElementById('headerComentarios');
 // let rotado = false;
 // btnHeaderComentarios.addEventListener('click', () => {

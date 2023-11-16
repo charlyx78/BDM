@@ -123,10 +123,6 @@
         </div>
     </div>
 
-    <form action="../controllers/deleteProductoWishlist.php">
-        <input type="submit" name="idProductoWishlist" value="12">
-    </form>
-
     <!-- Jquery -->
     <script
         src="https://code.jquery.com/jquery-3.7.1.js"

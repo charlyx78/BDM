@@ -30,12 +30,12 @@ session_start();
                     </div>
                 </div>
                 <div class="d-none d-lg-block">
-                    <!-- <h5 class="disponibilidad-producto">Unidades disponibles: <span>65</span> </h5> -->
+                    <h5 class="disponibilidad-producto">Unidades disponibles: <span>65</span> </h5>
                     <form action="#" id="formAddProductoACarrito" class="modulo-producto" method="post">
-                        <!-- <div class="d-flex align-items-end gap-3 mb-3">
+                        <div class="d-flex align-items-end gap-3 mb-3">
                             <label for="cantidad-producto" class="form-label">Cantidad</label>
                             <input type="number" class="form-control" id="CantidadAgregar">
-                        </div> -->
+                        </div>
                         <div class="botones-producto">
                             <button type="submit" class="btn btn-primario d-inline-block rounded-pill mb-3">Agregar al carrito</button>
                             <button type="button" class="btn btn-terciario d-inline-block rounded-pill" data-bs-toggle="modal" data-bs-target="#wishlistModal">
