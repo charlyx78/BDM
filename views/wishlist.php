@@ -9,6 +9,12 @@
 <body>
     <?php include_once "navbar.php" ?>
 
+    <div class="contenedor-loader" id="loader">
+        <div class="spinner-grow" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+
     <div class="contenedor-pagina container-fluid">
         <div class="contenedor-titulo-pagina">
             <div class="contenido-titulo-pagina">
@@ -17,7 +23,7 @@
             </div>
         </div>
 
-        <ul class="contenedor-wishlist">
+        <ul class="contenedor-wishlist" id="contenedorWishlist">
             <li class="wishlist accordion accordion-flush" id="accordionFlushExample">
                 <div class="accordion-item mb-3">
                     <div class="accordion-header" id="flush-headingOne">
@@ -68,7 +74,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="#" id="formAddWishlist" method="post">
+                <form enctype="multipart/form-data" id="formAddWishlist" method="post">
                     <div class="mb-2">
                         <label for="nombreWishlist" class="form-label">Nombre</label>
                         <input type="text" class="form-control" name="nombreWishlist" id="nombreWishlist">
@@ -79,17 +85,17 @@
                     </div>
                     <div class="mb-4">
                         <label for="imagenWishlist" class="form-label">Imagen</label>
-                        <input type="file" accept=".jpg,.png,.jpeg" id="imagenWishlist" class="form-control">
+                        <input type="file" accept=".jpg,.png,.jpeg" name="imagenWishlist" id="imagenWishlist" class="form-control">
                     </div>
                     <div class="mb-4 d-flex gap-3">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="privacidadWishlist">
+                            <input class="form-check-input" type="radio" name="privacidadWishlist" value="1">
                             <label class="form-check-label" for="privacidadWishlist">
                                 Publica
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="privacidadWishlist">
+                            <input class="form-check-input" type="radio" name="privacidadWishlist" value="2">
                             <label class="form-check-label" for="privacidadWishlist">
                                 Privada
                             </label>
@@ -117,7 +123,18 @@
         </div>
     </div>
 
+    <form action="../controllers/deleteProductoWishlist.php">
+        <input type="submit" name="idProductoWishlist" value="12">
+    </form>
 
+    <!-- Jquery -->
+    <script
+        src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+        crossorigin="anonymous">
+    </script>
+    <!-- Sweet alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../js/wishlist.js"></script>
 </body>
 </html>

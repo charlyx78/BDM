@@ -193,7 +193,7 @@
                 $id = 0;
                 $usuario = $_SESSION['UsuID'];
                 $valoracion = 0;
-                $activo = 1;
+                $activo = 2;
                 $opcion = "I";
 
                 $statement->bind_param(

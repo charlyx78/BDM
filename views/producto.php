@@ -38,7 +38,7 @@ session_start();
                         </div> -->
                         <div class="botones-producto">
                             <button type="submit" class="btn btn-primario d-inline-block rounded-pill mb-3">Agregar al carrito</button>
-                            <button type="button" class="btn btn-terciario d-inline-block rounded-pill">
+                            <button type="button" class="btn btn-terciario d-inline-block rounded-pill" data-bs-toggle="modal" data-bs-target="#wishlistModal">
                                 Agregar a wishlist
                                 <i class="bi bi-bookmark ms-3"></i>
                             </button>
@@ -161,7 +161,7 @@ session_start();
                     </div> -->
                     <div class="botones-producto">
                         <button type="submit" class="btn btn-primario d-inline-block rounded-pill mb-3">Agregar al carrito</button>
-                        <button type="button" class="btn btn-terciario d-inline-block rounded-pill">
+                        <button type="button" class="btn btn-terciario d-inline-block rounded-pill" data-bs-toggle="modal" data-bs-target="#wishlistModal">
                             Agregar a wishlist
                             <i class="bi bi-bookmark ms-3"></i>
                         </button>
@@ -288,6 +288,26 @@ session_start();
         </div>
     </div>
 
+    <div class="modal fade" id="wishlistModal" tabindex="-1" aria-labelledby="wishlistModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-4" id="wishlistModalLabel">Agregar a wishlist</h1>
+                    <button class="btn"><i class="bi bi-x-circle-fill text-danger" data-bs-dismiss="modal" aria-label="Close"></i></button>
+                </div>
+                <div class="modal-body">
+                    <form action="" id="formAddProductoWishlist">
+                        <div class="mb-3">
+                            <label for="wishlist" class="form-label">Wishlist</label>
+                            <select name="wishlist" class="form-select" id="wishlist"></select>
+                        </div>
+                        <button type="submit" class="btn btn-secundario">Agregar a la wishlist</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <?php include_once "footer.php" ?>
 
     <!-- Jquery -->
@@ -296,6 +316,8 @@ session_start();
         integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
         crossorigin="anonymous">
     </script>
+    <!-- Sweet alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../js/producto.js"></script>
 </body>
 </html>

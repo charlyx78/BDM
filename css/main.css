@@ -1387,13 +1387,6 @@ ul {
   flex-direction: row;
   gap: 1em;
 }
-.contenedor-wishlist .wishlist .producto-wishlist .imagen-producto-wishlist {
-  width: 40%;
-  background-image: url(../img/producto.webp);
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
 .contenedor-wishlist .wishlist .producto-wishlist .informacion-producto-wishlist .titulo-producto {
   display: flex;
   flex-direction: column;
@@ -1427,6 +1420,16 @@ ul {
 }
 .contenedor-wishlist .wishlist .producto-wishlist .informacion-producto-wishlist .botones-producto-wishlist button {
   width: 100%;
+}
+
+.imagen-producto-wishlist {
+  width: 170px;
+  height: 170px;
+  background-image: url(../img/producto.webp);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: 0 auto;
 }
 
 @media (min-width: 1440px) {
