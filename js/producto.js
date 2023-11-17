@@ -77,28 +77,21 @@ $(document).ready(async() => {
             console.log(JSON.stringify(formData));
             fetch('../controllers/addCarrito.php', {
                 method: 'POST',
-                body: formData
-            })
-            .then((response) => {
-                console.log(response)
-                //Alerta de confirmacion
+                body: JSON.stringify(formData) ,
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })   
+            .then(()=> {
                 Swal.fire(
                     'Exito!',
-                    'Producto agregado al Carrito',
+                    'Producto agregado a Carrito correctamente',
                     'success'
-                ).then(async() => {
-                    //Se resetean los campos del formulario de este
-                    CantidadAgregar.value = 0;
-                });
-            })
-            .catch(error => {
-                //Alerta de error
-                Swal.fire(
-                    'Error',
-                    error.message,
-                    'error'
-                );
-            });
+                    )
+                    .then(() => {
+                        $('#CantidadAgregar').val("")
+                    })
+                }) 
         }
     })
 

@@ -2,38 +2,20 @@
     session_start();
 
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
-
+        
         require_once "../db.php";
-
+        require_once "../models/Carrito.php";
+        
         try {
-            $idProducto = $_POST['idProducto'];
-            $cantidadProducto = $_POST['cantidadProducto'];
-            $precioProducto = $_POST['precioProducto'];
-
+            //Obtener Json
+            $json = json_decode(file_get_contents('php://input'),true);
+            
             // Conexion a la BD
             $mysqli = db::connect();
             
-            $sql = "CALL SP_GestionCarrito(?,?,?,?,?,?,?,?)";
-            $statement = $mysqli->prepare($sql);
+            $productoCarrito = Carrito::addCarrito($mysqli, $json['idProducto'], $json['cantidadProducto'], $json['precioProducto']);
 
-            $idCarrito = 1;
-            $usuario = $_SESSION['UsuID'];
-            $caducidad = "2025-9-11";
-            $valoracion = 2;
-            $activo = 2;
-            $opcion = "I";
-
-            $statement->bind_param(
-                "iiiidsis",
-                $idCarrito,
-                $usuario,
-                $idProducto,
-                $cantidadProducto,
-                $precioProducto,
-                $caducidad,
-                $activo,
-                $opcion);
-                $statement->execute();
+            echo "Producto agregado a Carrito exitosamente";
         }
         catch(Exception $exc) {
             echo ($exc->getMessage());
