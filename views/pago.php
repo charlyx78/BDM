@@ -42,7 +42,7 @@
                     <h2>Descuento: <span>0.00</span></h2>
                     <hr>
                 </div>
-                <h2>Total: <span id="totalCarrito">0</span></h2>
+                <h2>Total: <span id="totalCarrito" class="totalCarrito">5555</span></h2>
                 <a href="pago.php" class="btn btn-primario w-100 rounded-pill py-2">Pagar</a>
             </div>               
         </div>
@@ -87,5 +87,14 @@
         </div>
     </div>
 
+    <!-- Jquery -->
+    <script
+        src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+        crossorigin="anonymous">
+    </script>
+    <!-- Sweet alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/pago.js"></script>
 </body>
 </html>
