@@ -3,6 +3,7 @@
     display: flex;
     flex-direction: column;
     gap: 1.4em;
+
     .metodo-pago {
         display: flex;
         align-items: center;
@@ -10,6 +11,7 @@
         height: 60px;
         padding: 0 0.8em;
         border-radius: 0.6em;
+        width: 100%;
         box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;       
         cursor: pointer;
         h2 {
@@ -62,8 +64,7 @@
         .contenedor-total-carrito {
             box-shadow: none;
             position: static;
-            padding: 0 2em 4em 2em;
-            width: 80%;
+            padding: 2em 0 4em 0;
             margin: 0 auto;
             border-radius: 0 0 0.4em 0.4em;
             .contenido-total-carrito {

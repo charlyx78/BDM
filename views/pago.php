@@ -17,35 +17,32 @@
             </div>
         </div>
 
-        <ul class="contenedor-metodos-pago container-fluid">
-            <li class="metodo-pago">
+        <form class="contenedor-metodos-pago container-fluid">
+            <input class="btn-check" type="radio" name="tarjetaPago" id="tarjetaPago1">
+            <label class="metodo-pago btn" for="tarjetaPago1">
                 <img src="../img/visa.png" width="40" alt="">
                 <h2>**** **** **** 1234</h2>
-            </li>
-            <li class="metodo-pago">
+            </label>
+
+            <input class="btn-check" type="radio" name="tarjetaPago" id="tarjetaPago2">
+            <label class="metodo-pago btn" for="tarjetaPago2">
                 <img src="../img/mastercard.png" width="40" alt="">
                 <h2>**** **** **** 1234</h2>
-            </li>
-            <li class="metodo-pago agregar-metodo-pago" data-bs-toggle="modal" data-bs-target="#metodoPagoModal">
-                <h2>
-                    <i class="bi bi-plus-lg me-3"></i>
-                    Añadir metodo de pago
-                </h2>
-            </li>
-            <!-- <a href="pago.php" class="btn btn-primario w-100 rounded-pill py-3 fw-bold mt-4 d-none d-lg-block">Pagar</a> -->
-        </ul>
+            </label>
 
-        <div class="contenedor-total-carrito">
-            <div class="contenido-total-carrito container-fluid">
-                <div class="d-none d-lg-block">
-                    <h2>Subtotal: <span>12999.99</span></h2>
-                    <h2>Descuento: <span>0.00</span></h2>
-                    <hr>
-                </div>
-                <h2>Total: <span id="totalCarrito" class="totalCarrito">5555</span></h2>
-                <a href="pago.php" class="btn btn-primario w-100 rounded-pill py-2">Pagar</a>
-            </div>               
-        </div>
+            <div class="contenedor-total-carrito">
+                <div class="contenido-total-carrito container-fluid">
+                    <div class="d-none d-lg-block">
+                        <h2>Subtotal: <span>12999.99</span></h2>
+                        <h2>Descuento: <span>0.00</span></h2>
+                        <hr>
+                    </div>
+                    <h2>Total: <span id="totalCarrito" class="totalCarrito">5555</span></h2>
+                    <button type="submit" class="btn btn-primario w-100 rounded-pill py-2 mt-4">Pagar</button>
+                </div>               
+            </div>
+        </form>
+
     </main>
 
     <div class="modal fade" id="metodoPagoModal" tabindex="-1" aria-labelledby="metodoPagoModalLabel" aria-hidden="true">
