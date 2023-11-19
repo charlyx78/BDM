@@ -33,12 +33,13 @@ session_start();
                     <h5 class="disponibilidad-producto">Unidades disponibles: <span id="stockProducto">65</span> </h5>
                     <span>Vendido por:</span> <a class="text-secondary" href="account.php" id="vendedorProducto">Hola</a>
                     <form action="#" id="formAddProductoACarrito" class="modulo-producto" method="post">
-                        <div class="d-flex align-items-end gap-3 mb-3">
+                        <div class="align-items-end gap-3 mb-3" style="display: flex;" id="campoCantidad">
                             <label for="cantidad-producto" class="form-label">Cantidad</label>
                             <input type="number" class="form-control" id="CantidadAgregar">
                         </div>
                         <div class="botones-producto">
-                            <button type="submit" class="btn btn-primario d-inline-block rounded-pill mb-3">Agregar al carrito</button>
+                            <button href="contactos.php" class="btn btn-primario rounded-pill mb-3 btnAgregarCarrito">Agregar al carrito</button>
+                            <a href="chat.php" class="btn btn-primario rounded-pill mb-3 btnPedirCotizacion w-100 py-2">Enviar mensaje a vendedor</a>
                             <button type="button" class="btn btn-terciario d-inline-block rounded-pill" data-bs-toggle="modal" data-bs-target="#wishlistModal">
                                 Agregar a wishlist
                                 <i class="bi bi-bookmark ms-3"></i>
@@ -161,8 +162,9 @@ session_start();
                         <input type="number" class="form-control" id="CantidadAgregar">
                     </div> -->
                     <div class="botones-producto">
-                        <button type="submit" class="btn btn-primario d-inline-block rounded-pill mb-3">Agregar al carrito</button>
-                        <button type="button" class="btn btn-terciario d-inline-block rounded-pill" data-bs-toggle="modal" data-bs-target="#wishlistModal">
+                        <button type="submit" class="btn btn-primario rounded-pill mb-3 btnAgregarCarrito">Agregar al carrito</button>
+                        <a href="chat.php" class="btn btn-primario rounded-pill mb-3 btnPedirCotizacion w-100 py-2">Enviar mensaje a vendedor</a>
+                        <button class="btn btn-terciario d-inline-block rounded-pill" data-bs-toggle="modal" data-bs-target="#wishlistModal">
                             Agregar a wishlist
                             <i class="bi bi-bookmark ms-3"></i>
                         </button>

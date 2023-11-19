@@ -11,7 +11,20 @@ $(document).ready(async() => {
 
     $('#categoriaProducto').text(responseJSON.Categoria);
     $('#nombreProducto').text(responseJSON.Nombre);
-    $('#precioProducto').text('$' + responseJSON.Precio);
+
+    if(responseJSON.Tipo == "Precio fijo"){
+        $('#campoCantidad').show();
+        $('#precioProducto').text('$' + responseJSON.Precio);
+        $('.btnPedirCotizacion').hide();
+        $('.btnAgregarCarrito').show();
+    }
+    else {
+        $('#campoCantidad').hide();
+        $('#precioProducto').text('Precio cotizable');
+        $('.btnPedirCotizacion').show();
+        $('.btnAgregarCarrito').hide();
+    }
+    
     $('#valoracionProducto').text(responseJSON.Calificacion);
     $('#stockProducto').text(responseJSON.CantidadInventario)
     $('.textoDescProd').text(responseJSON.Descripcion);
