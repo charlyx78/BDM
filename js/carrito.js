@@ -16,8 +16,7 @@ $(document).ready(() => {
             await responseJSON.forEach(proCarr => {
                 $('#contenedor-productos-carrito').append(`
                 <div class="producto-carrito" data-idproducto="1">
-                    <div class="imagen-producto-carrito rounded");>
-                    </div>
+                    <div class="imagen-producto-carrito" style="background-image: url('data:image/png;base64,${proCarr.Imagen1}')"></div>
                     <div class="informacion-producto-carrito">
                         <div class="">
                             <h2>${proCarr.Nombre}</h2>
@@ -205,7 +204,7 @@ $(document).ready(() => {
                         })
         }
         catch(exception){
-            alert('No existen productos registrados en esta cuenta. Continue para crearlos')
+            alert('El carrito esta vacio. Explora la tienda para agregar productos')
             $('#loader').hide();
         }  
     

@@ -169,13 +169,12 @@
             }
         }
 
-        static public function readWishlist($mysqli) {
+        static public function readWishlist($mysqli, $usuario) {
             try {
                 $sql = "CALL SP_GestionWishlist(?,?,?,?,?,?,?,?,?,?,?)";
                 $statement = $mysqli->prepare($sql);
 
                 $id = 0;
-                $usuario = $_SESSION['UsuID'];
                 $nombre = '';
                 $descripcion = '';
                 $imagen = '';

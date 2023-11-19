@@ -19,11 +19,12 @@
         <div class="contenedor-titulo-pagina">
             <div class="contenido-titulo-pagina">
                 <h2 class="titulo-pagina mb-0">Wishlists</h2>
-                <button class="btn btn-primario" data-bs-toggle="modal" data-bs-target="#nuevaWishlistModal">Nueva lista</button>
+                <button class="btn btn-primario" id="btnModalWishlist" data-bs-toggle="modal" data-bs-target="#nuevaWishlistModal">Nueva lista</button>
             </div>
         </div>
 
         <ul class="contenedor-wishlist" id="contenedorWishlist">
+            <h4 id="mensaje-error" style="display: none;">No hay listas creadas :(</h4>
             <li class="wishlist accordion accordion-flush" id="accordionFlushExample">
                 <div class="accordion-item mb-3">
                     <div class="accordion-header" id="flush-headingOne">

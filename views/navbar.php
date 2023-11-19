@@ -9,10 +9,10 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mb-2 mb-lg-0">
                 <!-- Buscador Navbar -->
-                <form class="d-flex w-100" role="search">
+                <form class="d-flex w-100" id="formBusquedaProducto" role="search">
                     <div class="input-group input-group-md rounded-pill">
-                        <input class="form-control text-secondary" type="search" placeholder="Buscar producto..." aria-label="Search" aria-label="Search" aria-describedby="button-addon2">
-                        <a class="input-group-text btn-primario" id="button-addon2" href="search.php"><i class="bi bi-search"></i></a>
+                        <input class="form-control text-secondary" name="campoBusqueda" id="campoBusqueda" type="search" placeholder="Buscar producto..." aria-label="Search" aria-label="Search" aria-describedby="button-addon2">
+                        <button type="submit" name="busquedaProducto" class="input-group-text btn-primario" id="button-addon2" href="search.php"><i class="bi bi-search"></i></button>
                     </div>
                 </form>
                 <!-- Item Mensajes Celular -->
@@ -54,7 +54,8 @@
                             // Pantallas De Vendedor
                             else if($_SESSION['UsuRol'] == 'Vendedor') {
                                 echo
-                                '<li><a class="dropdown-item" href="misProductos.php">Mis productos</a></li>';
+                                '<li><a class="dropdown-item" href="misProductos.php">Mis productos</a></li>
+                                <li><a class="dropdown-item" href="wishlist.php">Wishlist</a></li>'; 
                             }
                             // Pantallas De Administrador
                             else if($_SESSION['UsuRol'] == 'Admin') {
@@ -101,6 +102,11 @@
                             '<li class="nav-item">
                                 <a href="misProductos.php" class="nav-link btn btn-light w-100 d-flex align-items-center" role="button">
                                     <div class="d-md-none">Mis productos</div>  
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="wishlist.php" class="nav-link btn btn-light w-100 d-flex align-items-center" role="button">
+                                    <div class="d-md-none">Wishlist</div>  
                                 </a>
                             </li>';
                         }

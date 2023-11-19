@@ -72,11 +72,11 @@
         $RegActivo = 2;
 
         $query = "select * from Usuarios where UsuCorreo = '$RegCorreo'";
-            $result2= mysqli_query($con, $query);
+            $result2= mysqli_query($mysqli, $query);
             if(!$result2->num_rows > 0)
             {
                 try{
-                    $statement = $con->prepare("CALL SP_RegistrarUsuario (?,?,?,?,?,?,?,?,?,?)");
+                    $statement = $mysqli->prepare("CALL SP_RegistrarUsuario (?,?,?,?,?,?,?,?,?,?)");
                     $statement->bind_param("sssisssisi", $RegCorreo, $RegApodo, $RegContra, $RegRol, $RegAvatar, $RegNombre, $RegApellidos, $RegSexo, $RegFechaNac, $RegActivo);
                     $statement->execute();
                     $statement->close();

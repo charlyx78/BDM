@@ -23,3 +23,8 @@ window.addEventListener("scroll", function() {
     }
     prevScrollPos = currentScrollPos;
 });
+
+document.getElementById('formBusquedaProducto').addEventListener('submit', (e) => {
+    e.preventDefault();
+    window.location.replace("search.php?nombreProducto=" + document.getElementById('campoBusqueda').value);
+})  

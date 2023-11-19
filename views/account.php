@@ -1,8 +1,18 @@
 <?php
 session_start();
 include("../db.php");
+    if(isset($_REQUEST['idUsuario'])) {
+        $mysqli = db::connect();
+        $sql = "SELECT * FROM vw_usuarios WHERE ID = ?";
+        $statement = $mysqli->prepare($sql);
 
-if(isset($_POST["submitUpdate"]))
+        $statement->bind_param("i", $_REQUEST['idUsuario']);
+
+        $statement->execute();
+        $result = $statement->get_result(); 
+        $rowUsuario = $result->fetch_assoc();
+    }
+    if(isset($_POST["submitUpdate"]))
     {
         $UpdNombre = $_POST['namesU'];
         $UpdApellidos = $_POST['lastnamesU'];
@@ -60,8 +70,9 @@ if(isset($_POST["submitUpdate"]))
                         </div>
                     </form>
                     <div class="text-center">
-                        <h3 class="m-0 fw-bold"><?php echo $_SESSION['UsuNombre'] ?></h3>
-                        <h5 class="m-0"><?php echo $_SESSION['UsuRol'] ?></h5>
+                        <h3 class="m-0 fw-bold"><?php echo isset($_REQUEST['idUsuario']) ? $rowUsuario["Nombres"] : $_SESSION['UsuNombre']; ?></h3>
+                        <h5 class="m-0"><?php echo isset($_REQUEST['idUsuario']) ? $rowUsuario["Rol"] : $_SESSION['UsuRol']; ?></h5>
+                        <a class="btn btn-light mt-2 <?php echo isset($_REQUEST['idUsuario']) ? "" : "d-none";?>" href="wishlist.php?idUsuario=<?php echo $rowUsuario["ID"]?>">Ver wishlists</a>
                     </div>
                 </div>
             </div>
@@ -72,22 +83,22 @@ if(isset($_POST["submitUpdate"]))
                         <div class="mb-2 row">
                             <div class="col">
                                 <label for="names" class="col-form-label">Nombre (s): </label>
-                                <input type="text" class="form-control" name="namesU" id="namesU" value="<?php echo $_SESSION['UsuNombre'] ?>" maxlength="70" required>
+                                <input type="text" class="form-control" name="namesU" id="namesU" value="<?php echo isset($_REQUEST['idUsuario']) ? $rowUsuario["Nombres"] : $_SESSION['UsuNombre']; ?>" maxlength="70" required <?php echo isset($_REQUEST['idUsuario']) ? "readonly" : "";?>> 
                             </div>
                             <div class="col">
                                 <label for="lastnames" class="col-form-label">Apellidos: </label>
-                                <input type="text" class="form-control" name="lastnamesU" id="lastnamesU" value="<?php echo $_SESSION['UsuApellidos'] ?>"  maxlength="70" required>
+                                <input type="text" class="form-control" name="lastnamesU" id="lastnamesU" value="<?php echo isset($_REQUEST['idUsuario']) ? $rowUsuario["Apellidos"] : $_SESSION['UsuApellidos']; ?>"  maxlength="70" required <?php echo isset($_REQUEST['idUsuario']) ? "readonly" : "";?>>
                             </div>       
                         </div>
                         <div class="mb-2 row">
                             <div class="col">
                                 <label for="birthdate" class="col-form-label">Fecha de nacimiento: </label>
-                                <input type="date" class="form-control" value="<?php echo $_SESSION['UsuFechaNac'] ?>" name="birthdateU" id="birthdateU" required>
+                                <input type="date" class="form-control" value="<?php echo isset($_REQUEST['idUsuario']) ? $rowUsuario["FechaNacimiento"] : $_SESSION['UsuFechaNac']; ?>" name="birthdateU" id="birthdateU" required <?php echo isset($_REQUEST['idUsuario']) ? "readonly" : "";?>>
                             </div>
                             <div class="col">
                                 <label for="sexU" class="col-form-label">Sexo: </label>
                                 <select name="sexU" id="sexU" class="form-control">
-                                    <option value="<?php echo $_SESSION['UsuFKSexo'] ?>"><?php echo $_SESSION['UsuSexo'] ?></option>
+                                    <option value="<?php echo isset($_REQUEST['idUsuario']) ? $rowUsuario["IDSexo"] : $_SESSION['UsuSexo'];?>"><?php echo isset($_REQUEST['idUsuario']) ? $rowUsuario["Sexo"] : $_SESSION['UsuSexo'];?></option>
                                     <option value="1">Hombre</option>
                                     <option value="2">Mujer</option>
                                     <option value="3">Otro</option>
@@ -96,25 +107,25 @@ if(isset($_POST["submitUpdate"]))
                         </div>
                         <div class="mb-2">
                             <label for="username" class="col-form-label">Nombre de usuario: </label>
-                            <input type="text" class="form-control" name="usernameU" id="usernameU" value="<?php echo $_SESSION['UsuApodo'] ?>"  maxlength="70" required>
+                            <input type="text" class="form-control" name="usernameU" id="usernameU" value="<?php echo isset($_REQUEST['idUsuario']) ? $rowUsuario['Apodo'] : $_SESSION['UsuApodo']; ?>"  maxlength="70" required <?php echo isset($_REQUEST['idUsuario']) ? "readonly" : "";?>>
                         </div>
                         <div class="mb-2">
                             <label for="email" class="col-form-label">Correo: </label>
-                            <input type="email" class="form-control" name="emailU" id="emailU" value="<?php echo $_SESSION['UsuCorreo'] ?>"  maxlength="40" required>
+                            <input type="email" class="form-control" name="emailU" id="emailU" value="<?php echo isset($_REQUEST['idUsuario']) ? $rowUsuario['Correo'] : $_SESSION['UsuCorreo']; ?>"  maxlength="40" required <?php echo isset($_REQUEST['idUsuario']) ? "readonly" : "";?>>
                         </div>
                         <div class="mb-5 row">
                             <div class="col">
                                 <label for="password" class="col-form-label">Contraseña: </label>
-                                <input type="password" class="form-control" name="passwordU" id="passwordU" value="<?php echo $_SESSION['UsuContra'] ?>" maxlength="40" required>
+                                <input type="password" class="form-control" name="passwordU" id="passwordU" value="<?php echo isset($_REQUEST['idUsuario']) ? $rowUsuario['Contrasena'] : $_SESSION['UsuContra']; ?>" maxlength="40" required <?php echo isset($_REQUEST['idUsuario']) ? "readonly" : "";?>>
                             </div>
                             <div class="col">
                                 <label for="confirmpassword" class="col-form-label">Confirmar contraseña: </label>
-                                <input type="password" class="form-control" name="confirmpasswordU" id="passwordU" placeholder="Confirmar contraseña" maxlength="40" required>
+                                <input type="password" class="form-control" name="confirmpasswordU" id="passwordU" placeholder="Confirmar contraseña" maxlength="40" required <?php echo isset($_REQUEST['idUsuario']) ? "readonly" : "";?>>
                             </div>  
                         </div>    
                         <div class="d-flex justify-content-end">
                             <!-- <button type="button" class="btn btn-secundario w-100">Guardar cambios</button> -->
-                            <input type="submit" value="Guardar Cambios" id="submitUpdate" name="submitUpdate" class="btn btn-secundario w-100">
+                            <input type="submit" value="Guardar Cambios" id="submitUpdate" name="submitUpdate" class="btn btn-secundario w-100 <?php echo isset($_REQUEST['idUsuario']) ? "d-none" : "";?>">
                         </div>
                     </form>
                 </div>

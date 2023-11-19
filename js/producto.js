@@ -13,7 +13,10 @@ $(document).ready(async() => {
     $('#nombreProducto').text(responseJSON.Nombre);
     $('#precioProducto').text('$' + responseJSON.Precio);
     $('#valoracionProducto').text(responseJSON.Calificacion);
+    $('#stockProducto').text(responseJSON.CantidadInventario)
     $('.textoDescProd').text(responseJSON.Descripcion);
+    $('#vendedorProducto').text(responseJSON.Vendedor);
+    $('#vendedorProducto').attr('href', 'account.php?idUsuario=' + responseJSON.IDVendedor);
 
     $('#videoProducto').attr('src', responseJSON.Video);
     $('.muestra-multimedia2').css('background-image', "url('data:image/png;base64," + responseJSON.Imagen1 + "')");
@@ -116,7 +119,8 @@ async function getWishlist() {
         });
     }
     catch(exception){
-        alert('No existen productos registrados en esta cuenta. Continue para crearlos')
+        // alert('No existen productos registrados en esta cuenta. Continue para crearlos')
+        $('#btnAgregarWishlist').addClass('disabled')
         $('#loader').hide();
     }   
 }

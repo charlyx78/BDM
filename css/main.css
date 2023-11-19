@@ -919,7 +919,7 @@ ul {
 .contenedor-carrito .contenedor-productos-carrito .producto-carrito .imagen-producto-carrito {
   width: 40%;
   background-image: url(../img/producto.webp);
-  background-size: cover;
+  background-size: contain;
   background-position: center center;
   background-repeat: no-repeat;
 }
@@ -1277,7 +1277,7 @@ ul {
   margin-bottom: 0.4em;
   background-image: url(../img/producto.webp);
   background-position: center center;
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
 }
 .contenedor-pagina-search .contenedor-productos-busqueda .producto-busqueda-item .producto-busqueda .informacion-producto-busqueda {

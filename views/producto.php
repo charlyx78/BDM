@@ -30,7 +30,8 @@ session_start();
                     </div>
                 </div>
                 <div class="d-none d-lg-block">
-                    <h5 class="disponibilidad-producto">Unidades disponibles: <span>65</span> </h5>
+                    <h5 class="disponibilidad-producto">Unidades disponibles: <span id="stockProducto">65</span> </h5>
+                    <span>Vendido por:</span> <a class="text-secondary" href="account.php" id="vendedorProducto">Hola</a>
                     <form action="#" id="formAddProductoACarrito" class="modulo-producto" method="post">
                         <div class="d-flex align-items-end gap-3 mb-3">
                             <label for="cantidad-producto" class="form-label">Cantidad</label>
@@ -301,7 +302,7 @@ session_start();
                             <label for="wishlist" class="form-label">Wishlist</label>
                             <select name="wishlist" class="form-select" id="wishlist"></select>
                         </div>
-                        <button type="submit" class="btn btn-secundario">Agregar a la wishlist</button>
+                        <button type="submit" class="btn btn-secundario" id="btnAgregarWishlist" >Agregar a la wishlist</button>
                     </form>
                 </div>
             </div>

@@ -1,4 +1,8 @@
 $(document).ready(() => {
+
+    urlParametros = new URLSearchParams(window.location.search);
+    idUsuario = urlParametros.get("idUsuario");
+
     $('#formAddWishlist').on('submit', function(e) {
         e.preventDefault();
         
@@ -76,7 +80,15 @@ $(document).ready(() => {
         
         try {
             //Se guarda en una variable la respuesta del controlador readCategorias
-            let response = await fetch('../controllers/readWishlist.php');
+            let response;
+
+            if(idUsuario != null) {
+                response = await fetch('../controllers/readWishlist.php?idUsuario=' + idUsuario)
+                $('#btnModalWishlist').hide();
+            }
+            else {
+                response = await fetch('../controllers/readWishlist.php')
+            }
     
             //Espera a obtener la respuesta y la convierte la respuesta en un JSON
             let responseJSON = await response.json();
@@ -91,8 +103,8 @@ $(document).ready(() => {
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse${wish.ID}" data-idwishlist=${wish.ID} aria-expanded="false" aria-controls="collapse${wish.ID}">
                                     ${wish.Nombre}   
                                 </button>
-                                <button type="button" class="btn btn-sm boton-wishlist btn-editar-wishlist" data-idwishlist=${wish.ID} data-bs-toggle="modal" data-bs-target="#nuevaWishlistModal"><i class="bi bi-pencil text-primario fs-5 fw-bold"></i></button>
-                                <button type="button" class="btn btn-sm boton-wishlist btn-eliminar-wishlist" data-idwishlist=${wish.ID}><i class="bi bi-trash3 text-danger fs-5 fw-bold"></i></button>
+                                ${idUsuario == null ? '<button type="button" class="btn btn-sm boton-wishlist btn-editar-wishlist" data-idwishlist='+wish.ID+'data-bs-toggle="modal" data-bs-target="#nuevaWishlistModal"><i class="bi bi-pencil text-primario fs-5 fw-bold"></i></button>' : '' }
+                                ${idUsuario == null ? '<button type="button" class="btn btn-sm boton-wishlist btn-eliminar-wishlist" data-idwishlist='+wish.ID+'><i class="bi bi-trash3 text-danger fs-5 fw-bold"></i></button>' : '' }
                             </div>
                         </div>  
                         <div id="collapse${wish.ID}" class="accordion-collapse collapse" aria-labelledby="heading${wish.ID}" data-bs-parent="#${wish.ID}">
@@ -104,7 +116,6 @@ $(document).ready(() => {
                                             <th>Nombre</th>
                                             <th>Precio</th>
                                             <th>Calificacion</th>
-                                            <th></th>
                                             <th></th>
                                         </tr>
                                     </thead>
@@ -258,8 +269,7 @@ $(document).ready(() => {
                         <td><a href="producto.php?idProducto=${prowish.ID}">${prowish.Nombre}</a></td>
                         <td>$${prowish.Precio}</td>
                         <td><i class="bi bi-star-fill color-oro me-2"></i>${prowish.Calificacion} </td>
-                        <td><button type="button" class="btn btn-sm btn-outline-secundario w-100 mb-1 mb-lg-0">Agregar al carrito</button></td>
-                        <td><button type="button" class="btn btn-sm btn-outline-danger w-100 boton-eliminar-producto" data-idproductolista="${prowish.IDProductoWishlist}">Eliminar</button></td>
+                        ${idUsuario == null ? '<td><button type="button" class="btn btn-sm btn-outline-danger w-100 boton-eliminar-producto" data-idproductolista="${prowish.IDProductoWishlist}">Eliminar</button></td>' : ''}
                     </tr>
                     `);
                 })
@@ -321,7 +331,7 @@ $(document).ready(() => {
             $('#loader').hide();
         }
         catch(exception){
-            alert('No existen productos registrados en esta cuenta. Continue para crearlos')
+            $('#mensaje-error').show()
             $('#loader').hide();
         }   
     }

@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,30 +22,6 @@
 
     <div class="contenedor-carrito container-fluid">
         <div class="contenedor-productos-carrito" id="contenedor-productos-carrito">
-            <div class="producto-carrito" data-idproducto="1">
-                <div class="imagen-producto-carrito rounded">
-                </div>
-                <div class="informacion-producto-carrito">
-                    <div class="">
-                        <h2>iPhone 14 Pro 128GB 4GB RAM</h2>
-                        <h4 id="precioProducto1" class="precio-producto">12999.99</h4>
-                    </div>
-                    <div class="d-flex align-items-center gap-2">
-                        <div class="d-flex gap-1 align-items-center">
-                            <button class="btn btn-primario btn-sm boton-menos-cantidad rounded-pill" data-idproducto="1"><i class="bi bi-dash"></i></button>
-                            <input name="1" class="form-control text-center input-cantidad" value="1">
-                            <button class="btn btn-primario btn-sm boton-mas-cantidad rounded-pill" data-idproducto="1"><i class="bi bi-plus"></i></button>
-                        </div>
-                    </div>
-                    <div class="total d-none d-lg-block">
-                        <h4 class="total-producto">12999.99</h4>
-                    </div>
-                    <div class="eliminar d-none d-lg-block">
-                        <button class="btn"><i class="bi bi-trash-fill text-danger fs-4"></i></button>
-                    </div>
-                </div>
-                <div class="boton-quitar-producto d-block d-lg-none"><button class="btn"><i class="bi bi-x-circle-fill text-secondary fs-4"></i></button></div>
-            </div>
         </div>
         
         <div class="contenedor-total-carrito">
