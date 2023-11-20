@@ -6,17 +6,16 @@
         require_once "../db.php";
         require_once "../models/Venta.php";
         
-        try {//TENGO QUE HACER EL "readCarrito" PARA TENER TODOS LOS PRODUCTOS DEL USUARIO QUE VA A PAGAR
-            //POR CADA UNO DE ESE ARRAY DE CARRITOS, TENGO QUE HACER EL "addVenta"
+        try {
             //Obtener Json
             $json = json_decode(file_get_contents('php://input'),true);
             
             // Conexion a la BD
             $mysqli = db::connect();
             
-            $productoCarrito = Venta::addVenta($mysqli, $json['idProducto'], $json['cantidadProducto']);
+            $Venta = Venta::addVenta($mysqli, $json['idProductoVenta'], $json['idProductoTipo'], $json['idProductoNombre'], $json['idProductoCategoria'], $json['idProductoPrecio'], $json['idProductoCantidad'], $json['usuarioVendedor'], $json['idMetodoPago']);
 
-            echo "Productos Vendidos Exitosamente";
+            echo "Productos Comprados exitosamente";
         }
         catch(Exception $exc) {
             echo ($exc->getMessage());

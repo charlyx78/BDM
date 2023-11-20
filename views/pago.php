@@ -17,7 +17,7 @@
             </div>
         </div>
 
-        <form class="contenedor-metodos-pago container-fluid">
+        <form class="contenedor-metodos-pago container-fluid" id="contenedor-metodos-pago" method="POST">
             <input class="btn-check" type="radio" name="tarjetaPago" id="tarjetaPago1">
             <label class="metodo-pago btn" for="tarjetaPago1">
                 <img src="../img/visa.png" width="40" alt="">
@@ -33,11 +33,11 @@
             <div class="contenedor-total-carrito">
                 <div class="contenido-total-carrito container-fluid">
                     <div class="d-none d-lg-block">
-                        <h2>Subtotal: <span>12999.99</span></h2>
+                        <h2>Subtotal: <span id="SubtotalAPagar">12999.99</span></h2>
                         <h2>Descuento: <span>0.00</span></h2>
                         <hr>
                     </div>
-                    <h2>Total: <span id="totalCarrito" class="totalCarrito">5555</span></h2>
+                    <h2>Total: <span id="TotalaPagar" class="totalCarrito">5555</span></h2>
                     <button type="submit" class="btn btn-primario w-100 rounded-pill py-2 mt-4">Pagar</button>
                 </div>               
             </div>

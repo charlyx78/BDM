@@ -111,80 +111,41 @@
             $this->activo = $activo;
         }
 
-        static public function addVenta($mysqli, $idCliente) { //FALTA JEJE
+        static public function addVenta($mysqli, $idProductoVenta, $idProductoTipo, $idProductoNombre, $idProductoCategoria, $idProductoPrecio, $idProductoCantidad, $usuarioVendedor, $idMetodoPago) { //FALTA JEJE
             try {
-            $sql = "CALL SP_GestionCarrito(?,?,?,?,?,?,?,?)";
-            $statement = $mysqli->prepare($sql);
-
-            $id = 0;
-            $usuario = $_SESSION['UsuID'];
-            $caducidad = "2025-9-11";
-            $valoracion = 2;
-            $activo = 2;
-            $opcion = "I";
-
-            $statement->bind_param(
-                "iiiidsis",
-                $idCarrito,
-                $usuario,
-                $idProducto,
-                $cantidad,
-                $precio,
-                $caducidad,
-                $activo,
-                $opcion);
-
-                $result = $statement->execute();
-
-                if($result) {
-                    echo 'Producto agregado a Carrito exitosamente';
-                }
-                else {
-                    echo 'Error al agregar producto a Carrito';  
-                }
-            }
-            catch (Exception $exc) {
-                echo '<script>alert("' . $exc . '")</script>';
-            }
-        }
-
-        static public function readProductoCarrito($mysqli) {
-            try {
-                $sql = "CALL SP_GestionCarrito(?,?,?,?,?,?,?,?)";
+                $sql = "CALL SP_GestionVentas(?,?,?,?,?,?,?,?,?,?,?,?,?)";
                 $statement = $mysqli->prepare($sql);
 
-                $idCarrito = 0;
-                $usuario = $_SESSION['UsuID'];
-                $idProducto = 0;
-                $cantidad = 0;
-                $precio = 0;
-                $caducidad = '';
+                $idVenta = 0;
+                $idVentaFecha = "2025-9-11";
+                $usuarioCliente = $_SESSION['UsuID'];
                 $activo = 2;
-                $opcion = "SP";
+                $opcion = "I";
 
-                $statement->bind_param(
-                    "iiiidsis",
-                    $idCarrito,
-                    $usuario,
-                    $idProducto,
-                    $cantidad,
-                    $precio,
-                    $caducidad,
+                $statement2->bind_param(
+                    "iiisidisiiiis",
+                    $idVenta,
+                    $idProductoVenta,
+                    $idProductoTipo,
+                    $idProductoNombre,
+                    $idProductoCategoria,
+                    $idProductoPrecio,
+                    $idProductoCantidad,
+                    $idVentaFecha,
+                    $usuarioVendedor,
+                    $usuarioCliente,
+                    $idMetodoPago,
                     $activo,
                     $opcion);    
 
                     $statement->execute();
-                    $result = $statement->get_result(); 
+                    $result = $statement->get_result();
 
-                    $Productos = array();
-
-                    if($result->num_rows > 0) {
-                        while($row = $result->fetch_assoc()) {
-                            $producto = $row;
-                            $producto['Imagen1'] = base64_encode($producto['Imagen1']);
-                            $Productos[] = $producto;
-                        }
-                        return $Productos;
+                    if($result) {
+                        echo 'Producto agregado a Carrito exitosamente';
+                    }
+                    else {
+                        echo 'Error al agregar producto a Carrito';  
                     }
             }
             catch (Exception $exc) {
