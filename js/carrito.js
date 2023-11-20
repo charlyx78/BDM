@@ -2,6 +2,7 @@ $(document).ready(() => {
 
     getProductosCarrito();
     let totalPagar = 0.00;
+
     async function getProductosCarrito() {
     
         //Se limpia la tabla
@@ -202,8 +203,14 @@ $(document).ready(() => {
                                 }
                             })
                         })
+                        if(totalPagar == 0) {
+                            $('#btnProcederPago').addClass('disabled')
+                        }
         }
         catch(exception){
+            if(totalPagar == 0) {
+                $('#btnProcederPago').addClass('disabled')
+            }
             alert('El carrito esta vacio. Explora la tienda para agregar productos')
             $('#loader').hide();
         }  

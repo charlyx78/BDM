@@ -30,7 +30,7 @@ session_start();
                 <h2>Descuento: <span>0.00</span></h2>
                 <hr> -->
                 <h2>Total: <span id="totalCarrito" class="totalCarrito">0</span></h2>
-                <a href="pago.php" class="btn btn-primario rounded-pill w-100">Proceder al pago</a>
+                <a href="pago.php" class="btn btn-primario rounded-pill w-100" id="btnProcederPago">Proceder al pago</a>
             </div>               
         </div>
     </div>
