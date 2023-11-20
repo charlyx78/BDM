@@ -9,12 +9,15 @@
 
         // Conexion a la BD
         $mysqli = db::connect();
-                
+        
+        $opcionYo = "SU";
+        $opcionOtro = "SUA";
+
         if(isset($_REQUEST['idUsuario'])) {
-            $result = Wishlist::readWishlist($mysqli, $_REQUEST['idUsuario']);
+            $result = Wishlist::readWishlist($mysqli, $_REQUEST['idUsuario'], $opcionOtro);
         }
         else {
-            $result = Wishlist::readWishlist($mysqli, $_SESSION['UsuID']);
+            $result = Wishlist::readWishlist($mysqli, $_SESSION['UsuID'], $opcionYo);
         }
 
         echo json_encode($result);

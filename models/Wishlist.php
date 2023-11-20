@@ -169,7 +169,7 @@
             }
         }
 
-        static public function readWishlist($mysqli, $usuario) {
+        static public function readWishlist($mysqli, $usuario, $opcion) {
             try {
                 $sql = "CALL SP_GestionWishlist(?,?,?,?,?,?,?,?,?,?,?)";
                 $statement = $mysqli->prepare($sql);
@@ -183,7 +183,6 @@
                 $tipo = '';
                 $activo = 0;
                 $producto = 0;
-                $opcion = "SU";
 
                 $statement->bind_param(
                     "iissbsisiis",
