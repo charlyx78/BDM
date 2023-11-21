@@ -6,13 +6,22 @@ $(document).ready(async () => {
     const tipoVentaProducto = $("#tipoVentaProducto");
     const precioProducto = $("#precioProducto");
     const stockProducto = $("#stockProducto");
-    const stockUnidadMedida = $("#stockUnidadMedida");
     const descripcionProducto = $("#descripcionProducto");
     const imagenProducto1 = $("#imagenProducto1");
     const imagenProducto2 = $("#imagenProducto2");
     const imagenProducto3 = $("#imagenProducto3");
     const videoProducto = $("#videoProducto");
     
+    tipoVentaProducto.on('change', function () {
+        if(tipoVentaProducto.val() == 2) {
+            precioProducto.val(0)
+            precioProducto.prop( "disabled", true )
+        }
+        else {
+            precioProducto.prop( "disabled", false )
+        }
+    })
+
     //Al abrir el modal desde el boton de nueva categoria se resetean los campos del formulario y se cambia la variable isEditando a false 
     $('#btnAbrirModal').click(() => {
         isEditando = false;
