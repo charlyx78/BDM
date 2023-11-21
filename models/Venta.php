@@ -122,7 +122,7 @@
                 $activo = 2;
                 $opcion = "I";
 
-                $statement2->bind_param(
+                $statement->bind_param(
                     "iiisidisiiiis",
                     $idVenta,
                     $idProductoVenta,
