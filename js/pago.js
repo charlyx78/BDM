@@ -64,10 +64,7 @@ $(document).ready(() => {
                 console.log(JSON.stringify(formData));
                 fetch('../controllers/addVenta.php', {//No Creado
                     method: 'POST',
-                    body: JSON.stringify(formData) ,
-                    headers: {
-                        'Content-Type': 'application/json'
-                    }
+                    body: formData
                 })   
                 .then(()=> {
                     Swal.fire(
