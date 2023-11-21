@@ -53,72 +53,14 @@ session_start();
                     <div class="contenedor-comentarios">
                         <p class="m-0">
                             <a class="header-comentarios" data-bs-toggle="collapse" href="#collapseComentarios" role="button" aria-expanded="false" aria-controls="collapseComentarios">
-                                Reseñas (5)
+                                Reseñas
                                 <i class="bi bi-chevron-down"></i>
 
                             </a>
                         </p>
                         <div class="collapse pt-4" id="collapseComentarios">
                             <a class="btn btn-primario rounded-pill w-100" data-bs-toggle="modal" data-bs-target="#comentarioModal" id="btnAnadirResena">Escribe una reseña</a>
-                            <div class="comentario">
-                                <div class="titulo-comentario"><h2>Excelente producto</h2></div>
-                                <div class="d-flex align-items-center gap-4">
-                                    <div class="calificacion-comentario"><h4 class="text-secondary"><i class="bi bi-star-fill me-2"></i>4.5</h4></div>
-                                    <div class="usuario-fecha-comentario">
-                                        <h4 class="text-secondary">Mario Salinas</h4>
-                                        <h4 class="text-secondary">-</h4>
-                                        <h4 class="text-secondary">23/09/2023</h4>
-                                    </div>
-                                </div>
-                                <div class="contenido-comentario"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla excepturi numquam molestias reiciendis sit expedita consequuntur voluptate eius velit soluta minus porro sint suscipit alias libero quod, dicta obcaecati at!</p></div>
-                            </div>
-                            <div class="comentario">
-                                <div class="titulo-comentario"><h2>Excelente producto</h2></div>
-                                <div class="d-flex align-items-center gap-4">
-                                    <div class="calificacion-comentario"><h4 class="text-secondary"><i class="bi bi-star-fill me-2"></i>4.5</h4></div>
-                                    <div class="usuario-fecha-comentario">
-                                        <h4 class="text-secondary">Mario Salinas</h4>
-                                        <h4 class="text-secondary">-</h4>
-                                        <h4 class="text-secondary">23/09/2023</h4>
-                                    </div>
-                                </div>
-                                <div class="contenido-comentario"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla excepturi numquam molestias reiciendis sit expedita consequuntur voluptate eius velit soluta minus porro sint suscipit alias libero quod, dicta obcaecati at!</p></div>
-                            </div>
-                            <div class="comentario">
-                                <div class="titulo-comentario"><h2>Excelente producto</h2></div>
-                                <div class="d-flex align-items-center gap-4">
-                                    <div class="calificacion-comentario"><h4 class="text-secondary"><i class="bi bi-star-fill me-2"></i>4.5</h4></div>
-                                    <div class="usuario-fecha-comentario">
-                                        <h4 class="text-secondary">Mario Salinas</h4>
-                                        <h4 class="text-secondary">-</h4>
-                                        <h4 class="text-secondary">23/09/2023</h4>
-                                    </div>
-                                </div>
-                                <div class="contenido-comentario"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla excepturi numquam molestias reiciendis sit expedita consequuntur voluptate eius velit soluta minus porro sint suscipit alias libero quod, dicta obcaecati at!</p></div>
-                            </div>
-                            <div class="comentario">
-                                <div class="titulo-comentario"><h2>Excelente producto</h2></div>
-                                <div class="d-flex align-items-center gap-4">
-                                    <div class="calificacion-comentario"><h4 class="text-secondary"><i class="bi bi-star-fill me-2"></i>4.5</h4></div>
-                                    <div class="usuario-fecha-comentario">
-                                        <h4 class="text-secondary">Mario Salinas</h4>
-                                        <h4 class="text-secondary">-</h4>
-                                        <h4 class="text-secondary">23/09/2023</h4>
-                                    </div>
-                                </div>
-                                <div class="contenido-comentario"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla excepturi numquam molestias reiciendis sit expedita consequuntur voluptate eius velit soluta minus porro sint suscipit alias libero quod, dicta obcaecati at!</p></div>
-                            </div>
-                            <div class="comentario">
-                                <div class="titulo-comentario"><h2>Excelente producto</h2></div>
-                                <div class="d-flex align-items-center gap-4">
-                                    <div class="calificacion-comentario"><h4 class="text-secondary"><i class="bi bi-star-fill me-2"></i>4.5</h4></div>
-                                    <div class="usuario-fecha-comentario">
-                                        <h4 class="text-secondary">Mario Salinas</h4>
-                                        <h4 class="text-secondary">-</h4>
-                                        <h4 class="text-secondary">23/09/2023</h4>
-                                    </div>
-                                </div>
-                                <div class="contenido-comentario"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla excepturi numquam molestias reiciendis sit expedita consequuntur voluptate eius velit soluta minus porro sint suscipit alias libero quod, dicta obcaecati at!</p></div>
+                            <div class="comentarios">
                             </div>
                         </div>         
                     </div>
@@ -177,71 +119,13 @@ session_start();
                 <div class="contenedor-comentarios">
                     <p class="m-0">
                         <a class="header-comentarios" id="headerComentarios" data-bs-toggle="collapse" href="#collapseComentarios" role="button" aria-expanded="false" aria-controls="collapseComentarios">
-                            Reseñas (5) 
+                            Reseñas 
                             <i class="bi bi-chevron-down" id="iconoChevron"></i>
                         </a>
                     </p>
                     <div class="collapse pt-4" id="collapseComentarios">
                         <a class="boton-escribir-comentario" data-bs-toggle="modal" data-bs-target="#comentarioModal">Escribe una reseña</a>
-                        <div class="comentario">
-                            <div class="titulo-comentario"><h2>Excelente producto</h2></div>
-                            <div class="d-flex align-items-center gap-4">
-                                <div class="calificacion-comentario"><h4 class="text-secondary"><i class="bi bi-star-fill me-2"></i>4.5</h4></div>
-                                <div class="usuario-fecha-comentario">
-                                    <h4 class="text-secondary">Mario Salinas</h4>
-                                    <h4 class="text-secondary">-</h4>
-                                    <h4 class="text-secondary">23/09/2023</h4>
-                                </div>
-                            </div>
-                            <div class="contenido-comentario"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla excepturi numquam molestias reiciendis sit expedita consequuntur voluptate eius velit soluta minus porro sint suscipit alias libero quod, dicta obcaecati at!</p></div>
-                        </div>
-                        <div class="comentario">
-                            <div class="titulo-comentario"><h2>Excelente producto</h2></div>
-                            <div class="d-flex align-items-center gap-4">
-                                <div class="calificacion-comentario"><h4 class="text-secondary"><i class="bi bi-star-fill me-2"></i>4.5</h4></div>
-                                <div class="usuario-fecha-comentario">
-                                    <h4 class="text-secondary">Mario Salinas</h4>
-                                    <h4 class="text-secondary">-</h4>
-                                    <h4 class="text-secondary">23/09/2023</h4>
-                                </div>
-                            </div>
-                            <div class="contenido-comentario"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla excepturi numquam molestias reiciendis sit expedita consequuntur voluptate eius velit soluta minus porro sint suscipit alias libero quod, dicta obcaecati at!</p></div>
-                        </div>
-                        <div class="comentario">
-                            <div class="titulo-comentario"><h2>Excelente producto</h2></div>
-                            <div class="d-flex align-items-center gap-4">
-                                <div class="calificacion-comentario"><h4 class="text-secondary"><i class="bi bi-star-fill me-2"></i>4.5</h4></div>
-                                <div class="usuario-fecha-comentario">
-                                    <h4 class="text-secondary">Mario Salinas</h4>
-                                    <h4 class="text-secondary">-</h4>
-                                    <h4 class="text-secondary">23/09/2023</h4>
-                                </div>
-                            </div>
-                            <div class="contenido-comentario"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla excepturi numquam molestias reiciendis sit expedita consequuntur voluptate eius velit soluta minus porro sint suscipit alias libero quod, dicta obcaecati at!</p></div>
-                        </div>
-                        <div class="comentario">
-                            <div class="titulo-comentario"><h2>Excelente producto</h2></div>
-                            <div class="d-flex align-items-center gap-4">
-                                <div class="calificacion-comentario"><h4 class="text-secondary"><i class="bi bi-star-fill me-2"></i>4.5</h4></div>
-                                <div class="usuario-fecha-comentario">
-                                    <h4 class="text-secondary">Mario Salinas</h4>
-                                    <h4 class="text-secondary">-</h4>
-                                    <h4 class="text-secondary">23/09/2023</h4>
-                                </div>
-                            </div>
-                            <div class="contenido-comentario"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla excepturi numquam molestias reiciendis sit expedita consequuntur voluptate eius velit soluta minus porro sint suscipit alias libero quod, dicta obcaecati at!</p></div>
-                        </div>
-                        <div class="comentario">
-                            <div class="titulo-comentario"><h2>Excelente producto</h2></div>
-                            <div class="d-flex align-items-center gap-4">
-                                <div class="calificacion-comentario"><h4 class="text-secondary"><i class="bi bi-star-fill me-2"></i>4.5</h4></div>
-                                <div class="usuario-fecha-comentario">
-                                    <h4 class="text-secondary">Mario Salinas</h4>
-                                    <h4 class="text-secondary">-</h4>
-                                    <h4 class="text-secondary">23/09/2023</h4>
-                                </div>
-                            </div>
-                            <div class="contenido-comentario"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla excepturi numquam molestias reiciendis sit expedita consequuntur voluptate eius velit soluta minus porro sint suscipit alias libero quod, dicta obcaecati at!</p></div>
+                        <div class="comentarios">        
                         </div>
                     </div>         
                 </div>
@@ -258,10 +142,6 @@ session_start();
                 </div>
                 <div class="modal-body">
                     <form id="form-resena" method="POST">
-                        <div class="mb-3">
-                            <label for="tituloComentario" class="form-label">Titulo</label>
-                            <input type="text" name="tituloComentario" id="tituloComentario" class="form-control">
-                        </div>
                         <div class="mb-4">
                             <label for="contenidoComentario" class="form-label">Comentario</label>
                             <textarea name="contenidoComentario" id="contenidoComentario" class="form-control" rows="5"></textarea>

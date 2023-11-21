@@ -13,9 +13,15 @@
             // Conexion a la BD
             $mysqli = db::connect();
             
-            $productoCarrito = Valoracion::addResena($mysqli, $json['TituloResena'], $json['ComentarioResena'], $json['CalificacionResena'], $json['idProducto']);
+            $addResena = Valoracion::addResena($mysqli, $json['ComentarioResena'], $json['CalificacionResena'], $json['idProducto']);
 
-            echo "Resena agregada a Carrito exitosamente";
+            $filasAfectadas = $mysqli->affected_rows;
+
+            if ($filasAfectadas > 0) {
+                echo json_encode(array('success' => 'Comentario publicado exitosamente'));
+            } else {
+                echo json_encode(array('error' => 'No puede volver a publicar un comentario de este producto'));
+            }
         }
         catch(Exception $exc) {
             echo ($exc->getMessage());

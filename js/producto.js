@@ -46,7 +46,7 @@ $(document).ready(async() => {
     $('.thumbnail-multimedia4').css('background-image', "url('data:image/png;base64," + responseJSON.Imagen3 + "')");
 
     getWishlist();
-
+    getComentarios();
     $('#loader').hide();
     
     
@@ -89,8 +89,18 @@ $(document).ready(async() => {
             precioProducto: responseJSON.Precio
         };
 
-        if(CantidadAgregar.value.length <= 0){
-            alert("Cantidad a Agregar Vacia");
+        if(CantidadAgregar.value <= 0){
+            Swal.fire(
+                'Error',
+                'Cantidad a agregar no puede ser 0',
+                'error'
+                )        }
+        else if(CantidadAgregar.value > responseJSON.CantidadInventario) {
+            Swal.fire(
+                'Error',
+                'No hay cantidad suficiente en el inventario',
+                'error'
+                )
         }
         else {
             //alert("Agregado al Carrito " + CantidadAgregar.value)
@@ -118,12 +128,10 @@ $(document).ready(async() => {
     $('#form-resena').submit((e) => {//Hay que hacer el Forms
         e.preventDefault();
 
-        const TituloResena = document.getElementById("tituloComentario");
         const ComentarioResena = document.getElementById("contenidoComentario");
         const CalificacionResena = document.querySelector('input[name="star-input"]:checked').value;
 
         var formData = {
-            TituloResena: TituloResena.value,
             ComentarioResena: ComentarioResena.value,
             CalificacionResena: CalificacionResena,
             idProducto: idProducto
@@ -137,17 +145,53 @@ $(document).ready(async() => {
                 'Content-Type': 'application/json'
             }
         })   
-        .then(()=> {
+        .then((response)=> {
             Swal.fire(
                 'Exito!',
                 'Resena Agregada Correctamente',
                 'success'
                 )
                 .then(() => {
-                    
+                    ComentarioResena.value = '';
+                    CalificacionResena.value = 0;
+                    $('#comentarioModal').modal('hide')
+                    getComentarios();
                 })
             }) 
     })
+
+async function getComentarios() {
+    //Se limpia la tabla
+    $('.comentarios').html('');
+    
+    try {
+        //Se guarda en una variable la respuesta del controlador readCategorias
+        let response = await fetch('../controllers/readValoracion.php?idProducto='+idProducto);
+
+        //Espera a obtener la respuesta y la convierte la respuesta en un JSON
+        let responseJSON = await response.json();
+
+        //Itera cada dato de este para imprimirlo en la tabla del HTML
+        await responseJSON.forEach(val => {
+            $('.comentarios').append(`
+            <div class="comentario">
+                <div class="contenido-comentario"><p class="p-0">${val.Comentario}</p></div>
+                <div class="d-flex align-items-center gap-4">
+                    <div class="calificacion-comentario"><h4 class="text-secondary"><i class="bi bi-star-fill me-2"></i>${val.Calificacion}</h4></div>
+                    <div class="usuario-fecha-comentario">
+                        <a class="text-secondary" href="account.php?idUsuario=${val.IDCliente}">${val.Cliente}</a>
+                        <h4 class="text-secondary">-</h4>
+                        <h4 class="text-secondary">${val.Fecha}</h4>
+                    </div>
+                </div>
+            </div>`);  
+        });
+    }
+    catch(exception){
+        // alert('No existen productos registrados en esta cuenta. Continue para crearlos')
+        $('#loader').hide();
+    }   
+}    
 
 
 async function getWishlist() {

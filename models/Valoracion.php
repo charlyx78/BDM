@@ -48,7 +48,7 @@
             $this->comentario = $comentario;
         }
 
-        static public function addResena($mysqli, $TituloResena, $ComentarioResena, $CalificacionResena, $idProducto) {
+        static public function addResena($mysqli, $ComentarioResena, $CalificacionResena, $idProducto) {
             try {
             $sql = "CALL SP_GestionValoracion(?,?,?,?,?,?)";
             $statement = $mysqli->prepare($sql);
@@ -74,6 +74,44 @@
                 else {
                     echo 'Error al agregar producto a Carrito';  
                 }
+            }
+            catch (Exception $exc) {
+                echo '<script>alert("' . $exc . '")</script>';
+            }
+        }
+
+        static public function readValoracion($mysqli, $idProducto) {
+            try {
+                $sql = "CALL SP_GestionValoracion(?,?,?,?,?,?)";
+                $statement = $mysqli->prepare($sql);
+
+                $idValoracion = 0;
+                $cliente = 0;
+                $CalificacionResena = 0;
+                $ComentarioResena = 0;
+                $opcion = "S";
+
+                $statement->bind_param(
+                    "iiidss",
+                    $idValoracion,
+                    $idProducto,
+                    $cliente,
+                    $CalificacionResena,
+                    $ComentarioResena,
+                    $opcion);  
+
+                    $statement->execute();
+                    $result = $statement->get_result(); 
+
+                    $valoraciones = array();
+
+                    if($result->num_rows > 0) {
+                        while($row = $result->fetch_assoc()) {
+                            $valoracion = $row;
+                            $valoraciones[] = $valoracion;
+                        }
+                        return $valoraciones;
+                    }
             }
             catch (Exception $exc) {
                 echo '<script>alert("' . $exc . '")</script>';

@@ -104,14 +104,14 @@ session_start();
                         </div>
                         <div class="mb-2">
                             <label for="stockProducto" class="form-label">Stock</label>
-                            <div class="input-group input-group">
-                                <input class="form-control" type="number" name="stockProducto" id="stockProducto" aria-label="Precio" aria-label="Precio" aria-describedby="button-addon4">
+                            <input class="form-control" type="number" name="stockProducto" id="stockProducto" aria-label="Precio" aria-label="Precio" aria-describedby="button-addon4">
+                            <!-- <div class="input-group input-group">
                                 <select class="input-group-text form-select" id="stockUnidadMedida">
                                     <option value="">Unidad de medida</option>
                                     <option value="Piezas">Piezas</option>
                                     <option value="Kilogramos">Kilogramos</option>
                                 </select>
-                            </div>
+                            </div> -->
                         </div>
                         <div class="mb-3">
                             <label class="form-label" for="videoProducto">Video de producto</label>

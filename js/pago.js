@@ -76,7 +76,7 @@ $(document).ready(() => {
                         'success'
                         )
                         .then(() => {
-                            //
+                            window.location.replace("home.php");
                         })
                     }) 
 
