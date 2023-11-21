@@ -152,4 +152,57 @@
                 echo '<script>alert("' . $exc . '")</script>';
             }
         }
+
+        static public function readProductoClienteComprados($mysqli) {
+            try {
+                $sql = "CALL SP_GestionVentas(?,?,?,?,?,?,?,?,?,?,?,?,?)";
+                $statement = $mysqli->prepare($sql);
+
+                $idVenta = 0;
+                $idProductoVenta = 0;
+                $idProductoTipo = 0;
+                $idProductoNombre = "";
+                $idProductoCategoria = 0;
+                $idProductoPrecio = 0;
+                $idProductoCantidad = 0;
+                $idVentaFecha = "2025-9-11";
+                $usuarioVendedor = 0;
+                $usuarioCliente = $_SESSION['UsuID'];
+                $idMetodoPago = 0;
+                $activo = 0;
+                $opcion = "SPCC";
+
+                $statement->bind_param(
+                    "iiisidisiiiis",
+                    $idVenta,
+                    $idProductoVenta,
+                    $idProductoTipo,
+                    $idProductoNombre,
+                    $idProductoCategoria,
+                    $idProductoPrecio,
+                    $idProductoCantidad,
+                    $idVentaFecha,
+                    $usuarioVendedor,
+                    $usuarioCliente,
+                    $idMetodoPago,
+                    $activo,
+                    $opcion);     
+
+                    $statement->execute();
+                    $result = $statement->get_result(); 
+
+                    $Productos = array();
+
+                    if($result->num_rows > 0) {
+                        while($row = $result->fetch_assoc()) {
+                            $producto = $row;
+                            $Productos[] = $producto;
+                        }
+                        return $Productos;
+                    }
+            }
+            catch (Exception $exc) {
+                echo '<script>alert("' . $exc . '")</script>';
+            }
+        }
     }

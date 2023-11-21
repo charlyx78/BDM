@@ -59,7 +59,7 @@ session_start();
                             </a>
                         </p>
                         <div class="collapse pt-4" id="collapseComentarios">
-                            <a class="boton-escribir-comentario" data-bs-toggle="modal" data-bs-target="#comentarioModal">Escribe una reseña</a>
+                            <a class="btn btn-primario rounded-pill w-100" data-bs-toggle="modal" data-bs-target="#comentarioModal" id="btnAnadirResena">Escribe una reseña</a>
                             <div class="comentario">
                                 <div class="titulo-comentario"><h2>Excelente producto</h2></div>
                                 <div class="d-flex align-items-center gap-4">
@@ -257,14 +257,14 @@ session_start();
                     <button class="btn"><i class="bi bi-x-circle-fill text-danger" data-bs-dismiss="modal" aria-label="Close"></i></button>
                 </div>
                 <div class="modal-body">
-                    <form action="">
+                    <form id="form-resena" method="POST">
                         <div class="mb-3">
                             <label for="tituloComentario" class="form-label">Titulo</label>
-                            <input type="text" name="tituloComentario" class="form-control">
+                            <input type="text" name="tituloComentario" id="tituloComentario" class="form-control">
                         </div>
                         <div class="mb-4">
                             <label for="contenidoComentario" class="form-label">Comentario</label>
-                            <textarea name="contenidoComentario" class="form-control" rows="5"></textarea>
+                            <textarea name="contenidoComentario" id="contenidoComentario" class="form-control" rows="5"></textarea>
                         </div>
                         <div class="mb-2">
                             <label for="star-input" class="form-label m-0">Calificacion</label>
@@ -281,11 +281,12 @@ session_start();
                                 <label class="radio-label" for="star1" title="1 star">1 star</label>
                             </div>
                         </div>                  
-                    </form>
+                    
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-primario">Publicar comentario</button>
+                    <button type="submit" class="btn btn-primario">Publicar comentario</button>
+                    </form>
                 </div>
             </div>
         </div>

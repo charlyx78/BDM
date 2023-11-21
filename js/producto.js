@@ -1,4 +1,8 @@
 $(document).ready(async() => {
+    
+    let Resena = 0;
+    getSiYaComproProducto();
+
     urlParametros = new URLSearchParams(window.location.search);
     idProducto = urlParametros.get("idProducto");
     
@@ -111,6 +115,40 @@ $(document).ready(async() => {
         }
     })
 
+    $('#form-resena').submit((e) => {//Hay que hacer el Forms
+        e.preventDefault();
+
+        const TituloResena = document.getElementById("tituloComentario");
+        const ComentarioResena = document.getElementById("contenidoComentario");
+        const CalificacionResena = document.querySelector('input[name="star-input"]:checked').value;
+
+        var formData = {
+            TituloResena: TituloResena.value,
+            ComentarioResena: ComentarioResena.value,
+            CalificacionResena: CalificacionResena,
+            idProducto: idProducto
+        };
+
+        console.log(JSON.stringify(formData));
+        fetch('../controllers/addResena.php', {
+            method: 'POST',
+            body: JSON.stringify(formData) ,
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })   
+        .then(()=> {
+            Swal.fire(
+                'Exito!',
+                'Resena Agregada Correctamente',
+                'success'
+                )
+                .then(() => {
+                    
+                })
+            }) 
+    })
+
 
 async function getWishlist() {
     //Se limpia la tabla
@@ -136,6 +174,41 @@ async function getWishlist() {
         $('#btnAgregarWishlist').addClass('disabled')
         $('#loader').hide();
     }   
+}
+
+async function getSiYaComproProducto() {
+    try {
+        let response = await fetch('../controllers/readProductosClienteComprados.php');
+
+        //Espera a obtener la respuesta y la convierte la respuesta en un JSON
+        let responseJSON = await response.json();
+
+        urlParametros = new URLSearchParams(window.location.search);
+        idProducto = urlParametros.get("idProducto");
+
+        await responseJSON.forEach(proCarr => {
+
+            var formData = {//Datos a Pasar
+                IdProductoComprado: proCarr.IdProducto
+            };
+
+            let idJsonString = JSON.stringify(proCarr.IdProducto)
+            if(idJsonString == idProducto){
+                Resena = 1;
+            }
+        })
+        if(Resena == 0) {
+            $('#btnAnadirResena').addClass('disabled')
+        }
+        $('#loader').hide();
+        console.log(Resena);
+    }
+    catch(exception){
+        if(Resena == 0) {
+            $('#btnAnadirResena').addClass('disabled')
+        }
+        $('#loader').hide();
+    }
 }
 
 // const formAddProductoACarrito = document.getElementById("formAddProductoACarrito");
