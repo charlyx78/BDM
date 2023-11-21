@@ -7,19 +7,13 @@
         require_once "../models/Venta.php";
         
         try {
-            $idProductoVenta = $_POST['idProductoVenta'];
-            $idProductoTipo = $_POST['idProductoTipo'];
-            $idProductoNombre = $_POST['idProductoNombre'];
-            $idProductoCategoria = $_POST['idProductoCategoria'];
-            $idProductoPrecio = $_POST['idProductoPrecio'];
-            $idProductoCantidad = $_POST['idProductoCantidad'];
-            $usuarioVendedor = $_POST['usuarioVendedor'];
-            $idMetodoPago = $_POST['idMetodoPago'];
+            //Obtener Json
+            $json = json_decode(file_get_contents('php://input'),true);
             
             // Conexion a la BD
             $mysqli = db::connect();
             
-            $Venta = Venta::addVenta($mysqli, $idProductoVenta, $idProductoTipo, $idProductoNombre, $idProductoCategoria, $idProductoPrecio, $idProductoCantidad, $usuarioVendedor, $idMetodoPago);
+            $Venta = Venta::addVenta($mysqli, $json['idProductoVenta'], $json['idProductoTipo'], $json['idProductoNombre'], $json['idProductoCategoria'], $json['idProductoPrecio'], $json['idProductoCantidad'], $json['usuarioVendedor'], $json['idMetodoPago']);
 
             echo "Productos Comprados exitosamente";
         }
