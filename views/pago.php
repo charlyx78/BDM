@@ -18,13 +18,13 @@
         </div>
 
         <form class="contenedor-metodos-pago container-fluid" id="contenedor-metodos-pago" method="POST">
-            <input class="btn-check" type="radio" name="tarjetaPago" id="tarjetaPago1">
+            <input class="btn-check" type="radio" name="tarjetaPago" id="tarjetaPago1" value="1">
             <label class="metodo-pago btn" for="tarjetaPago1">
                 <img src="../img/visa.png" width="40" alt="">
                 <h2>**** **** **** 1234</h2>
             </label>
 
-            <input class="btn-check" type="radio" name="tarjetaPago" id="tarjetaPago2">
+            <input class="btn-check" type="radio" name="tarjetaPago" id="tarjetaPago2" value="2">
             <label class="metodo-pago btn" for="tarjetaPago2">
                 <img src="../img/mastercard.png" width="40" alt="">
                 <h2>**** **** **** 1234</h2>

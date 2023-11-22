@@ -1,10 +1,10 @@
 <?php
     class db {
         static public function connect() {
-            $host = "localhost:3307";
+            $host = "localhost";
             $db = "bdm";
             $user = "root";
-            $pass = "Phineas2011!";
+            $pass = "BaseMultimedia2023-";
             try {
                 $mysqli = new mysqli($host,$user,$pass,$db);
                 if ($mysqli->connect_errno) {

@@ -47,7 +47,7 @@ $(document).ready(() => {
     
             //Espera a obtener la respuesta y la convierte la respuesta en un JSON
             let responseJSON = await response.json();
-
+            const MetPago = document.querySelector('input[name="tarjetaPago"]:checked').value;
             await responseJSON.forEach(proCarr => {
                 
                 var formData = {//Datos a Pasar
@@ -58,7 +58,7 @@ $(document).ready(() => {
                     idProductoPrecio: parseFloat(proCarr.Precio),
                     idProductoCantidad: proCarr.Cantidad,
                     usuarioVendedor: proCarr.IdVendedorP,
-                    idMetodoPago: 1
+                    idMetodoPago: MetPago
                 };
         
                 console.log(JSON.stringify(formData));
