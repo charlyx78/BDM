@@ -10,8 +10,8 @@
             $nombreVendedor = isset($_POST["nombreVendedor"]) ? '%' . $_POST["nombreVendedor"] . '%' : "%%";
             $precioMinimo = isset($_POST["precioMinimo"]) ? $_POST["precioMinimo"] : 0;
             $precioMaximo = isset($_POST["precioMaximo"]) ? $_POST["precioMaximo"] : 0;
-            $masVendido = false;
-            $mejorCalificados = false;
+            $masVendido = isset($_POST["masVendidos"]) ? $_POST["masVendidos"] : 0;
+            $mejorCalificados = isset($_POST["mejorCalificados"]) ? $_POST["mejorCalificados"] : 0;
 
             $sql = "CALL sp_busquedaProducto(?,?,?,?,?,?)";
 

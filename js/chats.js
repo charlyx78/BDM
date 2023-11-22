@@ -187,7 +187,7 @@ $(document).ready(async function() {
         contactos.forEach(contacto => {
             contenedorContactos.append(`
             <li class="contacto-item list-group-item">
-                <a href="chat.php?idUsuario=${contacto.idUsuario}&idProducto=${contacto.idProducto}" class="contacto">
+                <a href="chat.php?idUsuario=${contacto.idUsuario}&idProducto=${contacto.idProducto}" class="contacto text-truncate">
                     <div class="imagen-contacto">
                     </div>
                     <div class="informacion-contacto">

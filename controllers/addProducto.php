@@ -46,7 +46,7 @@
 
             }
             else {
-                $blobImagenProducto1 = $_POST['imagenProducto1'];
+                $blobImagenProducto1 = base64_decode($_POST['imagenProducto1']);
                 $nombreImagenProducto1 = '';
                 $tipoImagenProducto1 = '';
             }
@@ -61,7 +61,7 @@
                 }
             }
             else {
-                $blobImagenProducto2 = $_POST['imagenProducto2'];
+                $blobImagenProducto2 = base64_decode($_POST['imagenProducto2']);
                 $nombreImagenProducto2 = '';
                 $tipoImagenProducto2 = '';
             }
@@ -76,7 +76,7 @@
                 }
             }
             else {
-                $blobImagenProducto3 = $_POST['imagenProducto3'];
+                $blobImagenProducto3 = base64_decode($_POST['imagenProducto3']);
                 $nombreImagenProducto3 = '';
                 $tipoImagenProducto3 = '';
             }
