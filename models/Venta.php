@@ -205,4 +205,91 @@
                 echo '<script>alert("' . $exc . '")</script>';
             }
         }
+
+        static public function readProductoPedidos($mysqli) {
+            try {
+                $sql = "CALL SP_GestionReportes(?,?,?,?,?)";
+                $statement = $mysqli->prepare($sql);
+
+                $idCategoria = 0;
+                $Fecha1 = "";
+                $Fecha2 = "";
+                $idUsuario = $_SESSION['UsuID'];
+                $opcion = "C";
+
+                $statement->bind_param(
+                    "issis",
+                    $idUsuario,
+                    $Fecha1,
+                    $Fecha2,
+                    $idCategoria,
+                    $opcion);   
+
+                    $statement->execute();
+                    $result = $statement->get_result(); 
+
+                    $Productos = array();
+
+                    if($result->num_rows > 0) {
+                        while($row = $result->fetch_assoc()) {
+                            $producto = $row;
+                            $producto['Imagen1'] = base64_encode($producto['Imagen1']);
+                            $Productos[] = $producto;
+                        }
+                        return $Productos;
+                    }
+            }
+            catch (Exception $exc) {
+                echo '<script>alert("' . $exc . '")</script>';
+            }
+        }
+
+        static public function readProductoPedidosFiltro($mysqli, $Fecha1, $Fecha2, $idCategoria) {
+            try {
+                $sql = "CALL SP_GestionReportes(?,?,?,?,?)";
+                $statement = $mysqli->prepare($sql);
+
+                if($idCategoria == "")
+                {
+                    $idCategoria = 0;
+                }
+                if($Fecha1 == "")
+                {
+                    $Fecha1 = "";
+                    $Fecha2 = "";
+                }
+                if($Fecha2 == "")
+                {
+                    $Fecha1 = "";
+                    $Fecha2 = "";
+                }
+                $idUsuario = $_SESSION['UsuID'];
+                $opcion = "C";
+
+                $statement->bind_param(
+                    "issis",
+                    $idUsuario,
+                    $Fecha1,
+                    $Fecha2,
+                    $idCategoria,
+                    $opcion);   
+
+                    $statement->execute();
+                    $result = $statement->get_result(); 
+
+                    $Productos = array();
+
+                    if($result->num_rows > 0) {
+                        while($row = $result->fetch_assoc()) {
+                            $producto = $row;
+                            $producto['Imagen1'] = base64_encode($producto['Imagen1']);
+                            $Productos[] = $producto;
+                        }
+                        return $Productos;
+                    }
+            }
+            catch (Exception $exc) {
+                echo '<script>alert("' . $exc . '")</script>';
+            }
+        }
     }
