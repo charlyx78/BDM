@@ -422,21 +422,17 @@
         
         static public function updateProducto($mysqli, $id, $nombre, $descripcion, $imagen1, $imagen2, $imagen3, $nombreImagen1, $tipoImagen1, $nombreImagen2, $tipoImagen2, $nombreImagen3, $tipoImagen3, $video, $categoria, $tipo, $precio, $existencias) {
             try {
-                if($nombreImagen1 == "" && $nombreImagen2 == "" && $nombreImagen3 == "" && $video == "")
-                {
-                    $opcion = "USIMG";
-                }
-                else{
-                    $opcion = "U";
-                }
+
+                $opcion = "U";
+                
                 $sql = "CALL SP_GestionProductos(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
                 $statement = $mysqli->prepare($sql);
 
                 //VALORACION TENGO QUE ENVIARLA
                 $usuario = $_SESSION['UsuID'];
-                $valoracion = 5;
-                $activo = 1;
-                $$idAUsuario=0;
+                $valoracion = 0;
+                $activo = 0;
+                $idAUsuario = 0;
 
                 $statement->bind_param(
                     "iissbbbssssssbiididisi",
@@ -463,10 +459,10 @@
                     $opcion,
                     $idAUsuario);
 
-                $statement->send_long_data(4, $blobImagenProducto1);
-                $statement->send_long_data(5, $blobImagenProducto2);
-                $statement->send_long_data(6, $blobImagenProducto3);
-                $statement->send_long_data(13, $rutaCompleta);
+                $statement->send_long_data(4, $imagen1);
+                $statement->send_long_data(5, $imagen2);
+                $statement->send_long_data(6, $imagen3);
+                $statement->send_long_data(13, $video);
 
                 $result = $statement->execute();
                 echo $result;

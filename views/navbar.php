@@ -39,7 +39,7 @@
                 <!-- DropDown Menu Laptop -->
                 <li class="nav-item dropstart d-none d-lg-block">
                     <a class="nav-link dropdown btn btn-light w-100 d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="bi bi-person-circle color-primario"></i>
+                        <?php echo $_SESSION['UsuNombre']?><i class="bi bi-person-circle ms-3 color-primario"></i> 
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="account.php">Mi cuenta</a></li>
@@ -54,7 +54,8 @@
                             // Pantallas De Vendedor
                             else if($_SESSION['UsuRol'] == 'Vendedor') {
                                 echo
-                                '<li><a class="dropdown-item" href="misProductos.php">Mis productos</a></li>
+                                '<li><a class="dropdown-item" href="categorias.php">Categorias</a></li>
+                                <li><a class="dropdown-item" href="misProductos.php">Mis productos</a></li>
                                 <li><a class="dropdown-item" href="wishlist.php">Wishlist</a></li>
                                 <li><a class="dropdown-item" href="ventas.php">Reporte Ventas</a></li>'; 
                             }

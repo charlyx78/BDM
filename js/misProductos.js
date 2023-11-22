@@ -26,7 +26,7 @@ $(document).ready(async () => {
     //Al abrir el modal desde el boton de nueva categoria se resetean los campos del formulario y se cambia la variable isEditando a false 
     $('#btnAbrirModal').click(() => {
         isEditando = false;
-        $('#idpro').text('');
+        $('#idpro').val('');
         nombreProducto.val('');
         categoriaProducto.val('');
         tipoVentaProducto.val('');
@@ -41,9 +41,7 @@ $(document).ready(async () => {
 
     $('#formAddProducto').on('submit', function(e) {
         e.preventDefault();
-    
-        var formData = new FormData(this);
-        console.log(JSON.stringify(formData));
+
     
         if(nombreProducto.val() != "" &&
             categoriaProducto.val() != "" &&
@@ -54,7 +52,8 @@ $(document).ready(async () => {
             {
 
             if(!isEditando) {//ADD PRODUCTO
-                console.log(isEditando);
+                var formData = new FormData(this);
+                console.log(JSON.stringify(formData));
                 fetch('../controllers/addProducto.php', {
                     method: 'POST',
                     body: formData
@@ -108,35 +107,9 @@ $(document).ready(async () => {
                 });
             }
             else{
-                //UPDATE PRODUCTOS
-                console.log(isEditando);
-                /*const IdProEdit = document.getElementById("idpro");
-                const NombreProEdit = document.getElementById("nombreProducto");
-                const CategoriaProEdit = document.getElementById("categoriaProducto");
-                const TipoProEdit = document.getElementById("tipoVentaProducto");
-                const PrecioProEdit = document.getElementById("precioProducto");
-                const StockProEdit = document.getElementById("stockProducto");
-                const DescripcionProEdit = document.getElementById("descripcionProducto");
-                const Imagen1ProEdit = document.getElementById("imagenProducto1");
-                const Imagen2ProEdit = document.getElementById("imagenProducto2");
-                const Imagen3ProEdit = document.getElementById("imagenProducto3");
-                const VideoProEdit = document.getElementById("videoProducto");
-
-                var formData2 = {
-                    idProductoEdit: IdProEdit.value,
-                    NombreProEdit: NombreProEdit.value,
-                    CategoriaProEdit: CategoriaProEdit.value,
-                    TipoProEdit: TipoProEdit.value,
-                    PrecioProEdit: PrecioProEdit.value,
-                    StockProEdit: StockProEdit.value,
-                    DescripcionProEdit: DescripcionProEdit.value
-                    //Imagen1ProEdit: Imagen1ProEdit,
-                    //Imagen2ProEdit: Imagen2ProEdit,
-                    //Imagen3ProEdit: Imagen3ProEdit,
-                    //VideoProEdit: VideoProEdit.value
-                };*/
+                var formData = new FormData(this);
                 console.log(JSON.stringify(formData));
-                fetch('../controllers/updateProductoZ.php', {
+                fetch('../controllers/updateProducto.php', {
                     method: 'POST',
                     body: formData
                 })
@@ -262,7 +235,7 @@ async function getProductos(paginaActual, categoriasPorPagina) {
                 FormDataUpdate = responseJSON;
             
             //Asignamos el valor del span que se encuentra en el header del modal al de el id del producto que obtuvimos previamente con "findProducto"
-                $('#idpro').text(responseJSON.ID);
+                $('#idpro').val(responseJSON.ID);
     
             //Asignamos a los campos del formulario los valores del producto seleccionado
             const nombreProducto = $("#nombreProducto");

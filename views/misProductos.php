@@ -71,11 +71,12 @@ session_start();
         <div class="modal-dialog producto-modal">
             <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="nuevoProductoModalLabel">Nuevo Producto <span class="text-secondary fw-light ms-3" id="idpro"></span></h1>
+                <h1 class="modal-title fs-5" id="nuevoProductoModalLabel">Nuevo Producto</h1>
                 <button class="btn btn-danger" data-bs-dismiss="modal" aria-label="Close"><i class="bi bi-x-lg text-light fw-bold"></i></button>
             </div>
             <div class="modal-body">
-                <form id="formAddProducto" method="POST" enctype="multipart/form-data">
+                <form id="formAddProducto" action="../controllers/updateProducto.php" method="POST" enctype="multipart/form-data">
+                    <input type="number" readonly class="text-secondary form-control fw-light ms-3 d-none" name="idpro" value="" id="idpro">    
                     <div class="row">
                         <div class="mb-2">
                             <label for="nombreProducto" class="form-label">Nombre</label>
