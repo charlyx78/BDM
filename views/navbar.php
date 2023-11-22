@@ -55,7 +55,8 @@
                             else if($_SESSION['UsuRol'] == 'Vendedor') {
                                 echo
                                 '<li><a class="dropdown-item" href="misProductos.php">Mis productos</a></li>
-                                <li><a class="dropdown-item" href="wishlist.php">Wishlist</a></li>'; 
+                                <li><a class="dropdown-item" href="wishlist.php">Wishlist</a></li>
+                                <li><a class="dropdown-item" href="ventas.php">Reporte Ventas</a></li>'; 
                             }
                             // Pantallas De Administrador
                             else if($_SESSION['UsuRol'] == 'Admin') {
@@ -107,6 +108,11 @@
                             <li class="nav-item">
                                 <a href="wishlist.php" class="nav-link btn btn-light w-100 d-flex align-items-center" role="button">
                                     <div class="d-md-none">Wishlist</div>  
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="ventas.php" class="nav-link btn btn-light w-100 d-flex align-items-center" role="button">
+                                    <div class="d-md-none">Reporte Ventas</div>  
                                 </a>
                             </li>';
                         }

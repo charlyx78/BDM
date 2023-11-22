@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,29 +12,29 @@
 <body>
     <?php include_once "navbar.php" ?>
 
+    <br>
+    <br>
+    <br>
     <main class="container py-4">
         <h2 class="titulo-pagina">Mis Ventas</h2>
 
         <h5 class="fw-bold">Filtros</h5>
         <div class="card card-body filtros-busqueda mb-5">
-            <form action="">
+            <form id="form-filtrar-ventas" method="post">
                 <div class="row">
                     <div class="mb-2 col-6 col-lg-4">
-                        <label for="fechaPedido" class="form-label">Fecha</label>
-                        <input type="date" name="fechaPedido" class="form-control">
+                        <label for="fechaVenta1" class="form-label">Fecha Inicio</label>
+                        <input type="date" name="fechaVenta1" id="fechaVenta1" class="form-control">
                     </div>
                     <div class="mb-2 col-6 col-lg-4">
-                        <label for="categoriaPedido" class="form-label">Categoria</label>
-                        <select name="categoriaPedido" id="" class="form-select">
-                            <option value="">Selecciona una opcion...</option>
-                            <option value="">Tecnologia</option>
-                            <option value="">Moda</option>
-                            <option value="">Belleza</option>
-                        </select>                    
+                        <label for="fechaVenta2" class="form-label">Fecha Fin</label>
+                        <input type="date" name="fechaVenta2" id="fechaVenta2" class="form-control">
                     </div>
-                    <div class="mb-4 col-6 col-lg-4">
-                        <label for="nombreProducto" class="form-label">Nombre de producto</label>
-                        <input type="text" name="nombreProducto" class="form-control">
+                    <div class="mb-2 col-6 col-lg-4">
+                        <label for="categoriaVenta" class="form-label">Categoria</label>
+                        <select name="categoriaVenta" id="categoriaVenta" class="form-select">
+                            <option value="">Selecciona una opcion...</option>
+                        </select>                    
                     </div>
                     <div class="mb-2 col-12">
                         <input type="submit" class="btn btn-primario w-100" value="Buscar">
@@ -40,7 +43,7 @@
             </form>
         </div>
 
-        <table class="table table-bordered">
+        <table class="table table-bordered" id="tablaReporteVentas">
             <thead>
                 <tr>
                     <td>Fecha</td>
@@ -62,7 +65,31 @@
                 </tr>
             </tbody>
         </table>
+
+        <table class="table table-bordered" id="tablaReporteVentasAgrupadas">
+            <thead>
+                <tr>
+                    <td>Categoria</td>
+                    <td>Vendido</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Tecnologia</td>
+                    <td>1256</td>
+                </tr>
+            </tbody>
+        </table>
     </main>
+
+    <script
+        src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+        crossorigin="anonymous">
+    </script>
+    <!-- Sweet alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/reporteVentas.js"></script>
 
 </body>
 </html>
