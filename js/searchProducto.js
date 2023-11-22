@@ -46,7 +46,7 @@ $(document).ready(async() => {
                         <div class="informacion-producto-busqueda">
                             <h6 class="text-secondary">${producto.Categoria}</h6>
                             <h2>${producto.Nombre}</h2>
-                            <h4>$${producto.Precio}</h4>
+                            <h4>${producto.Precio == null ? 'Precio cotizable' : '$' + producto.Precio}</h4>
                             <div class="calificacion-producto-busqueda">
                                 <i class="bi bi-star-fill color-oro"></i>
                                 <p class="m-0 text-secondary">${producto.Calificacion}</p>

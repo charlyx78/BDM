@@ -51,15 +51,17 @@ async function getProductos(cantProductosAMostrar, opcionView) {
 
     //Itera cada dato de este para imprimirlo en la tabla del HTML
     await productosAMostrar.forEach(pro => {
-        contenedorProductos.append(`
-        <li class="item-producto" data-idpro=${pro.ID}>                        
-            <a class="producto" href="producto.php?idProducto=${pro.ID}">
-                <div class="imagen-producto" style="background-image: url('data:image/png;base64,${pro.Imagen1}')"></div>
-                <h4 class="categoria-producto text-secondary">${pro.Categoria}</h4>
-                <h2 class="nombre-producto">${pro.Nombre}</h2>
-                <h4 class="precio-producto">$${pro.Precio}</h4>
-            </a>
-        </li>`);  
+        if(pro.ProAUsuario == null) {
+            contenedorProductos.append(`
+            <li class="item-producto" data-idpro=${pro.ID}>                        
+                <a class="producto" href="producto.php?idProducto=${pro.ID}">
+                    <div class="imagen-producto" style="background-image: url('data:image/png;base64,${pro.Imagen1}')"></div>
+                    <h4 class="categoria-producto text-secondary">${pro.Categoria}</h4>
+                    <h2 class="nombre-producto">${pro.Nombre}</h2>
+                    <h4 class="precio-producto">${pro.Precio == null ? 'Precio cotizable' : '$' + pro.Precio}</h4>
+                </a>
+            </li>`);  
+        }
     });
 
     $('#loader').hide();

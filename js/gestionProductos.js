@@ -25,12 +25,13 @@ async function getProductos(paginaActual, categoriasPorPagina) {
         <tr>
             <td>${pro.PK_IdProducto}</td>
             <td>${pro.ProNombre}</td>
-            <td>$${pro.ProPrecio}</td>
+            <td>${pro.ProPrecio == null ? '-' : '$' + pro.ProPrecio}</td>
             <td>${pro.ProExistencias}</td>
             <td>${pro.ProFK_IdTipoP === 1 ? 'Precio fijo' : 'Cotizable'}</td>
             <td>${pro.ProFechaRegistro}</td>
             <td><span class="badge rounded-pill ${pro.ProFK_IdActivo === 2 ? 'bg-success' : 'bg-secondary'} fs-6">${pro.ProFK_IdActivo === 2 ? 'Activo' : 'Inactivo'}</span></td>
-            <td class="text-center"><button class="btn btn-activar-producto" data-idpro="${pro.PK_IdProducto}"><i class="bi ${pro.ProFK_IdActivo === 2 ? 'bi-toggle-on' : 'bi-toggle-off'} color-primario fs-3"></i></button></td>
+            <td class="text-center"><button class="btn btn-activar-producto" data-idpro="${pro.PK_IdProducto}"><i class="bi bi-toggle-on color-primario fs-3"></i></button></td>
+            <td class="text-center"><button class="btn btn-desactivar-producto" data-idpro="${pro.PK_IdProducto}"><i class="bi bi-toggle-off text-danger fs-3"></i></button></td>
         </tr>`);  
     });
     
@@ -67,6 +68,58 @@ async function getProductos(paginaActual, categoriasPorPagina) {
                          Swal.fire(
                              'Exito!',
                              'Producto Activado correctamente',
+                             'success'
+                         )
+                         .then(async() => {
+                             //Vuelve a imprimir todos los productos
+                             $('#loader').show();
+                             await getProductos(1,7);
+                         })
+                     })
+                     .catch(error => {
+                         //Alerta de error
+                         Swal.fire(
+                             'Error',
+                             error.message,
+                             'error'
+                         );
+                     });
+                }
+            })
+        })
+        //Se le asigna un evento a cada boton de editar
+        $('.btn-desactivar-producto').on('click', async function() {
+    
+            //Se obtiene el valor del atributo "data-idpro" (practicamente el id del producto seleccionado)
+            var id = $(this).data('idpro');
+    
+            //Se crea un objeto que contenga dicho id
+            var formData = {
+                idProducto: id
+            };
+    
+            //Alerta de advertencia y confirmacion para Activar el producto seleccionado
+            Swal.fire({
+                title: 'Confirmacion',
+                text: '¿Estás segur@ de desactivar este producto?',
+                icon: 'warning',
+                showCancelButton: true
+            })
+            .then((result) => {
+                if (result.isConfirmed) {
+                    //Se ejecuta el controlador activateProducto
+                     fetch('../controllers/deleteProducto.php', {
+                         method: 'POST',
+                         body: JSON.stringify(formData),
+                         headers: {
+                             'Content-Type': 'application/json'
+                         }
+                     })
+                     .then(() => {
+                         //Alerta de confirmacion
+                         Swal.fire(
+                             'Exito!',
+                             'Producto desactivado correctamente',
                              'success'
                          )
                          .then(async() => {

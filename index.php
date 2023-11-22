@@ -245,6 +245,10 @@
         </div>
     </div>
 
+    <?php 
+        echo '<script>sessionStorage.removeItem("UsuarioSesion")</script>';
+    ?>
+
     <!-- <script src="js/landingPage.js"></script> -->
 </body>
 </html>

@@ -181,5 +181,9 @@ session_start();
     </script>
     <script src="../js/home.js"></script>
 
+
+    <?php
+        echo '<script>sessionStorage.setItem("UsuarioSesion",' . $_SESSION['UsuID'] . ')</script>';
+    ?>
 </body>
 </html>

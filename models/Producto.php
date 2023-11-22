@@ -185,46 +185,46 @@
             $this->activo = $activo;
         }
 
-        static public function addProducto($mysqli, $nombre, $descripcion, $imagen1, $imagen2, $imagen3, $nombreImagen1, $tipoImagen1, $nombreImagen2, $tipoImagen2, $nombreImagen3, $tipoImagen3, $video, $categoria, $tipo, $precio, $existencias) {
-            try {
-                $sql = "CALL SP_GestionProductos(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-                $statement = $mysqli->prepare($sql);
+        // static public function addProducto($mysqli, $nombre, $descripcion, $imagen1, $imagen2, $imagen3, $nombreImagen1, $tipoImagen1, $nombreImagen2, $tipoImagen2, $nombreImagen3, $tipoImagen3, $video, $categoria, $tipo, $precio, $existencias, $idAUsuario) {
+        //     try {
+        //         $sql = "CALL SP_GestionProductos(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+        //         $statement = $mysqli->prepare($sql);
 
-                $id = 0;
-                $usuario = $_SESSION['UsuID'];
-                $valoracion = 0;
-                $activo = 2;
-                $opcion = "I";
+        //         $usuario = $_SESSION['UsuID'];
+        //         $valoracion = 0;
+        //         $activo = 2;
+        //         $opcion = "I";
 
-                $statement->bind_param(
-                    "iissbbbssssssbiididis",
-                    $id,
-                    $usuario,
-                    $nombre,
-                    $descripcion,
-                    $imagen1,
-                    $imagen2,
-                    $imagen3,
-                    $nombreImagen1,
-                    $tipoImagen1,
-                    $nombreImagen2,
-                    $tipoImagen2,
-                    $nombreImagen3,
-                    $tipoImagen3,    
-                    $video,
-                    $categoria,
-                    $tipo,
-                    $precio,
-                    $existencias,
-                    $valoracion,
-                    $activo,
-                    $opcion);
-                $result = $statement->execute();
-            }
-            catch (Exception $exc) {
-                echo '<script>alert("' . $exc . '")</script>';
-            }
-        }
+        //         $statement->bind_param(
+        //             "iissbbbssssssbiididisi",
+        //             $id,
+        //             $usuario,
+        //             $nombre,
+        //             $descripcion,
+        //             $imagen1,
+        //             $imagen2,
+        //             $imagen3,
+        //             $nombreImagen1,
+        //             $tipoImagen1,
+        //             $nombreImagen2,
+        //             $tipoImagen2,
+        //             $nombreImagen3,
+        //             $tipoImagen3,    
+        //             $video,
+        //             $categoria,
+        //             $tipo,
+        //             $precio,
+        //             $existencias,
+        //             $valoracion,
+        //             $activo,
+        //             $opcion,
+        //             $idAUsuario);
+        //         $result = $statement->execute();
+        //     }
+        //     catch (Exception $exc) {
+        //         echo '<script>alert("' . $exc . '")</script>';
+        //     }
+        // }
 
         static public function readProducto($mysqli, $opcion) {
             try {
@@ -242,12 +242,13 @@
                 $existencias = 0;
                 $valoracion = 0;
                 $activo = 0;
+                $idAUsuario = 0;
                 
-                $sql = "CALL SP_GestionProductos(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+                $sql = "CALL SP_GestionProductos(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
                 $statement = $mysqli->prepare($sql);
 
                 $statement->bind_param(
-                    "iissbbbssssssbiididis",
+                    "iissbbbssssssbiididisi",
                     $id,
                     $usuario,
                     $nombre,
@@ -268,7 +269,8 @@
                     $existencias,
                     $valoracion,
                     $activo,
-                    $opcion);
+                    $opcion,
+                    $idAUsuario);
                 $statement->execute();
                 $result = $statement->get_result(); 
 
@@ -307,12 +309,13 @@
                 $valoracion = 0;
                 $activo = 0;
                 $opcion = "SU";
+                $idAUsuario = 0;
                 
-                $sql = "CALL SP_GestionProductos(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+                $sql = "CALL SP_GestionProductos(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
                 $statement = $mysqli->prepare($sql);
 
                 $statement->bind_param(
-                    "iissbbbssssssbiididis",
+                    "iissbbbssssssbiididisi",
                     $id,
                     $usuario,
                     $nombre,
@@ -333,7 +336,8 @@
                     $existencias,
                     $valoracion,
                     $activo,
-                    $opcion);
+                    $opcion,
+                    $idAUsuario);
                 $statement->execute();
                 $result = $statement->get_result(); 
 
@@ -369,12 +373,13 @@
                 $valoracion = 0;
                 $activo = 0;
                 $opcion = "SAP";
+                $idAUsuario=0;
                 
-                $sql = "CALL SP_GestionProductos(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+                $sql = "CALL SP_GestionProductos(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
                 $statement = $mysqli->prepare($sql);
 
                 $statement->bind_param(
-                    "iissbbbssssssbiididis",
+                    "iissbbbssssssbiididisi",
                     $id,
                     $usuario,
                     $nombre,
@@ -395,7 +400,8 @@
                     $existencias,
                     $valoracion,
                     $activo,
-                    $opcion);
+                    $opcion,
+                    $idAUsuario);
                 $statement->execute();
                 $result = $statement->get_result(); 
 
@@ -423,16 +429,17 @@
                 else{
                     $opcion = "U";
                 }
-                $sql = "CALL SP_GestionProductos(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+                $sql = "CALL SP_GestionProductos(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
                 $statement = $mysqli->prepare($sql);
 
                 //VALORACION TENGO QUE ENVIARLA
                 $usuario = $_SESSION['UsuID'];
                 $valoracion = 5;
                 $activo = 1;
+                $$idAUsuario=0;
 
                 $statement->bind_param(
-                    "iissbbbssssssbiididis",
+                    "iissbbbssssssbiididisi",
                     $id,
                     $usuario,
                     $nombre,
@@ -453,7 +460,8 @@
                     $existencias,
                     $valoracion,
                     $activo,
-                    $opcion);
+                    $opcion,
+                    $idAUsuario);
 
                 $statement->send_long_data(4, $blobImagenProducto1);
                 $statement->send_long_data(5, $blobImagenProducto2);
@@ -484,12 +492,13 @@
                 $valoracion = 0;
                 $activo = 0;
                 $opcion = "SID";
-                
-                $sql = "CALL SP_GestionProductos(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+                $idAUsuario=0;
+
+                $sql = "CALL SP_GestionProductos(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
                 $statement = $mysqli->prepare($sql);
 
                 $statement->bind_param(
-                    "iissbbbssssssbiididis",
+                    "iissbbbssssssbiididisi",
                     $id,
                     $usuario,
                     $nombre,
@@ -510,7 +519,8 @@
                     $existencias,
                     $valoracion,
                     $activo,
-                    $opcion);
+                    $opcion,
+                    $idAUsuario);
                 $statement->execute();
                 $result = $statement->get_result(); 
                 $row = $result->fetch_assoc();
@@ -541,12 +551,13 @@
                 $valoracion = 0;
                 $activo = 0;
                 $opcion = "D";
+                $idAUsuario=0;
                 
-                $sql = "CALL SP_GestionProductos(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+                $sql = "CALL SP_GestionProductos(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
                 $statement = $mysqli->prepare($sql);
 
                 $statement->bind_param(
-                    "iissbbbssssssbiididis",
+                    "iissbbbssssssbiididisi",
                     $id,
                     $usuario,
                     $nombre,
@@ -567,7 +578,8 @@
                     $existencias,
                     $valoracion,
                     $activo,
-                    $opcion);
+                    $opcion,
+                    $idAUsuario);
                 $statement->execute();
                 $result = $statement->get_result(); 
                 $row = $result->fetch_assoc();
@@ -595,12 +607,13 @@
                 $valoracion = 0;
                 $activo = 0;
                 $opcion = "A";
+                $idAUsuario=0;
                 
-                $sql = "CALL SP_GestionProductos(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+                $sql = "CALL SP_GestionProductos(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
                 $statement = $mysqli->prepare($sql);
 
                 $statement->bind_param(
-                    "iissbbbssssssbiididis",
+                    "iissbbbssssssbiididisi",
                     $id,
                     $usuario,
                     $nombre,
@@ -621,7 +634,8 @@
                     $existencias,
                     $valoracion,
                     $activo,
-                    $opcion);
+                    $opcion,
+                    $idAUsuario);
                 $statement->execute();
                 $result = $statement->get_result(); 
                 $row = $result->fetch_assoc();

@@ -1,16 +1,17 @@
 $(document).ready(async () => {
 
     isEditando = false;
-    const nombreProducto = $("#nombreProducto");
-    const categoriaProducto = $("#categoriaProducto");
-    const tipoVentaProducto = $("#tipoVentaProducto");
-    const precioProducto = $("#precioProducto");
-    const stockProducto = $("#stockProducto");
-    const descripcionProducto = $("#descripcionProducto");
-    const imagenProducto1 = $("#imagenProducto1");
-    const imagenProducto2 = $("#imagenProducto2");
-    const imagenProducto3 = $("#imagenProducto3");
-    const videoProducto = $("#videoProducto");
+    nombreProducto = $("#nombreProducto");
+    categoriaProducto = $("#categoriaProducto");
+    tipoVentaProducto = $("#tipoVentaProducto");
+    precioProducto = $("#precioProducto");
+    stockProducto = $("#stockProducto");
+    stockUnidadMedida = $("#stockUnidadMedida");
+    descripcionProducto = $("#descripcionProducto");
+    imagenProducto1 = $("#imagenProducto1");
+    imagenProducto2 = $("#imagenProducto2");
+    imagenProducto3 = $("#imagenProducto3");
+    videoProducto = $("#videoProducto");
     
     tipoVentaProducto.on('change', function () {
         if(tipoVentaProducto.val() == 2) {
@@ -42,17 +43,18 @@ $(document).ready(async () => {
         e.preventDefault();
     
         var formData = new FormData(this);
-        console.log(formData);
+        console.log(JSON.stringify(formData));
     
         if(nombreProducto.val() != "" &&
             categoriaProducto.val() != "" &&
             tipoVentaProducto.val() != "" &&
             precioProducto.val() != "" &&
             stockProducto.val() != "" &&
-            descripcionProducto != "" ) {
+            descripcionProducto != "" ) 
+            {
 
             if(!isEditando) {//ADD PRODUCTO
-                console.log(JSON.stringify(formData));
+                console.log(isEditando);
                 fetch('../controllers/addProducto.php', {
                     method: 'POST',
                     body: formData
@@ -107,11 +109,38 @@ $(document).ready(async () => {
             }
             else{
                 //UPDATE PRODUCTOS
-                fetch('../controllers/updateProducto.php', {
+                console.log(isEditando);
+                /*const IdProEdit = document.getElementById("idpro");
+                const NombreProEdit = document.getElementById("nombreProducto");
+                const CategoriaProEdit = document.getElementById("categoriaProducto");
+                const TipoProEdit = document.getElementById("tipoVentaProducto");
+                const PrecioProEdit = document.getElementById("precioProducto");
+                const StockProEdit = document.getElementById("stockProducto");
+                const DescripcionProEdit = document.getElementById("descripcionProducto");
+                const Imagen1ProEdit = document.getElementById("imagenProducto1");
+                const Imagen2ProEdit = document.getElementById("imagenProducto2");
+                const Imagen3ProEdit = document.getElementById("imagenProducto3");
+                const VideoProEdit = document.getElementById("videoProducto");
+
+                var formData2 = {
+                    idProductoEdit: IdProEdit.value,
+                    NombreProEdit: NombreProEdit.value,
+                    CategoriaProEdit: CategoriaProEdit.value,
+                    TipoProEdit: TipoProEdit.value,
+                    PrecioProEdit: PrecioProEdit.value,
+                    StockProEdit: StockProEdit.value,
+                    DescripcionProEdit: DescripcionProEdit.value
+                    //Imagen1ProEdit: Imagen1ProEdit,
+                    //Imagen2ProEdit: Imagen2ProEdit,
+                    //Imagen3ProEdit: Imagen3ProEdit,
+                    //VideoProEdit: VideoProEdit.value
+                };*/
+                console.log(JSON.stringify(formData));
+                fetch('../controllers/updateProductoZ.php', {
                     method: 'POST',
                     body: formData
                 })
-                .then(() => {
+                .then((response) => {
                     //Alerta de confirmacion
                     Swal.fire(
                         'Exito!',
@@ -200,7 +229,7 @@ async function getProductos(paginaActual, categoriasPorPagina) {
             <tr>
                 <td>${pro.PK_IdProducto}</td>
                 <td>${pro.ProNombre}</td>
-                <td>$${pro.ProPrecio}</td>
+                <td>${pro.ProPrecio == null ? 'Precio cotizable' : '$' + pro.ProPrecio}</td>
                 <td>${pro.ProExistencias}</td>
                 <td>${pro.ProFK_IdTipoP === 1 ? 'Precio fijo' : 'Cotizable'}</td>
                 <td>${pro.ProFechaRegistro}</td>
@@ -230,6 +259,7 @@ async function getProductos(paginaActual, categoriasPorPagina) {
             //Convierte la respuesta del controlador en un JSON 
                 let responseJSON = await response.json();
                 console.log(responseJSON);
+                FormDataUpdate = responseJSON;
             
             //Asignamos el valor del span que se encuentra en el header del modal al de el id del producto que obtuvimos previamente con "findProducto"
                 $('#idpro').text(responseJSON.ID);
@@ -249,7 +279,7 @@ async function getProductos(paginaActual, categoriasPorPagina) {
     
             nombreProducto.val(responseJSON.Nombre);
             categoriaProducto.val(responseJSON.IdCategoria);
-            tipoVentaProducto.val(responseJSON.IdTipo);
+            tipoVentaProducto.val(responseJSON.IdTipoP);
             precioProducto.val(responseJSON.Precio);
             stockProducto.val(responseJSON.CantidadInventario);
             descripcionProducto.val(responseJSON.Descripcion);

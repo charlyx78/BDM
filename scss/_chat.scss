@@ -71,7 +71,7 @@
             background-image: url(../img/producto.webp);
             background-repeat: no-repeat;
             background-position: center center;
-            background-size: cover;
+            background-size: contain;
         }
         .informacion-producto {
             h4 {
@@ -96,7 +96,7 @@
         ul.contactos {
             height: 90.5vh;
             border-radius: 0;
-            background-color: $color-primario;
+            background-color: $color-blanco;
             .contenedor-titulo-pagina {
                 margin-bottom: 1em;
                 .contenido-titulo-pagina {
@@ -110,7 +110,7 @@
             .contacto-item {
                 display: flex;
                 margin: 0.8em 0;
-                background-color: $color-terciario;
+                // background-color: $color-terciario;
                 padding: 1em;
                 box-shadow: none;
                 border-radius: 0.4em;
@@ -121,7 +121,7 @@
                     }
                     .informacion-contacto {
                         h2, p {
-                            color: $color-blanco !important;
+                            color: $color-negro !important;
                         }
                         p {
                             width: 90%;

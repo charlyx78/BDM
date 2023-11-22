@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +22,7 @@
                 </div>
             </div>
 
-            <div class="contenedor-pedido">
+            <div class="contenedor-pedido" id="contenedor-pedido">
                 <ul class="contenedor-productos-pedido">
                     <li class="producto-pedido" data-idproducto="1">
                         <div class="imagen-producto-pedido rounded">
@@ -39,24 +43,23 @@
                 <h2 class="fw-bold mb-4 fs-3 mt-3">Filtros</h2>
                 <button class="btn d-lg-none" id="btnCerrarSidebar" onclick="mostrarFiltros('sidebarFiltrosPedidos')"><i class="bi bi-x-lg text-secondary"></i></button>
             </div>
-            <form action="">
+            <form id="form-filtrar-pedidos" method="post">
                 <div class="row">
                     <div class="mb-2 col-12">
-                        <label for="fechaPedido" class="form-label">Fecha de compra</label>
-                        <input type="date" name="fechaPedido" class="form-control">
+                        <label for="fechaPedido1" class="form-label">Fecha de compra Inicio</label>
+                        <input type="date" name="fechaPedido1" id="fechaPedido1" class="form-control">
                     </div>
                     <div class="mb-2 col-12">
-                        <label for="horaPedido" class="form-label">Hora de compra</label>
-                        <input type="time" name="horaPedido" class="form-control">
+                        <label for="fechaPedido2" class="form-label">Fecha de compra Fin</label>
+                        <input type="date" name="fechaPedido2" id="fechaPedido2" class="form-control">
                     </div>
                     <div class="mb-2 col-12">
                         <label for="categoriaPedido" class="form-label">Categoria</label>
-                        <select name="categoriaPedido" id="" class="form-select">
+                        <select name="categoriaPedido" id="categoriaPedido" class="form-select">
                             <option value="">Selecciona una categoria</option>
-                            <option value=""></option>
-                            <option value=""></option>
                         </select>
                     </div>
+                    <!--
                     <div class="mb-2 col-12">
                         <label for="productoPedido" class="form-label">Nombre de producto</label>
                         <input type="text" name="productoPedido" class="form-control">
@@ -76,6 +79,7 @@
                         <label for="precioPedido" class="form-label">Precio</label>
                         <input type="number" name="precioPedido" class="form-control">
                     </div>
+                    -->
                     <div class="mb-2 mt-1 w-100">
                         <button class="btn btn-primario w-100" type="submit">Buscar</button>
                     </div>
@@ -89,6 +93,8 @@
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
         crossorigin="anonymous">
     </script>
+    <!-- Sweet alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../js/sidebarFiltros.js"></script>
 
 </body>

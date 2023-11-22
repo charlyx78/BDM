@@ -140,6 +140,7 @@ session_start();
                             <label class="form-label" name="descripcionProducto">Descripcion</label>
                             <textarea class="form-control" name="descripcionProducto" id="descripcionProducto" rows="5"></textarea>
                         </div>
+                        <!-- <input type="text" class="d-none" name="productoAUsuario" id="productoAUsuario" value=""> -->
                         <div class="mb-2">
                             <button type="submit" id="submitProducto" name="submitProducto" class="btn btn-primario w-100">Guardar</button>
                         </div>

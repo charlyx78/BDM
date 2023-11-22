@@ -49,13 +49,13 @@
         $mysqli = db::connect();
     
         $nombreProducto = '%' . $_REQUEST['nombreProducto'] . '%';
-        
-        $sql = "SELECT * FROM vw_productos WHERE Nombre LIKE ?";
+        $activo=2;
+        $sql = "SELECT * FROM vw_productos WHERE Nombre LIKE ? AND Activo=?";
 
         $statement = $mysqli->prepare($sql);
     
         // Enlazar parámetro
-        $statement->bind_param("s", $nombreProducto);
+        $statement->bind_param("si", $nombreProducto, $activo);
     
         $statement->execute();
         $result = $statement->get_result(); 

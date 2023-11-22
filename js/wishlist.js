@@ -267,7 +267,7 @@ $(document).ready(() => {
                     <tr>
                         <td><div class="imagen-producto-wishlist rounded" style="background-image: url('data:image/png;base64,${prowish.Imagen1}');"></div></td>
                         <td><a href="producto.php?idProducto=${prowish.ID}">${prowish.Nombre}</a></td>
-                        <td>$${prowish.Precio}</td>
+                        <td>${prowish.Precio == null ? 'Precio cotizable' : '$' + prowish.Precio}</td>
                         <td><i class="bi bi-star-fill color-oro me-2"></i>${prowish.Calificacion} </td>
                         ${idUsuario == null ? '<td><button type="button" class="btn btn-sm btn-outline-danger w-100 boton-eliminar-producto" data-idproductolista="${prowish.IDProductoWishlist}">Eliminar</button></td>' : ''}
                     </tr>

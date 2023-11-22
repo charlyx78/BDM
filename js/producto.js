@@ -26,6 +26,7 @@ $(document).ready(async() => {
         $('#campoCantidad').hide();
         $('#precioProducto').text('Precio cotizable');
         $('.btnPedirCotizacion').show();
+        $('.btnPedirCotizacion').attr('href', 'chat.php?idUsuario=' + responseJSON.IDVendedor + '&idProducto=' + responseJSON.ID);
         $('.btnAgregarCarrito').hide();
     }
     
